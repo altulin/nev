@@ -596,15 +596,85 @@ input:-webkit-autofill:active {
   background-color: green;
 }
 
+.location {
+  background-color: #78899f;
+  position: relative;
+  z-index: 1;
+  padding-top: 9.8rem;
+}
+
+.location__wrap {
+  width: 100%;
+}
+
+.location__figure {
+  width: 100%;
+  padding-top: 61%;
+  position: relative;
+  overflow: hidden;
+}
+
+.location__img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.location-logo {
+  position: absolute;
+  width: 13.3%;
+  top: 20.5%;
+  left: 17%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.location-logo__link {
+  width: 100%;
+  display: block;
+  margin-bottom: 1rem;
+  -webkit-transform: translateX(0.4rem);
+      -ms-transform: translateX(0.4rem);
+          transform: translateX(0.4rem);
+}
+
+.location-logo__link svg {
+  width: 100%;
+  fill: #fff;
+  aspect-ratio: 4/1;
+}
+
+.location-logo__figure {
+  width: 100%;
+  padding-top: 100%;
+  background-image: url("../../img/magnifier.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .about {
   background-color: #78899f;
   padding-top: 5rem;
   padding-bottom: 3.75rem;
   position: relative;
+  margin-top: -13.2rem;
 }
 
 .about__title {
   margin-bottom: 10.875rem;
+  position: relative;
+  z-index: 1;
 }
 
 .about__subtitle {

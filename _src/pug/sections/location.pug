@@ -1,3 +1,18 @@
+include ../helpers/data/location.pug
+
 section.location
 	.locaton__wrap
 		figure.location__figure
+			+img-retina('location', 'png', 'location', 'location__img', '2371', '1452')
+
+	.location__logo.location-logo
+		a.location-logo__link("/")
+			+svg('logo')
+		figure.location-logo__figure
+
+	each item,i in locationlist
+		.location__flag.location-flag(class=`location-flag--${i+1}`)
+			h3.location-flag__title= item
+			.location-flag__vertical
+				.location-flag__line
+				.location-flag__circle

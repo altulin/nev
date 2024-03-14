@@ -22,7 +22,7 @@ const makeImages = () => {
       imagemin([
         optipng({ optimizationLevel: 3 }),
         mozjpeg({ quality: 75, progressive: true }),
-      ])
+      ]),
     )
     .pipe(dest(imgFolder));
 };
@@ -33,8 +33,8 @@ const createWebp = () => {
     .pipe(newer({ dest: webpFolder, ext: ".webp" }))
     .pipe(
       webp({
-        quality: 100,
-      })
+        quality: 75,
+      }),
     )
     .pipe(dest(webpFolder));
 };
