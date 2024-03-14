@@ -13,14 +13,13 @@ html {
 }
 
 body {
-  @include font("Gilroy");
+  @include font("Montserrat");
 
   display: flex;
   flex-direction: column;
   width: 100%;
   min-height: 100vh;
   color: $text-dark;
-
 
   &::-webkit-scrollbar {
     width: 0.8rem;
@@ -34,7 +33,6 @@ body {
     background: rgb(255 255 255 / 50%);
     border-radius: 0.2rem;
   }
-
 }
 
 a {
@@ -109,7 +107,7 @@ input:-webkit-autofill:active {
 }
 
 .container {
-  max-width: $width-dt + $gap * 2;
+  width: 66%;
   margin-right: auto;
   margin-left: auto;
   padding-right: $gap;

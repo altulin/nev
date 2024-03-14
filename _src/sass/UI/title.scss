@@ -1,0 +1,33 @@
+.title {
+  color: rgb(167, 167, 171);
+  font-family: Montserrat;
+  font-weight: 600;
+  line-height: 6.25rem;
+  letter-spacing: 1.6rem;
+  text-transform: uppercase;
+
+  &--lg {
+    font-size: 8rem;
+  }
+
+  &--md {
+    font-size: 4rem;
+  }
+
+  &--column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &--gray {
+    // color: #d6d2d2;
+  }
+
+  &--light {
+    color: #d6d2d2;
+  }
+
+  &--white {
+    color: #fff;
+  }
+}

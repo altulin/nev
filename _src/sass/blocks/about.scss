@@ -1,0 +1,131 @@
+.about {
+  background-color: #78899f;
+  padding-top: 5rem;
+  padding-bottom: 3.75rem;
+  position: relative;
+
+  &__inner {
+  }
+
+  &__title {
+    margin-bottom: 10.875rem;
+  }
+
+  &__subtitle {
+    color: rgb(255, 255, 255);
+    font-size: 3rem;
+    font-weight: 400;
+    line-height: 4.25rem;
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+    max-width: 55%;
+    margin-bottom: 3.3rem;
+  }
+
+  &__text {
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 2.25rem;
+    margin-bottom: 4.1rem;
+    max-width: 50%;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 3.5rem;
+    margin-bottom: 6rem;
+    max-width: 51%;
+    margin-left: -3rem;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // width: calc(100% / 3);
+
+    svg {
+      width: 5rem;
+      height: 5rem;
+      margin-bottom: 0.6rem;
+    }
+
+    &:nth-child(-n + 3) {
+      svg {
+        fill: #fff;
+      }
+    }
+
+    &:nth-child(n + 4) {
+      svg {
+        fill: transparent;
+        stroke: #fff;
+      }
+    }
+
+    span {
+      color: rgb(255, 255, 255);
+      font-size: 1.13rem;
+      font-weight: 300;
+      line-height: 1.75rem;
+      letter-spacing: 0%;
+      text-align: center;
+    }
+  }
+
+  &__link {
+    padding: 1.25rem 2.5rem 1.25rem 2.5rem;
+    border: 0.06rem solid rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 2.5rem;
+    letter-spacing: 0.15rem;
+    text-transform: lowercase;
+    display: inline-block;
+    min-width: 22rem;
+    text-align: center;
+
+    @include hocus() {
+    }
+
+    &:active {
+    }
+  }
+
+  .container {
+  }
+  .title {
+  }
+  .title--lg {
+  }
+  .title--light {
+  }
+  .picture {
+    position: absolute;
+    width: 47%;
+    right: 0;
+    bottom: 0;
+
+    &__wrap {
+      width: 100%;
+      height: 0;
+      padding-top: 110%;
+      position: relative;
+    }
+
+    &__img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      object-fit: contain;
+      object-position: right bottom;
+    }
+  }
+  .figure {
+  }
+}

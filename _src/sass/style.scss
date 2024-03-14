@@ -5,7 +5,11 @@
 @import "./helpers/_mixins";
 @import "./helpers/_font";
 @import "./helpers/_global";
+@import "./UI/title.scss";
 
 // Critical style
 @import "./blocks/header";
 @import "./blocks/promo";
+
+@import "./blocks/location";
+@import "./blocks/about";

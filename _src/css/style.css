@@ -383,11 +383,47 @@ template {
 }
 
 @font-face {
-  font-weight: 400;
-  font-family: Gilroy;
+  font-weight: 700;
+  font-family: Montserrat;
   font-style: normal;
-  src: url("/fonts/Gilroy-Regular.woff2") format("woff2");
-  src: url("/fonts/Gilroy-Regular.woff") format("woff");
+  src: url("/fonts/Montserrat-Bold.woff2") format("woff2");
+  src: url("/fonts/Montserrat-Bold.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 300;
+  font-family: Montserrat;
+  font-style: normal;
+  src: url("/fonts/Montserrat-Light.woff2") format("woff2");
+  src: url("/fonts/Montserrat-Light.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 500;
+  font-family: Montserrat;
+  font-style: normal;
+  src: url("/fonts/Montserrat-Medium.woff2") format("woff2");
+  src: url("/fonts/Montserrat-Medium.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 400;
+  font-family: Montserrat;
+  font-style: normal;
+  src: url("/fonts/Montserrat-Regular.woff2") format("woff2");
+  src: url("/fonts/Montserrat-Regular.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 600;
+  font-family: Montserrat;
+  font-style: normal;
+  src: url("/fonts/Montserrat-SemiBold.woff2") format("woff2");
+  src: url("/fonts/Montserrat-SemiBold.woff") format("woff");
   font-display: swap;
 }
 
@@ -405,7 +441,7 @@ html {
 }
 
 body {
-  font-family: "Gilroy", "Arial", sans-serif;
+  font-family: "Montserrat", "Arial", sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -502,11 +538,46 @@ input:-webkit-autofill:active {
 }
 
 .container {
-  max-width: 1350px;
+  width: 66%;
   margin-right: auto;
   margin-left: auto;
   padding-right: 15px;
   padding-left: 15px;
+}
+
+.title {
+  color: rgb(167, 167, 171);
+  font-family: Montserrat;
+  font-weight: 600;
+  line-height: 6.25rem;
+  letter-spacing: 1.6rem;
+  text-transform: uppercase;
+}
+
+.title--lg {
+  font-size: 8rem;
+}
+
+.title--md {
+  font-size: 4rem;
+}
+
+.title--column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.title--light {
+  color: #d6d2d2;
+}
+
+.title--white {
+  color: #fff;
 }
 
 .header {
@@ -523,6 +594,125 @@ input:-webkit-autofill:active {
 .header__logo:hover,
 .header__logo:focus {
   background-color: green;
+}
+
+.about {
+  background-color: #78899f;
+  padding-top: 5rem;
+  padding-bottom: 3.75rem;
+  position: relative;
+}
+
+.about__title {
+  margin-bottom: 10.875rem;
+}
+
+.about__subtitle {
+  color: rgb(255, 255, 255);
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 4.25rem;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+  max-width: 55%;
+  margin-bottom: 3.3rem;
+}
+
+.about__text {
+  color: rgb(255, 255, 255);
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 2.25rem;
+  margin-bottom: 4.1rem;
+  max-width: 50%;
+}
+
+.about__list {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 3.5rem;
+  margin-bottom: 6rem;
+  max-width: 51%;
+  margin-left: -3rem;
+}
+
+.about__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.about__item svg {
+  width: 5rem;
+  height: 5rem;
+  margin-bottom: 0.6rem;
+}
+
+.about__item:nth-child(-n+3) svg {
+  fill: #fff;
+}
+
+.about__item:nth-child(n+4) svg {
+  fill: transparent;
+  stroke: #fff;
+}
+
+.about__item span {
+  color: rgb(255, 255, 255);
+  font-size: 1.13rem;
+  font-weight: 300;
+  line-height: 1.75rem;
+  letter-spacing: 0%;
+  text-align: center;
+}
+
+.about__link {
+  padding: 1.25rem 2.5rem 1.25rem 2.5rem;
+  border: 0.06rem solid rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 2.5rem;
+  letter-spacing: 0.15rem;
+  text-transform: lowercase;
+  display: inline-block;
+  min-width: 22rem;
+  text-align: center;
+}
+
+.about .picture {
+  position: absolute;
+  width: 47%;
+  right: 0;
+  bottom: 0;
+}
+
+.about .picture__wrap {
+  width: 100%;
+  height: 0;
+  padding-top: 110%;
+  position: relative;
+}
+
+.about .picture__img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: right bottom;
+     object-position: right bottom;
 }
 
 @media (min-width: 1200px) {
