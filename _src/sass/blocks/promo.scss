@@ -1,1 +1,214 @@
-// style
+.promo {
+  &__inner {
+  }
+
+  &__swiper {
+  }
+}
+
+.promo-swiper {
+  width: 100%;
+
+  &__pagination {
+    position: absolute;
+    width: 100%;
+    bottom: 4rem;
+    left: 0;
+    z-index: 1;
+    justify-content: center;
+  }
+}
+
+.promo-slide {
+  min-height: 60.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 9rem;
+  box-sizing: border-box;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+
+  @include mw($dt) {
+    padding-top: 7.3rem;
+  }
+
+  @include mw($tb) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    justify-content: flex-start;
+    min-height: auto;
+    padding-bottom: 8.5rem;
+  }
+
+  &__figure {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__inner {
+    position: relative;
+    z-index: 1;
+    width: 78rem;
+    max-width: 100%;
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3rem;
+    line-height: 1;
+
+    span:last-child {
+      align-self: flex-end;
+    }
+
+    @include mw($tb) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include mw($dt) {
+      flex-direction: column-reverse;
+      row-gap: 3.6rem;
+      column-gap: 0;
+    }
+  }
+
+  &__link {
+    color: rgb(0, 0, 0);
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 2.5rem;
+    letter-spacing: 0.15rem;
+    text-transform: lowercase;
+    background: rgb(136, 214, 139);
+    text-align: center;
+    padding: 1.25rem 2.5rem 1.25rem 2.5rem;
+    flex-shrink: 0;
+    display: block;
+    min-width: 33%;
+
+    @include mw($tb) {
+      font-size: 0.94rem;
+      line-height: 1;
+    }
+  }
+
+  &__text {
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 2.5rem;
+    width: 53%;
+
+    @include mw($dt) {
+      width: 100%;
+    }
+
+    @include mw($tb) {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+  }
+}
+.slide-label {
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(#88d68be6, 0.9);
+  width: 16rem;
+  height: 16rem;
+  color: rgb(0, 0, 0);
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: 0.2rem;
+  text-transform: lowercase;
+  display: flex;
+  flex-direction: column;
+  // flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  right: 0%;
+  top: -29%;
+  text-align: center;
+
+  @include mw($dt) {
+    position: static;
+    margin-bottom: 2rem;
+    margin-left: auto;
+  }
+
+  @include mw($tb) {
+    width: 11rem;
+    height: 11rem;
+    font-size: 1rem;
+  }
+
+  &__head {
+    display: flex;
+    column-gap: 0.5rem;
+    align-items: center;
+
+    @include mw($tb) {
+      column-gap: 0.3rem;
+    }
+  }
+
+  &__price {
+    font-size: 2.5rem;
+
+    @include mw($tb) {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.pagination-bar {
+  display: flex;
+
+  &__bullet {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 0.5rem;
+    background-color: #fff;
+
+    & + span {
+      margin-left: 1.25rem;
+    }
+
+    &--active {
+      position: relative;
+      // margin-right: 4.6rem;
+
+      &::after {
+        content: "";
+        position: absolute;
+        border-radius: 0.5rem;
+        width: 5.6rem;
+        height: 100%;
+        @include centered("y");
+        left: 0;
+        border: 0.06rem solid rgb(255, 255, 255);
+        background-color: transparent;
+
+        border-radius: 0.5rem;
+      }
+    }
+  }
+}

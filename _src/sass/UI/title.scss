@@ -8,6 +8,15 @@
 
   &--lg {
     font-size: 8rem;
+
+    @include mw($dt) {
+      font-size: 5rem;
+    }
+
+    @include mw($tb) {
+      font-size: 2.69rem;
+      letter-spacing: 0.5rem;
+    }
   }
 
   &--md {
@@ -20,7 +29,7 @@
   }
 
   &--gray {
-    // color: #d6d2d2;
+    color: #a7a7ab;
   }
 
   &--light {

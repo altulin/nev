@@ -1,0 +1,10 @@
+.container-lt {
+  width: 83%;
+  max-width: 100%;
+  padding-left: 1rem;
+  margin-left: auto;
+
+  @media screen and (max-width: 1920px) {
+    width: 100rem;
+  }
+}

@@ -1,6 +1,46 @@
+include ../helpers/data/header.pug
+
 header.header#header
-	.header__inner.container.container--header
+	.header__inner
+		.header__left.header-left
+
+			button.header-left__btn.menu-icon(type="button")
+				.menu-icon__inner
+					span.menu-icon__line.menu-icon__line--up
+					span.menu-icon__line.menu-icon__line--down
 
 
-		a.header__logo.logo(href="/index.html")
-			//- +svg('user')
+		.header__middle.header-middle
+			a.header-middle__logo(href="/")
+				+svg('logo')
+
+			a.header-middle__choose(href="#") выбрать квартиру
+
+			a.header-middle__tel(href="tel:+78124435659") +7 (812) 443-56-59
+
+
+		.header__right.header-right
+			a.header-right__mail(href="mailto:sales@lenoblstroy47.ru")
+				+svg('mail')
+			a.header-right__camera(href="#" target="_blank")
+				+svg('camera')
+
+	.header__menu.menu
+		.menu__content.menu-contetnt
+			.menu-contetnt__wrap
+				nav.menu-contetnt__nav.menu-nav
+					ul.menu-nav__list
+						each item in header_nav
+							li.menu-nav__item
+								a.menu-nav__link(href=`${item.href}` class=item.anchor && 'js-anchor' target=item.anchor ? null:'_blank' data-anchor=item.anchor && `${item.href}`)= item.label
+
+				.menu-contetnt__point.contetnt-point
+					ul.contetnt-point__list
+						each item in header_point
+							li.contetnt-point__item
+								a.contetnt-point__link(href=`${item.href}` class=item.anchor && 'js-anchor' target=item.anchor ? null:'_blank')= item.label
+
+					a.contetnt-point__choose(href="/" taeget="_blank") выбрать  квартиру
+
+		figure.menu__figure
+			+img-retina('menu', 'jpg', 'menu', 'menu__img', '740', '970')

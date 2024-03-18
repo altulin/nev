@@ -1,0 +1,42 @@
+include ../helpers/data/dubrovka.pug
+
+section.dubrovka.container-lt#dubrovka
+	.dubrovka__inner
+		h2.dubrovka__title.title.title--lg.title--gray
+			span О ДУБРОВКЕ
+			span НА НЕВЕ
+
+		.dubrovka__content.tabs
+			ul.tabs__head.tabs-head
+				each item in dubrovka_tabs
+					li.tabs-head__item
+						a.tabs-head__link(href=`#${item.href}`)= item.label
+
+
+			each item,i in dubrovka_tabs
+				.tabs__block.tabs-block(id=`${item.href}`)
+					.tabs-block__info
+						p.tabs-block__text= dubrovka_text
+						.tabs-block__control.tabs-block__control--dt
+							button.tabs-block__btn.control.control--prev(type='button' class=`tabs-block__btn--prev-${i}`)
+								+svg('arr-top')
+							button.tabs-block__btn.control.control--next(type='button' class=`tabs-block__btn--next-${i}`)
+								+svg('arr-top')
+
+					.tabs-block__slider.tabs-slider.swiper.js-tabs-slider
+						.tabs-slider__list.swiper-wrapper
+							- var n = 0;
+								while n < 6
+									.swiper-slide.tabs-slider__item.dubrovka-slide
+										figure.dubrovka-slide__figure
+											img.dubrovka-slide__img(src='/img/dubrovka.jpg', alt="слайд" width="488" height="746")
+
+										p.dubrovka-slide__text Мягкий шепот волни легкий бриз приносят с собой ощущениесвежести и обновления.
+
+									-n++
+							-n=0
+						.tabs-block__control.tabs-block__control--tb
+							button.tabs-block__btn.control.control--prev(type='button' class=`tabs-block__btn--prev-${i}`)
+								+svg('arr-top')
+							button.tabs-block__btn.control.control--next(type='button' class=`tabs-block__btn--next-${i}`)
+								+svg('arr-top')

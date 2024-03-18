@@ -1,0 +1,33 @@
+include ../helpers/data/promo.pug
+
+section.promo
+	.promo__inner
+		.promo__swiper.swiper.promo-swiper
+			.swiper-wrapper.promo-swiper__wrapper
+				each item in promo_slider
+					li.swiper-slide.promo-swiper__slide.promo-slide
+						figure.promo-slide__figure
+								+img-retina(`${item.img}`, 'jpg', 'image', 'promo-slide__img', '1919', '970')
+
+						.promo-slide__inner
+							.promo-slide__label.slide-label
+								span.slide-label__head
+									span= item.label[0]
+									span.slide-label__price= item.price
+									span= item.label[1]
+								each el,i in item.label
+									if i>1
+										span= el
+
+
+
+
+
+							h1.title.title--lg.title--white.promo-slide__title
+								span КВАРТИРА
+								span У НЕВЫ
+							.promo-slide__block
+								a.promo-slide__link(href="/") смотреть планировки
+								p.promo-slide__text= item.text
+
+			.promo-swiper__pagination.pagination-bar

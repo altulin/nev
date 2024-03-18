@@ -1,0 +1,153 @@
+.circle {
+  padding-top: 3rem;
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    font-size: 4rem;
+    line-height: 1;
+    width: 64%;
+    margin-left: auto;
+    margin-right: auto;
+    letter-spacing: 0.4rem;
+    margin-bottom: 3rem;
+
+    @include mw($ldt) {
+      width: 100%;
+      padding: 0 2rem;
+    }
+
+    @include mw($dt) {
+      font-size: 3rem;
+      padding: 0 1rem;
+    }
+
+    @include mw($tb) {
+      font-size: 2rem;
+    }
+
+    @include mw($ph) {
+      font-size: 1.25rem;
+      letter-spacing: 0.2rem;
+    }
+
+    span:last-child {
+      align-self: flex-end;
+    }
+  }
+
+  &__slider {
+    width: 100%;
+  }
+
+  &__slide {
+    width: 85.5%;
+
+    @include mw($tb) {
+      width: 78%;
+    }
+  }
+
+  &__figure {
+    width: 100%;
+    padding-top: 59%;
+    position: relative;
+
+    @include mw($tb) {
+      padding-top: 154%;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__control {
+    position: absolute;
+    width: 80%;
+    @include centered();
+    display: flex;
+    justify-content: space-between;
+    z-index: 1;
+
+    @include mw($tb) {
+      // display: none;
+    }
+  }
+
+  &__btn {
+    width: 13%;
+
+    @include mw($dt) {
+      width: 13%;
+      &::before {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @include mw($tb) {
+      width: 19%;
+    }
+  }
+}
+.title {
+}
+.title--lg {
+}
+.title--gray {
+}
+.swiper {
+}
+.swiper-wrapper {
+}
+.swiper-slide {
+}
+.circle {
+  &__control {
+  }
+
+  &__btn--prev-undefined {
+  }
+
+  &__btn--next-undefined {
+  }
+}
+.control {
+}
+.control--prev {
+}
+.control--next {
+}
+.circle-cover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  display: flex;
+  column-gap: 5px;
+  z-index: 1;
+  pointer-events: none;
+
+  &__block {
+    &--center {
+      width: 85.5%;
+
+      @include mw($tb) {
+        width: 78%;
+      }
+    }
+
+    &--sm {
+      flex-grow: 1;
+      background-color: rgba(#fff, 0.68);
+    }
+  }
+}

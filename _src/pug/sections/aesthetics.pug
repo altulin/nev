@@ -1,0 +1,29 @@
+include ../helpers/data/aesthetics.pug
+
+section.aesthetics
+	.aesthetics__inner
+		h2.title.title--lg.title--gray.aesthetics__title ЭСТЕТИКА ВНУТРИ
+
+		.aesthetics__tab.aesthetics-tab
+			ul.aesthetics-tab__head.aesthetics-head
+				each item in aesthetics_tabs
+					li.aesthetics-head__item
+						a.aesthetics-head__link(href=`#${item.href}`)= item.label
+
+	each item,i in aesthetics_tabs
+		.aesthetics-tab__swiper.swiper.js-aesthetics-tabs(id=`${item.href}`)
+			.swiper-wrapper
+				each el in ['','','','','','','','']
+					.swiper-slide.aesthetics-tab__slide
+						figure.aesthetics-tab__figure
+							+img-retina('aesthetics', 'jpg', 'aesthetics', 'aesthetics-tab__img', '803', '803')
+
+						ul.aesthetics-tab__list
+							each word in aesthetics_list
+								li.aesthetics-tab__item= word
+
+			.aesthetics__control
+				button.aesthetics__btn.control.control--prev(type='button' class=`aesthetics__btn--prev-${i}`)
+					+svg('arr-top')
+				button.aesthetics__btn.control.control--next(type='button' class=`aesthetics__btn--next-${i}`)
+					+svg('arr-top')

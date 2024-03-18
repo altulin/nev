@@ -1,0 +1,116 @@
+.aesthetics {
+  padding-top: 10rem;
+
+  &__inner {
+    margin: 0 auto;
+    width: 64%;
+
+    @media screen and (max-width: 1920px) {
+      width: 77rem;
+      max-width: 100%;
+    }
+  }
+
+  &__title {
+    color: rgb(167, 167, 171);
+    font-size: 4rem;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0.4rem;
+    text-transform: uppercase;
+    margin-bottom: 4.5rem;
+  }
+
+  &__tab {
+  }
+
+  &__img {
+  }
+}
+.title {
+}
+.title--lg {
+}
+.title--gray {
+}
+.aesthetics-tab {
+  &__head {
+  }
+
+  &__swiper {
+  }
+
+  &__slide {
+    width: 27%;
+    overflow: hidden;
+
+    &.swiper-slide-active {
+      width: 42.5%;
+
+      .aesthetics-tab__list {
+        display: none;
+      }
+    }
+  }
+
+  &__figure {
+    width: 100%;
+    padding-top: 100%;
+    position: relative;
+  }
+
+  &__img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__list {
+  }
+
+  &__item {
+    color: rgb(0, 0, 0);
+    font-size: 1.13rem;
+    font-weight: 300;
+    line-height: 1.75rem;
+    text-align: left;
+  }
+}
+.aesthetics-head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+  column-gap: 6rem;
+  row-gap: 1rem;
+
+  &__item {
+  }
+
+  &__link {
+    color: rgb(0, 0, 0);
+    font-size: 1.25rem;
+    font-weight: 300;
+    line-height: 1.25rem;
+    padding: 1.25rem;
+    border: 0.06rem solid transparent;
+    transition: 0.3s;
+    display: block;
+
+    &[aria-selected="true"] {
+      border-color: #000;
+    }
+  }
+}
+.swiper {
+}
+.swiper-wrapper {
+}
+.swiper-slide {
+}

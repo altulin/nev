@@ -1,0 +1,108 @@
+.choose {
+  padding-top: 5rem;
+
+  @include mw($dt) {
+    display: none;
+  }
+
+  &__inner {
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 7rem;
+
+    @media screen and (max-width: 1920px) {
+      width: 78rem;
+      max-width: 100%;
+    }
+
+    span:last-child {
+      align-self: flex-end;
+    }
+  }
+
+  &__content {
+    display: flex;
+  }
+
+  &__left {
+    width: 50%;
+    position: relative;
+    background-image: url("/img/choose.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__block {
+  }
+
+  &__right {
+    width: 50%;
+    position: relative;
+    background-color: #78899f;
+  }
+
+  &__figure {
+    width: 100%;
+    height: 0;
+    padding-top: 100%;
+  }
+}
+.title {
+}
+.title--lg {
+}
+.title--gray {
+}
+.choose-left {
+}
+.choose-block {
+  position: absolute;
+  @include centered("y");
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__link {
+    display: block;
+    width: 5rem;
+    height: 5rem;
+    margin-bottom: 1.4rem;
+
+    svg {
+      width: 100%;
+      height: 100%;
+      fill: #88d68be6;
+      stroke: #fff;
+    }
+  }
+
+  &__title {
+    color: rgb(255, 255, 255);
+    font-size: 3rem;
+    font-weight: 400;
+    line-height: 4.25rem;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    /* TKO 1 */
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 2.25rem;
+  }
+}
+.choose-block--left {
+  right: 18%;
+}
+.choose-right {
+}
+.choose-block--right {
+  left: 9%;
+}

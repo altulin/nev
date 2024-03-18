@@ -1,1 +1,202 @@
-// style
+.footer {
+  padding-bottom: 4.5rem;
+  color: rgb(0, 0, 0);
+
+  &__inner {
+    padding-top: 6.25rem;
+  }
+
+  &__up {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 5rem;
+  }
+
+  &__middle {
+  }
+
+  &__down {
+  }
+}
+.container {
+  &--footer {
+    width: 94.5%;
+  }
+}
+.footer-up {
+  &__department {
+  }
+
+  &__soc {
+    margin-left: 15%;
+    min-width: 25rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__connection {
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+  }
+}
+.department {
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 2.25rem;
+    margin-bottom: 2.3rem;
+    display: block;
+  }
+
+  &__addr {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 2.25rem;
+    margin-bottom: 5.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__route {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 2.5rem;
+    letter-spacing: 10%;
+    text-transform: lowercase;
+    padding: 1.25rem 2.5rem 1.25rem 2.5rem;
+    border: 0.06rem solid #000;
+    letter-spacing: 0.15rem;
+    background-color: transparent;
+  }
+}
+.soc {
+  &__logo {
+    display: block;
+    margin-bottom: 6rem;
+    align-self: flex-end;
+
+    svg {
+      fill: #78899f;
+      aspect-ratio: 3.6 / 1;
+      width: 21.3rem;
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__list-top {
+  }
+
+  &__item {
+  }
+
+  &__link {
+    display: block;
+  }
+
+  &__link--vk {
+    width: 3.44rem;
+    height: 2.38rem;
+  }
+
+  &__link--tg {
+    width: 3.25rem;
+    height: 2.88rem;
+  }
+
+  &__link--wa {
+    width: 2.56rem;
+    height: 2.5rem;
+  }
+}
+.connection {
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5rem;
+    height: 5rem;
+    border: 0.06rem solid rgb(0, 0, 0);
+    background-color: transparent;
+    margin-bottom: 5.8rem;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-left: 44%;
+
+    @include hocus() {
+      opacity: 0.6;
+    }
+
+    svg {
+      width: 1.31rem;
+      height: 3.56rem;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 2.25rem;
+    margin-bottom: 2.3rem;
+  }
+
+  &__tel {
+    color: rgb(0, 0, 0);
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 2.25rem;
+  }
+
+  &__mail {
+    /* TKO 1 */
+    color: rgb(0, 0, 0);
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 2.25rem;
+  }
+}
+.footer-middle {
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: center;
+  &__list {
+    display: flex;
+    align-items: center;
+    column-gap: 3.5rem;
+  }
+
+  &__link {
+    color: rgb(0, 0, 0);
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 2.25rem;
+    transition: 0.3s;
+
+    @include hocus() {
+      opacity: 0.5;
+    }
+  }
+}
+.footer-info {
+  display: flex;
+  justify-content: center;
+  &__text {
+    width: 51%;
+    color: rgb(167, 167, 171);
+    font-size: 1.13rem;
+    font-weight: 300;
+    line-height: 1.75rem;
+    text-align: center;
+  }
+}

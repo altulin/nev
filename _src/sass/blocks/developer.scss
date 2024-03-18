@@ -1,0 +1,174 @@
+.developer {
+  padding-top: 8.5rem;
+  border-bottom: 0.06rem solid rgb(167, 167, 171);
+
+  &__inner {
+    display: flex;
+    padding-left: 2rem;
+
+    @include mw($tb) {
+      flex-direction: column;
+    }
+  }
+
+  &__info {
+  }
+
+  &__right {
+    width: 59.5%;
+    flex-shrink: 0;
+    padding-top: 3rem;
+
+    @include mw($tb) {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    color: rgb(167, 167, 171);
+    font-size: 4rem;
+    font-weight: 600;
+    line-height: 4rem;
+    letter-spacing: 0.4rem;
+    text-transform: uppercase;
+    margin-bottom: 5.5rem;
+
+    &--dt {
+      @include mw($tb) {
+        display: none;
+      }
+    }
+
+    &--tb {
+      display: none;
+
+      @include mw($tb) {
+        display: block;
+      }
+    }
+
+    @include mw($dt) {
+      font-size: 2.5rem;
+    }
+  }
+
+  &__wrap {
+    width: 100%;
+  }
+
+  &__figure {
+    width: 100%;
+    height: 0;
+    padding-top: 103%;
+    position: relative;
+  }
+
+  &__img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+  }
+}
+.container-lt {
+}
+.developer-info {
+  padding-right: 2rem;
+  &__logo {
+    display: block;
+    width: 7.44rem;
+    height: 9.68rem;
+    margin-bottom: 3rem;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__block {
+  }
+
+  &__list {
+  }
+
+  &__project {
+  }
+}
+.info-block {
+  color: rgb(0, 0, 0);
+  font-size: 1.5rem;
+  line-height: 2.25rem;
+  margin-bottom: 7.5rem;
+
+  &__title {
+    font-weight: 600;
+  }
+
+  &__text {
+    font-weight: 300;
+  }
+}
+.info-list {
+  color: rgb(0, 0, 0);
+  font-size: 1.5rem;
+  line-height: 2.25rem;
+  margin-bottom: 11rem;
+
+  &__title {
+    font-weight: 600;
+  }
+
+  &__item {
+    font-weight: 300;
+    margin: 0.2rem 0;
+    display: flex;
+
+    &::before {
+      content: "";
+      width: 1.69rem;
+      height: 0.25rem;
+      background-color: #88d68b;
+      display: block;
+      margin-right: 0.3rem;
+      margin-top: 1rem;
+    }
+  }
+}
+.developer-project {
+  &__link {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    color: rgb(0, 0, 0);
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 2.25rem;
+    justify-content: flex-end;
+
+    & + a {
+      margin-top: 2rem;
+    }
+
+    svg {
+      width: 2.34rem;
+      height: 2.99rem;
+      margin-right: 2rem;
+      fill: none;
+      stroke: #000;
+      flex-shrink: 0;
+    }
+  }
+
+  &__declaration {
+    color: rgb(0, 0, 0);
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 2.25rem;
+    text-decoration-line: underline;
+    margin-bottom: 3rem;
+    display: inline-block;
+  }
+}

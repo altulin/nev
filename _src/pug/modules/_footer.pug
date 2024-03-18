@@ -1,9 +1,41 @@
-footer.main-footer
-	.main-footer__inner.container
-		.main-footer__top
-			//- a.main-footer__logo(href="/index.html")
-				+img-retina(`logo`, `png`, `логотип`, `main-footer__logo-img`, `200`, `63`)
+include ../helpers/data/footer.pug
 
-			//- a.main-footer__up-link(href="#" aria-label="В начало")
+footer.footer
+	.footer__inner.container.container--footer
+		.footer__up.footer-up
 
-		.main-footer__bottom
+			.footer-up__department.department
+				span.department__title Отдел продаж:
+				p.department__addr
+					span Ленинградская область,
+					span г.п. Дубровка, ул. Советская, д. 6
+
+				button.department__route построить маршрут
+
+			.footer-up__soc.soc
+				a.soc__logo(href="/")
+					+svg('logo')
+
+				ul.soc__list.soc__list-top
+					each item in soc
+						li.soc__item
+							a.soc__link(href=`${item.href}` class=`soc__link--${item.name}` style={'background-image': `url(/img/${item.name}.png)`})
+			.footer-up__connection.connection
+				button.connection__top(type="button")
+					<svg  viewBox="0 0 23 59" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M1 11.5L11.5 1L22 11.5" stroke="black" stroke-linecap="round"/>
+						<path d="M11.5 1L11.5 58" stroke="black" stroke-linecap="round"/>
+					</svg>
+
+				.connection__inner
+					span.connection__title Связаться с нами:
+					a.connection__tel(href="tel:+78124435659") +7 (812) 443-56-59
+					a.connection__mail(href="mailto:sales@lenoblstroy47.ru") sales@lenoblstroy47.ru
+
+		.footer__middle.footer-middle
+			ul.footer-middle__list
+				each item in footer_middle
+					li.footer-middle__link(href=`${item.href}`)= item.title
+
+		.footer__down.footer-info
+			p.footer-info__text Любая информация, представленная на данном сайте, носит исключительно информационный характер и ни при каких условиях не является публичной офертой, определяемой положениями статьи 437 ГК РФ

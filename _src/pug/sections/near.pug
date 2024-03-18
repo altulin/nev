@@ -1,0 +1,29 @@
+include ../helpers/data/near.pug
+
+section.near
+	h2.title.title--lg.near__title все рядом
+	.near__inner
+		.near__map
+		.near__content.near-content
+			h3.near-content__subtitle РАСПОЛОЖЕНИЕ
+			.near-content__mark
+				i
+				span Ленинградская область, гп. Дубровка, ул.&nbsp;Невская
+
+			ul.near-content__list
+				each item,i in near
+					li.near-content__item.near-item
+						.near-item__inner
+							span.near-item__time= item.time
+							span.near-item__min мин
+							p.near-item__text
+								each el in item.text
+									span= el
+
+
+							if item.span
+								span.near-item__station= item.span
+
+						.near-item__indication.near-indication(class=`near-indication--${i+1}`)
+							.near-indication__line
+							.near-indication__color

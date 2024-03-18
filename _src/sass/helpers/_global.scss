@@ -20,6 +20,7 @@ body {
   width: 100%;
   min-height: 100vh;
   color: $text-dark;
+  transition: 0.3s;
 
   &::-webkit-scrollbar {
     width: 0.8rem;
@@ -32,6 +33,21 @@ body {
   &::-webkit-scrollbar-thumb {
     background: rgb(255 255 255 / 50%);
     border-radius: 0.2rem;
+  }
+}
+
+.scroll {
+  &::-webkit-scrollbar {
+    width: 0.2rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: #fff;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #78899f;
+    border-radius: 0.5rem;
   }
 }
 
@@ -114,6 +130,19 @@ input:-webkit-autofill:active {
   padding-left: $gap;
 }
 
-// * {
-// outline: 1px solid #ff6347;
-// }
+* {
+  // outline: 1px solid #ff6347;
+}
+
+.scroll-lock {
+  overflow: hidden;
+  padding-right: 0.2rem;
+}
+
+.page-main {
+  flex-grow: 1;
+}
+
+[hidden] {
+  display: none !important;
+}

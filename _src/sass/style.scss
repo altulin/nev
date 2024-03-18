@@ -6,10 +6,22 @@
 @import "./helpers/_font";
 @import "./helpers/_global";
 @import "./UI/title.scss";
-
-// Critical style
+@import "./UI/control.scss";
+@import "./UI/container.scss";
+@import "../../node_modules/swiper/swiper.scss"; // Critical style
 @import "./blocks/header";
-@import "./blocks/promo";
 
+@import "./blocks/promo";
 @import "./blocks/location";
 @import "./blocks/about";
+@import "./blocks/near";
+
+@import "./blocks/footer";
+
+@import "./blocks/dubrovka";
+
+@import "./blocks/circle";
+@import "./blocks/yard";
+@import "./blocks/aesthetics";
+@import "./blocks/choose";
+@import "./blocks/developer";

@@ -1,0 +1,23 @@
+section.choose
+	.choose__inner
+		h2.title.title--lg.title--gray.choose__title
+			span выбрать
+			span квартиру
+
+	.choose__content
+		.choose__left.choose-left
+			figure.choose__figure
+			.choose__block.choose-block.choose-block--left
+
+
+				a.choose-block__link(href="/")
+					+svg('choose-lt')
+				h3.choose-block__title на схеме
+				p.choose-block__text выберете на генплане
+
+		.choose__right.choose-right
+			.choose__block.choose-block.choose-block--right
+				a.choose-block__link(href="/")
+					+svg('choose-rt')
+				h3.choose-block__title по параметрам
+				p.choose-block__text выберите по цене и площади

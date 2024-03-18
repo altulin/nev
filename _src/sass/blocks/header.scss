@@ -1,14 +1,424 @@
 .header {
-  @include padding-top(100px);
+  position: fixed;
+  left: 0;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+  transition: 0.3s;
+
+  &--down {
+    transform: translateY(-100%);
+  }
+
+  &--menu-active {
+    .header {
+      &__inner {
+        border-color: #000;
+      }
+
+      &-middle {
+        border-color: #000;
+
+        &__logo {
+          svg {
+            fill: #78899f;
+          }
+        }
+
+        &__choose,
+        &__tel {
+          visibility: hidden;
+          opacity: 0;
+        }
+      }
+
+      &-right {
+        &__mail {
+          svg {
+            stroke: #000;
+          }
+        }
+      }
+
+      &-right {
+        &__camera {
+          svg {
+            stroke: #000;
+          }
+        }
+      }
+    }
+  }
+
+  &--down {
+    transform: translateY(-100%);
+  }
+
+  &__inner {
+    display: flex;
+    min-height: 6.8rem;
+    border-bottom: 0.06rem solid #fff;
+    flex-wrap: wrap;
+    transition: 0.3s;
+
+    @include mw($tb) {
+      min-height: 4.5rem;
+    }
+  }
+
+  &__left {
+    width: 17.6%;
+    flex-shrink: 0;
+
+    @include mw($tb) {
+      order: 1;
+    }
+
+    @include mw($ph) {
+      margin-right: 0;
+    }
+  }
+
+  &__middle {
+    flex-grow: 1;
+    border-left: 0.06rem solid #fff;
+    border-right: 0.06rem solid #fff;
+  }
+
+  &__right {
+    width: 17.6%;
+    flex-shrink: 0;
+
+    @include mw($tb) {
+      display: none;
+    }
+  }
+}
+.header-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.header-middle {
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  flex-wrap: wrap;
+
+  @include mw($tb) {
+    border: 0;
+  }
+
+  @include mw($ph) {
+    padding: 0 1rem;
+  }
 
   &__logo {
     display: block;
-    width: 200px;
-    height: 50px;
-    background-color: tomato;
 
-    @include hocus {
-      background-color: green;
+    svg {
+      width: 7.93rem;
+      height: 2.56rem;
+      fill: #fff;
+      transition: 0.3s;
+
+      @include mw($tb) {
+        width: 6.45rem;
+        height: 2.26rem;
+      }
+    }
+  }
+
+  &__choose {
+    color: rgb(255, 255, 255);
+    font-size: 1.13rem;
+    font-weight: 500;
+    line-height: 1.38rem;
+    letter-spacing: 10%;
+    align-items: center;
+    padding: 0.63rem 1.25rem 0.63rem 1.25rem;
+    border: 0.06rem solid rgb(255, 255, 255);
+    display: block;
+    margin-left: auto;
+    transition: 0.3s;
+
+    @include mw($dt) {
+      display: none;
+    }
+  }
+
+  &__tel {
+    color: rgb(255, 255, 255);
+    font-size: 1.13rem;
+    font-weight: 500;
+    line-height: 1.38rem;
+    display: block;
+    margin-left: 4.75rem;
+    transition: 0.3s;
+
+    @include mw($dt) {
+      margin-left: auto;
+      font-size: 0.88rem;
+    }
+  }
+}
+.header-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 2.75rem;
+  flex-wrap: wrap;
+
+  &__mail {
+    display: block;
+
+    svg {
+      width: 2.06rem;
+      height: 1.25rem;
+      stroke: #fff;
+      fill: transparent;
+    }
+  }
+
+  &__camera {
+    display: block;
+
+    svg {
+      width: 2.26rem;
+      height: 1.56rem;
+      stroke: #fff;
+      fill: transparent;
+    }
+  }
+}
+
+.menu {
+  position: fixed;
+  width: 100%;
+  min-height: 100%;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: flex-end;
+  z-index: -1;
+  visibility: hidden;
+  opacity: 0;
+
+  &__content {
+    background-color: #fff;
+    flex-shrink: 0;
+    padding-left: 2%;
+    padding-top: 11.5rem;
+    padding-right: 3%;
+    flex-grow: 1;
+
+    @include mw($ph) {
+      padding-left: 4.5%;
+    }
+  }
+
+  &__figure {
+    position: relative;
+    width: 38.5%;
+
+    @include mw($dt) {
+      width: 0;
+      overflow: hidden;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left bottom;
+  }
+}
+.menu-contetnt {
+  &__nav {
+  }
+
+  &__point {
+  }
+
+  &__wrap {
+    display: flex;
+    column-gap: 1.4rem;
+    justify-content: flex-end;
+
+    @include mw($ph) {
+      flex-direction: column;
+    }
+  }
+}
+.menu-nav {
+  @include mw($ph) {
+    margin-bottom: 3rem;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 2.5rem;
+  }
+
+  &__item {
+  }
+
+  &__link {
+    color: rgb(0, 0, 0);
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 4.25rem;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    display: block;
+    border-bottom: 0.06rem solid transparent;
+    transform: 0.5s;
+
+    @include hocus() {
+      border-color: #a7a7ab;
+    }
+  }
+}
+.js-anchor {
+}
+.contetnt-point {
+  align-self: flex-end;
+
+  @include mw($ph) {
+    align-self: flex-start;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 1.68rem;
+    margin-bottom: 4rem;
+    margin-left: 3.5rem;
+
+    @include mw($ph) {
+      // margin-left: 0;
+    }
+  }
+
+  &__item {
+  }
+
+  &__link {
+    color: rgb(0, 0, 0);
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 2.25rem;
+    border-bottom: 0.06rem solid transparent;
+    transform: 0.5s;
+    display: block;
+
+    @include hocus() {
+      border-color: #a7a7ab;
+    }
+  }
+
+  &__choose {
+    color: rgb(0, 0, 0);
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 2.5rem;
+    letter-spacing: 0.2rem;
+    text-transform: lowercase;
+    border: 0.06rem solid rgb(0, 0, 0);
+    padding: 1.25rem 2.5rem 1.25rem 2.5rem;
+    display: block;
+  }
+}
+
+.menu-icon {
+  transform: scale(1.5);
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+
+  @include mw($tb) {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  &:hover {
+    .menu-icon__line--up {
+      width: 2.6rem;
+      background-color: #000;
+
+      @include mw($tb) {
+        width: 100%;
+      }
+    }
+    .menu-icon__line--down {
+      width: 1.4rem;
+      background-color: #000;
+
+      @include mw($tb) {
+        width: 100%;
+      }
+    }
+  }
+
+  &--active,
+  &--active:hover {
+    .menu-icon__line {
+      width: 100%;
+      background-color: #000;
+    }
+  }
+
+  &--active {
+    .menu-icon__line--up {
+      transform: rotate(45deg);
+      top: 0.46rem;
+
+      @include mw($tb) {
+        top: 0.4rem;
+      }
+    }
+    .menu-icon__line--down {
+      transform: rotate(-45deg);
+      bottom: 0.46rem;
+
+      @include mw($tb) {
+        bottom: 0.4rem;
+      }
+    }
+  }
+
+  &__inner {
+    width: 73%;
+    height: 1rem;
+    position: relative;
+
+    @include mw($tb) {
+      height: 0.8rem;
+    }
+  }
+
+  &__line {
+    position: absolute;
+    width: 100%;
+    height: 0.06px;
+    background-color: #fff;
+    left: 0;
+    transition: all 0.3s cubic-bezier(0.1, 0.82, 0.76, 0.965);
+
+    &--top {
+      top: 0;
+    }
+    &--down {
+      bottom: 0;
     }
   }
 }

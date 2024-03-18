@@ -8,7 +8,7 @@ const {
 } = paths;
 
 export const createSection = async () => {
-  const list = ["location","about"];
+  const list = ["choose", "developer"];
 
   for (const name of list) {
     fs.writeFile(`${pug}/${name}.pug`, "", function (err) {
@@ -27,7 +27,7 @@ export const createSection = async () => {
         if (err) {
           throw err;
         }
-      }
+      },
     );
 
     fs.appendFile(style, `\n@import "./blocks/${name}";`, "utf-8", (err) => {
