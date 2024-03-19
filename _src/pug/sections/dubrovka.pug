@@ -1,12 +1,12 @@
 include ../helpers/data/dubrovka.pug
 
-section.dubrovka.container-lt#dubrovka
+section.dubrovka#dubrovka
 	.dubrovka__inner
 		h2.dubrovka__title.title.title--lg.title--gray
 			span О ДУБРОВКЕ
 			span НА НЕВЕ
 
-		.dubrovka__content.tabs
+		.dubrovka__content.tabs.container-lt
 			ul.tabs__head.tabs-head
 				each item in dubrovka_tabs
 					li.tabs-head__item

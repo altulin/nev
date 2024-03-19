@@ -1995,7 +1995,20 @@ input:-webkit-autofill:active {
 
 .near__title {
   margin-bottom: 5.7rem;
-  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.near__title span:last-child {
+  margin-left: 1rem;
 }
 
 .near__inner {
@@ -2003,7 +2016,6 @@ input:-webkit-autofill:active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding-top: 4.2rem;
   padding-bottom: 17rem;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -2015,16 +2027,6 @@ input:-webkit-autofill:active {
 
 .near__map {
   width: 42.6%;
-  background-image: url("../img/map.png");
-  background-repeat: no-repeat;
-  background-position: left center;
-  background-repeat: no-repeat;
-  background-size: auto 100%;
-  background-position: center;
-  -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, color-stop(-0.432%, rgba(19, 19, 19, 0)), color-stop(11.231%, rgba(202, 197, 197, 0.54)), color-stop(26.675%, rgb(214, 210, 210)), color-stop(55.052%, rgb(255, 255, 255)), color-stop(80.182%, rgba(213, 208, 208, 0.9)), color-stop(96.466%, rgba(190, 183, 183, 0.1)), color-stop(100.152%, rgba(19, 19, 19, 0)));
-  -webkit-mask-image: linear-gradient(180deg, rgba(19, 19, 19, 0) -0.432%, rgba(202, 197, 197, 0.54) 11.231%, rgb(214, 210, 210) 26.675%, rgb(255, 255, 255) 55.052%, rgba(213, 208, 208, 0.9) 80.182%, rgba(190, 183, 183, 0.1) 96.466%, rgba(19, 19, 19, 0) 100.152%);
-          mask-image: -webkit-gradient(linear, left top, left bottom, color-stop(-0.432%, rgba(19, 19, 19, 0)), color-stop(11.231%, rgba(202, 197, 197, 0.54)), color-stop(26.675%, rgb(214, 210, 210)), color-stop(55.052%, rgb(255, 255, 255)), color-stop(80.182%, rgba(213, 208, 208, 0.9)), color-stop(96.466%, rgba(190, 183, 183, 0.1)), color-stop(100.152%, rgba(19, 19, 19, 0)));
-          mask-image: linear-gradient(180deg, rgba(19, 19, 19, 0) -0.432%, rgba(202, 197, 197, 0.54) 11.231%, rgb(214, 210, 210) 26.675%, rgb(255, 255, 255) 55.052%, rgba(213, 208, 208, 0.9) 80.182%, rgba(190, 183, 183, 0.1) 96.466%, rgba(19, 19, 19, 0) 100.152%);
 }
 
 .near-content {
@@ -2033,6 +2035,7 @@ input:-webkit-autofill:active {
       -ms-flex-positive: 1;
           flex-grow: 1;
   padding-left: 3%;
+  padding-top: 4.2rem;
 }
 
 .near-content__subtitle {
@@ -2159,7 +2162,7 @@ input:-webkit-autofill:active {
 }
 
 .near-indication__line {
-  width: 100%;
+  width: 0;
   height: 0.06rem;
   background-color: #fff;
 }
@@ -2168,6 +2171,17 @@ input:-webkit-autofill:active {
   height: 0.5rem;
   width: 3.75rem;
   background-color: #88d68b;
+}
+
+.near-map__figure {
+  width: 100%;
+  height: 0;
+  padding-top: 113%;
+  background-image: url("../img/map.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #78899f;
+  background-blend-mode: luminosity;
 }
 
 .footer {
@@ -2432,12 +2446,15 @@ input:-webkit-autofill:active {
           flex-direction: column;
   row-gap: 1rem;
   margin-bottom: 4.6rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .dubrovka__title span:last-child {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }
 
 .tabs {
@@ -2454,10 +2471,10 @@ input:-webkit-autofill:active {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   margin-bottom: 8.5rem;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   margin-right: 1rem;
+  -webkit-column-gap: 2rem;
+     -moz-column-gap: 2rem;
+          column-gap: 2rem;
   row-gap: 1rem;
 }
 

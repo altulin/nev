@@ -19,9 +19,13 @@
     flex-direction: column;
     row-gap: 1rem;
     margin-bottom: 4.6rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-left: auto;
+    margin-right: auto;
 
     span:last-child {
-      align-self: center;
+      align-self: flex-end;
 
       @include mw($tb) {
         align-self: flex-end;
@@ -69,8 +73,8 @@
   align-items: center;
   flex-wrap: wrap;
   margin-bottom: 8.5rem;
-  justify-content: space-between;
   margin-right: 1rem;
+  column-gap: 2rem;
   row-gap: 1rem;
 
   @include mw($tb) {

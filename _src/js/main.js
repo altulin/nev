@@ -10,6 +10,8 @@ import { setAestheticsSliders } from "./modules/sliders/aesthetics.js";
 import { setToTop } from "./modules/header/toTop.js";
 import { anchorPromoOrder } from "./modules/promo/anchor.js";
 import { tlPromo } from "./modules/promo/animation.js";
+import { animationDubrovka } from "./modules/dubrovka/animation.js";
+import { animationLine } from "./modules/near/animation.js";
 
 const handler = () => {
   tlPromo.play().then(() => {
@@ -24,6 +26,9 @@ const handler = () => {
   setAestheticsSliders();
   setToTop();
   anchorPromoOrder();
+  animationDubrovka();
+  // animationNearTitle();
+  animationLine();
 };
 
 document.addEventListener("DOMContentLoaded", handler);

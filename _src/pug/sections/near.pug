@@ -1,9 +1,12 @@
 include ../helpers/data/near.pug
 
 section.near
-	h2.title.title--lg.near__title все рядом
+	h2.title.title--lg.near__title
+		spn все
+		span рядом
 	.near__inner
-		.near__map
+		.near__map.near-map
+			figure.near-map__figure
 		.near__content.near-content
 			h3.near-content__subtitle РАСПОЛОЖЕНИЕ
 			.near-content__mark
@@ -25,5 +28,5 @@ section.near
 								span.near-item__station= item.span
 
 						.near-item__indication.near-indication(class=`near-indication--${i+1}`)
-							.near-indication__line
+							.near-indication__line(class=`near-indication__line--${i}`)
 							.near-indication__color
