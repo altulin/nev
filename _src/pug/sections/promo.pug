@@ -4,8 +4,8 @@ section.promo
 	.promo__inner
 		.promo__swiper.swiper.promo-swiper
 			.swiper-wrapper.promo-swiper__wrapper
-				each item in promo_slider
-					li.swiper-slide.promo-swiper__slide.promo-slide
+				each item,i in promo_slider
+					li.swiper-slide.promo-swiper__slide.promo-slide(class=`promo-slide--${i}`)
 						figure.promo-slide__figure
 								+img-retina(`${item.img}`, 'jpg', 'image', 'promo-slide__img', '1919', '970')
 
@@ -23,9 +23,17 @@ section.promo
 
 
 
-							h1.title.title--lg.title--white.promo-slide__title
-								span КВАРТИРА
-								span У НЕВЫ
+							h1.title.title--lg.title--white.promo-slide__title.promo-title(class=`promo-title--${i}`)
+								span.promo-title__text
+									//- if i===0
+										span.promo-title__cover
+											|	КВАРТИРА
+									| КВАРТИРА
+								span.promo-title__text
+									//- if i===0
+										span.promo-title__cover
+											| У НЕВЫ
+									| У НЕВЫ
 							.promo-slide__block
 								a.promo-slide__link(href="/") смотреть планировки
 								p.promo-slide__text= item.text

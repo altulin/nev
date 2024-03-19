@@ -10,9 +10,12 @@ const updateScrollDirection = () => {
     direction !== scrollDirection &&
     (scrollY - lastScrollY > 10 || scrollY - lastScrollY < -10)
   ) {
-    direction === "down"
-      ? header.classList.add("header--down")
-      : header.classList.remove("header--down");
+    header.className = "";
+    header.classList.add(`header`);
+
+    if (scrollY > 50) {
+      header.classList.add(`header--${direction}`);
+    }
   }
   lastScrollY = scrollY > 0 ? scrollY : 0;
 };

@@ -27,6 +27,7 @@ const openHandle = async () => {
   await menuTl.play();
 
   body.classList.add("scroll-lock");
+
   anchorList.forEach((element) => {
     element.addEventListener("click", anchorHandle);
   });

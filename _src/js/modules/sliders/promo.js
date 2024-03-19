@@ -1,6 +1,7 @@
 import Swiper from "swiper";
 import { Pagination, Autoplay } from "swiper/modules";
 import gsap from "gsap";
+// import { tlPromo } from "../promo/animation.js";
 
 let tlList;
 const progressTime = 3;
@@ -26,6 +27,7 @@ const initHandle = (s) => {
       .set(bullets[i], { width: "1rem", marginRight: 0 })
       .to(bullets[i], { marginRight: "4.6rem", duration: 0.01 })
       .add("clear", "<")
+      .set(s.pagination.el, { autoAlpha: 1 })
       .to(bullets[i], {
         width: "5.6rem",
         marginRight: 0,
@@ -34,11 +36,14 @@ const initHandle = (s) => {
       .add("ready", "<");
   });
 
-  tlList[s.realIndex].play();
+  requestAnimationFrame(() => {
+    tlList[s.realIndex].play();
+  });
 };
 
 export const sliderPromo = new Swiper(".promo__swiper", {
   enabled: false,
+  init: false,
   modules: [Pagination, Autoplay],
   // autoplay: {
   //   delay: progressTime * 1000,

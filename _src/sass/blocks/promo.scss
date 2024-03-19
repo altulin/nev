@@ -103,6 +103,11 @@
     flex-shrink: 0;
     display: block;
     min-width: 33%;
+    transition: 0.3s;
+
+    @include hocus() {
+      background-color: #fff;
+    }
 
     @include mw($tb) {
       font-size: 0.94rem;
@@ -181,6 +186,7 @@
 
 .pagination-bar {
   display: flex;
+  opacity: 0;
 
   &__bullet {
     width: 1rem;

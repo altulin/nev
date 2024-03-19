@@ -8,6 +8,11 @@
 
   &--down {
     transform: translateY(-100%);
+    background-color: rgba(#78899f, 0.8);
+  }
+
+  &--up {
+    background-color: rgba(#78899f, 0.8);
   }
 
   &--menu-active {
@@ -143,6 +148,11 @@
     margin-left: auto;
     transition: 0.3s;
 
+    @include hocus() {
+      background-color: #fff;
+      color: #78899f;
+    }
+
     @include mw($dt) {
       display: none;
     }
@@ -183,6 +193,7 @@
 
   &__camera {
     display: block;
+    position: relative;
 
     svg {
       width: 2.26rem;
@@ -420,5 +431,37 @@
     &--down {
       bottom: 0;
     }
+  }
+}
+
+.camera {
+  &__pulse {
+    width: 0.23em;
+    height: 0.23em;
+    border-radius: 50%;
+    background-color: #f42a36;
+    position: absolute;
+    top: 25%;
+    left: 58%;
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(#f42a36, 1);
+    animation: pulse-red 1s infinite;
+  }
+}
+
+@keyframes pulse-red {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(#f42a36, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 5px rgba(#f42a36, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(#f42a36, 0);
   }
 }
