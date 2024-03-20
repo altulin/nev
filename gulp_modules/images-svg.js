@@ -21,7 +21,7 @@ const makeImagesSvg = () => {
         svgo({
           plugins: [{ removeViewBox: true }, { cleanupIDs: false }],
         }),
-      ])
+      ]),
     )
     .pipe(dest(svgFolder));
 };

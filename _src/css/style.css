@@ -2587,14 +2587,6 @@ input:-webkit-autofill:active {
   height: 46.6rem;
 }
 
-.dubrovka-slide.swiper-slide-active {
-  width: 43.4%;
-}
-
-.dubrovka-slide.swiper-slide-active .dubrovka-slide__figure {
-  height: 100%;
-}
-
 .dubrovka-slide.swiper-slide-active .dubrovka-slide__text {
   visibility: visible;
   opacity: 1;

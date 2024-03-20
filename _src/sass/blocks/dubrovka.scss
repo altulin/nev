@@ -226,14 +226,14 @@
   }
 
   &.swiper-slide-active {
-    width: 43.4%;
+    // width: 43.4%;
 
     @include mw($tb) {
       width: 100%;
     }
 
     .dubrovka-slide__figure {
-      height: 100%;
+      // height: 100%;
     }
 
     .dubrovka-slide__text {
