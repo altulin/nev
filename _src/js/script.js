@@ -191,7 +191,7 @@
       return "undefined" != typeof window;
     }, z = function(e) {
       return A(e) || k(e);
-    }, R = "function" == typeof ArrayBuffer && ArrayBuffer.isView || function() {}, F = Array.isArray, B = /(?:-?\.?\d|\.)+/gi, N = /[-+=.]*\d+[.e\-+]*\d*[e\-+]*\d*/g, G = /[-+=.]*\d+[.e-]*\d*[a-z%]*/g, q = /[-+=.]*\d+\.?\d*(?:e-|e\+)?\d*/gi, V = /[+-]=-?[.\d]+/, $ = /[^,'"\[\]\s]+/gi, Y = /^[+\-=e\s\d]*\d+[.\d]*([a-z]*|%)\s*$/i, H = {}, X = {}, j = function(e) {
+    }, R = "function" == typeof ArrayBuffer && ArrayBuffer.isView || function() {}, F = Array.isArray, B = /(?:-?\.?\d|\.)+/gi, q = /[-+=.]*\d+[.e\-+]*\d*[e\-+]*\d*/g, N = /[-+=.]*\d+[.e-]*\d*[a-z%]*/g, G = /[-+=.]*\d+\.?\d*(?:e-|e\+)?\d*/gi, V = /[+-]=-?[.\d]+/, $ = /[^,'"\[\]\s]+/gi, Y = /^[+\-=e\s\d]*\d+[.\d]*([a-z]*|%)\s*$/i, H = {}, X = {}, j = function(e) {
       return (X = xe(e, H)) && Tr;
     }, W = function(e, t) {
       return console.warn("Invalid property", e, "set to", t, "Missing plugin? gsap.registerPlugin()");
@@ -339,12 +339,12 @@
       return t.parent && ke(t), t._start = he((P(r) ? r : r || e !== a ? Xe(e, r, t) : e._time) + t._delay), 
       t._end = he(t._start + (t.totalDuration() / Math.abs(t.timeScale()) || 0)), Ce(e, t, "_first", "_last", e._sort ? "_start" : 0), 
       Ve(t) || (e._recent = t), i || Fe(e, t), e._ts < 0 && Re(e, e._tTime), e;
-    }, Ne = function(e, t) {
+    }, qe = function(e, t) {
       return (H.ScrollTrigger || W("scrollTrigger", t)) && H.ScrollTrigger.create(t, e);
-    }, Ge = function(e, t, r, i, s) {
+    }, Ne = function(e, t, r, i, s) {
       return Ht(e, t, s), e._initted ? !r && e._pt && !n && (e._dur && !1 !== e.vars.lazy || !e._dur && e.vars.lazy) && c !== St.frame ? (re.push(e), 
       e._lazy = [ s, i ], 1) : void 0 : 1;
-    }, qe = function e(t) {
+    }, Ge = function e(t) {
       var r = t.parent;
       return r && r._ts && r._initted && !r._lock && (r.rawTime() < 0 || e(r));
     }, Ve = function(e) {
@@ -356,7 +356,7 @@
       a > 0 && !i && Re(e, e._tTime = e._tDur * a), e.parent && ze(e), r || Ae(e.parent, e), 
       e;
     }, Ye = function(e) {
-      return e instanceof Nt ? Ae(e) : $e(e, e._dur);
+      return e instanceof qt ? Ae(e) : $e(e, e._dur);
     }, He = {
       _start: 0,
       endTime: Q,
@@ -548,7 +548,7 @@
         } else if ("hsl" === e.substr(0, 3)) {
           if (f = p = e.match(B), t) {
             if (~e.indexOf("=")) {
-              return f = e.match(N), r && f.length < 4 && (f[3] = 1), f;
+              return f = e.match(q), r && f.length < 4 && (f[3] = 1), f;
             }
           } else {
             a = +f[0] % 360 / 360, o = +f[1] / 100, i = 2 * (l = +f[2] / 100) - (n = l <= .5 ? l * (o + 1) : l + o - l * o), 
@@ -566,7 +566,7 @@
     }, yt = function(e) {
       var t = [], r = [], i = -1;
       return e.split(wt).forEach((function(e) {
-        var n = e.match(G) || [];
+        var n = e.match(N) || [];
         t.push.apply(t, n), r.push(i += n.length + 1);
       })), t.c = r, t;
     }, bt = function(e, t, r) {
@@ -577,7 +577,7 @@
       if (l = l.map((function(e) {
         return (e = _t(e, t, 1)) && u + (t ? e[0] + "," + e[1] + "%," + e[2] + "%," + e[3] : e.join(",")) + ")";
       })), r && (s = yt(e), (i = r.c).join(o) !== s.c.join(o))) {
-        for (a = (n = e.replace(wt, "1").split(G)).length - 1; d < a; d++) {
+        for (a = (n = e.replace(wt, "1").split(N)).length - 1; d < a; d++) {
           o += n[d] + (~i.indexOf(d) ? l.shift() || u + "0,0,0,0)" : (s.length ? s : l.length ? l : r).shift());
         }
       }
@@ -659,7 +659,7 @@
       };
     }, Ot = function e(t, r) {
       for (var i, n = t._first; n; ) {
-        n instanceof Nt ? e(n, r) : !n.vars.yoyoEase || n._yoyo && n._repeat || n._yoyo === r || (n.timeline ? e(n.timeline, r) : (i = n._ease, 
+        n instanceof qt ? e(n, r) : !n.vars.yoyoEase || n._yoyo && n._repeat || n._yoyo === r || (n.timeline ? e(n.timeline, r) : (i = n._ease, 
         n._ease = n._yEase, n._yEase = i, n._yoyo = r)), n = n._next;
       }
     }, Lt = function(e, t) {
@@ -891,12 +891,12 @@
       _ps: !1,
       _rts: 1
     });
-    var Nt = function(r) {
+    var qt = function(r) {
       function i(t, i) {
         var n;
         return void 0 === t && (t = {}), (n = r.call(this, t) || this).labels = {}, n.smoothChildTiming = !!t.smoothChildTiming, 
         n.autoRemoveChildren = !!t.autoRemoveChildren, n._sort = I(t.sortChildren), a && Be(t.parent || a, e(n), i), 
-        t.reversed && n.reverse(), t.paused && n.paused(!0), t.scrollTrigger && Ne(e(n), t.scrollTrigger), 
+        t.reversed && n.reverse(), t.paused && n.paused(!0), t.scrollTrigger && qe(e(n), t.scrollTrigger), 
         n;
       }
       t(i, r);
@@ -1055,12 +1055,12 @@
         }
       }, s.killTweensOf = function(e, t, r) {
         for (var i = this.getTweensOf(e, r), n = i.length; n--; ) {
-          Gt !== i[n] && i[n].kill(e, t);
+          Nt !== i[n] && i[n].kill(e, t);
         }
         return this;
       }, s.getTweensOf = function(e, t) {
         for (var r, i = [], n = et(e), s = this._first, a = P(t); s; ) {
-          s instanceof Kt ? ge(s._targets, n) && (a ? (!Gt || s._initted && s._ts) && s.globalTime(0) <= t && s.globalTime(s.totalDuration()) > t : !t || s.isActive()) && i.push(s) : (r = s.getTweensOf(n, t)).length && i.push.apply(i, r), 
+          s instanceof Kt ? ge(s._targets, n) && (a ? (!Nt || s._initted && s._ts) && s.globalTime(0) <= t && s.globalTime(s.totalDuration()) > t : !t || s.isActive()) && i.push(s) : (r = s.getTweensOf(n, t)).length && i.push.apply(i, r), 
           s = s._next;
         }
         return i;
@@ -1148,15 +1148,15 @@
         }
       }, i;
     }(Bt);
-    we(Nt.prototype, {
+    we(qt.prototype, {
       _lock: 0,
       _hasPause: 0,
       _forcing: 0
     });
-    var Gt, qt, Vt = function(e, t, r, i, n, s, a) {
+    var Nt, Gt, Vt = function(e, t, r, i, n, s, a) {
       var o, l, u, d, c, p, f, h, m = new dr(this._pt, e, t, 0, 1, nr, null, n), g = 0, v = 0;
       for (m.b = r, m.e = i, r += "", (f = ~(i += "").indexOf("random(")) && (i = lt(i)), 
-      s && (s(h = [ r, i ], e, t), r = h[0], i = h[1]), l = r.match(q) || []; o = q.exec(i); ) {
+      s && (s(h = [ r, i ], e, t), r = h[0], i = h[1]), l = r.match(G) || []; o = G.exec(i); ) {
         d = o[0], c = i.substring(g, o.index), u ? u = (u + 1) % 5 : "rgba(" === c.substr(-5) && (u = 1), 
         d !== l[v++] && (p = parseFloat(l[v - 1]) || 0, m._pt = {
           _next: m._pt,
@@ -1164,7 +1164,7 @@
           s: p,
           c: "=" === d.charAt(1) ? me(p, d) - p : parseFloat(d) - p,
           m: u && u < 4 ? Math.round : 0
-        }, g = q.lastIndex);
+        }, g = G.lastIndex);
       }
       return m.c = g < i.length ? i.substring(g, i.length) : "", m.fp = a, (V.test(i) || f) && (m.e = 0), 
       this._pt = m, m;
@@ -1172,7 +1172,7 @@
       A(i) && (i = i(n || 0, e, s));
       var d, c = e[t], p = "get" !== r ? r : A(c) ? l ? e[t.indexOf("set") || !A(e["get" + t.substr(3)]) ? t : "get" + t.substr(3)](l) : e[t]() : c, f = A(c) ? l ? Jt : Zt : Qt;
       if (k(i) && (~i.indexOf("random(") && (i = lt(i)), "=" === i.charAt(1) && ((d = me(p, i) + (Ke(p) || 0)) || 0 === d) && (i = d)), 
-      !u || p !== i || qt) {
+      !u || p !== i || Gt) {
         return isNaN(p * i) || "" === i ? (!c && !(t in e) && W(t, i), Vt.call(this, e, t, p, i, f, o || _.stringFilter, l)) : (d = new dr(this._pt, e, t, +p || 0, i - (p || 0), "boolean" == typeof c ? ir : rr, 0, f), 
         l && (d.fp = l), a && d.modifier(a, this, e), this._pt = d);
       }
@@ -1195,10 +1195,10 @@
       }
       return a;
     }, Ht = function e(t, r, s) {
-      var o, l, u, d, c, p, f, h, m, g, v, _, x, T = t.vars, S = T.ease, E = T.startAt, C = T.immediateRender, M = T.lazy, k = T.onUpdate, A = T.runBackwards, P = T.yoyoEase, O = T.keyframes, L = T.autoRevert, D = t._dur, z = t._startAt, R = t._targets, F = t.parent, B = F && "nested" === F.data ? F.vars.targets : R, N = "auto" === t._overwrite && !i, G = t.timeline;
-      if (G && (!O || !S) && (S = "none"), t._ease = Lt(S, y.ease), t._yEase = P ? Pt(Lt(!0 === P ? S : P, y.ease)) : 0, 
-      P && t._yoyo && !t._repeat && (P = t._yEase, t._yEase = t._ease, t._ease = P), t._from = !G && !!T.runBackwards, 
-      !G || O && !T.stagger) {
+      var o, l, u, d, c, p, f, h, m, g, v, _, x, T = t.vars, S = T.ease, E = T.startAt, C = T.immediateRender, M = T.lazy, k = T.onUpdate, A = T.runBackwards, P = T.yoyoEase, O = T.keyframes, L = T.autoRevert, D = t._dur, z = t._startAt, R = t._targets, F = t.parent, B = F && "nested" === F.data ? F.vars.targets : R, q = "auto" === t._overwrite && !i, N = t.timeline;
+      if (N && (!O || !S) && (S = "none"), t._ease = Lt(S, y.ease), t._yEase = P ? Pt(Lt(!0 === P ? S : P, y.ease)) : 0, 
+      P && t._yoyo && !t._repeat && (P = t._yEase, t._yEase = t._ease, t._ease = P), t._from = !N && !!T.runBackwards, 
+      !N || O && !T.stagger) {
         if (_ = (h = R[0] ? de(R[0]).harness : 0) && T[h.prop], o = Se(T, te), z && (z._zTime < 0 && z.progress(1), 
         r < 0 && A && C && !L ? z.render(-1, !0) : z.revert(A && D ? J : Z), z._lazy = 0), 
         E) {
@@ -1246,12 +1246,12 @@
               ne[u] && (m = Yt(u, o, t, v, c, B)) ? m.priority && (p = 1) : g[u] = d = $t.call(t, c, u, "get", o[u], v, B, 0, T.stringFilter);
             }
           }
-          t._op && t._op[l] && t.kill(c, t._op[l]), N && t._pt && (Gt = t, a.killTweensOf(c, g, t.globalTime(r)), 
-          x = !t.parent, Gt = 0), t._pt && M && (ie[f.id] = 1);
+          t._op && t._op[l] && t.kill(c, t._op[l]), q && t._pt && (Nt = t, a.killTweensOf(c, g, t.globalTime(r)), 
+          x = !t.parent, Nt = 0), t._pt && M && (ie[f.id] = 1);
         }
         p && ur(t), t._onInit && t._onInit(t);
       }
-      t._onUpdate = k, t._initted = (!t._op || t._pt) && !x, O && r <= 0 && G.render(b, !0, !0);
+      t._onUpdate = k, t._initted = (!t._op || t._pt) && !x, O && r <= 0 && N.render(b, !0, !0);
     }, Xt = function(e, t, r, i) {
       var n, s, a = t.ease || i || "power1.inOut";
       if (F(t)) {
@@ -1284,7 +1284,7 @@
         var u, d, c, p, f, h, m, g, v = (l = r.call(this, o ? n : Ee(n)) || this).vars, y = v.duration, b = v.delay, w = v.immediateRender, x = v.stagger, T = v.overwrite, S = v.keyframes, E = v.defaults, C = v.scrollTrigger, M = v.yoyoEase, k = n.parent || a, A = (F(t) || R(t) ? P(t[0]) : "length" in n) ? [ t ] : et(t);
         if (l._targets = A.length ? ue(A) : U("GSAP target " + t + " not found. https://gsap.com", !_.nullTargetWarn) || [], 
         l._ptLookup = [], l._overwrite = T, S || x || z(y) || z(b)) {
-          if (n = l.vars, (u = l.timeline = new Nt({
+          if (n = l.vars, (u = l.timeline = new qt({
             data: "nested",
             defaults: E || {},
             targets: k && "nested" === k.data ? k.vars.targets : A
@@ -1304,7 +1304,7 @@
             Ee(we(u.vars.defaults, {
               ease: "none"
             })), u._ease = Lt(S.ease || n.ease || "none");
-            var O, D, B, N = 0;
+            var O, D, B, q = 0;
             if (F(S)) {
               S.forEach((function(e) {
                 return u.to(A, e, ">");
@@ -1316,11 +1316,11 @@
               for (f in c) {
                 for (O = c[f].sort((function(e, t) {
                   return e.t - t.t;
-                })), N = 0, d = 0; d < O.length; d++) {
+                })), q = 0, d = 0; d < O.length; d++) {
                   (B = {
                     ease: (D = O[d]).e,
                     duration: (D.t - (d ? O[d - 1].t : 0)) / 100 * y
-                  })[f] = D.v, u.to(A, B, N), N += B.duration;
+                  })[f] = D.v, u.to(A, B, q), q += B.duration;
                 }
               }
               u.duration() < y && u.to({}, {
@@ -1332,9 +1332,9 @@
         } else {
           l.timeline = 0;
         }
-        return !0 !== T || i || (Gt = e(l), a.killTweensOf(A), Gt = 0), Be(k, e(l), s), 
+        return !0 !== T || i || (Nt = e(l), a.killTweensOf(A), Nt = 0), Be(k, e(l), s), 
         n.reversed && l.reverse(), n.paused && l.paused(!0), (w || !y && !S && l._start === he(k._time) && I(w) && Oe(e(l)) && "nested" !== k.data) && (l._tTime = -1e-8, 
-        l.render(Math.max(0, -b) || 0)), C && Ne(e(l), C), l;
+        l.render(Math.max(0, -b) || 0)), C && qe(e(l), C), l;
       }
       t(s, r);
       var o = s.prototype;
@@ -1355,7 +1355,7 @@
               this.render(he(o * a), !0).invalidate()._lock = 0));
             }
             if (!this._initted) {
-              if (Ge(this, g ? e : i, r, t, v)) {
+              if (Ne(this, g ? e : i, r, t, v)) {
                 return this._tTime = 0, this;
               }
               if (!(f === this._time || r && this.vars.repeatRefresh && a !== l)) {
@@ -1382,11 +1382,11 @@
           }
         } else {
           !function(e, t, r, i) {
-            var s, a, o, l = e.ratio, u = t < 0 || !t && (!e._start && qe(e) && (e._initted || !Ve(e)) || (e._ts < 0 || e._dp._ts < 0) && !Ve(e)) ? 0 : 1, d = e._rDelay, c = 0;
+            var s, a, o, l = e.ratio, u = t < 0 || !t && (!e._start && Ge(e) && (e._initted || !Ve(e)) || (e._ts < 0 || e._dp._ts < 0) && !Ve(e)) ? 0 : 1, d = e._rDelay, c = 0;
             if (d && e._repeat && (c = Ue(0, e._tDur, t), a = Ie(c, d), e._yoyo && 1 & a && (u = 1 - u), 
             a !== Ie(e._tTime, d) && (l = 1 - u, e.vars.repeatRefresh && e._initted && e.invalidate())), 
             u !== l || n || i || e._zTime === w || !t && e._zTime) {
-              if (!e._initted && Ge(e, t, i, r, c)) {
+              if (!e._initted && Ne(e, t, i, r, c)) {
                 return;
               }
               for (o = e._zTime, e._zTime = t || (r ? w : 0), r || (r = t && !o), e.ratio = u, 
@@ -1420,7 +1420,7 @@
                 }
               }
               if (!l) {
-                return qt = 1, e.vars[t] = "+=0", Ht(e, a), qt = 0, o ? U(t + " not eligible for reset") : 1;
+                return Gt = 1, e.vars[t] = "+=0", Ht(e, a), Gt = 0, o ? U(t + " not eligible for reset") : 1;
               }
               p.push(l);
             }
@@ -1438,7 +1438,7 @@
         }
         if (this.timeline) {
           var r = this.timeline.totalDuration();
-          return this.timeline.killTweensOf(e, t, Gt && !0 !== Gt.vars.overwrite)._first || pt(this), 
+          return this.timeline.killTweensOf(e, t, Nt && !0 !== Nt.vars.overwrite)._first || pt(this), 
           this.parent && r !== this.timeline.totalDuration() && $e(this, this._dur * this.timeline._tDur / r, 0, 1), 
           this;
         }
@@ -1506,7 +1506,7 @@
       _onInit: 0
     }), pe("staggerTo,staggerFrom,staggerFromTo", (function(e) {
       Kt[e] = function() {
-        var t = new Nt, r = Qe.call(arguments, 0);
+        var t = new qt, r = Qe.call(arguments, 0);
         return r.splice("staggerFromTo" === e ? 5 : 4, 0, 0), t[e].apply(t, r);
       };
     }));
@@ -1574,7 +1574,7 @@
     }();
     pe(le + "parent,duration,ease,delay,overwrite,runBackwards,startAt,yoyo,immediateRender,repeat,repeatDelay,data,paused,reversed,lazy,callbackScope,stringFilter,id,yoyoEase,stagger,inherit,repeatRefresh,keyframes,autoRevert,scrollTrigger", (function(e) {
       return te[e] = 1;
-    })), H.TweenMax = H.TweenLite = Kt, H.TimelineLite = H.TimelineMax = Nt, a = new Nt({
+    })), H.TweenMax = H.TweenLite = Kt, H.TimelineLite = H.TimelineMax = qt, a = new qt({
       sortChildren: !1,
       defaults: y,
       autoRemoveChildren: !0,
@@ -1642,7 +1642,7 @@
           })).forEach((function(t) {
             return t.t.revert(e);
           })), n = r.data.length; n--; ) {
-            (t = r.data[n]) instanceof Nt ? "nested" !== t.data && (t.scrollTrigger && t.scrollTrigger.revert(), 
+            (t = r.data[n]) instanceof qt ? "nested" !== t.data && (t.scrollTrigger && t.scrollTrigger.revert(), 
             t.kill()) : !(t instanceof Kt) && t.revert && t.revert(e);
           }
           r._r.forEach((function(t) {
@@ -1693,7 +1693,7 @@
         }));
       },
       timeline: function(e) {
-        return new Nt(e);
+        return new qt(e);
       },
       getTweensOf: function(e, t) {
         return a.getTweensOf(e, t);
@@ -1746,7 +1746,7 @@
           return e && !ne[e] && !H[e] && U(t + " effect requires " + e + " plugin.");
         })), se[t] = function(e, t, i) {
           return r(et(e), we(t || {}, n), i);
-        }, s && (Nt.prototype[t] = function(e, r, i) {
+        }, s && (qt.prototype[t] = function(e, r, i) {
           return this.add(se[t](e, L(r) ? r : (i = r) && {}, this), i);
         });
       },
@@ -1761,7 +1761,7 @@
       },
       exportRoot: function(e, t) {
         void 0 === e && (e = {});
-        var r, i, n = new Nt(e);
+        var r, i, n = new qt(e);
         for (n.smoothChildTiming = I(e.smoothChildTiming), a.remove(n), n._dp = 0, n._time = n._tTime = a._time, 
         r = a._first; r; ) {
           i = r._next, !t && !r._dur && r instanceof Kt && r.vars.onComplete === r._targets[0] || Be(n, r, r._start - r._delay), 
@@ -1876,14 +1876,14 @@
       install: j,
       effects: se,
       ticker: St,
-      updateRoot: Nt.updateRoot,
+      updateRoot: qt.updateRoot,
       plugins: ne,
       globalTimeline: a,
       core: {
         PropTween: dr,
         globals: K,
         Tween: Kt,
-        Timeline: Nt,
+        Timeline: qt,
         Animation: Bt,
         getCache: de,
         _removeLinkedListItem: Me,
@@ -1900,7 +1900,7 @@
     };
     pe("to,from,fromTo,delayedCall,set,killTweensOf", (function(e) {
       return br[e] = Kt[e];
-    })), St.add(Nt.updateRoot), p = br.to({}, {
+    })), St.add(qt.updateRoot), p = br.to({}, {
       duration: 0
     });
     var wr = function(e, t) {
@@ -1956,17 +1956,17 @@
         }
       }
     }, xr("roundProps", nt), xr("modifiers"), xr("snap", st)) || br;
-    Kt.version = Nt.version = Tr.version = "3.12.5", d = 1, D() && Et();
+    Kt.version = qt.version = Tr.version = "3.12.5", d = 1, D() && Et();
     Ct.Power0, Ct.Power1, Ct.Power2, Ct.Power3, Ct.Power4, Ct.Linear, Ct.Quad, Ct.Cubic, 
     Ct.Quart, Ct.Quint, Ct.Strong, Ct.Elastic, Ct.Back, Ct.SteppedEase, Ct.Bounce, Ct.Sine, 
     Ct.Expo, Ct.Circ;
-    var Sr, Er, Cr, Mr, kr, Ar, Pr, Or, Lr = {}, Ir = 180 / Math.PI, Dr = Math.PI / 180, zr = Math.atan2, Rr = /([A-Z])/g, Fr = /(left|right|width|margin|padding|x)/i, Br = /[\s,\(]\S/, Nr = {
+    var Sr, Er, Cr, Mr, kr, Ar, Pr, Or, Lr = {}, Ir = 180 / Math.PI, Dr = Math.PI / 180, zr = Math.atan2, Rr = /([A-Z])/g, Fr = /(left|right|width|margin|padding|x)/i, Br = /[\s,\(]\S/, qr = {
       autoAlpha: "opacity,visibility",
       scale: "scaleX,scaleY",
       alpha: "opacity"
-    }, Gr = function(e, t) {
+    }, Nr = function(e, t) {
       return t.set(t.t, t.p, Math.round(1e4 * (t.s + t.c * e)) / 1e4 + t.u, t);
-    }, qr = function(e, t) {
+    }, Gr = function(e, t) {
       return t.set(t.t, t.p, 1 === e ? t.e : Math.round(1e4 * (t.s + t.c * e)) / 1e4 + t.u, t);
     }, Vr = function(e, t) {
       return t.set(t.t, t.p, e ? Math.round(1e4 * (t.s + t.c * e)) / 1e4 + t.u : t.b, t);
@@ -1995,11 +1995,11 @@
       var i = this, n = this.target, s = n.style, a = n._gsap;
       if (t in Lr && s) {
         if (this.tfm = this.tfm || {}, "transform" === t) {
-          return Nr.transform.split(",").forEach((function(t) {
+          return qr.transform.split(",").forEach((function(t) {
             return e.call(i, t, r);
           }));
         }
-        if (~(t = Nr[t] || t).indexOf(",") ? t.split(",").forEach((function(e) {
+        if (~(t = qr[t] || t).indexOf(",") ? t.split(",").forEach((function(e) {
           return i.tfm[e] = _i(n, e);
         })) : this.tfm[t] = a.x ? a[t] : _i(n, t), t === Jr && (this.tfm.zOrigin = a.zOrigin), 
         this.props.indexOf(Zr) >= 0) {
@@ -2124,7 +2124,7 @@
       return p && v && ((o = de(a)).time = St.time, o.width = a[h]), fe(g ? s * u / m : s && u ? m / s * u : 0);
     }, _i = function(e, t, r, i) {
       var n;
-      return Mr || li(), t in Nr && "transform" !== t && ~(t = Nr[t]).indexOf(",") && (t = t.split(",")[0]), 
+      return Mr || li(), t in qr && "transform" !== t && ~(t = qr[t]).indexOf(",") && (t = t.split(",")[0]), 
       Lr[t] && "transform" !== t ? (n = Ai(e, i), n = "transformOrigin" !== t ? n[t] : n.svg ? n.origin : Pi(si(e, Jr)) + " " + n.zOrigin + "px") : (!(n = e.style[t]) || "auto" === n || i || ~(n + "").indexOf("calc(")) && (n = xi[t] && xi[t](e, t, r) || si(e, t) || ce(e, t) || ("opacity" === t ? 1 : 0)), 
       r && !~(n + "").trim().indexOf(" ") ? vi(e, t, n, r) + r : n;
     }, yi = function(e, t, r, i) {
@@ -2134,13 +2134,13 @@
       }
       var a, o, l, u, d, c, p, f, h, m, g, v = new dr(this._pt, e.style, t, 0, 1, nr), y = 0, b = 0;
       if (v.b = r, v.e = i, r += "", "auto" === (i += "") && (c = e.style[t], e.style[t] = i, 
-      i = si(e, t) || i, c ? e.style[t] = c : fi(e, t)), Tt(a = [ r, i ]), i = a[1], l = (r = a[0]).match(G) || [], 
-      (i.match(G) || []).length) {
-        for (;o = G.exec(i); ) {
+      i = si(e, t) || i, c ? e.style[t] = c : fi(e, t)), Tt(a = [ r, i ]), i = a[1], l = (r = a[0]).match(N) || [], 
+      (i.match(N) || []).length) {
+        for (;o = N.exec(i); ) {
           p = o[0], h = i.substring(y, o.index), d ? d = (d + 1) % 5 : "rgba(" !== h.substr(-5) && "hsla(" !== h.substr(-5) || (d = 1), 
           p !== (c = l[b++] || "") && (u = parseFloat(c) || 0, g = c.substr((u + "").length), 
           "=" === p.charAt(1) && (p = me(u, p) + g), f = parseFloat(p), m = p.substr((f + "").length), 
-          y = G.lastIndex - m.length, m || (m = m || _.units[t] || g, y === i.length && (i += m, 
+          y = N.lastIndex - m.length, m || (m = m || _.units[t] || g, y === i.length && (i += m, 
           v.e += m)), g !== m && (u = vi(e, t, c, m) || 0), v._pt = {
             _next: v._pt,
             p: h || 1 === b ? h : ",",
@@ -2184,7 +2184,7 @@
       return "matrix(1, 0, 0, 1, 0, 0)" === e || "none" === e || !e;
     }, Ci = function(e) {
       var t = si(e, Zr);
-      return Ei(t) ? Ti : t.substr(7).match(N).map(fe);
+      return Ei(t) ? Ti : t.substr(7).match(q).map(fe);
     }, Mi = function(e, t) {
       var r, i, n, s, a = e._gsap || de(e), o = e.style, l = Ci(e);
       return a.svg && e.getAttribute("transform") ? "1,0,0,1,0,0" === (l = [ (n = e.transform.baseVal.consolidate().matrix).a, n.b, n.c, n.d, n.e, n.f ]).join(",") ? Ti : l : (l !== Ti || e.offsetParent || e === Cr || a.svg || (n = o.display, 
@@ -2205,12 +2205,12 @@
       if ("x" in r && !t && !r.uncache) {
         return r;
       }
-      var i, n, s, a, o, l, u, d, c, p, f, h, m, g, v, y, b, w, x, T, S, E, C, M, k, A, P, O, L, I, D, z, R = e.style, F = r.scaleX < 0, B = "px", N = "deg", G = getComputedStyle(e), q = si(e, Jr) || "0";
+      var i, n, s, a, o, l, u, d, c, p, f, h, m, g, v, y, b, w, x, T, S, E, C, M, k, A, P, O, L, I, D, z, R = e.style, F = r.scaleX < 0, B = "px", q = "deg", N = getComputedStyle(e), G = si(e, Jr) || "0";
       return i = n = s = l = u = d = c = p = f = 0, a = o = 1, r.svg = !(!e.getCTM || !pi(e)), 
-      G.translate && ("none" === G.translate && "none" === G.scale && "none" === G.rotate || (R[Zr] = ("none" !== G.translate ? "translate3d(" + (G.translate + " 0 0").split(" ").slice(0, 3).join(", ") + ") " : "") + ("none" !== G.rotate ? "rotate(" + G.rotate + ") " : "") + ("none" !== G.scale ? "scale(" + G.scale.split(" ").join(",") + ") " : "") + ("none" !== G[Zr] ? G[Zr] : "")), 
+      N.translate && ("none" === N.translate && "none" === N.scale && "none" === N.rotate || (R[Zr] = ("none" !== N.translate ? "translate3d(" + (N.translate + " 0 0").split(" ").slice(0, 3).join(", ") + ") " : "") + ("none" !== N.rotate ? "rotate(" + N.rotate + ") " : "") + ("none" !== N.scale ? "scale(" + N.scale.split(" ").join(",") + ") " : "") + ("none" !== N[Zr] ? N[Zr] : "")), 
       R.scale = R.rotate = R.translate = "none"), g = Mi(e, r.svg), r.svg && (r.uncache ? (k = e.getBBox(), 
-      q = r.xOrigin - k.x + "px " + (r.yOrigin - k.y) + "px", M = "") : M = !t && e.getAttribute("data-svg-origin"), 
-      ki(e, M || q, !!M || r.originIsAbsolute, !1 !== r.smooth, g)), h = r.xOrigin || 0, 
+      G = r.xOrigin - k.x + "px " + (r.yOrigin - k.y) + "px", M = "") : M = !t && e.getAttribute("data-svg-origin"), 
+      ki(e, M || G, !!M || r.originIsAbsolute, !1 !== r.smooth, g)), h = r.xOrigin || 0, 
       m = r.yOrigin || 0, g !== Ti && (w = g[0], x = g[1], T = g[2], S = g[3], i = E = g[4], 
       n = C = g[5], 6 === g.length ? (a = Math.sqrt(w * w + x * x), o = Math.sqrt(S * S + T * T), 
       l = w || x ? zr(x, w) * Ir : 0, (c = T || S ? zr(T, S) * Ir + l : 0) && (o *= Math.abs(Math.cos(c * Dr))), 
@@ -2229,9 +2229,9 @@
       c += l <= 0 ? 180 : -180, l += l <= 0 ? 180 : -180) : (o *= -1, c += c <= 0 ? 180 : -180)), 
       t = t || r.uncache, r.x = i - ((r.xPercent = i && (!t && r.xPercent || (Math.round(e.offsetWidth / 2) === Math.round(-i) ? -50 : 0))) ? e.offsetWidth * r.xPercent / 100 : 0) + B, 
       r.y = n - ((r.yPercent = n && (!t && r.yPercent || (Math.round(e.offsetHeight / 2) === Math.round(-n) ? -50 : 0))) ? e.offsetHeight * r.yPercent / 100 : 0) + B, 
-      r.z = s + B, r.scaleX = fe(a), r.scaleY = fe(o), r.rotation = fe(l) + N, r.rotationX = fe(u) + N, 
-      r.rotationY = fe(d) + N, r.skewX = c + N, r.skewY = p + N, r.transformPerspective = f + B, 
-      (r.zOrigin = parseFloat(q.split(" ")[2]) || !t && r.zOrigin || 0) && (R[Jr] = Pi(q)), 
+      r.z = s + B, r.scaleX = fe(a), r.scaleY = fe(o), r.rotation = fe(l) + q, r.rotationX = fe(u) + q, 
+      r.rotationY = fe(d) + q, r.skewX = c + q, r.skewY = p + q, r.transformPerspective = f + B, 
+      (r.zOrigin = parseFloat(G.split(" ")[2]) || !t && r.zOrigin || 0) && (R[Jr] = Pi(G)), 
       r.xOffset = r.yOffset = 0, r.force3D = _.force3D, r.renderTransform = r.svg ? Fi : Or ? Ri : Li, 
       r.uncache = 0, r;
     }, Pi = function(e) {
@@ -2268,23 +2268,23 @@
       var s, a, o = 360, l = k(n), u = parseFloat(n) * (l && ~n.indexOf("rad") ? Ir : 1) - i, d = i + u + "deg";
       return l && ("short" === (s = n.split("_")[1]) && (u %= o) !== u % 180 && (u += u < 0 ? o : -360), 
       "cw" === s && u < 0 ? u = (u + 36e9) % o - ~~(u / o) * o : "ccw" === s && u > 0 && (u = (u - 36e9) % o - ~~(u / o) * o)), 
-      e._pt = a = new dr(e._pt, t, r, i, u, qr), a.e = d, a.u = "deg", e._props.push(r), 
+      e._pt = a = new dr(e._pt, t, r, i, u, Gr), a.e = d, a.u = "deg", e._props.push(r), 
       a;
-    }, Ni = function(e, t) {
+    }, qi = function(e, t) {
       for (var r in t) {
         e[r] = t[r];
       }
       return e;
-    }, Gi = function(e, t, r) {
-      var i, n, s, a, o, l, u, d = Ni({}, r._gsap), c = r.style;
+    }, Ni = function(e, t, r) {
+      var i, n, s, a, o, l, u, d = qi({}, r._gsap), c = r.style;
       for (n in d.svg ? (s = r.getAttribute("transform"), r.setAttribute("transform", ""), 
       c[Zr] = t, i = Ai(r, 1), fi(r, Zr), r.setAttribute("transform", s)) : (s = getComputedStyle(r)[Zr], 
       c[Zr] = t, i = Ai(r, 1), c[Zr] = s), Lr) {
         (s = d[n]) !== (a = i[n]) && "perspective,force3D,transformOrigin,svgOrigin".indexOf(n) < 0 && (o = Ke(s) !== (u = Ke(a)) ? vi(r, n, s, u) : parseFloat(s), 
-        l = parseFloat(a), e._pt = new dr(e._pt, i, n, o, l - o, Gr), e._pt.u = u || 0, 
+        l = parseFloat(a), e._pt = new dr(e._pt, i, n, o, l - o, Nr), e._pt.u = u || 0, 
         e._props.push(n));
       }
-      Ni(i, d);
+      qi(i, d);
     };
     pe("padding,margin,Width,Radius", (function(e, t) {
       var r = "Top", i = "Right", n = "Bottom", s = "Left", a = (t < 3 ? [ r, i, n, s ] : [ r + s, r + i, n + i, n + s ]).map((function(r) {
@@ -2302,7 +2302,7 @@
         })), e.init(t, o, n);
       };
     }));
-    var qi, Vi, $i, Yi = {
+    var Gi, Vi, $i, Yi = {
       name: "css",
       register: li,
       targetTest: function(e) {
@@ -2325,14 +2325,14 @@
               k(s) && ~s.indexOf("random(") && (s = lt(s)), Ke(s + "") || "auto" === s || (s += _.units[c] || Ke(_i(e, c)) || ""), 
               "=" === (s + "").charAt(1) && (s = _i(e, c))) : s = _i(e, c), l = parseFloat(s), 
               (h = "string" === u && "=" === a.charAt(1) && a.substr(0, 2)) && (a = a.substr(2)), 
-              o = parseFloat(a), c in Nr && ("autoAlpha" === c && (1 === l && "hidden" === _i(e, "visibility") && o && (l = 0), 
+              o = parseFloat(a), c in qr && ("autoAlpha" === c && (1 === l && "hidden" === _i(e, "visibility") && o && (l = 0), 
               w.push("visibility", 0, M.visibility), hi(this, M, "visibility", l ? "inherit" : "hidden", o ? "inherit" : "hidden", !o)), 
-              "scale" !== c && "transform" !== c && ~(c = Nr[c]).indexOf(",") && (c = c.split(",")[0])), 
+              "scale" !== c && "transform" !== c && ~(c = qr[c]).indexOf(",") && (c = c.split(",")[0])), 
               m = c in Lr) {
                 if (this.styles.save(c), g || ((v = e._gsap).renderTransform && !t.parseTransform || Ai(e, t.parseTransform), 
                 y = !1 !== t.smoothOrigin && v.smooth, (g = this._pt = new dr(this._pt, M, Zr, 0, 1, v.renderTransform, v, 0, -1)).dep = 1), 
                 "scale" === c) {
-                  this._pt = new dr(this._pt, v, "scaleY", v.scaleY, (h ? me(v.scaleY, h + o) : o) - v.scaleY || 0, Gr), 
+                  this._pt = new dr(this._pt, v, "scaleY", v.scaleY, (h ? me(v.scaleY, h + o) : o) - v.scaleY || 0, Nr), 
                   this._pt.u = 0, C.push("scaleY", c), c += "X";
                 } else {
                   if ("transformOrigin" === c) {
@@ -2359,7 +2359,7 @@
                     continue;
                   }
                   if ("transform" === c) {
-                    Gi(this, a, e);
+                    Ni(this, a, e);
                     continue;
                   }
                 }
@@ -2368,7 +2368,7 @@
               }
               if (m || (o || 0 === o) && (l || 0 === l) && !Br.test(a) && c in M) {
                 o || (o = 0), (p = (s + "").substr((l + "").length)) !== (f = Ke(a) || (c in _.units ? _.units[c] : p)) && (l = vi(e, c, s, f)), 
-                this._pt = new dr(this._pt, m ? v : M, c, l, (h ? me(l, h + o) : o) - l, m || "px" !== f && "zIndex" !== c || !1 === t.autoRound ? Gr : $r), 
+                this._pt = new dr(this._pt, m ? v : M, c, l, (h ? me(l, h + o) : o) - l, m || "px" !== f && "zIndex" !== c || !1 === t.autoRound ? Nr : $r), 
                 this._pt.u = f || 0, p !== f && "%" !== f && (this._pt.b = s, this._pt.r = Vr);
               } else if (c in M) {
                 yi.call(this, e, c, s, h ? h + a : a);
@@ -2394,9 +2394,9 @@
         }
       },
       get: _i,
-      aliases: Nr,
+      aliases: qr,
       getSetter: function(e, t, r) {
-        var i = Nr[t];
+        var i = qr[t];
         return i && i.indexOf(",") < 0 && (t = i), t in Lr && t !== Jr && (e._gsap.x || _i(e, "x")) ? r && Ar === r ? "scale" === t ? Ur : Wr : (Ar = r || {}) && ("scale" === t ? Kr : Qr) : e.style && !O(e.style[t]) ? Xr : ~t.indexOf("-") ? jr : tr(e, t);
       },
       core: {
@@ -2404,13 +2404,13 @@
         _getMatrix: Mi
       }
     };
-    Tr.utils.checkPrefix = oi, Tr.core.getStyleSaver = ii, $i = pe((qi = "x,y,z,scale,scaleX,scaleY,xPercent,yPercent") + "," + (Vi = "rotation,rotationX,rotationY,skewX,skewY") + ",transform,transformOrigin,svgOrigin,force3D,smoothOrigin,transformPerspective", (function(e) {
+    Tr.utils.checkPrefix = oi, Tr.core.getStyleSaver = ii, $i = pe((Gi = "x,y,z,scale,scaleX,scaleY,xPercent,yPercent") + "," + (Vi = "rotation,rotationX,rotationY,skewX,skewY") + ",transform,transformOrigin,svgOrigin,force3D,smoothOrigin,transformPerspective", (function(e) {
       Lr[e] = 1;
     })), pe(Vi, (function(e) {
       _.units[e] = "deg", Si[e] = 1;
-    })), Nr[$i[13]] = qi + "," + Vi, pe("0:translateX,1:translateY,2:translateZ,8:rotate,8:rotationZ,8:rotateZ,9:rotateX,10:rotateY", (function(e) {
+    })), qr[$i[13]] = Gi + "," + Vi, pe("0:translateX,1:translateY,2:translateZ,8:rotate,8:rotationZ,8:rotateZ,9:rotateX,10:rotateY", (function(e) {
       var t = e.split(":");
-      Nr[t[1]] = $i[t[0]];
+      qr[t[1]] = $i[t[0]];
     })), pe("x,y,z,top,right,bottom,left,width,height,fontSize,padding,margin,perspective", (function(e) {
       _.units[e] = "px";
     })), Tr.registerPlugin(Yi);
@@ -3635,12 +3635,12 @@
         })), e.recalcSlides(), e.slideTo(e.realIndex, 0);
       }
     };
-    function Nn(e, t, r) {
+    function qn(e, t, r) {
       const i = ln(), {params: n} = e, s = n.edgeSwipeDetection, a = n.edgeSwipeThreshold;
       return !s || !(r <= a || r >= i.innerWidth - a) || "prevent" === s && (t.preventDefault(), 
       !0);
     }
-    function Gn(e) {
+    function Nn(e) {
       const t = this, r = an();
       let i = e;
       i.originalEvent && (i = i.originalEvent);
@@ -3654,7 +3654,7 @@
         "touchstart" === i.type && 1 === i.targetTouches.length && (n.touchId = i.targetTouches[0].identifier);
       }
       if ("touchstart" === i.type) {
-        return void Nn(t, i, i.targetTouches[0].pageX);
+        return void qn(t, i, i.targetTouches[0].pageX);
       }
       const {params: s, touches: a, enabled: o} = t;
       if (!o) {
@@ -3700,7 +3700,7 @@
       }
       a.currentX = i.pageX, a.currentY = i.pageY;
       const f = a.currentX, h = a.currentY;
-      if (!Nn(t, i, f)) {
+      if (!qn(t, i, f)) {
         return;
       }
       Object.assign(n, {
@@ -3719,7 +3719,7 @@
       s.freeMode && s.freeMode.enabled && t.freeMode && t.animating && !s.cssMode && t.freeMode.onTouchStart(), 
       t.emit("touchStart", i);
     }
-    function qn(e) {
+    function Gn(e) {
       const t = an(), r = this, i = r.touchEventsData, {params: n, touches: s, rtlTranslate: a, enabled: o} = r;
       if (!o) {
         return;
@@ -4162,7 +4162,7 @@
       events: {
         attachEvents: function() {
           const e = this, {params: t} = e;
-          e.onTouchStart = Gn.bind(e), e.onTouchMove = qn.bind(e), e.onTouchEnd = Vn.bind(e), 
+          e.onTouchStart = Nn.bind(e), e.onTouchMove = Gn.bind(e), e.onTouchEnd = Vn.bind(e), 
           e.onDocumentTouchStart = jn.bind(e), t.cssMode && (e.onScroll = Hn.bind(e)), e.onClick = Yn.bind(e), 
           e.onLoad = Xn.bind(e), Wn(e, "on");
         },
@@ -5254,8 +5254,8 @@
       slidesPerView: "auto",
       spaceBetween: 5,
       navigation: {
-        nextEl: ".circle__btn--next",
-        prevEl: ".circle__btn--prev"
+        nextEl: ".circle-control__block--right",
+        prevEl: ".circle-control__block--left"
       },
       pagination: {
         enabled: !1,
@@ -5354,14 +5354,14 @@
       return t;
     }, Bs = function(e, t) {
       return ~zs.indexOf(e) && zs[zs.indexOf(e) + 1][t];
-    }, Ns = function(e) {
+    }, qs = function(e) {
       return !!~Ms.indexOf(e);
-    }, Gs = function(e, t, r, i, n) {
+    }, Ns = function(e, t, r, i, n) {
       return e.addEventListener(t, r, {
         passive: !1 !== i,
         capture: !!n
       });
-    }, qs = function(e, t, r, i) {
+    }, Gs = function(e, t, r, i) {
       return e.removeEventListener(t, r, !!i);
     }, Vs = "scrollLeft", $s = "scrollTop", Ys = function() {
       return ks && ks.isPressed || Ds.cache++;
@@ -5406,10 +5406,10 @@
       return (t && t._ctx && t._ctx.selector || _s.utils.toArray)(e)[0] || ("string" == typeof e && !1 !== _s.config().nullTargetWarn ? console.warn("Element not found:", e) : null);
     }, Us = function(e, t) {
       var r = t.s, i = t.sc;
-      Ns(e) && (e = ws.scrollingElement || xs);
+      qs(e) && (e = ws.scrollingElement || xs);
       var n = Ds.indexOf(e), s = i === js.sc ? 1 : 2;
-      !~n && (n = Ds.push(e) - 1), Ds[n + s] || Gs(e, "scroll", Ys);
-      var a = Ds[n + s], o = a || (Ds[n + s] = Hs(Bs(e, r), !0) || (Ns(e) ? i : Hs((function(t) {
+      !~n && (n = Ds.push(e) - 1), Ds[n + s] || Ns(e, "scroll", Ys);
+      var a = Ds[n + s], o = a || (Ds[n + s] = Hs(Bs(e, r), !0) || (qs(e) ? i : Hs((function(t) {
         return arguments.length ? e[r] = t : e[r];
       }))));
       return o.target = e, a || (o.smooth = "smooth" === _s.getProperty(e, "scrollBehavior")), 
@@ -5459,11 +5459,11 @@
       var t, r, i;
       return e.prototype.init = function(e) {
         ys || ea(_s) || console.warn("Please gsap.registerPlugin(Observer)"), Cs || Js();
-        var t = e.tolerance, r = e.dragMinimum, i = e.type, n = e.target, s = e.lineHeight, a = e.debounce, o = e.preventDefault, l = e.onStop, u = e.onStopDelay, d = e.ignore, c = e.wheelSpeed, p = e.event, f = e.onDragStart, h = e.onDragEnd, m = e.onDrag, g = e.onPress, v = e.onRelease, _ = e.onRight, y = e.onLeft, b = e.onUp, w = e.onDown, x = e.onChangeX, T = e.onChangeY, S = e.onChange, E = e.onToggleX, C = e.onToggleY, M = e.onHover, k = e.onHoverEnd, A = e.onMove, P = e.ignoreCheck, O = e.isNormalizer, L = e.onGestureStart, I = e.onGestureEnd, D = e.onWheel, z = e.onEnable, R = e.onDisable, F = e.onClick, B = e.scrollSpeed, N = e.capture, G = e.allowClicks, q = e.lockAxis, V = e.onLockAxis;
+        var t = e.tolerance, r = e.dragMinimum, i = e.type, n = e.target, s = e.lineHeight, a = e.debounce, o = e.preventDefault, l = e.onStop, u = e.onStopDelay, d = e.ignore, c = e.wheelSpeed, p = e.event, f = e.onDragStart, h = e.onDragEnd, m = e.onDrag, g = e.onPress, v = e.onRelease, _ = e.onRight, y = e.onLeft, b = e.onUp, w = e.onDown, x = e.onChangeX, T = e.onChangeY, S = e.onChange, E = e.onToggleX, C = e.onToggleY, M = e.onHover, k = e.onHoverEnd, A = e.onMove, P = e.ignoreCheck, O = e.isNormalizer, L = e.onGestureStart, I = e.onGestureEnd, D = e.onWheel, z = e.onEnable, R = e.onDisable, F = e.onClick, B = e.scrollSpeed, q = e.capture, N = e.allowClicks, G = e.lockAxis, V = e.onLockAxis;
         this.target = n = Ws(n) || xs, this.vars = e, d && (d = _s.utils.toArray(d)), t = t || 1e-9, 
         r = r || 0, c = c || 1, B = B || 1, i = i || "wheel,touch,pointer", a = !1 !== a, 
         s || (s = parseFloat(bs.getComputedStyle(Ts).lineHeight) || 22);
-        var $, Y, H, X, j, W, U, K = this, Q = 0, Z = 0, J = e.passive || !o, ee = Us(n, Xs), te = Us(n, js), re = ee(), ie = te(), ne = ~i.indexOf("touch") && !~i.indexOf("pointer") && "pointerdown" === As[0], se = Ns(n), ae = n.ownerDocument || ws, oe = [ 0, 0, 0 ], le = [ 0, 0, 0 ], ue = 0, de = function() {
+        var $, Y, H, X, j, W, U, K = this, Q = 0, Z = 0, J = e.passive || !o, ee = Us(n, Xs), te = Us(n, js), re = ee(), ie = te(), ne = ~i.indexOf("touch") && !~i.indexOf("pointer") && "pointerdown" === As[0], se = qs(n), ae = n.ownerDocument || ws, oe = [ 0, 0, 0 ], le = [ 0, 0, 0 ], ue = 0, de = function() {
           return ue = Rs();
         }, ce = function(e, t) {
           return (K.event = e) && d && ~d.indexOf(e.target) || t && ne && "touch" !== e.pointerType || P && P(e, t);
@@ -5477,7 +5477,7 @@
         }, fe = function(e, t, r) {
           oe[r] += e, le[r] += t, K._vx.update(e), K._vy.update(t), a ? $ || ($ = requestAnimationFrame(pe)) : pe();
         }, he = function(e, t) {
-          q && !U && (K.axis = U = Math.abs(e) > Math.abs(t) ? "x" : "y", W = !0), "y" !== U && (oe[2] += e, 
+          G && !U && (K.axis = U = Math.abs(e) > Math.abs(t) ? "x" : "y", W = !0), "y" !== U && (oe[2] += e, 
           K._vx.update(e, !0)), "x" !== U && (le[2] += t, K._vy.update(t, !0)), a ? $ || ($ = requestAnimationFrame(pe)) : pe();
         }, me = function(e) {
           if (!ce(e, 1)) {
@@ -5488,12 +5488,12 @@
         }, ge = K.onPress = function(e) {
           ce(e, 1) || e && e.button || (K.axis = U = null, Y.pause(), K.isPressed = !0, e = Qs(e), 
           Q = Z = 0, K.startX = K.x = e.clientX, K.startY = K.y = e.clientY, K._vx.reset(), 
-          K._vy.reset(), Gs(O ? n : ae, As[1], me, J, !0), K.deltaX = K.deltaY = 0, g && g(K));
+          K._vy.reset(), Ns(O ? n : ae, As[1], me, J, !0), K.deltaX = K.deltaY = 0, g && g(K));
         }, ve = K.onRelease = function(e) {
           if (!ce(e, 1)) {
-            qs(O ? n : ae, As[1], me, !0);
+            Gs(O ? n : ae, As[1], me, !0);
             var t = !isNaN(K.y - K.startY), r = K.isDragging, i = r && (Math.abs(K.x - K.startX) > 3 || Math.abs(K.y - K.startY) > 3), s = Qs(e);
-            !i && t && (K._vx.reset(), K._vy.reset(), o && G && _s.delayedCall(.08, (function() {
+            !i && t && (K._vx.reset(), K._vy.reset(), o && N && _s.delayedCall(.08, (function() {
               if (Rs() - ue > 300 && !e.defaultPrevented) {
                 if (e.target.click) {
                   e.target.click();
@@ -5538,26 +5538,26 @@
         })).pause(), K.deltaX = K.deltaY = 0, K._vx = Ks(0, 50, !0), K._vy = Ks(0, 50, !0), 
         K.scrollX = ee, K.scrollY = te, K.isDragging = K.isGesturing = K.isPressed = !1, 
         Ps(this), K.enable = function(e) {
-          return K.isEnabled || (Gs(se ? ae : n, "scroll", Ys), i.indexOf("scroll") >= 0 && Gs(se ? ae : n, "scroll", be, J, N), 
-          i.indexOf("wheel") >= 0 && Gs(n, "wheel", we, J, N), (i.indexOf("touch") >= 0 && Ss || i.indexOf("pointer") >= 0) && (Gs(n, As[0], ge, J, N), 
-          Gs(ae, As[2], ve), Gs(ae, As[3], ve), G && Gs(n, "click", de, !0, !0), F && Gs(n, "click", Ee), 
-          L && Gs(ae, "gesturestart", _e), I && Gs(ae, "gestureend", ye), M && Gs(n, Es + "enter", Te), 
-          k && Gs(n, Es + "leave", Se), A && Gs(n, Es + "move", xe)), K.isEnabled = !0, e && e.type && ge(e), 
+          return K.isEnabled || (Ns(se ? ae : n, "scroll", Ys), i.indexOf("scroll") >= 0 && Ns(se ? ae : n, "scroll", be, J, q), 
+          i.indexOf("wheel") >= 0 && Ns(n, "wheel", we, J, q), (i.indexOf("touch") >= 0 && Ss || i.indexOf("pointer") >= 0) && (Ns(n, As[0], ge, J, q), 
+          Ns(ae, As[2], ve), Ns(ae, As[3], ve), N && Ns(n, "click", de, !0, !0), F && Ns(n, "click", Ee), 
+          L && Ns(ae, "gesturestart", _e), I && Ns(ae, "gestureend", ye), M && Ns(n, Es + "enter", Te), 
+          k && Ns(n, Es + "leave", Se), A && Ns(n, Es + "move", xe)), K.isEnabled = !0, e && e.type && ge(e), 
           z && z(K)), K;
         }, K.disable = function() {
           K.isEnabled && (Is.filter((function(e) {
-            return e !== K && Ns(e.target);
-          })).length || qs(se ? ae : n, "scroll", Ys), K.isPressed && (K._vx.reset(), K._vy.reset(), 
-          qs(O ? n : ae, As[1], me, !0)), qs(se ? ae : n, "scroll", be, N), qs(n, "wheel", we, N), 
-          qs(n, As[0], ge, N), qs(ae, As[2], ve), qs(ae, As[3], ve), qs(n, "click", de, !0), 
-          qs(n, "click", Ee), qs(ae, "gesturestart", _e), qs(ae, "gestureend", ye), qs(n, Es + "enter", Te), 
-          qs(n, Es + "leave", Se), qs(n, Es + "move", xe), K.isEnabled = K.isPressed = K.isDragging = !1, 
+            return e !== K && qs(e.target);
+          })).length || Gs(se ? ae : n, "scroll", Ys), K.isPressed && (K._vx.reset(), K._vy.reset(), 
+          Gs(O ? n : ae, As[1], me, !0)), Gs(se ? ae : n, "scroll", be, q), Gs(n, "wheel", we, q), 
+          Gs(n, As[0], ge, q), Gs(ae, As[2], ve), Gs(ae, As[3], ve), Gs(n, "click", de, !0), 
+          Gs(n, "click", Ee), Gs(ae, "gesturestart", _e), Gs(ae, "gestureend", ye), Gs(n, Es + "enter", Te), 
+          Gs(n, Es + "leave", Se), Gs(n, Es + "move", xe), K.isEnabled = K.isPressed = K.isDragging = !1, 
           R && R(K));
         }, K.kill = K.revert = function() {
           K.disable();
           var e = Is.indexOf(K);
           e >= 0 && Is.splice(e, 1), ks === K && (ks = 0);
-        }, Is.push(K), O && Ns(n) && (ks = K), K.enable(p);
+        }, Is.push(K), O && qs(n) && (ks = K), K.enable(p);
       }, t = e, (r = [ {
         key: "velocityX",
         get: function() {
@@ -5588,7 +5588,7 @@
  * Club GSAP members, the agreement issued with that membership.
  * @author: Jack Doyle, jack@greensock.com
 */
-    var ra, ia, na, sa, aa, oa, la, ua, da, ca, pa, fa, ha, ma, ga, va, _a, ya, ba, wa, xa, Ta, Sa, Ea, Ca, Ma, ka, Aa, Pa, Oa, La, Ia, Da, za, Ra, Fa, Ba, Na, Ga = 1, qa = Date.now, Va = qa(), $a = 0, Ya = 0, Ha = function(e, t, r) {
+    var ra, ia, na, sa, aa, oa, la, ua, da, ca, pa, fa, ha, ma, ga, va, _a, ya, ba, wa, xa, Ta, Sa, Ea, Ca, Ma, ka, Aa, Pa, Oa, La, Ia, Da, za, Ra, Fa, Ba, qa, Na = 1, Ga = Date.now, Va = Ga(), $a = 0, Ya = 0, Ha = function(e, t, r) {
       var i = so(e) && ("clamp(" === e.substr(0, 6) || e.indexOf("max") > -1);
       return r["_" + t + "Clamp"] = i, i ? e.substr(6, e.length - 7) : e;
     }, Xa = function(e, t) {
@@ -5721,19 +5721,19 @@
     }, Bo = {
       toggleActions: "play",
       anticipatePin: 0
-    }, No = {
+    }, qo = {
       top: 0,
       left: 0,
       center: .5,
       bottom: 1,
       right: 1
-    }, Go = function(e, t) {
+    }, No = function(e, t) {
       if (so(e)) {
         var r = e.indexOf("="), i = ~r ? +(e.charAt(r - 1) + 1) * parseFloat(e.substr(r + 1)) : 0;
-        ~r && (e.indexOf("%") > r && (i *= t / 100), e = e.substr(0, r - 1)), e = i + (e in No ? No[e] * t : ~e.indexOf("%") ? parseFloat(e) * t / 100 : parseFloat(e) || 0);
+        ~r && (e.indexOf("%") > r && (i *= t / 100), e = e.substr(0, r - 1)), e = i + (e in qo ? qo[e] * t : ~e.indexOf("%") ? parseFloat(e) * t / 100 : parseFloat(e) || 0);
       }
       return e;
-    }, qo = function(e, t, r, i, n, s, a, o) {
+    }, Go = function(e, t, r, i, n, s, a, o) {
       var l = n.startColor, u = n.endColor, d = n.fontSize, c = n.indent, p = n.fontWeight, f = sa.createElement("div"), h = eo(r) || "fixed" === Bs(r, "pinType"), m = -1 !== e.indexOf("scroller"), g = h ? oa : r, v = -1 !== e.indexOf("start"), _ = v ? l : u, y = "border-color:" + _ + ";font-size:" + d + ";color:" + _ + ";font-weight:" + p + ";pointer-events:none;white-space:nowrap;font-family:sans-serif,Arial;z-index:1000;padding:4px 8px;border-width:0;border-style:solid;";
       return y += "position:" + ((m || o) && h ? "fixed;" : "absolute;"), (m || o || !h) && (y += (i === js ? ho : mo) + ":" + (s + parseFloat(c)) + "px;"), 
       a && (y += "box-sizing:border-box;text-align:left;width:" + a.offsetWidth + "px;"), 
@@ -5747,10 +5747,10 @@
       e._isFlipped = i, n[r.a + "Percent"] = i ? -100 : 0, n[r.a] = i ? "1px" : 0, n["border" + s + So] = 1, 
       n["border" + a + So] = 0, n[r.p] = t + "px", ra.set(e, n);
     }, $o = [], Yo = {}, Ho = function() {
-      return qa() - $a > 34 && (Ra || (Ra = requestAnimationFrame(ul)));
+      return Ga() - $a > 34 && (Ra || (Ra = requestAnimationFrame(ul)));
     }, Xo = function() {
       (!Sa || !Sa.isPressed || Sa.startX > oa.clientWidth) && (Ds.cache++, Sa ? Ra || (Ra = requestAnimationFrame(ul)) : ul(), 
-      $a || Zo("scrollStart"), $a = qa());
+      $a || Zo("scrollStart"), $a = Ga());
     }, jo = function() {
       Ma = na.innerWidth, Ca = na.innerHeight;
     }, Wo = function() {
@@ -5814,8 +5814,8 @@
       }
     }, ol = 0, ll = 1, ul = function(e) {
       if (2 === e || !Fa && !Ia) {
-        Tl.isUpdating = !0, Na && Na.update(0);
-        var t = $o.length, r = qa(), i = r - Va >= 50, n = t && $o[0].scroll();
+        Tl.isUpdating = !0, qa && qa.update(0);
+        var t = $o.length, r = Ga(), i = r - Va >= 50, n = t && $o[0].scroll();
         if (ll = ol > n ? -1 : 1, Fa || (ol = n), i && ($a && !ma && r - $a > 200 && ($a = 0, 
         Zo("scrollEnd")), pa = Va, Va = r), ll < 0) {
           for (va = t; va-- > 0; ) {
@@ -5857,7 +5857,7 @@
       left: 0,
       top: 0
     }, vl = function(e, t, r, i, n, s, a, o, l, u, d, c, p, f) {
-      ao(e) && (e = e(o)), so(e) && "max" === e.substr(0, 3) && (e = c + ("=" === e.charAt(4) ? Go("0" + e.substr(3), r) : 0));
+      ao(e) && (e = e(o)), so(e) && "max" === e.substr(0, 3) && (e = c + ("=" === e.charAt(4) ? No("0" + e.substr(3), r) : 0));
       var h, m, g, v = p ? p.time() : 0;
       if (p && p.seek(0), isNaN(e) || (e = +e), oo(e)) {
         p && (e = ra.utils.mapRange(p.scrollTrigger.start, p.scrollTrigger.end, 0, c, e)), 
@@ -5867,7 +5867,7 @@
         var _, y, b, w, x = (e || "0").split(" ");
         g = Ws(t, o) || oa, (_ = Ao(g) || {}) && (_.left || _.top) || "none" !== Mo(g).display || (w = g.style.display, 
         g.style.display = "block", _ = Ao(g), w ? g.style.display = w : g.style.removeProperty("display")), 
-        y = Go(x[0], _[i.d]), b = Go(x[1] || "0", r), e = _[i.p] - l[i.p] - u + y + n - b, 
+        y = No(x[0], _[i.d]), b = No(x[1] || "0", r), e = _[i.p] - l[i.p] - u + y + n - b, 
         a && Vo(a, b, i, r - b < 20 || a._isStart && b > 20), r -= r - b;
       }
       if (f && (o[f] = e || -.001, e < 0 && (e = 0)), s) {
@@ -5927,7 +5927,7 @@
       }
       return e.prototype.init = function(t, r) {
         if (this.progress = this.start = 0, this.vars && this.kill(!0, !0), Ya) {
-          var i, n, s, a, o, l, u, d, c, p, f, h, m, g, v, _, y, b, w, x, T, S, E, C, M, k, A, P, O, L, I, D, z, R, F, B, N, G, q, V, $, Y, H = t = ko(so(t) || oo(t) || t.nodeType ? {
+          var i, n, s, a, o, l, u, d, c, p, f, h, m, g, v, _, y, b, w, x, T, S, E, C, M, k, A, P, O, L, I, D, z, R, F, B, q, N, G, V, $, Y, H = t = ko(so(t) || oo(t) || t.nodeType ? {
             trigger: t
           } : t, Bo), X = H.onUpdate, j = H.toggleClass, W = H.id, U = H.onToggle, K = H.onRefresh, Q = H.scrub, Z = H.trigger, J = H.pin, ee = H.pinSpacing, te = H.invalidateOnRefresh, re = H.anticipatePin, ie = H.onScrubComplete, ne = H.onSnapComplete, se = H.once, ae = H.snap, oe = H.pinReparent, le = H.pinSpacer, ue = H.containerAnimation, de = H.fastScrollEnd, ce = H.preventOverlaps, pe = t.horizontal || t.containerAnimation && !1 !== t.horizontal ? Xs : js, fe = !Q && 0 !== Q, he = Ws(t.scroller || na), me = ra.core.getCache(he), ge = eo(he), ve = "fixed" === ("pinType" in t ? t.pinType : Bs(he, "pinType") || ge && "fixed"), _e = [ t.onEnter, t.onLeave, t.onEnterBack, t.onLeaveBack ], ye = fe && t.toggleActions.split(" "), be = "markers" in t ? t.markers : Bo.markers, we = ge ? 0 : parseFloat(Mo(he)["border" + pe.p2 + So]) || 0, xe = this, Te = t.onRefreshInit && function() {
             return t.onRefreshInit(xe);
@@ -5945,7 +5945,7 @@
           }(he, ge), Ce = 0, Me = 0, ke = 0, Ae = Us(he, pe);
           if (xe._startClamp = xe._endClamp = !1, xe._dir = pe, re *= 45, xe.scroller = he, 
           xe.scroll = ue ? ue.time.bind(ue) : Ae, a = Ae(), xe.vars = t, r = r || t.animation, 
-          "refreshPriority" in t && (wa = 1, -9999 === t.refreshPriority && (Na = xe)), me.tweenScroll = me.tweenScroll || {
+          "refreshPriority" in t && (wa = 1, -9999 === t.refreshPriority && (qa = xe)), me.tweenScroll = me.tweenScroll || {
             top: xl(he, js),
             left: xl(he, Xs)
           }, xe.tweenTo = i = me.tweenScroll[pe.p], xe.scrubDuration = function(e) {
@@ -5974,16 +5974,16 @@
           }(r) : "labelsDirectional" === ae.snapTo ? (V = r, function(e, t) {
             return Lo(Oo(V))(e, t.direction);
           }) : !1 !== ae.directional ? function(e, t) {
-            return Lo(ae.snapTo)(e, qa() - Me < 500 ? 0 : t.direction);
+            return Lo(ae.snapTo)(e, Ga() - Me < 500 ? 0 : t.direction);
           } : ra.utils.snap(ae.snapTo), R = ae.duration || {
             min: .1,
             max: 2
           }, R = lo(R) ? ca(R.min, R.max) : ca(R, R), F = ra.delayedCall(ae.delay || z / 2 || .1, (function() {
-            var e = Ae(), t = qa() - Me < 500, n = i.tween;
+            var e = Ae(), t = Ga() - Me < 500, n = i.tween;
             if (!(t || Math.abs(xe.getVelocity()) < 10) || n || ma || Ce === e) {
               xe.isActive && Ce !== e && F.restart(!0);
             } else {
-              var a, o, d = (e - l) / g, c = r && !fe ? r.totalProgress() : d, p = t ? 0 : (c - I) / (qa() - pa) * 1e3 || 0, f = ra.utils.clamp(-d, 1 - d, po(p / 2) * p / .185), h = d + (!1 === ae.inertia ? 0 : f), m = ae, v = m.onStart, _ = m.onInterrupt, y = m.onComplete;
+              var a, o, d = (e - l) / g, c = r && !fe ? r.totalProgress() : d, p = t ? 0 : (c - I) / (Ga() - pa) * 1e3 || 0, f = ra.utils.clamp(-d, 1 - d, po(p / 2) * p / .185), h = d + (!1 === ae.inertia ? 0 : f), m = ae, v = m.onStart, _ = m.onInterrupt, y = m.onComplete;
               if (a = s(h, xe), oo(a) || (a = h), o = Math.round(l + a * g), e <= u && e >= l && o !== e) {
                 if (n && !n._initted && n.data <= po(o - e)) {
                   return;
@@ -6002,7 +6002,7 @@
                 }, e, f * g, o - e - f * g), v && v(xe, i.tween);
               }
             }
-          })).pause()), W && (Yo[W] = xe), (q = (Z = xe.trigger = Ws(Z || !0 !== J && J)) && Z._gsap && Z._gsap.stRevert) && (q = q(xe)), 
+          })).pause()), W && (Yo[W] = xe), (G = (Z = xe.trigger = Ws(Z || !0 !== J && J)) && Z._gsap && Z._gsap.stRevert) && (G = G(xe)), 
           J = !0 === J ? Z : Ws(J), so(j) && (j = {
             targets: Z,
             className: j
@@ -6014,11 +6014,11 @@
             force3D: !0
           }), xe.spacer = b = n.spacer, O = Mo(J), C = O[ee + pe.os2], x = ra.getProperty(J), 
           T = ra.quickSetter(J, pe.a, Co), pl(J, b, O), y = ml(J)), be) {
-            h = lo(be) ? ko(be, Fo) : Fo, p = qo("scroller-start", W, he, pe, h, 0), f = qo("scroller-end", W, he, pe, h, 0, p), 
+            h = lo(be) ? ko(be, Fo) : Fo, p = Go("scroller-start", W, he, pe, h, 0), f = Go("scroller-end", W, he, pe, h, 0, p), 
             w = p["offset" + pe.op.d2];
             var Pe = Ws(Bs(he, "content") || he);
-            d = this.markerStart = qo("start", W, Pe, pe, h, w, 0, ue), c = this.markerEnd = qo("end", W, Pe, pe, h, w, 0, ue), 
-            ue && (G = ra.quickSetter([ d, c ], pe.a, Co)), ve || zs.length && !0 === Bs(he, "fixedMarkers") || (Y = Mo($ = ge ? oa : he).position, 
+            d = this.markerStart = Go("start", W, Pe, pe, h, w, 0, ue), c = this.markerEnd = Go("end", W, Pe, pe, h, w, 0, ue), 
+            ue && (N = ra.quickSetter([ d, c ], pe.a, Co)), ve || zs.length && !0 === Bs(he, "fixedMarkers") || (Y = Mo($ = ge ? oa : he).position, 
             $.style.position = "absolute" === Y || "fixed" === Y ? Y : "relative", ra.set([ p, f ], {
               force3D: !0
             }), k = ra.quickSetter(p, pe.a, Co), P = ra.quickSetter(f, pe.a, Co));
@@ -6039,7 +6039,7 @@
             }
             var i = !1 !== e || !xe.enabled, n = ha;
             i !== xe.isReverted && (i && (B = Math.max(Ae(), xe.scroll.rec || 0), ke = xe.progress, 
-            N = r && r.progress()), d && [ d, c, p, f ].forEach((function(e) {
+            q = r && r.progress()), d && [ d, c, p, f ].forEach((function(e) {
               return e.style.display = i ? "none" : "block";
             })), i && (ha = xe, xe.update(i)), !J || oe && xe.isActive || (i ? function(e, t, r) {
               hl(r);
@@ -6061,13 +6061,13 @@
                 te && r && r.revert({
                   kill: !1
                 }).invalidate(), xe.isReverted || xe.revert(!0, !0), xe._subPinOffset = !1;
-                var T, C, k, P, O, L, I, z, R, G, q, V, $, Y = Se(), H = Ee(), X = ue ? ue.duration() : io(he, pe), j = g <= .01, W = 0, U = w || 0, Q = lo(h) ? h.end : t.end, re = t.endTrigger || Z, ie = lo(h) ? h.start : t.start || (0 !== t.start && Z ? J ? "0 0" : "0 100%" : 0), ne = xe.pinnedContainer = t.pinnedContainer && Ws(t.pinnedContainer, xe), se = Z && Math.max(0, $o.indexOf(xe)) || 0, ae = se;
+                var T, C, k, P, O, L, I, z, R, N, G, V, $, Y = Se(), H = Ee(), X = ue ? ue.duration() : io(he, pe), j = g <= .01, W = 0, U = w || 0, Q = lo(h) ? h.end : t.end, re = t.endTrigger || Z, ie = lo(h) ? h.start : t.start || (0 !== t.start && Z ? J ? "0 0" : "0 100%" : 0), ne = xe.pinnedContainer = t.pinnedContainer && Ws(t.pinnedContainer, xe), se = Z && Math.max(0, $o.indexOf(xe)) || 0, ae = se;
                 for (be && lo(h) && (V = ra.getProperty(p, pe.p), $ = ra.getProperty(f, pe.p)); ae--; ) {
-                  (L = $o[ae]).end || L.refresh(0, 1) || (ha = xe), !(I = L.pin) || I !== Z && I !== J && I !== ne || L.isReverted || (G || (G = []), 
-                  G.unshift(L), L.revert(!0, !0)), L !== $o[ae] && (se--, ae--);
+                  (L = $o[ae]).end || L.refresh(0, 1) || (ha = xe), !(I = L.pin) || I !== Z && I !== J && I !== ne || L.isReverted || (N || (N = []), 
+                  N.unshift(L), L.revert(!0, !0)), L !== $o[ae] && (se--, ae--);
                 }
                 for (ao(ie) && (ie = ie(xe)), ie = Ha(ie, "start", xe), l = vl(ie, Z, Y, pe, Ae(), d, p, xe, H, we, ve, X, ue, xe._startClamp && "_startClamp") || (J ? -.001 : 0), 
-                ao(Q) && (Q = Q(xe)), so(Q) && !Q.indexOf("+=") && (~Q.indexOf(" ") ? Q = (so(ie) ? ie.split(" ")[0] : "") + Q : (W = Go(Q.substr(2), Y), 
+                ao(Q) && (Q = Q(xe)), so(Q) && !Q.indexOf("+=") && (~Q.indexOf(" ") ? Q = (so(ie) ? ie.split(" ")[0] : "") + Q : (W = No(Q.substr(2), Y), 
                 Q = so(ie) ? ie : (ue ? ra.utils.mapRange(0, ue.duration(), ue.scrollTrigger.start, ue.scrollTrigger.end, l) : l) + W, 
                 re = Z)), Q = Ha(Q, "end", xe), u = Math.max(l, vl(Q || (re ? "100% 0" : X), re, Y, pe, Ae() + W, c, f, xe, H, we, ve, X, ue, xe._endClamp && "_endClamp")) || -.001, 
                 W = 0, ae = se; ae--; ) {
@@ -6085,10 +6085,10 @@
                     }
                   }
                 } else {
-                  T = Mo(J), P = pe === js, k = Ae(), S = parseFloat(x(pe.a)) + U, !X && u > 1 && (q = {
-                    style: q = (ge ? sa.scrollingElement || aa : he).style,
-                    value: q["overflow" + pe.a.toUpperCase()]
-                  }, ge && "scroll" !== Mo(oa)["overflow" + pe.a.toUpperCase()] && (q.style["overflow" + pe.a.toUpperCase()] = "scroll")), 
+                  T = Mo(J), P = pe === js, k = Ae(), S = parseFloat(x(pe.a)) + U, !X && u > 1 && (G = {
+                    style: G = (ge ? sa.scrollingElement || aa : he).style,
+                    value: G["overflow" + pe.a.toUpperCase()]
+                  }, ge && "scroll" !== Mo(oa)["overflow" + pe.a.toUpperCase()] && (G.style["overflow" + pe.a.toUpperCase()] = "scroll")), 
                   pl(J, b, T), y = ml(J), C = Ao(J, !0), z = ve && Us(he, P ? Xs : js)(), ee ? ((M = [ ee + pe.os2, g + U + Co ]).t = b, 
                   (ae = ee === xo ? Po(J, pe) + g + U : 0) && (M.push(pe.d, ae + Co), "auto" !== b.style.flexBasis && (b.style.flexBasis = ae + Co)), 
                   hl(M), ne && $o.forEach((function(e) {
@@ -6110,13 +6110,13 @@
                   }(v, O, oe), Fa && Ae(0)), r ? (R = r._initted, xa(1), r.render(r.duration(), !0, !0), 
                   E = x(pe.a) - S + g + U, A = Math.abs(g - E) > 1, ve && A && _.splice(_.length - 2, 2), 
                   r.render(0, !0, !0), R || r.invalidate(!0), r.parent || r.totalTime(r.totalTime()), 
-                  xa(0)) : E = g, q && (q.value ? q.style["overflow" + pe.a.toUpperCase()] = q.value : q.style.removeProperty("overflow-" + pe.a));
+                  xa(0)) : E = g, G && (G.value ? G.style["overflow" + pe.a.toUpperCase()] = G.value : G.style.removeProperty("overflow-" + pe.a));
                 }
-                G && G.forEach((function(e) {
+                N && N.forEach((function(e) {
                   return e.revert(!1, !0);
                 })), xe.start = l, xe.end = u, a = o = Fa ? B : Ae(), ue || Fa || (a < B && Ae(B), 
-                xe.scroll.rec = 0), xe.revert(!1, !0), Me = qa(), F && (Ce = -1, F.restart(!0)), 
-                ha = 0, r && fe && (r._initted || N) && r.progress() !== N && r.progress(N || 0, !0).render(r.time(), !0, !0), 
+                xe.scroll.rec = 0), xe.revert(!1, !0), Me = Ga(), F && (Ce = -1, F.restart(!0)), 
+                ha = 0, r && fe && (r._initted || q) && r.progress() !== q && r.progress(q || 0, !0).render(r.time(), !0, !0), 
                 (j || ke !== xe.progress || ue || te) && (r && !fe && r.totalProgress(ue && l < -.001 && !ke ? ra.utils.normalize(l, u, 0) : ke, !0), 
                 xe.progress = j || (a - l) / g === ke ? 0 : ke), J && ee && (b._pinOffset = Math.round(xe.progress * E)), 
                 D && D.invalidate(), isNaN(V) || (V -= ra.getProperty(p, pe.p), $ -= ra.getProperty(f, pe.p), 
@@ -6125,7 +6125,7 @@
               }
             }
           }, xe.getVelocity = function() {
-            return (Ae() - o) / (qa() - pa) * 1e3 || 0;
+            return (Ae() - o) / (Ga() - pa) * 1e3 || 0;
           }, xe.endAnimation = function() {
             uo(xe.callbackAnimation), r && (D ? D.progress(1) : r.paused() ? fe || uo(r, xe.direction < 0, 1) : uo(r, r.reversed()));
           }, xe.labelToScroll = function(e) {
@@ -6141,14 +6141,14 @@
             if (!ue || n || e) {
               var s, d, c, f, h, m, v, w = !0 === Fa ? B : xe.scroll(), x = e ? 0 : (w - l) / g, M = x < 0 ? 0 : x > 1 ? 1 : x || 0, O = xe.progress;
               if (t && (o = a, a = ue ? Ae() : w, ae && (I = L, L = r && !fe ? r.totalProgress() : M)), 
-              re && J && !ha && !Ga && $a && (!M && l < w + (w - o) / (qa() - pa) * re ? M = 1e-4 : 1 === M && u > w + (w - o) / (qa() - pa) * re && (M = .9999)), 
+              re && J && !ha && !Na && $a && (!M && l < w + (w - o) / (Ga() - pa) * re ? M = 1e-4 : 1 === M && u > w + (w - o) / (Ga() - pa) * re && (M = .9999)), 
               M !== O && xe.enabled) {
                 if (f = (h = (s = xe.isActive = !!M && M < 1) !== (!!O && O < 1)) || !!M != !!O, 
                 xe.direction = M > O ? 1 : -1, xe.progress = M, f && !ha && (d = M && !O ? 0 : 1 === M ? 1 : 1 === O ? 2 : 3, 
                 fe && (c = !h && "none" !== ye[d + 1] && ye[d + 1] || ye[d], v = r && ("complete" === c || "reset" === c || c in r))), 
                 ce && (h || v) && (v || Q || !r) && (ao(ce) ? ce(xe) : xe.getTrailing(ce).forEach((function(e) {
                   return e.endAnimation();
-                }))), fe || (!D || ha || Ga ? r && r.totalProgress(M, !(!ha || !Me && !e)) : (D._dp._time - D._start !== D._time && D.render(D._dp._time - D._start), 
+                }))), fe || (!D || ha || Na ? r && r.totalProgress(M, !(!ha || !Me && !e)) : (D._dp._time - D._start !== D._time && D.render(D._dp._time - D._start), 
                 D.resetTo ? D.resetTo("totalProgress", M, r._tTime / r._tDur) : (D.vars.totalProgress = M, 
                 D.invalidate().restart()))), J) {
                   if (e && ee && (b.style[ee + pe.os2] = C), ve) {
@@ -6167,7 +6167,7 @@
                     T(Qa(S + E * M));
                   }
                 }
-                ae && !i.tween && !ha && !Ga && F.restart(!0), j && (h || se && M && (M < 1 || !za)) && da(j.targets).forEach((function(e) {
+                ae && !i.tween && !ha && !Na && F.restart(!0), j && (h || se && M && (M < 1 || !za)) && da(j.targets).forEach((function(e) {
                   return e.classList[s || se ? "add" : "remove"](j.className);
                 })), X && !fe && !e && X(xe), f && !ha ? (fe && (v && ("complete" === c ? r.pause().totalProgress(1) : "reset" === c ? r.restart(!0).pause() : "restart" === c ? r.restart(!0) : r[c]()), 
                 X && X(xe)), !h && za || (U && h && co(xe, U), _e[d] && co(xe, _e[d]), se && (1 === M ? xe.kill(!1, 1) : _e[d] = 0), 
@@ -6175,10 +6175,10 @@
                 D ? D.progress(1) : uo(r, "reverse" === c ? 1 : !M, 1))) : fe && X && !ha && X(xe);
               }
               if (P) {
-                var N = ue ? w / ue.duration() * (ue._caScrollDist || 0) : w;
-                k(N + (p._isFlipped ? 1 : 0)), P(N);
+                var q = ue ? w / ue.duration() * (ue._caScrollDist || 0) : w;
+                k(q + (p._isFlipped ? 1 : 0)), P(q);
               }
-              G && G(-w / ue.duration() * (ue._caScrollDist || 0));
+              N && N(-w / ue.duration() * (ue._caScrollDist || 0));
             }
           }, xe.enable = function(t, r) {
             xe.enabled || (xe.enabled = !0, Do(he, "resize", Wo), ge || Do(he, "scroll", Xo), 
@@ -6220,10 +6220,10 @@
               kill: !1
             }), i || r.kill()), d && [ d, c, p, f ].forEach((function(e) {
               return e.parentNode && e.parentNode.removeChild(e);
-            })), Na === xe && (Na = 0), J && (n && (n.uncache = 1), s = 0, $o.forEach((function(e) {
+            })), qa === xe && (qa = 0), J && (n && (n.uncache = 1), s = 0, $o.forEach((function(e) {
               return e.pin === J && s++;
             })), s || (n.spacer = 0)), t.onKill && t.onKill(xe);
-          }, $o.push(xe), xe.enable(!1, !1), q && q(xe), r && r.add && !g) {
+          }, $o.push(xe), xe.enable(!1, !1), G && G(xe), r && r.add && !g) {
             var Ie = xe.update;
             xe.update = function() {
               xe.update = Ie, l || u || xe.refresh();
@@ -6290,10 +6290,10 @@
           }), i.borderTopStyle = "solid", t = Ao(oa), js.m = Math.round(t.top + js.sc()) || 0, 
           Xs.m = Math.round(t.left + Xs.sc()) || 0, n ? i.borderTopStyle = n : i.removeProperty("border-top-style"), 
           fa = setInterval(Ho, 250), ra.delayedCall(.5, (function() {
-            return Ga = 0;
+            return Na = 0;
           })), Do(sa, "touchcancel", Ka), Do(oa, "touchstart", Ka), Io(Do, sa, "pointerdown,touchstart,mousedown", Wa), 
           Io(Do, sa, "pointerup,touchend,mouseup", Ua), ga = ra.utils.checkPrefix("transform"), 
-          cl.push(ga), ia = qa(), ua = ra.delayedCall(.2, al).pause(), ba = [ sa, "visibilitychange", function() {
+          cl.push(ga), ia = Ga(), ua = ra.delayedCall(.2, al).pause(), ba = [ sa, "visibilitychange", function() {
             var e = na.innerWidth, t = na.innerHeight;
             sa.hidden ? (_a = e, ya = t) : _a === e && ya === t || Wo();
           }, sa, "DOMContentLoaded", al, na, "load", al, na, "resize", Wo ], no(Do), $o.forEach((function(e) {
@@ -6319,7 +6319,7 @@
         return r ? i.right - n > 0 && i.left + n < na.innerWidth : i.bottom - n > 0 && i.top + n < na.innerHeight;
       }, e.positionInViewport = function(e, t, r) {
         so(e) && (e = Ws(e));
-        var i = e.getBoundingClientRect(), n = i[r ? go : vo], s = null == t ? n / 2 : t in No ? No[t] * n : ~t.indexOf("%") ? parseFloat(t) * n / 100 : parseFloat(t) || 0;
+        var i = e.getBoundingClientRect(), n = i[r ? go : vo], s = null == t ? n / 2 : t in qo ? qo[t] * n : ~t.indexOf("%") ? parseFloat(t) * n / 100 : parseFloat(t) || 0;
         return r ? (i.left + s) / na.innerWidth : (i.top + s) / na.innerHeight;
       }, e.killAll = function(e) {
         if ($o.slice(0).forEach((function(e) {
@@ -6396,7 +6396,7 @@
       auto: 1,
       scroll: 1
     }, kl = function(e) {
-      var t, r = e.event, i = e.target, n = e.axis, s = (r.changedTouches ? r.changedTouches[0] : r).target, a = s._gsap || ra.core.getCache(s), o = qa();
+      var t, r = e.event, i = e.target, n = e.axis, s = (r.changedTouches ? r.changedTouches[0] : r).target, a = s._gsap || ra.core.getCache(s), o = Ga();
       if (!a._isScrollT || o - a._isScrollT > 2e3) {
         for (;s && s !== oa && (s.scrollHeight <= s.clientHeight && s.scrollWidth <= s.clientWidth || !Ml[(t = Mo(s)).overflowY] && !Ml[t.overflowX]); ) {
           s = s.parentNode;
@@ -6480,7 +6480,7 @@
         }
         f && f(e);
       }, e.onWheel = function() {
-        s._ts && s.pause(), qa() - x > 1e3 && (i = 0, x = qa());
+        s._ts && s.pause(), Ga() - x > 1e3 && (i = 0, x = Ga());
       }, e.onChange = function(e, t, r, n, s) {
         if (il !== i && k(), t && d && y(C(n[2] === t ? a + (e.startX - e.x) : y() + t - n[1])), 
         r) {
@@ -6535,7 +6535,7 @@
       _proxies: zs,
       bridge: {
         ss: function() {
-          $a || Zo("scrollStart"), $a = qa();
+          $a || Zo("scrollStart"), $a = Ga();
         },
         ref: function() {
           return ha;
@@ -6543,6 +6543,41 @@
       }
     }, Ja() && ra.registerPlugin(Tl), Hi.registerPlugin(Tl);
     Hi.registerPlugin(Tl);
+    Hi.registerPlugin(Tl);
+    Hi.registerPlugin(Tl);
+    const Il = ji.querySelector(".about"), Dl = Hi.timeline({
+      paused: !0
+    }).fromTo(Il.querySelector(".about__subtitle"), {
+      autoAlpha: 0,
+      y: "-10%"
+    }, {
+      autoAlpha: 1,
+      y: "0"
+    }).fromTo(Il.querySelector(".about__text"), {
+      autoAlpha: 0,
+      y: "-10%"
+    }, {
+      autoAlpha: 1,
+      y: "0"
+    }).fromTo(Il.querySelector(".about__list"), {
+      autoAlpha: 0,
+      y: "-10%"
+    }, {
+      autoAlpha: 1,
+      y: "0"
+    }).fromTo(Il.querySelector(".about__link"), {
+      autoAlpha: 0,
+      y: "-10%"
+    }, {
+      autoAlpha: 1,
+      y: "0"
+    }).fromTo(Il.querySelector(".about__picture"), {
+      autoAlpha: 0,
+      x: "50%"
+    }, {
+      autoAlpha: 1,
+      x: 0
+    }), zl = ji.querySelector(".circle-cover__block--center");
     document.addEventListener("DOMContentLoaded", (() => {
       gs.play().then((() => {
         os.init(), os.enable();
@@ -6648,6 +6683,48 @@
           width: "100%",
           duration: 5
         });
+      })), (() => {
+        const e = Array.from(ji.querySelectorAll(".location-flag__line")), t = ji.querySelector(".location");
+        e.forEach(((e, r) => {
+          Hi.to(e, {
+            scrollTrigger: {
+              trigger: t,
+              toggleActions: "play none none pause",
+              start: "top 60%",
+              end: "+=300",
+              onToggle: ({isActive: e}) => {
+                e || Hi.to(ji.querySelector(`.location-flag__title--${r + 1}`), {
+                  autoAlpha: 1
+                });
+              }
+            },
+            height: "100%",
+            duration: 1
+          });
+        }));
+      })(), Hi.to(Il.querySelector(".about__title"), {
+        scrollTrigger: {
+          trigger: Il,
+          toggleActions: "play none none pause",
+          start: "top 60%",
+          end: "+=300",
+          onToggle: ({isActive: e}) => {
+            e || Dl.play();
+          }
+        },
+        autoAlpha: 1,
+        duration: 1
+      }), Array.from(zl.querySelectorAll(".circle-control__block")).forEach((e => {
+        let t = 0, r = 0, i = 0, n = 0;
+        const s = e.querySelector(".control");
+        !function e() {
+          i += .2 * (t - i), n += .2 * (r - n), s.style.left = i + "px", s.style.top = n + "px", 
+          requestAnimationFrame(e);
+        }(), e.addEventListener("mousemove", (function(e) {
+          s.classList.add("circle-control__btn--active"), t = e.offsetX - 95, r = e.offsetY - 95;
+        })), e.addEventListener("mouseleave", (function(e) {
+          s.classList.remove("circle-control__btn--active");
+        }));
       }));
     }));
   })();

@@ -11,15 +11,20 @@ section.circle
 					figure.circle__figure
 						+img-retina('circle', 'jpg', 'circle', 'circle__img', '1647', '970')
 
-		.circle__control.tabs-block__control
-			button.circle__btn.control.control--prev(type='button' class=`circle__btn--prev`)
-				+svg('arr-top')
-			button.circle__btn.control.control--next(type='button' class=`circle__btn--next`)
-				+svg('arr-top')
+
 
 		.circle__cover.circle-cover
 			.circle-cover__block.circle-cover__block--sm
-			.circle-cover__block.circle-cover__block--center
+			.circle-cover__block.circle-cover__block--center.circle-control
+				.circle-control__block.circle-control__block--left
+					button.control.control--prev.circle-control__btn.circle-control__btn--prev(type='button' class=`circle__btn--prev`)
+						+svg('arr-top')
+
+				.circle-control__block.circle-control__block--right
+					button.control.control--next.circle-control__btn.circle-control__btn--next(type='button' class=`circle__btn--next`)
+						+svg('arr-top')
+
+
 			.circle-cover__block.circle-cover__block--sm
 
 	//- .circle__pagination

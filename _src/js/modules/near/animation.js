@@ -50,17 +50,4 @@ export const animationLine = () => {
       duration: 5,
     });
   });
-
-  // gsap.to(line, {
-  //   scrollTrigger: {
-  //     trigger: line,
-  //     toggleActions: "play pause none pause",
-  //     start: "top 80%",
-  //     end: "+=300",
-  //     markers: true,
-  //     scrub: 2,
-  //   },
-  //   width: "100%",
-  //   duration: 3,
-  // });
 };

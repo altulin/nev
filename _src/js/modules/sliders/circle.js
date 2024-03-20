@@ -10,8 +10,8 @@ export const sliderCircle = new Swiper(".circle__slider", {
   slidesPerView: "auto",
   spaceBetween: 5,
   navigation: {
-    nextEl: `.circle__btn--next`,
-    prevEl: `.circle__btn--prev`,
+    nextEl: `.circle-control__block--right`,
+    prevEl: `.circle-control__block--left`,
   },
   pagination: {
     enabled: false,

@@ -12,6 +12,9 @@ import { anchorPromoOrder } from "./modules/promo/anchor.js";
 import { tlPromo } from "./modules/promo/animation.js";
 import { animationDubrovka } from "./modules/dubrovka/animation.js";
 import { animationLine } from "./modules/near/animation.js";
+import { animationPins } from "./modules/location/location.js";
+import { animationAbout } from "./modules/about/animation.js";
+import { createCircleDots } from "./modules/circle/dot.js";
 
 const handler = () => {
   tlPromo.play().then(() => {
@@ -29,6 +32,9 @@ const handler = () => {
   animationDubrovka();
   // animationNearTitle();
   animationLine();
+  animationPins();
+  animationAbout();
+  createCircleDots();
 };
 
 document.addEventListener("DOMContentLoaded", handler);
