@@ -45,9 +45,9 @@ export const sliderPromo = new Swiper(".promo__swiper", {
   enabled: false,
   init: false,
   modules: [Pagination, Autoplay],
-  // autoplay: {
-  //   delay: progressTime * 1000,
-  // },
+  autoplay: {
+    delay: progressTime * 1000,
+  },
   loop: true,
   pagination: {
     el: ".promo-swiper__pagination",

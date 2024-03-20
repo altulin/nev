@@ -5,7 +5,7 @@ import "./modules/dubrovka.js";
 import "./modules/aesthetics.js";
 import { setDubrovkaSliders } from "./modules/sliders/dubrovka.js";
 import { sliderCircle } from "./modules/sliders/circle.js";
-import { sliderYard } from "./modules/sliders/yard.js";
+// import { sliderYard } from "./modules/sliders/yard.js";
 import { setAestheticsSliders } from "./modules/sliders/aesthetics.js";
 import { setToTop } from "./modules/header/toTop.js";
 import { anchorPromoOrder } from "./modules/promo/anchor.js";
@@ -15,6 +15,8 @@ import { animationLine } from "./modules/near/animation.js";
 import { animationPins } from "./modules/location/location.js";
 import { animationAbout } from "./modules/about/animation.js";
 import { createCircleDots } from "./modules/circle/dot.js";
+import { animationTitle } from "./modules/circle/title.js";
+import { animationYard } from "./modules/yard/animation.js";
 
 const handler = () => {
   tlPromo.play().then(() => {
@@ -25,7 +27,7 @@ const handler = () => {
   setSticky();
   setDubrovkaSliders();
   sliderCircle.enable();
-  sliderYard.enable();
+  // sliderYard.enable();
   setAestheticsSliders();
   setToTop();
   anchorPromoOrder();
@@ -35,6 +37,8 @@ const handler = () => {
   animationPins();
   animationAbout();
   createCircleDots();
+  animationTitle();
+  animationYard();
 };
 
 document.addEventListener("DOMContentLoaded", handler);

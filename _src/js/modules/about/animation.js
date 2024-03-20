@@ -10,28 +10,31 @@ const tlAbout = gsap
   })
   .fromTo(
     about.querySelector(".about__subtitle"),
-    { autoAlpha: 0, y: "-10%" },
+    { autoAlpha: 0, y: "-100" },
     { autoAlpha: 1, y: "0" },
   )
   .fromTo(
     about.querySelector(".about__text"),
-    { autoAlpha: 0, y: "-10%" },
+    { autoAlpha: 0, y: "-100" },
     { autoAlpha: 1, y: "0" },
+    "<",
   )
   .fromTo(
     about.querySelector(".about__list"),
-    { autoAlpha: 0, y: "-10%" },
+    { autoAlpha: 0, y: "-100" },
     { autoAlpha: 1, y: "0" },
   )
   .fromTo(
     about.querySelector(".about__link"),
-    { autoAlpha: 0, y: "-10%" },
+    { autoAlpha: 0, y: "-100" },
     { autoAlpha: 1, y: "0" },
+    "<",
   )
   .fromTo(
     about.querySelector(".about__picture"),
-    { autoAlpha: 0, x: "50%" },
+    { autoAlpha: 0, x: "300" },
     { autoAlpha: 1, x: 0 },
+    "<",
   );
 
 export const animationAbout = () => {

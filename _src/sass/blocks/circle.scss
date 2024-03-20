@@ -11,6 +11,7 @@
     margin-right: auto;
     letter-spacing: 0.4rem;
     margin-bottom: 3rem;
+    opacity: 0;
 
     @include mw($ldt) {
       width: 100%;

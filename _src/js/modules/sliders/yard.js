@@ -40,9 +40,9 @@ const initHandle = (s) => {
 export const sliderYard = new Swiper(".yard__slider", {
   enabled: false,
   modules: [Pagination, Autoplay],
-  // autoplay: {
-  //   delay: progressTime * 1000,
-  // },
+  autoplay: {
+    delay: progressTime * 1000,
+  },
   loop: true,
   spaceBetween: 5,
   pagination: {

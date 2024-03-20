@@ -4,6 +4,7 @@
   padding-bottom: 3.75rem;
   position: relative;
   margin-top: -13.2rem;
+  overflow: hidden;
 
   @include mw($tb) {
     display: flex;
