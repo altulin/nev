@@ -31,12 +31,14 @@ section.dubrovka#dubrovka
 										figure.dubrovka-slide__figure
 											img.dubrovka-slide__img(src='/img/dubrovka.jpg', alt="слайд" width="488" height="746")
 
-										//- p.dubrovka-slide__text Мягкий шепот волни легкий бриз приносят с собой ощущениесвежести и обновления.
+										p.dubrovka-slide__text Мягкий шепот волни легкий бриз приносят с собой ощущениесвежести и обновления.
 
 									-n++
 							-n=0
-						.tabs-block__control.tabs-block__control--tb
+						//- .tabs-block__control.tabs-block__control--tb
 							button.tabs-block__btn.control.control--prev(type='button' class=`tabs-block__btn--prev-${i}`)
 								+svg('arr-top')
 							button.tabs-block__btn.control.control--next(type='button' class=`tabs-block__btn--next-${i}`)
 								+svg('arr-top')
+						.tabs-slider__scrollbar
+						.tabs-slider__cover

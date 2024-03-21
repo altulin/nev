@@ -29,6 +29,11 @@
       transform 0.3s,
       opacity 0.1s;
     opacity: 0;
+
+    @include mw($tb) {
+      transform: scale(1);
+      opacity: 1;
+    }
   }
 
   &--prev {

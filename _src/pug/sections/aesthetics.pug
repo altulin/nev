@@ -11,6 +11,7 @@ section.aesthetics
 						a.aesthetics-head__link(href=`#${item.href}`)= item.label
 
 	each item,i in aesthetics_tabs
+
 		.aesthetics-tab__swiper.swiper.js-aesthetics-tabs(id=`${item.href}`)
 			.swiper-wrapper
 				each el in ['','','','','','','','']
@@ -18,11 +19,21 @@ section.aesthetics
 						figure.aesthetics-tab__figure
 							+img-retina('aesthetics', 'jpg', 'aesthetics', 'aesthetics-tab__img', '803', '803')
 
-						ul.aesthetics-tab__list
+						//- ul.aesthetics-tab__list
 							each word in aesthetics_list
 								li.aesthetics-tab__item= word
+			.aesthetics-tab__scrollbar
+			.aesthetics-tab__cover
 
-			.aesthetics__control
+			.aesthetics__touch.aesthetics-touch
+				.aesthetics-touch__block.aesthetics-touch__block--prev
+					button.control.control--prev.aesthetics-touch__btn--prev.aesthetics-touch__btn(type='button')
+						+svg('arr-top')
+				.aesthetics-touch__block.aesthetics-touch__block--next
+					button.control.control--next.aesthetics-touch__btn--next.aesthetics-touch__btn(type='button')
+						+svg('arr-top')
+
+			//- .aesthetics__control
 				button.aesthetics__btn.control.control--prev(type='button' class=`aesthetics__btn--prev-${i}`)
 					+svg('arr-top')
 				button.aesthetics__btn.control.control--next(type='button' class=`aesthetics__btn--next-${i}`)

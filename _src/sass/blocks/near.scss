@@ -10,7 +10,7 @@
     margin-right: auto;
 
     span:last-child {
-      margin-left: 1rem;
+      // margin-left: 1rem;
     }
 
     @include mw($tb) {
@@ -55,6 +55,25 @@
 
   &__content {
     // padding-left: 5rem;
+  }
+}
+
+.near-title {
+  .whitespace {
+    width: 1rem;
+  }
+  .word {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+
+    .char:nth-child(4) {
+      margin-left: 1.5rem;
+    }
+  }
+
+  &__right {
+    margin-left: 1.5rem;
   }
 }
 

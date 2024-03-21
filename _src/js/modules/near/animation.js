@@ -2,34 +2,31 @@ import gsap from "gsap";
 import { body } from "../header/menu.js";
 import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 gsap.registerPlugin(ScrollTrigger);
+import Splitting from "splitting";
 
-import { width } from "../sliders/dubrovka.js";
-
-const getWidth = () => {
-  if (width > 1920) {
-    return "43%";
-  }
-  if (width > 1440) {
-    return "75%";
-  }
-
-  return "100%";
-};
+// import { width } from "../sliders/dubrovka.js";
+const near = body.querySelector(".near");
 
 const animationNearTitle = () => {
-  if (width < 769) return;
-  const title = body.querySelector(".near__title");
+  if (!near) return;
+  // if (width < 769) return;
+  const title = near.querySelector(".near-title");
+  Splitting({ target: title, whitespace: true, by: "chars" });
 
-  gsap.to(title, {
+  const word = title.querySelector(".word");
+
+  gsap.to(word, {
     scrollTrigger: {
       trigger: title,
       toggleActions: "play pause reverce pause",
       start: "top 70%",
     },
-    width: getWidth(),
+    flexGrow: 0,
     duration: 1,
   });
 };
+
+animationNearTitle();
 
 export const animationLine = () => {
   // const line = body.querySelector(".near-indication__line--0");

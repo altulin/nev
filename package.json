@@ -63,6 +63,7 @@
     "gsap": "^3.12.5",
     "normalize.css": "^8.0.1",
     "rfs": "^10.0.0",
+    "splitting": "^1.0.6",
     "swiper": "^11.0.7",
     "tabbyjs": "^12.0.3"
   }

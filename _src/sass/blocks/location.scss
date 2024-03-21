@@ -74,6 +74,7 @@
     display: block;
     margin-bottom: 1rem;
     transform: translateX(0.4rem);
+    opacity: 0;
 
     svg {
       width: 100%;
@@ -88,6 +89,7 @@
     background-image: url("../../img/magnifier.png");
     background-repeat: no-repeat;
     background-size: cover;
+    transform: scale(0);
   }
 }
 

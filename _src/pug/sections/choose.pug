@@ -5,19 +5,26 @@ section.choose#choose
 			span квартиру
 
 	.choose__content
-		.choose__left.choose-left
+		a.choose__left.choose-left.choose__control(href="/")
 			figure.choose__figure
 			.choose__block.choose-block.choose-block--left
 
 
-				a.choose-block__link(href="/")
+				.choose-block__link
 					+svg('choose-lt')
 				h3.choose-block__title на схеме
 				p.choose-block__text выберете на генплане
 
-		.choose__right.choose-right
+			.control.control--prev.choose__circle.choose__circle--prev
+				+svg('arr-top')
+
+
+		a.choose__right.choose-right.choose__control(href="/")
 			.choose__block.choose-block.choose-block--right
-				a.choose-block__link(href="/")
+				.choose-block__link
 					+svg('choose-rt')
 				h3.choose-block__title по параметрам
 				p.choose-block__text выберите по цене и площади
+
+			.control.control--next.choose__circle.choose__circle--next
+				+svg('arr-top')

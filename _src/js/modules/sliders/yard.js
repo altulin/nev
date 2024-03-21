@@ -1,5 +1,5 @@
 import Swiper from "swiper";
-import { Pagination, Autoplay } from "swiper/modules";
+import { Pagination, Autoplay, Navigation } from "swiper/modules";
 import gsap from "gsap";
 
 let tlList;
@@ -39,7 +39,7 @@ const initHandle = (s) => {
 
 export const sliderYard = new Swiper(".yard__slider", {
   enabled: false,
-  modules: [Pagination, Autoplay],
+  modules: [Pagination, Autoplay, Navigation],
   autoplay: {
     delay: progressTime * 1000,
   },
@@ -49,6 +49,10 @@ export const sliderYard = new Swiper(".yard__slider", {
     el: ".yard__pagination",
     bulletClass: "pagination-bar__bullet",
     bulletActiveClass: "pagination-bar__bullet--active",
+  },
+  navigation: {
+    nextEl: `.yard-touch__block--next`,
+    prevEl: `.yard-touch__block--prev`,
   },
   speed: 2000,
   on: {

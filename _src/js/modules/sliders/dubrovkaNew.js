@@ -23,6 +23,4 @@ export const makeDubrovkaSlider = () => {
       },
     });
   });
-
-  console.log(sliders[0]);
 };

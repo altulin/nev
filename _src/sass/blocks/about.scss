@@ -29,6 +29,21 @@
     margin-bottom: 10.875rem;
     position: relative;
     z-index: 1;
+    display: flex;
+
+    .whitespace {
+      width: 1rem;
+    }
+
+    .word {
+      display: flex;
+      flex-grow: 1;
+      justify-content: space-between;
+
+      .char:nth-child(2) {
+        margin-left: 1.5rem;
+      }
+    }
 
     @include mw($tb) {
       text-align: center;

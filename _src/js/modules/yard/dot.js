@@ -1,10 +1,10 @@
 import { body } from "../header/menu.js";
 import { width } from "../sliders/dubrovka.js";
-const circle = body.querySelector(".circle-cover__block--center");
+const yard = body.querySelector(".yard-touch");
 
-export const createCircleDots = () => {
+export const createYardDots = () => {
   if (width < 769) return;
-  const blocks = Array.from(circle.querySelectorAll(".circle-control__block"));
+  const blocks = Array.from(yard.querySelectorAll(".yard-touch__block"));
 
   blocks.forEach((element) => {
     let mouseX = 0;
@@ -33,14 +33,14 @@ export const createCircleDots = () => {
     animate();
 
     element.addEventListener("mousemove", function (e) {
-      btn.classList.add("circle-control__btn--active");
+      btn.classList.add("yard-touch__btn--active");
 
       mouseX = e.offsetX - 95;
       mouseY = e.offsetY - 95;
     });
 
     element.addEventListener("mouseleave", function (e) {
-      btn.classList.remove("circle-control__btn--active");
+      btn.classList.remove("yard-touch__btn--active");
     });
   });
 };

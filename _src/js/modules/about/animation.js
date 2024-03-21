@@ -1,8 +1,10 @@
 import gsap from "gsap";
 import { body } from "../header/menu.js";
 import { ScrollTrigger } from "gsap/ScrollTrigger.js";
+import Splitting from "splitting";
 gsap.registerPlugin(ScrollTrigger);
 const about = body.querySelector(".about");
+const title = about.querySelector(".about__title");
 
 const tlAbout = gsap
   .timeline({
@@ -38,7 +40,10 @@ const tlAbout = gsap
   );
 
 export const animationAbout = () => {
-  gsap.to(about.querySelector(".about__title"), {
+  Splitting({ target: title, whitespace: true, by: "chars" });
+  const word = title.querySelector(".word");
+
+  gsap.to(title, {
     scrollTrigger: {
       trigger: about,
       toggleActions: "play none none pause",
@@ -53,6 +58,16 @@ export const animationAbout = () => {
       },
     },
     autoAlpha: 1,
+    duration: 1,
+  });
+
+  gsap.to(word, {
+    scrollTrigger: {
+      trigger: title,
+      toggleActions: "play pause reverce pause",
+      start: "top 70%",
+    },
+    flexGrow: 0,
     duration: 1,
   });
 };
