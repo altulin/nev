@@ -52,15 +52,14 @@
     height: 0;
     padding-top: 100%;
   }
+
+  &__control {
+    &--active {
+      z-index: 1;
+    }
+  }
 }
-.title {
-}
-.title--lg {
-}
-.title--gray {
-}
-.choose-left {
-}
+
 .choose-block {
   position: absolute;
   @include centered("y");

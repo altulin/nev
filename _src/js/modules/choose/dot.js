@@ -34,6 +34,7 @@ export const createChooseDots = () => {
 
     element.addEventListener("mousemove", function (e) {
       btn.classList.add("choose__circle--active");
+      element.classList.add("choose__control--active");
 
       mouseX = e.offsetX - 95;
       mouseY = e.offsetY - 95;
@@ -41,6 +42,7 @@ export const createChooseDots = () => {
 
     element.addEventListener("mouseleave", function (e) {
       btn.classList.remove("choose__circle--active");
+      element.classList.remove("choose__control--active");
     });
   });
 };

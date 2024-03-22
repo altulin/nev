@@ -1224,18 +1224,29 @@ input:-webkit-autofill:active {
 .menu {
   position: fixed;
   width: 100%;
-  min-height: 100%;
+  height: 100%;
+  overflow: auto;
   left: 0;
   top: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   z-index: -1;
   visibility: hidden;
   opacity: 0;
+}
+
+.menu__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 
 .menu__content {
@@ -2978,6 +2989,10 @@ input:-webkit-autofill:active {
   margin-bottom: 4.5rem;
 }
 
+.aesthetics__title__right {
+  margin-left: 1rem;
+}
+
 .aesthetics-tab__wrapper {
   width: 130%;
 }
@@ -2996,6 +3011,23 @@ input:-webkit-autofill:active {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.aesthetics-tab__slide::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  opacity: 0;
+}
+
+.aesthetics-tab__slide--cover::after {
+  opacity: 1;
 }
 
 .aesthetics-tab__slide.swiper-slide-active {
@@ -3086,10 +3118,57 @@ input:-webkit-autofill:active {
   -webkit-transition: 0.3s;
   transition: 0.3s;
   display: block;
+  position: relative;
 }
 
 .aesthetics-head__link[aria-selected=true] {
   border-color: #000;
+}
+
+.aesthetics-head__info {
+  position: absolute;
+  right: 0;
+  top: 0.3rem;
+}
+
+.aesthetics-head__mark {
+  width: 1.06rem;
+  height: 1.06rem;
+  border-radius: 50%;
+  border: 0.06rem solid #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: rgb(0, 0, 0);
+  font-size: 0.88rem;
+  font-weight: 300;
+  line-height: 0.88rem;
+}
+
+.aesthetics-head__text {
+  position: absolute;
+  font-size: 1.25rem;
+  font-weight: 300;
+  line-height: 1.25rem;
+  padding: 1rem;
+  border: 0.06rem solid #000;
+  bottom: 100%;
+  left: 100%;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.aesthetics-head__text--visible {
+  visibility: visible;
+  opacity: 1;
 }
 
 .aesthetics_tab__wrapper {
@@ -3184,6 +3263,10 @@ input:-webkit-autofill:active {
   width: 100%;
   height: 0;
   padding-top: 100%;
+}
+
+.choose__control--active {
+  z-index: 1;
 }
 
 .choose-block {
@@ -3302,6 +3385,19 @@ input:-webkit-autofill:active {
 
 .developer__wrap {
   width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.developer__figure-cover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 100%;
+  background-color: #fff;
+  z-index: 1;
+  pointer-events: 0;
 }
 
 .developer__figure {
@@ -3594,6 +3690,12 @@ input:-webkit-autofill:active {
     overflow: hidden;
   }
 
+  .menu-contetnt__wrap {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+
   .promo-slide {
     padding-top: 7.3rem;
   }
@@ -3764,6 +3866,11 @@ input:-webkit-autofill:active {
     margin: 0;
   }
 
+  .connection__top svg {
+    width: 0.82rem;
+    height: 2.23rem;
+  }
+
   .connection__inner {
     -webkit-box-align: start;
         -ms-flex-align: start;
@@ -3838,6 +3945,16 @@ input:-webkit-autofill:active {
     margin-bottom: 1rem;
   }
 
+  .aesthetics__inner {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .aesthetics__title {
+    font-size: 2.2rem;
+    line-height: 1.1;
+  }
+
   .aesthetics-tab__slide {
     height: 32rem;
   }
@@ -3896,6 +4013,41 @@ input:-webkit-autofill:active {
   .header-middle__logo svg {
     width: 6.45rem;
     height: 2.26rem;
+  }
+
+  .menu__content {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 7.5rem;
+  }
+
+  .menu-contetnt__wrap {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .menu-nav__link {
+    font-size: 1.25rem;
+    line-height: 1;
+  }
+
+  .contetnt-point {
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+    width: 100%;
+    padding-bottom: 2rem;
+  }
+
+  .contetnt-point__list {
+    margin-left: 0;
+  }
+
+  .contetnt-point__choose {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-align: center;
   }
 
   .menu-icon {
@@ -4013,6 +4165,7 @@ input:-webkit-autofill:active {
         -ms-flex-direction: column;
             flex-direction: column;
     row-gap: 2rem;
+    padding-bottom: 0;
   }
 
   .about__inner {
@@ -4278,7 +4431,7 @@ input:-webkit-autofill:active {
     padding-bottom: 2rem;
     padding-left: 1rem;
     padding-right: 1rem;
-    text-align: center;
+    text-align: left;
     opacity: 1;
     visibility: visible;
   }
@@ -4366,10 +4519,27 @@ input:-webkit-autofill:active {
     padding-left: 2rem;
   }
 
+  .aesthetics__inner {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
   .aesthetics__title {
     padding-right: 1.5rem;
-    font-size: 2.2rem;
     margin-bottom: 3.5rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .aesthetics__title__right {
+    margin-left: 0;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
   }
 
   .aesthetics-tab__slide {
@@ -4439,6 +4609,10 @@ input:-webkit-autofill:active {
     line-height: 1;
     padding: 0.63rem;
     text-align: center;
+  }
+
+  .aesthetics-head__info {
+    display: none;
   }
 
   .aesthetics-touch {
@@ -4574,24 +4748,8 @@ input:-webkit-autofill:active {
     padding: 0 1rem;
   }
 
-  .menu__content {
-    padding-left: 4.5%;
-  }
-
-  .menu-contetnt__wrap {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-
   .menu-nav {
     margin-bottom: 3rem;
-  }
-
-  .contetnt-point {
-    -ms-flex-item-align: start;
-        align-self: flex-start;
   }
 
   .location__figure {

@@ -207,14 +207,21 @@
 .menu {
   position: fixed;
   width: 100%;
-  min-height: 100%;
+  height: 100%;
+  overflow: auto;
   left: 0;
   top: 0;
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  // justify-content: flex-end;
   z-index: -1;
   visibility: hidden;
   opacity: 0;
+
+  &__inner {
+    display: flex;
+    flex-grow: 1;
+  }
 
   &__content {
     background-color: #fff;
@@ -224,8 +231,10 @@
     padding-right: 3%;
     flex-grow: 1;
 
-    @include mw($ph) {
-      padding-left: 4.5%;
+    @include mw($tb) {
+      padding-left: 1rem;
+      padding-right: 1rem;
+      padding-top: 7.5rem;
     }
   }
 
@@ -258,7 +267,11 @@
     column-gap: 1.4rem;
     justify-content: flex-end;
 
-    @include mw($ph) {
+    @include mw($dt) {
+      justify-content: flex-start;
+    }
+
+    @include mw($tb) {
       flex-direction: column;
     }
   }
@@ -289,6 +302,11 @@
     border-bottom: 0.06rem solid transparent;
     transform: 0.5s;
 
+    @include mw($tb) {
+      font-size: 1.25rem;
+      line-height: 1;
+    }
+
     @include hocus() {
       border-color: #a7a7ab;
     }
@@ -299,8 +317,10 @@
 .contetnt-point {
   align-self: flex-end;
 
-  @include mw($ph) {
+  @include mw($tb) {
     align-self: flex-start;
+    width: 100%;
+    padding-bottom: 2rem;
   }
 
   &__list {
@@ -311,8 +331,8 @@
     margin-bottom: 4rem;
     margin-left: 3.5rem;
 
-    @include mw($ph) {
-      // margin-left: 0;
+    @include mw($tb) {
+      margin-left: 0;
     }
   }
 
@@ -343,6 +363,12 @@
     border: 0.06rem solid rgb(0, 0, 0);
     padding: 1.25rem 2.5rem 1.25rem 2.5rem;
     display: block;
+
+    @include mw($tb) {
+      padding-left: 1rem;
+      padding-right: 1rem;
+      text-align: center;
+    }
   }
 }
 

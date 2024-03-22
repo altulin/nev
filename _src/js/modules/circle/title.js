@@ -12,8 +12,9 @@ export const animationTitle = () => {
       trigger: circle,
       toggleActions: "play none none pause",
       start: `top 60%`,
-      end: "+=300",
+      end: "+=100",
       // markers: true,
+      once: true,
       onToggle: ({ isActive }) => {
         if (!isActive) {
           gsap.to(title, { autoAlpha: 1, duration: 1 });

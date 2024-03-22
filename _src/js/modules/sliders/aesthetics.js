@@ -4,6 +4,27 @@ import { Navigation, Scrollbar } from "swiper/modules";
 import gsap from "gsap";
 import { width } from "./dubrovka.js";
 
+export const makeCover = (list) => {
+  if (width < 769) return;
+
+  list.forEach((item) => {
+    item.classList.add("aesthetics-tab__slide--cover");
+  });
+
+  const prev = list.filter((item) =>
+    item.classList.contains("swiper-slide-prev"),
+  )[0];
+
+  const active = list.filter((item) =>
+    item.classList.contains("swiper-slide-active"),
+  )[0];
+
+  if (!prev || !active) return;
+
+  prev.classList.remove("aesthetics-tab__slide--cover");
+  active.classList.remove("aesthetics-tab__slide--cover");
+};
+
 const initHandler = (s) => {
   if (width < 769) return;
   const activSlide = s.slides[s.realIndex];
@@ -19,6 +40,7 @@ const initHandler = (s) => {
   //   autoAlpha: 1,
   //   duration: 0.1,
   // });
+  makeCover(s.slides);
 };
 
 const changeHandler = (s) => {
@@ -54,6 +76,7 @@ const changeHandler = (s) => {
   //   autoAlpha: 1,
   //   duration: 0.1,
   // });
+  makeCover(s.slides);
 };
 
 export const setAestheticsSliders = () => {

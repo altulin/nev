@@ -229,6 +229,11 @@
     svg {
       width: 1.31rem;
       height: 3.56rem;
+
+      @include mw($dt) {
+        width: 0.82rem;
+        height: 2.23rem;
+      }
     }
   }
 

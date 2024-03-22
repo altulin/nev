@@ -27,21 +27,22 @@ header.header#header
 				+svg('camera')
 
 	.header__menu.menu
-		.menu__content.menu-contetnt
-			.menu-contetnt__wrap
-				nav.menu-contetnt__nav.menu-nav
-					ul.menu-nav__list
-						each item in header_nav
-							li.menu-nav__item
-								a.menu-nav__link(href=`${item.href}` class=item.anchor && 'js-anchor' target=item.anchor ? null:'_blank' data-anchor=item.anchor && `${item.href}`)= item.label
+		.menu__inner
+			.menu__content.menu-contetnt
+				.menu-contetnt__wrap
+					nav.menu-contetnt__nav.menu-nav
+						ul.menu-nav__list
+							each item in header_nav
+								li.menu-nav__item
+									a.menu-nav__link(href=`${item.href}` class=item.anchor && 'js-anchor' target=item.anchor ? null:'_blank' data-anchor=item.anchor && `${item.href}`)= item.label
 
-				.menu-contetnt__point.contetnt-point
-					ul.contetnt-point__list
-						each item in header_point
-							li.contetnt-point__item
-								a.contetnt-point__link(href=`${item.href}` class=item.anchor && 'js-anchor' target=item.anchor ? null:'_blank')= item.label
+					.menu-contetnt__point.contetnt-point
+						ul.contetnt-point__list
+							each item in header_point
+								li.contetnt-point__item
+									a.contetnt-point__link(href=`${item.href}` class=item.anchor && 'js-anchor' target=item.anchor ? null:'_blank')= item.label
 
-					a.contetnt-point__choose(href="/" taeget="_blank") выбрать  квартиру
+						a.contetnt-point__choose(href="/" taeget="_blank") выбрать  квартиру
 
-		figure.menu__figure
-			+img-retina('menu', 'jpg', 'menu', 'menu__img', '740', '970')
+			figure.menu__figure
+				+img-retina('menu', 'jpg', 'menu', 'menu__img', '740', '970')

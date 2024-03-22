@@ -50,7 +50,7 @@ export const animationAbout = () => {
       start: `top 60%`,
       end: "+=300",
       // markers: true,
-      // once: true,
+      once: true,
       onToggle: ({ isActive }) => {
         if (!isActive) {
           tlAbout.play();
@@ -66,6 +66,7 @@ export const animationAbout = () => {
       trigger: title,
       toggleActions: "play pause reverce pause",
       start: "top 70%",
+      once: true,
     },
     flexGrow: 0,
     duration: 1,

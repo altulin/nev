@@ -2,20 +2,28 @@ include ../helpers/data/aesthetics.pug
 
 section.aesthetics
 	.aesthetics__inner
-		h2.title.title--lg.title--gray.aesthetics__title ЭСТЕТИКА ВНУТРИ
+		h2.title.title--lg.title--gray.aesthetics__title
+			span эстетика
+			span.aesthetics__title__right внутри
 
 		.aesthetics__tab.aesthetics-tab
 			ul.aesthetics-tab__head.aesthetics-head
 				each item in aesthetics_tabs
 					li.aesthetics-head__item
 						a.aesthetics-head__link(href=`#${item.href}`)= item.label
+							if item.info
+								.aesthetics-head__info
+									span.aesthetics-head__mark i
+									p.aesthetics-head__text= item.info
+
+
 
 	each item,i in aesthetics_tabs
 
 		.aesthetics-tab__swiper.swiper.js-aesthetics-tabs(id=`${item.href}`)
 			.swiper-wrapper
 				each el in ['','','','','','','','']
-					.swiper-slide.aesthetics-tab__slide
+					.swiper-slide.aesthetics-tab__slide.aesthetics-tab__slide--cover
 						figure.aesthetics-tab__figure
 							+img-retina('aesthetics', 'jpg', 'aesthetics', 'aesthetics-tab__img', '803', '803')
 

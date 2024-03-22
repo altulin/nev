@@ -20,7 +20,8 @@ import Splitting from "splitting";
 import { createYardDots } from "./modules/yard/dot.js";
 import { createAestheticsDots } from "./modules/aesthetics/dot.js";
 import { createChooseDots } from "./modules/choose/dot.js";
-import { animationDevelop } from "./modules/developer/animation.js";
+import { animationDeveloper } from "./modules/developer/animation.js";
+import { infoVisible } from "./modules/aesthetics/info.js";
 
 const handler = () => {
   tlPromo.play().then(() => {
@@ -44,7 +45,8 @@ const handler = () => {
   createYardDots();
   createAestheticsDots();
   createChooseDots();
-  // animationDevelop();
+  animationDeveloper();
+  infoVisible();
 
   if (width < 769) return;
 };

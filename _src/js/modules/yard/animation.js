@@ -39,6 +39,7 @@ export const animationYard = () => {
       toggleActions: "play none none pause",
       start: `top 60%`,
       end: "+=300",
+      once: true,
       // markers: true,
       onToggle: ({ isActive }) => {
         if (!isActive) {

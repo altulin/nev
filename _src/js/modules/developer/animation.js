@@ -3,52 +3,74 @@ import { body } from "../header/menu.js";
 import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 import Splitting from "splitting";
 gsap.registerPlugin(ScrollTrigger);
+import { width } from "../sliders/dubrovka.js";
 
 const developer = body.querySelector(".developer");
-const title = developer.querySelector(".developer__title");
+const title = developer.querySelector(
+  `.developer__title--${width < 769 ? "tb" : "dt"}`,
+);
+const logo = developer.querySelector(".developer-info__logo");
+const cover = developer.querySelector(".developer__figure-cover");
+const infoBock = developer.querySelector(".info-block");
+const infoList = developer.querySelector(".info-list");
 
-const tldevelop = gsap
-  .timeline({
-    paused: true,
-  })
-  .fromTo(title, { autoAlpha: 0, y: "-100" }, { autoAlpha: 0, y: "0" });
-// .fromTo(
-//   develop.querySelector(".develop__text"),
-//   { autoAlpha: 0, y: "-100" },
-//   { autoAlpha: 1, y: "0" },
-//   "<",
-// )
-// .fromTo(
-//   develop.querySelector(".develop__list"),
-//   { autoAlpha: 0, y: "-100" },
-//   { autoAlpha: 1, y: "0" },
-// )
-// .fromTo(
-//   develop.querySelector(".develop__link"),
-//   { autoAlpha: 0, y: "-100" },
-//   { autoAlpha: 1, y: "0" },
-//   "<",
-// )
-// .fromTo(
-//   develop.querySelector(".develop__picture"),
-//   { autoAlpha: 0, x: "300" },
-//   { autoAlpha: 1, x: 0 },
-//   "<",
-// );
+const animationCover = gsap
+  .timeline({ paused: true })
 
-export const animationDevelop = () => {
+  .fromTo(cover, { y: 0 }, { y: "-100%", duration: 0.5 })
+
+  .fromTo(
+    infoList,
+    { y: 0, autoAlpha: 1 },
+    { y: 100, autoAlpha: 0, duration: 1 },
+  )
+  .fromTo(
+    infoBock,
+    { y: 0, autoAlpha: 1 },
+    { y: 100, autoAlpha: 0, duration: 1 },
+    "<",
+  );
+
+const animationTitle = gsap
+  .timeline({ paused: true })
+  .fromTo(
+    title,
+    { autoAlpha: 1, y: 0 },
+    { autoAlpha: 0, y: 100, duration: 0.5 },
+  )
+  .fromTo(logo, { autoAlpha: 1 }, { autoAlpha: 0, duration: 0.5 }, "<");
+
+export const animationDeveloper = () => {
+  animationTitle.play();
+  animationCover.play();
+
   gsap.to(title, {
     scrollTrigger: {
       trigger: developer,
       toggleActions: "play none none pause",
       start: `top 60%`,
-      end: "+=300",
-      markers: true,
-      // once: true,
-
+      end: `${width < 769 ? "+=200" : "+=300"}`,
+      once: true,
+      // markers: true,
       onToggle: ({ isActive }) => {
         if (!isActive) {
-          tldevelop.play();
+          animationTitle.reverse();
+        }
+      },
+    },
+  });
+
+  gsap.to(infoBock, {
+    scrollTrigger: {
+      trigger: developer,
+      toggleActions: "play none none pause",
+      start: `top 30%`,
+      end: `${width < 769 ? "+=200" : "+=300"}`,
+      // markers: true,
+      once: true,
+      onToggle: ({ isActive }) => {
+        if (!isActive) {
+          animationCover.reverse();
         }
       },
     },

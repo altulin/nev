@@ -1,6 +1,6 @@
 import { body } from "../header/menu.js";
 import { width } from "../sliders/dubrovka.js";
-const aesthetics = body.querySelector(".aesthetics-touch");
+export const aesthetics = body.querySelector(".aesthetics-touch");
 
 export const createAestheticsDots = () => {
   if (width < 769) return;
