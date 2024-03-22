@@ -28,7 +28,6 @@ export const makeCover = (list) => {
 const initHandler = (s) => {
   if (width < 769) return;
   const activSlide = s.slides[s.realIndex];
-  const previousSlide = s.slides[s.previousIndex];
 
   if (!activSlide) return;
 
@@ -36,16 +35,17 @@ const initHandler = (s) => {
     width: "43.4%",
     duration: 0.1,
   });
-  // .to(previousSlide.querySelector(".aesthetics-tab__list"), {
-  //   autoAlpha: 1,
-  //   duration: 0.1,
-  // });
+
   makeCover(s.slides);
 };
 
 const changeHandler = (s) => {
   if (width < 769) return;
   const previousSlide = s.slides[s.previousIndex];
+
+  s.slides.forEach((item) => {
+    gsap.to(item.querySelector(".aesthetics-tab__list"), { autoAlpha: 0 });
+  });
 
   const activSlide = s.slides.filter((slide) =>
     slide.classList.contains("swiper-slide-active"),
@@ -55,13 +55,6 @@ const changeHandler = (s) => {
 
   gsap
     .timeline()
-    // .fromTo(
-    //   previousSlide.querySelector(".aesthetics-tab__list"),
-    //   {
-    //     autoAlpha: 1,
-    //   },
-    //   { autoAlpha: 0, duration: 0.01 },
-    // )
     .to(activSlide, {
       width: "42.5%",
       duration: 1,
@@ -72,11 +65,20 @@ const changeHandler = (s) => {
       { width: "27%", duration: 1 },
       "<",
     );
-  // .to(activSlide.querySelector(".aesthetics-tab__list"), {
-  //   autoAlpha: 1,
-  //   duration: 0.1,
-  // });
+
   makeCover(s.slides);
+};
+
+const slideNext = (s) => {
+  if (width < 769) return;
+  const prev = s.slides.filter((slide) =>
+    slide.classList.contains("swiper-slide-prev"),
+  )[0];
+
+  gsap.to(prev.querySelector(".aesthetics-tab__list"), {
+    autoAlpha: 1,
+    duration: 1,
+  });
 };
 
 export const setAestheticsSliders = () => {
@@ -123,8 +125,11 @@ export const setAestheticsSliders = () => {
         },
       },
       on: {
-        afterInit: initHandler,
         slideChangeTransitionStart: changeHandler,
+        afterInit: initHandler,
+
+        slideNextTransitionEnd: slideNext,
+        slidePrevTransitionEnd: slideNext,
       },
     });
   });

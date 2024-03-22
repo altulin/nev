@@ -1,6 +1,6 @@
 .aesthetics {
   padding-top: 10rem;
-  overflow: hidden;
+  position: relative;
 
   @include mw($tb) {
     padding-top: 6rem;
@@ -58,18 +58,12 @@
     }
   }
 
-  &__tab {
+  &__wrapper {
+    width: 100%;
+    position: relative;
   }
+}
 
-  &__img {
-  }
-}
-.title {
-}
-.title--lg {
-}
-.title--gray {
-}
 .aesthetics-tab {
   &__wrapper {
     width: 130%;
@@ -77,6 +71,16 @@
 
   &__swiper {
     width: 100%;
+    opacity: 1;
+    z-index: 1;
+
+    &[hidden] {
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0;
+      pointer-events: none;
+    }
 
     @include mw($tb) {
     }
@@ -103,6 +107,11 @@
     &--cover {
       &::after {
         opacity: 1;
+
+        @include mw($tb) {
+          opacity: 0;
+          content: none;
+        }
       }
     }
 
@@ -145,12 +154,12 @@
   }
 
   &__list {
-    position: absolute;
+    // position: absolute;
     width: 100%;
-    right: 100%;
+    // right: 100%;
     margin-bottom: auto;
-    opacity: 0;
-    visibility: hidden;
+    // opacity: 0;
+    // visibility: hidden;
     box-sizing: border-box;
     padding: 1rem 2rem;
 

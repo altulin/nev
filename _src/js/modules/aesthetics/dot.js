@@ -1,12 +1,19 @@
 import { body } from "../header/menu.js";
 import { width } from "../sliders/dubrovka.js";
 export const aesthetics = body.querySelector(".aesthetics-touch");
+export const listBlocks = Array.from(
+  body.querySelectorAll(".aesthetics-touch"),
+);
 
 export const createAestheticsDots = () => {
   if (width < 769) return;
-  const blocks = Array.from(
-    aesthetics.querySelectorAll(".aesthetics-touch__block"),
-  );
+  if (!aesthetics) return;
+
+  const blocks = listBlocks
+    .map((item) => {
+      return Array.from(item.querySelectorAll(".aesthetics-touch__block"));
+    })
+    .flat();
 
   blocks.forEach((element) => {
     let mouseX = 0;

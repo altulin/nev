@@ -572,10 +572,6 @@ input:-webkit-autofill:active {
           flex-grow: 1;
 }
 
-[hidden] {
-  display: none !important;
-}
-
 .title {
   color: rgb(167, 167, 171);
   font-family: Montserrat;
@@ -2544,6 +2540,11 @@ input:-webkit-autofill:active {
   padding-left: 1rem;
 }
 
+.tabs__wrapper {
+  position: relative;
+  width: 100%;
+}
+
 .tabs-head {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2581,6 +2582,15 @@ input:-webkit-autofill:active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
+  opacity: 1;
+  z-index: 1;
+}
+
+.tabs-block[hidden] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .tabs-block__info {
@@ -2971,7 +2981,7 @@ input:-webkit-autofill:active {
 
 .aesthetics {
   padding-top: 10rem;
-  overflow: hidden;
+  position: relative;
 }
 
 .aesthetics__inner {
@@ -2993,12 +3003,27 @@ input:-webkit-autofill:active {
   margin-left: 1rem;
 }
 
+.aesthetics__wrapper {
+  width: 100%;
+  position: relative;
+}
+
 .aesthetics-tab__wrapper {
   width: 130%;
 }
 
 .aesthetics-tab__swiper {
   width: 100%;
+  opacity: 1;
+  z-index: 1;
+}
+
+.aesthetics-tab__swiper[hidden] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .aesthetics-tab__slide {
@@ -3053,12 +3078,8 @@ input:-webkit-autofill:active {
 }
 
 .aesthetics-tab__list {
-  position: absolute;
   width: 100%;
-  right: 100%;
   margin-bottom: auto;
-  opacity: 0;
-  visibility: hidden;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 1rem 2rem;
@@ -4542,6 +4563,11 @@ input:-webkit-autofill:active {
         align-self: flex-end;
   }
 
+  .aesthetics-tab__slide--cover::after {
+    opacity: 0;
+    content: none;
+  }
+
   .aesthetics-tab__slide {
     width: 89%;
     height: auto;
@@ -4806,4 +4832,3 @@ input:-webkit-autofill:active {
     letter-spacing: 0.2rem;
   }
 }
-/*# sourceMappingURL=style.css.map */

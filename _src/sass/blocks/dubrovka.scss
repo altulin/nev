@@ -62,10 +62,9 @@
     padding-left: 0;
   }
 
-  &__head {
-  }
-
-  &__block {
+  &__wrapper {
+    position: relative;
+    width: 100%;
   }
 }
 .tabs-head {
@@ -113,10 +112,19 @@
 }
 .tabs-block {
   display: flex;
+  width: 100%;
+  opacity: 1;
+  z-index: 1;
 
   @include mw($tb) {
     flex-direction: column;
     padding-left: 2rem;
+  }
+
+  &[hidden] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
   }
 
   &__info {
@@ -181,12 +189,6 @@
     flex-grow: 1;
   }
 
-  &__btn--prev {
-  }
-
-  &__btn--next {
-  }
-
   &__slider {
     flex-grow: 1;
 
@@ -195,12 +197,7 @@
     }
   }
 }
-.control {
-}
-.control--prev {
-}
-.control--next {
-}
+
 .tabs-slider {
   &__list {
   }
