@@ -3,9 +3,22 @@ import { body } from "../header/menu.js";
 import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 gsap.registerPlugin(ScrollTrigger);
 
-export const animationTitle = () => {
-  const circle = body.querySelector(".circle");
+const circle = body.querySelector(".circle");
+
+export const animationCircle = () => {
+  if (!circle) return;
   const title = circle.querySelector(".title");
+  if (!title) return;
+
+  const titleTl = gsap
+    .timeline({ paused: true })
+    .fromTo(
+      title,
+      { autoAlpha: 1, y: 0 },
+      { autoAlpha: 0, y: 200, duration: 0.5 },
+    );
+
+  titleTl.play();
 
   gsap.to(title, {
     scrollTrigger: {
@@ -17,7 +30,7 @@ export const animationTitle = () => {
       once: true,
       onToggle: ({ isActive }) => {
         if (!isActive) {
-          gsap.to(title, { autoAlpha: 1, duration: 1 });
+          titleTl.reverse();
         }
       },
     },

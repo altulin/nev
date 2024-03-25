@@ -6,6 +6,9 @@ gsap.registerPlugin(ScrollTrigger);
 export const animationPins = () => {
   const list = Array.from(body.querySelectorAll(".location-flag__line"));
   const location = body.querySelector(".location");
+
+  if (!location) return;
+
   const figure = location.querySelector(".location-logo__figure");
   const logo = location.querySelector(".location-logo__link");
 

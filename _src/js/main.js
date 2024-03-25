@@ -14,14 +14,15 @@ import { animationLine } from "./modules/near/animation.js";
 import { animationPins } from "./modules/location/location.js";
 import { animationAbout } from "./modules/about/animation.js";
 import { createCircleDots } from "./modules/circle/dot.js";
-import { animationTitle } from "./modules/circle/title.js";
+import { animationCircle } from "./modules/circle/title.js";
 import { animationYard } from "./modules/yard/animation.js";
-import Splitting from "splitting";
 import { createYardDots } from "./modules/yard/dot.js";
 import { createAestheticsDots } from "./modules/aesthetics/dot.js";
 import { createChooseDots } from "./modules/choose/dot.js";
 import { animationDeveloper } from "./modules/developer/animation.js";
 import { infoVisible } from "./modules/aesthetics/info.js";
+import { animationAesthetics } from "./modules/aesthetics/animation.js";
+import { animationChoose } from "./modules/choose/animation.js";
 
 const handler = () => {
   tlPromo.play().then(() => {
@@ -40,13 +41,15 @@ const handler = () => {
   animationPins();
   animationAbout();
   createCircleDots();
-  animationTitle();
+  animationCircle();
   animationYard();
   createYardDots();
   createAestheticsDots();
   createChooseDots();
   animationDeveloper();
   infoVisible();
+  animationAesthetics();
+  animationChoose();
 
   if (width < 769) return;
 };

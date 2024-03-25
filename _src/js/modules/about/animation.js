@@ -3,72 +3,187 @@ import { body } from "../header/menu.js";
 import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 import Splitting from "splitting";
 gsap.registerPlugin(ScrollTrigger);
-const about = body.querySelector(".about");
-const title = about.querySelector(".about__title");
 
-const tlAbout = gsap
-  .timeline({
-    paused: true,
-  })
-  .fromTo(
-    about.querySelector(".about__subtitle"),
-    { autoAlpha: 0, y: "-100" },
-    { autoAlpha: 1, y: "0" },
-  )
-  .fromTo(
-    about.querySelector(".about__text"),
-    { autoAlpha: 0, y: "-100" },
-    { autoAlpha: 1, y: "0" },
-    "<",
-  )
-  .fromTo(
-    about.querySelector(".about__list"),
-    { autoAlpha: 0, y: "-100" },
-    { autoAlpha: 1, y: "0" },
-  )
-  .fromTo(
-    about.querySelector(".about__link"),
-    { autoAlpha: 0, y: "-100" },
-    { autoAlpha: 1, y: "0" },
-    "<",
-  )
-  .fromTo(
-    about.querySelector(".about__picture"),
-    { autoAlpha: 0, x: "300" },
-    { autoAlpha: 1, x: 0 },
-    "<",
-  );
+let title, subTitle, text, list, link, img, about;
+
+let tlAboutSubtitle, tlAboutText, tlAboutList, tlAboutLink, tlAboutImg;
+
+const createAnimation = () => {
+  about = body.querySelector(".about");
+
+  if (!about) return;
+
+  title = about.querySelector(".about__title");
+  subTitle = about.querySelector(".about__subtitle");
+  text = about.querySelector(".about__text");
+  list = about.querySelector(".about__list");
+  link = about.querySelector(".about__link");
+  img = about.querySelector(".picture__img");
+
+  tlAboutSubtitle = gsap
+    .timeline({
+      paused: true,
+    })
+    .fromTo(
+      subTitle,
+      { autoAlpha: 1, y: "0" },
+      { autoAlpha: 0, y: "50", duration: 1 },
+    );
+
+  tlAboutText = gsap
+    .timeline({
+      paused: true,
+    })
+    .fromTo(
+      text,
+      { autoAlpha: 1, y: "0" },
+      { autoAlpha: 0, y: "50", duration: 1 },
+    );
+
+  tlAboutList = gsap
+    .timeline({
+      paused: true,
+    })
+    .fromTo(
+      list,
+      { autoAlpha: 1, y: "0" },
+      { autoAlpha: 0, y: "50", duration: 1 },
+    );
+
+  tlAboutLink = gsap
+    .timeline({
+      paused: true,
+    })
+    .fromTo(
+      link,
+      { autoAlpha: 1, y: "0" },
+      { autoAlpha: 0, y: "50", duration: 1 },
+    );
+
+  tlAboutImg = gsap
+    .timeline({
+      paused: true,
+    })
+    .fromTo(
+      img,
+      {
+        scale: 1,
+      },
+      { scale: 0.9, duration: 1 },
+    );
+};
+
+createAnimation();
 
 export const animationAbout = () => {
-  Splitting({ target: title, whitespace: true, by: "chars" });
-  const word = title.querySelector(".word");
+  let word;
+  if (title) {
+    Splitting({ target: title, whitespace: true, by: "chars" });
+    word = title.querySelector(".word");
+  }
 
-  gsap.to(title, {
-    scrollTrigger: {
-      trigger: about,
-      toggleActions: "play none none pause",
-      start: `top 60%`,
-      end: "+=300",
-      // markers: true,
-      once: true,
-      onToggle: ({ isActive }) => {
-        if (!isActive) {
-          tlAbout.play();
-        }
+  if (subTitle) {
+    tlAboutSubtitle.play();
+    gsap.to(subTitle, {
+      scrollTrigger: {
+        trigger: subTitle,
+        toggleActions: "play none none pause",
+        start: `top 100%`,
+        end: "+=100",
+        // markers: true,
+        once: true,
+        onToggle: ({ isActive }) => {
+          if (!isActive) {
+            tlAboutSubtitle.reverse();
+          }
+        },
       },
-    },
-    autoAlpha: 1,
-    duration: 1,
-  });
+    });
+  }
+  if (text) {
+    tlAboutText.play();
+    gsap.to(text, {
+      scrollTrigger: {
+        trigger: text,
+        toggleActions: "play none none pause",
+        start: `top 100%`,
+        end: "+=100",
+        // markers: true,
+        once: true,
+        onToggle: ({ isActive }) => {
+          if (!isActive) {
+            tlAboutText.reverse();
+          }
+        },
+      },
+    });
+  }
+  if (tlAboutList) {
+    tlAboutList.play();
+    gsap.to(list, {
+      scrollTrigger: {
+        trigger: list,
+        toggleActions: "play none none pause",
+        start: `top 100%`,
+        end: "+=100",
+        // markers: true,
+        once: true,
+        onToggle: ({ isActive }) => {
+          if (!isActive) {
+            tlAboutList.reverse();
+          }
+        },
+      },
+    });
+  }
+  if (link) {
+    tlAboutLink.play();
+    gsap.to(link, {
+      scrollTrigger: {
+        trigger: link,
+        toggleActions: "play none none pause",
+        start: `top 100%`,
+        end: "+=100",
+        // markers: true,
+        once: true,
+        onToggle: ({ isActive }) => {
+          if (!isActive) {
+            tlAboutLink.reverse();
+          }
+        },
+      },
+    });
+  }
+  if (img) {
+    tlAboutImg.play();
+    gsap.to(img, {
+      scrollTrigger: {
+        trigger: img,
+        toggleActions: "play none none pause",
+        start: `bottom 100%`,
+        end: "+=100",
+        // markers: true,
+        once: true,
+        onToggle: ({ isActive }) => {
+          if (!isActive) {
+            tlAboutImg.reverse();
+          }
+        },
+      },
+    });
+  }
 
-  gsap.to(word, {
-    scrollTrigger: {
-      trigger: title,
-      toggleActions: "play pause reverce pause",
-      start: "top 70%",
-      once: true,
-    },
-    flexGrow: 0,
-    duration: 1,
-  });
+  if (word) {
+    gsap.to(word, {
+      scrollTrigger: {
+        trigger: title,
+        toggleActions: "play pause reverce pause",
+        start: "top 70%",
+        once: true,
+        // markers: true,
+      },
+      flexGrow: 0,
+      duration: 1,
+    });
+  }
 };

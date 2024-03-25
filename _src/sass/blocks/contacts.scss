@@ -1,0 +1,164 @@
+.contacts {
+  background-color: #78899f;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  &__inner {
+    flex-grow: 1;
+    display: flex;
+
+    @include mw($dt) {
+      flex-direction: column;
+    }
+  }
+
+  &__map {
+  }
+
+  &__info {
+  }
+}
+.contacts-map {
+  position: relative;
+  width: 52%;
+  display: flex;
+  padding-top: 11rem;
+
+  @include mw($dt) {
+    width: 100%;
+  }
+
+  @include mw($tb) {
+    padding-top: 7rem;
+  }
+
+  &__picture {
+    width: 100%;
+    padding-top: 90%;
+    height: 0;
+    background-image: url("../../img/map-contact.png");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: left top;
+    background-color: #78899f;
+    background-blend-mode: luminosity;
+  }
+
+  &__mark {
+    position: absolute;
+    right: 27%;
+    top: 68%;
+    width: 6.02rem;
+    height: 6.02rem;
+    border-radius: 50%;
+    border: 0.06rem solid rgb(255, 255, 255);
+    background: rgb(136, 214, 139);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 2.25rem;
+    text-transform: uppercase;
+
+    @include mw($tb) {
+      width: 3rem;
+      height: 3rem;
+      font-size: 0.88rem;
+    }
+  }
+}
+.contacts-info {
+  padding-left: 4.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @include mw($dt) {
+    padding-bottom: 5rem;
+  }
+
+  @include mw($tb) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    color: rgb(255, 255, 255);
+    font-size: 4rem;
+    font-weight: 600;
+    line-height: 1;
+    text-transform: uppercase;
+    margin-bottom: 4.6rem;
+
+    @include mw($ph) {
+      font-size: 3rem;
+    }
+  }
+
+  &__text {
+  }
+
+  &__link {
+  }
+
+  &__link--mail {
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 2.25rem;
+    margin-bottom: 2.5rem;
+  }
+
+  &__link--tel {
+    color: rgb(255, 255, 255);
+    font-size: 3rem;
+    font-weight: 400;
+    line-height: 4.25rem;
+    text-transform: uppercase;
+    margin-bottom: 2.6rem;
+
+    @include mw($ph) {
+      font-size: 2rem;
+    }
+  }
+
+  &__call {
+    background-color: #88d68b;
+    padding: 1.25rem 2.5rem;
+    color: rgb(0, 0, 0);
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 2.5rem;
+    text-transform: lowercase;
+    text-align: center;
+    display: inline-block;
+    align-self: flex-start;
+
+    @include mw($tb) {
+      align-self: stretch;
+    }
+  }
+}
+.contacts-text {
+  color: rgb(255, 255, 255);
+  font-size: 1.5rem;
+  line-height: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2.2rem;
+}
+.contacts-text--light {
+  font-weight: 300;
+  margin-bottom: 0.75rem;
+}
+.contacts-text--bold {
+  font-weight: 500;
+}

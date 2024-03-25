@@ -3,6 +3,7 @@ import { width } from "../sliders/dubrovka.js";
 const choose = body.querySelector(".choose__content");
 
 export const createChooseDots = () => {
+  if (!choose) return;
   if (width < 769) return;
   const blocks = Array.from(choose.querySelectorAll(".choose__control"));
 

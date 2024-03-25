@@ -3,6 +3,7 @@ import { width } from "../sliders/dubrovka.js";
 const yard = body.querySelector(".yard-touch");
 
 export const createYardDots = () => {
+  if (!yard) return;
   if (width < 769) return;
   const blocks = Array.from(yard.querySelectorAll(".yard-touch__block"));
 

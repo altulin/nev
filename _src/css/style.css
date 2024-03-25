@@ -1705,6 +1705,17 @@ input:-webkit-autofill:active {
   border-radius: 0.5rem;
 }
 
+.promo-title__text {
+  color: transparent;
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #fff), color-stop(50%, #fff), color-stop(0, transparent));
+  background-image: linear-gradient(0deg, #fff 0, #fff 50%, transparent 0);
+  -webkit-background-clip: text;
+          background-clip: text;
+  background-size: 100% 200%;
+  background-position-x: 0%;
+  background-position-y: 100%;
+}
+
 .location {
   background-color: #78899f;
   position: relative;
@@ -2014,7 +2025,7 @@ input:-webkit-autofill:active {
 .about .picture__wrap {
   width: 100%;
   height: 0;
-  padding-top: 110%;
+  padding-top: 108%;
   position: relative;
 }
 
@@ -2024,10 +2035,13 @@ input:-webkit-autofill:active {
   height: 100%;
   left: 0;
   top: 0;
-  -o-object-fit: auto 100%;
-     object-fit: auto 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
   -o-object-position: right bottom;
      object-position: right bottom;
+  -webkit-transform-origin: right bottom;
+      -ms-transform-origin: right bottom;
+          transform-origin: right bottom;
 }
 
 .near__title {
@@ -2228,6 +2242,34 @@ input:-webkit-autofill:active {
   height: 0.5rem;
   width: 3.75rem;
   background-color: #88d68b;
+}
+
+.near-map {
+  position: relative;
+}
+
+.near-map__mark {
+  position: absolute;
+  color: rgb(255, 255, 255);
+  font-size: 1.5rem;
+  font-weight: 600;
+  width: 5rem;
+  height: 5rem;
+  border: 0.06rem solid rgb(255, 255, 255);
+  background: rgb(136, 214, 139);
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-transform: uppercase;
+  right: 28%;
+  top: 67%;
 }
 
 .near-map__figure {
@@ -2716,7 +2758,6 @@ input:-webkit-autofill:active {
   margin-right: auto;
   letter-spacing: 0.4rem;
   margin-bottom: 3rem;
-  opacity: 0;
 }
 
 .circle__title span:last-child {
@@ -3546,6 +3587,160 @@ input:-webkit-autofill:active {
   display: inline-block;
 }
 
+.contacts {
+  background-color: #78899f;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.contacts__inner {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.contacts-map {
+  position: relative;
+  width: 52%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 11rem;
+}
+
+.contacts-map__picture {
+  width: 100%;
+  padding-top: 90%;
+  height: 0;
+  background-image: url("../../img/map-contact.png");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: left top;
+  background-color: #78899f;
+  background-blend-mode: luminosity;
+}
+
+.contacts-map__mark {
+  position: absolute;
+  right: 27%;
+  top: 68%;
+  width: 6.02rem;
+  height: 6.02rem;
+  border-radius: 50%;
+  border: 0.06rem solid rgb(255, 255, 255);
+  background: rgb(136, 214, 139);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: rgb(255, 255, 255);
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 2.25rem;
+  text-transform: uppercase;
+}
+
+.contacts-info {
+  padding-left: 4.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.contacts-info__block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.contacts-info__title {
+  color: rgb(255, 255, 255);
+  font-size: 4rem;
+  font-weight: 600;
+  line-height: 1;
+  text-transform: uppercase;
+  margin-bottom: 4.6rem;
+}
+
+.contacts-info__link--mail {
+  color: rgb(255, 255, 255);
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 2.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.contacts-info__link--tel {
+  color: rgb(255, 255, 255);
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 4.25rem;
+  text-transform: uppercase;
+  margin-bottom: 2.6rem;
+}
+
+.contacts-info__call {
+  background-color: #88d68b;
+  padding: 1.25rem 2.5rem;
+  color: rgb(0, 0, 0);
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 2.5rem;
+  text-transform: lowercase;
+  text-align: center;
+  display: inline-block;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+.contacts-text {
+  color: rgb(255, 255, 255);
+  font-size: 1.5rem;
+  line-height: 2.25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 2.2rem;
+}
+
+.contacts-text--light {
+  font-weight: 300;
+  margin-bottom: 0.75rem;
+}
+
+.contacts-text--bold {
+  font-weight: 500;
+}
+
 @media screen and (max-width: 1920px) {
   .container-lt {
     width: 100rem;
@@ -3658,6 +3853,10 @@ input:-webkit-autofill:active {
   .near-content__list {
     width: 100%;
     margin-left: 0;
+  }
+
+  .near-map__mark {
+    top: 47%;
   }
 
   .footer-up__soc {
@@ -3785,7 +3984,6 @@ input:-webkit-autofill:active {
 
   .near__map {
     width: 100%;
-    height: 31rem;
   }
 
   .near-content {
@@ -3797,6 +3995,10 @@ input:-webkit-autofill:active {
     padding-left: 0;
     text-align: center;
     margin-bottom: 2.3rem;
+  }
+
+  .near-map__mark {
+    top: 38%;
   }
 
   .footer__inner {
@@ -3986,6 +4188,21 @@ input:-webkit-autofill:active {
 
   .developer__title {
     font-size: 2.5rem;
+  }
+
+  .contacts__inner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .contacts-map {
+    width: 100%;
+  }
+
+  .contacts-info {
+    padding-bottom: 5rem;
   }
 }
 
@@ -4311,6 +4528,10 @@ input:-webkit-autofill:active {
     font-size: 0.88rem;
     line-height: 0.75rem;
     margin-left: 1rem;
+  }
+
+  .near-map__mark {
+    top: 67%;
   }
 
   .dubrovka {
@@ -4756,6 +4977,27 @@ input:-webkit-autofill:active {
   .developer-project__declaration {
     font-size: 1rem;
   }
+
+  .contacts-map {
+    padding-top: 7rem;
+  }
+
+  .contacts-map__mark {
+    width: 3rem;
+    height: 3rem;
+    font-size: 0.88rem;
+  }
+
+  .contacts-info {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .contacts-info__call {
+    -ms-flex-item-align: stretch;
+        -ms-grid-row-align: stretch;
+        align-self: stretch;
+  }
 }
 
 @media screen and (max-width: 768px) and (max-width: 768px) {
@@ -4827,8 +5069,23 @@ input:-webkit-autofill:active {
     padding-right: 1.5rem;
   }
 
+  .near-map__mark {
+    width: 2.56rem;
+    height: 2.56rem;
+    font-size: 0.75rem;
+  }
+
   .circle__title {
     font-size: 1.25rem;
     letter-spacing: 0.2rem;
   }
+
+  .contacts-info__title {
+    font-size: 3rem;
+  }
+
+  .contacts-info__link--tel {
+    font-size: 2rem;
+  }
 }
+/*# sourceMappingURL=style.css.map */

@@ -8,18 +8,19 @@ export let tlPromo = gsap.timeline({
 
 const animationPromo = () => {
   const promoSlide = body.querySelector(".promo-slide--0");
-  const text = promoSlide.querySelector(".promo-title--0");
+  if (!promoSlide) return;
+
+  const text = Array.from(
+    promoSlide.querySelectorAll(".promo-title--0 .promo-title__text"),
+  );
   const block = promoSlide.querySelector(".promo-slide__block");
   const label = promoSlide.querySelector(".promo-slide__label");
 
   tlPromo
     .fromTo(
       text,
-      {
-        autoAlpha: 0,
-        y: "-100%",
-      },
-      { autoAlpha: 1, y: 0, duration: 1 },
+      { backgroundPositionY: "200%" },
+      { backgroundPositionY: "100%", duration: 2 },
     )
     .fromTo(
       block,

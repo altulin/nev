@@ -20,6 +20,8 @@ export const animationDubrovka = () => {
   if (width < 769) return;
   const title = body.querySelector(".dubrovka__title");
 
+  if (!title) return;
+
   gsap.to(title, {
     scrollTrigger: {
       trigger: title,

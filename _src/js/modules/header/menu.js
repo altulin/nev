@@ -8,16 +8,21 @@ const anchorList = Array.from(header.querySelectorAll(".js-anchor"));
 
 export const menuTl = gsap
   .timeline({ paused: true })
-  .fromTo(header.querySelector(".menu"), { autoAlpha: 0 }, { autoAlpha: 1 })
+  .fromTo(
+    header.querySelector(".menu"),
+    { autoAlpha: 0 },
+    { autoAlpha: 1, duration: 0.3 },
+  )
   .fromTo(
     header.querySelector(".menu__figure"),
-    { x: "20%", autoAlpha: 0 },
-    { x: 0, autoAlpha: 1 },
+    { x: 50, autoAlpha: 0 },
+    { x: 0, autoAlpha: 1, duration: 0.3 },
+    "<",
   )
   .fromTo(
     header.querySelector(".menu-contetnt__wrap"),
-    { y: "5%", autoAlpha: 0 },
-    { y: 0, autoAlpha: 1, duration: 0.5, onComplete: () => {} },
+    { y: -30, autoAlpha: 0 },
+    { y: 0, autoAlpha: 1, duration: 0.3 },
     "<",
   );
 

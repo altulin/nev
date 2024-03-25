@@ -10,6 +10,8 @@ export const toTopHandle = (e) => {
 
 export const setToTop = () => {
   if (!header) return;
-  const logoLink = header.querySelector(".header-middle__logo");
-  logoLink.addEventListener("click", toTopHandle);
+  const links = Array.from(body.querySelectorAll(".js-top"));
+  links.forEach((link) => {
+    link.addEventListener("click", toTopHandle);
+  });
 };

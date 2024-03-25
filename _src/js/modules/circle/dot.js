@@ -3,7 +3,9 @@ import { width } from "../sliders/dubrovka.js";
 const circle = body.querySelector(".circle-cover__block--center");
 
 export const createCircleDots = () => {
+  if (!circle) return;
   if (width < 769) return;
+
   const blocks = Array.from(circle.querySelectorAll(".circle-control__block"));
 
   blocks.forEach((element) => {
