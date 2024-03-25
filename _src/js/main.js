@@ -22,6 +22,7 @@ import { infoVisible } from "./modules/aesthetics/info.js";
 import { animationAesthetics } from "./modules/aesthetics/animation.js";
 import { animationChoose } from "./modules/choose/animation.js";
 import { createTabs } from "./modules/dubrovka/tabs.js";
+import { createMap } from "./modules/near/map.js";
 
 const handler = () => {
   tlPromo.play().then(() => {
@@ -51,6 +52,7 @@ const handler = () => {
   infoVisible();
   animationAesthetics();
   animationChoose();
+  ymaps.ready(createMap);
 
   if (width < 769) return;
 };
