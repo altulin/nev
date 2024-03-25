@@ -137,13 +137,9 @@ input:-webkit-autofill:active {
 
 .scroll-lock {
   overflow: hidden;
-  padding-right: 0.2rem;
+  // padding-right: 0.2rem;
 }
 
 .page-main {
   flex-grow: 1;
 }
-
-// [hidden] {
-// display: none !important;
-// }

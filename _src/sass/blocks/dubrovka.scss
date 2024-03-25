@@ -98,6 +98,8 @@
     padding: 1.25rem;
     border: 0.06rem solid transparent;
     transition: 0.3s;
+    background-color: transparent;
+    cursor: pointer;
 
     @include mw($tb) {
       font-size: 0.88rem;
@@ -105,7 +107,7 @@
       line-height: 1;
     }
 
-    &[aria-selected="true"] {
+    &.selected {
       border-color: #000;
     }
   }
@@ -121,8 +123,10 @@
     padding-left: 2rem;
   }
 
-  &[hidden] {
+  &.hidden {
     position: absolute;
+    left: 0;
+    top: 0;
     opacity: 0;
     pointer-events: none;
   }

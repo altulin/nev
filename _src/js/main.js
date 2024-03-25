@@ -1,8 +1,6 @@
 import { setSticky } from "./modules/header/header.js";
 import { controlMenu } from "./modules/header/menu.js";
 import { sliderPromo } from "./modules/sliders/promo.js";
-import "./modules/dubrovka.js";
-import "./modules/aesthetics.js";
 import { setDubrovkaSliders, width } from "./modules/sliders/dubrovka.js";
 import { sliderCircle } from "./modules/sliders/circle.js";
 import { setAestheticsSliders } from "./modules/sliders/aesthetics.js";
@@ -23,12 +21,15 @@ import { animationDeveloper } from "./modules/developer/animation.js";
 import { infoVisible } from "./modules/aesthetics/info.js";
 import { animationAesthetics } from "./modules/aesthetics/animation.js";
 import { animationChoose } from "./modules/choose/animation.js";
+import { createTabs } from "./modules/dubrovka/tabs.js";
 
 const handler = () => {
   tlPromo.play().then(() => {
     sliderPromo.init();
     sliderPromo.enable();
   });
+  createTabs(".dubrovka");
+  createTabs(".aesthetics");
   controlMenu();
   setSticky();
   setDubrovkaSliders();

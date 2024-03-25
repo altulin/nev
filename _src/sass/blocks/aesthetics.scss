@@ -74,7 +74,7 @@
     opacity: 1;
     z-index: 1;
 
-    &[hidden] {
+    &.hidden {
       position: absolute;
       left: 0;
       top: 0;
@@ -256,6 +256,8 @@
     transition: 0.3s;
     display: block;
     position: relative;
+    background-color: transparent;
+    cursor: pointer;
 
     @include mw($tb) {
       font-size: 0.88rem;
@@ -264,7 +266,7 @@
       text-align: center;
     }
 
-    &[aria-selected="true"] {
+    &.selected {
       border-color: #000;
     }
   }

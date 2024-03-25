@@ -8,9 +8,10 @@ section.aesthetics
 
 		.aesthetics__tab.aesthetics-tab
 			ul.aesthetics-tab__head.aesthetics-head
-				each item in aesthetics_tabs
+				each item,i in aesthetics_tabs
 					li.aesthetics-head__item
-						a.aesthetics-head__link(href=`#${item.href}`)= item.label
+						//- a.aesthetics-head__link(href=`#${item.href}`)= item.label
+						button.aesthetics-head__link.tab-btn( data-tab-content-id=`${item.href}` class=i===0?"selected":'')= item.label
 							if item.info
 								.aesthetics-head__info
 									span.aesthetics-head__mark i
@@ -20,7 +21,7 @@ section.aesthetics
 	.aesthetics__wrapper
 		each item,i in aesthetics_tabs
 
-			.aesthetics-tab__swiper.swiper.js-aesthetics-tabs(id=`${item.href}`)
+			.aesthetics-tab__swiper.swiper.js-aesthetics-tabs.tab-content(id=`${item.href}` class=i===0?"":'hidden')
 				.swiper-wrapper
 					each el in ['','','','','','','','']
 						.swiper-slide.aesthetics-tab__slide.aesthetics-tab__slide--cover

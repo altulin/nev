@@ -8,16 +8,17 @@ section.dubrovka#dubrovka
 
 		.dubrovka__content.tabs.container-lt
 			ul.tabs__head.tabs-head
-				each item in dubrovka_tabs
+				each item,i in dubrovka_tabs
 					li.tabs-head__item
-						a.tabs-head__link(href=`#${item.href}`)= item.label
+						//- a.tabs-head__link(href=`#${item.href}`)= item.label
+						button.tabs-head__link.tab-btn( data-tab-content-id=`${item.href}` class=i===0?"selected":'')= item.label
 
 
 			.tabs__wrapper
 
 
 				each item,i in dubrovka_tabs
-					.tabs__block.tabs-block(id=`${item.href}`)
+					.tabs__block.tabs-block.tab-content(id=`${item.href}` class=i===0?"":'hidden')
 						.tabs-block__info
 							p.tabs-block__text= dubrovka_text
 							.tabs-block__control.tabs-block__control--dt
