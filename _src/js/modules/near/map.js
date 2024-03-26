@@ -7,7 +7,8 @@ export const createMap = () => {
   if (!el) return;
 
   const map = new ymaps.Map("map", {
-    center: [59.842503, 30.938881],
+    // center: [59.842503, 30.938881],
+    center: [59.84382055211919, 30.933211330293744],
     zoom: 16,
     controls: [],
   });
@@ -29,6 +30,7 @@ export const createMap = () => {
   map.controls.remove("typeSelector"); // удаляем тип
   map.controls.remove("fullscreenControl"); // удаляем кнопку перехода в полноэкранный режим
   map.controls.remove("zoomControl"); // удаляем контрол зуммирования
+  map.behaviors.disable("scrollZoom");
   map.geoObjects.add(placemark);
 
   if (width > 768) return;

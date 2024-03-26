@@ -5706,7 +5706,7 @@
       }, {
         scale: 1,
         duration: 1
-      });
+      }, "<50%");
     }));
     /*!
  * Observer 3.12.5
@@ -7054,9 +7054,9 @@
             e.classList.remove("selected");
           })), e.target.classList.add("selected");
           const t = e.target.dataset.tabContentId, n = document.getElementById(t);
-          Array.from(i).forEach((e => {
+          n && (Array.from(i).forEach((e => {
             e.classList.add("hidden");
-          })), n.classList.remove("hidden");
+          })), n.classList.remove("hidden"));
         }));
       }));
     }, fc = () => {
@@ -7064,7 +7064,7 @@
         return;
       }
       const e = new ymaps.Map("map", {
-        center: [ 59.842503, 30.938881 ],
+        center: [ 59.84382055211919, 30.933211330293744 ],
         zoom: 16,
         controls: []
       }), t = new ymaps.Placemark([ 59.842503, 30.938881 ], {}, {
@@ -7075,7 +7075,7 @@
       });
       e.controls.remove("geolocationControl"), e.controls.remove("searchControl"), e.controls.remove("trafficControl"), 
       e.controls.remove("typeSelector"), e.controls.remove("fullscreenControl"), e.controls.remove("zoomControl"), 
-      e.geoObjects.add(t), fs > 768 || e.behaviors.disable("drag");
+      e.behaviors.disable("scrollZoom"), e.geoObjects.add(t), fs > 768 || e.behaviors.disable("drag");
     }, hc = ji.querySelector(".choose__content"), mc = () => {
       window.location.assign("https://plan7.ru/catalog/adm/?page=zk&id=103&path=embed");
     };
@@ -7106,7 +7106,7 @@
           320: {
             allowTouchMove: !0,
             initialSlide: 0,
-            slidesPerView: 1,
+            slidesPerView: "auto",
             slidesOffsetBefore: 0,
             centeredSlides: !1
           },
@@ -7171,20 +7171,28 @@
         }
         const r = t.querySelector(".location-logo__figure"), i = t.querySelector(".location-logo__link");
         e.forEach(((e, r) => {
+          const i = Hi.timeline({
+            paused: !0
+          }).fromTo(t.querySelector(`.location-flag__title--${r + 1}`), {
+            autoAlpha: 1
+          }, {
+            autoAlpha: 0
+          }).fromTo(e, {
+            height: "100%"
+          }, {
+            height: 0
+          }).play();
           Hi.to(e, {
             scrollTrigger: {
               trigger: t,
               toggleActions: "play none none pause",
               start: "top 60%",
-              end: "+=300",
+              end: "+=100",
+              onse: !0,
               onToggle: ({isActive: e}) => {
-                e || Hi.to(ji.querySelector(`.location-flag__title--${r + 1}`), {
-                  autoAlpha: 1
-                });
+                e || i.reverse();
               }
-            },
-            height: "100%",
-            duration: 1
+            }
           });
         })), Hi.to(r, {
           scrollTrigger: {
@@ -7310,14 +7318,14 @@
           y: 0
         }, {
           autoAlpha: 0,
-          y: 200,
-          duration: .5
+          y: 50,
+          duration: 1
         });
         t.play(), Hi.to(e, {
           scrollTrigger: {
             trigger: rc,
             toggleActions: "play none none pause",
-            start: "top 60%",
+            start: "top 80%",
             end: "+=100",
             once: !0,
             onToggle: ({isActive: e}) => {
@@ -7358,8 +7366,8 @@
           scrollTrigger: {
             trigger: e,
             toggleActions: "play none none pause",
-            start: "top 60%",
-            end: "+=300",
+            start: fs < 769 ? "top 90%" : "top 60%",
+            end: fs < 769 ? "+=200" : "+=300",
             once: !0,
             onToggle: ({isActive: e}) => {
               e || s.play();
@@ -7468,7 +7476,7 @@
           scrollTrigger: {
             trigger: cc,
             toggleActions: "play none none pause",
-            start: "top 60%",
+            start: fs < 769 ? "top 100%" : "top 60%",
             end: fs < 769 ? "+=200" : "+=300",
             once: !0,
             onToggle: ({isActive: e}) => {
@@ -7479,7 +7487,7 @@
           scrollTrigger: {
             trigger: cc,
             toggleActions: "play none none pause",
-            start: "top 30%",
+            start: fs < 769 ? "top 80%" : "top 60%",
             end: fs < 769 ? "+=200" : "+=300",
             once: !0,
             onToggle: ({isActive: e}) => {
@@ -7493,11 +7501,11 @@
           return;
         }
         Array.from(e.querySelectorAll(".aesthetics-head__info")).forEach((e => {
-          const t = e.querySelector(".aesthetics-head__mark"), r = e.querySelector(".aesthetics-head__text");
+          const t = e.querySelector(".aesthetics-head__mark"), r = t.parentNode, i = e.querySelector(".aesthetics-head__text");
           t.addEventListener("mousemove", (function() {
-            r.classList.add("aesthetics-head__text--visible");
+            i.classList.add("aesthetics-head__text--visible"), r.classList.add("aesthetics-head__info--active");
           })), t.addEventListener("mouseleave", (function() {
-            r.classList.remove("aesthetics-head__text--visible");
+            i.classList.remove("aesthetics-head__text--visible"), r.classList.remove("aesthetics-head__info--active");
           }));
         }));
       })(), (() => {
@@ -7518,7 +7526,7 @@
           scrollTrigger: {
             trigger: e,
             toggleActions: "play pause reverce pause",
-            start: "top 70%",
+            start: fs < 769 ? "top 100%" : "top 70%",
             end: fs < 769 ? "+=200" : "+=300",
             once: !0,
             onToggle: ({isActive: e}) => {

@@ -109,8 +109,8 @@ export const setAestheticsSliders = () => {
           allowTouchMove: true,
           //     navigation: { enabled: true },
           initialSlide: 0,
-          slidesPerView: 1,
-          // slidesPerView: "auto",
+          // slidesPerView: 1,
+          slidesPerView: "auto",
           slidesOffsetBefore: 0,
           centeredSlides: false,
           //   },
@@ -133,10 +133,4 @@ export const setAestheticsSliders = () => {
       },
     });
   });
-
-  // slides.forEach((item, i) => {
-  // if (width < 769) return;
-
-  // createAnimation(item, i);
-  // });
 };

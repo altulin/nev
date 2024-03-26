@@ -641,10 +641,10 @@ input:-webkit-autofill:active {
   -webkit-transform: scale(0);
       -ms-transform: scale(0);
           transform: scale(0);
-  -webkit-transition: opacity 0.1s, -webkit-transform 0.3s;
-  transition: opacity 0.1s, -webkit-transform 0.3s;
-  transition: transform 0.3s, opacity 0.1s;
-  transition: transform 0.3s, opacity 0.1s, -webkit-transform 0.3s;
+  -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+  transition: opacity 0.3s, -webkit-transform 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
+  transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
   opacity: 0;
 }
 
@@ -665,8 +665,6 @@ input:-webkit-autofill:active {
   height: 3.56rem;
   fill: transparent;
   stroke: #000;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
 }
 
 .control:hover::before {
@@ -1667,6 +1665,7 @@ button.swiper-pagination-bullet {
 
 .header--menu-active .header__inner {
   border-color: #000;
+  background-color: #fff;
 }
 
 .header--menu-active .header-middle {
@@ -2438,7 +2437,6 @@ button.swiper-pagination-bullet {
   font-weight: 300;
   line-height: 2.25rem;
   margin-top: -0.7rem;
-  opacity: 0;
 }
 
 .location-flag--1 {
@@ -2514,7 +2512,7 @@ button.swiper-pagination-bullet {
 .location-flag__line {
   width: 0.06rem;
   background-color: #fff;
-  height: 0%;
+  height: 100%;
 }
 
 .location-flag__circle {
@@ -3734,6 +3732,10 @@ button.swiper-pagination-bullet {
   position: relative;
 }
 
+.aesthetics-tab {
+  overflow: hidden;
+}
+
 .aesthetics-tab__wrapper {
   width: 130%;
 }
@@ -3868,6 +3870,7 @@ button.swiper-pagination-bullet {
   position: relative;
   background-color: transparent;
   cursor: pointer;
+  display: block;
 }
 
 .aesthetics-head__link.selected {
@@ -3876,8 +3879,24 @@ button.swiper-pagination-bullet {
 
 .aesthetics-head__info {
   position: absolute;
-  right: 0;
-  top: 0.3rem;
+  left: calc(100% - 1.5rem);
+  top: 0.1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.5rem;
+  padding: 0.1rem;
+  min-width: 13rem;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  cursor: auto;
+}
+
+.aesthetics-head__info--active {
+  background-color: #d9d9d9;
 }
 
 .aesthetics-head__mark {
@@ -3898,21 +3917,17 @@ button.swiper-pagination-bullet {
   font-size: 0.88rem;
   font-weight: 300;
   line-height: 0.88rem;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 
 .aesthetics-head__text {
-  position: absolute;
-  font-size: 1.25rem;
+  font-size: 0.88rem;
   font-weight: 300;
   line-height: 1.25rem;
-  padding: 1rem;
-  border: 0.06rem solid #000;
-  bottom: 100%;
-  left: 100%;
+  pointer-events: none;
   visibility: hidden;
   opacity: 0;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
 }
 
 .aesthetics-head__text--visible {
@@ -4200,8 +4215,10 @@ button.swiper-pagination-bullet {
 .developer-info__logo img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
 }
 
 .info-block {
@@ -4918,6 +4935,11 @@ button.swiper-pagination-bullet {
     height: 32rem;
   }
 
+  .aesthetics-head__info {
+    left: 0;
+    min-width: 12rem;
+  }
+
   .choose {
     display: none;
   }
@@ -5303,6 +5325,12 @@ button.swiper-pagination-bullet {
     padding-right: 1rem;
     margin-right: 0;
     margin-bottom: 1.3rem;
+    -webkit-column-gap: 1rem;
+       -moz-column-gap: 1rem;
+            column-gap: 1rem;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
 
   .tabs-head__link {
@@ -5469,6 +5497,7 @@ button.swiper-pagination-bullet {
 
   .yard__title {
     font-size: 1.5rem;
+    line-height: 2.13rem;
   }
 
   .yard__text {
@@ -5495,7 +5524,7 @@ button.swiper-pagination-bullet {
 
   .aesthetics {
     padding-top: 6rem;
-    padding-left: 2rem;
+    padding-left: 1.5rem;
   }
 
   .aesthetics__inner {
@@ -5527,7 +5556,7 @@ button.swiper-pagination-bullet {
   }
 
   .aesthetics-tab__slide {
-    width: 89%;
+    width: 89% !important;
     height: auto;
   }
 
@@ -5536,7 +5565,20 @@ button.swiper-pagination-bullet {
   }
 
   .aesthetics-tab__list {
-    display: none;
+    position: absolute;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    bottom: 0;
+  }
+
+  .aesthetics-tab__item {
+    color: #fff;
+    font-size: 0.88rem;
+    line-height: 1.13rem;
+  }
+
+  .aesthetics-tab__item::before {
+    content: none;
   }
 
   .aesthetics-tab__scrollbar {
@@ -5596,7 +5638,11 @@ button.swiper-pagination-bullet {
   }
 
   .aesthetics-head__info {
-    display: none;
+    gap: 0.2rem;
+  }
+
+  .aesthetics-head__text {
+    font-size: 0.2rem;
   }
 
   .aesthetics-touch {

@@ -34,6 +34,7 @@ const animationPromo = () => {
         scale: 0,
       },
       { scale: 1, duration: 1 },
+      "<50%",
     );
 };
 

@@ -25,7 +25,7 @@ export const animationAesthetics = () => {
     scrollTrigger: {
       trigger: title,
       toggleActions: "play pause reverce pause",
-      start: "top 70%",
+      start: `${width < 769 ? "top 100%" : "top 70%"}`,
       end: `${width < 769 ? "+=200" : "+=300"}`,
       once: true,
       // markers: true,

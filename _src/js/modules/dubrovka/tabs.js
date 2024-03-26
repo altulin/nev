@@ -15,7 +15,10 @@ export const createTabs = (selector) => {
       e.target.classList.add("selected");
 
       const selectedTabId = e.target.dataset.tabContentId;
+
       const selectedTab = document.getElementById(selectedTabId);
+
+      if (!selectedTab) return;
 
       Array.from(tabs).forEach((tab) => {
         tab.classList.add("hidden");

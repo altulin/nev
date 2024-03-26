@@ -51,7 +51,7 @@ export const animationDeveloper = () => {
     scrollTrigger: {
       trigger: developer,
       toggleActions: "play none none pause",
-      start: `top 60%`,
+      start: `${width < 769 ? "top 100%" : "top 60%"}`,
       end: `${width < 769 ? "+=200" : "+=300"}`,
       once: true,
       // markers: true,
@@ -67,7 +67,7 @@ export const animationDeveloper = () => {
     scrollTrigger: {
       trigger: developer,
       toggleActions: "play none none pause",
-      start: `top 30%`,
+      start: `${width < 769 ? "top 80%" : "top 60%"}`,
       end: `${width < 769 ? "+=200" : "+=300"}`,
       // markers: true,
       once: true,

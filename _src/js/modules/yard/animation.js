@@ -2,6 +2,7 @@ import gsap from "gsap";
 import { body } from "../header/menu.js";
 import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 import { sliderYard } from "../sliders/yard.js";
+import { width } from "../sliders/dubrovka.js";
 gsap.registerPlugin(ScrollTrigger);
 
 export const animationYard = () => {
@@ -38,8 +39,9 @@ export const animationYard = () => {
     scrollTrigger: {
       trigger: yard,
       toggleActions: "play none none pause",
-      start: `top 60%`,
-      end: "+=300",
+      start: `${width < 769 ? "top 90%" : "top 60%"}`,
+      end: `${width < 769 ? "+=200" : "+=300"}`,
+
       once: true,
       // markers: true,
       onToggle: ({ isActive }) => {

@@ -27,7 +27,7 @@
     transform: scale(0);
     transition:
       transform 0.3s,
-      opacity 0.1s;
+      opacity 0.3s;
     opacity: 0;
 
     @include mw($tb) {
@@ -58,7 +58,7 @@
     height: 3.56rem;
     fill: transparent;
     stroke: #000;
-    transition: 0.3s;
+    // transition: 0.3s;
 
     @include mw($tb) {
       height: 1.8rem;
