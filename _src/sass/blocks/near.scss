@@ -333,20 +333,20 @@
     top: 0;
     background-color: #78899f;
 
-    .ymaps-2-1-79-events-pane:after {
-      content: "";
-      background-image: linear-gradient(
-        270deg,
-        #78899f 13.59%,
-        rgba(255, 255, 255, 0) 114.76%
-      );
-      position: absolute;
-      right: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-    }
+    // .ymaps-2-1-79-events-pane:after {
+    //   content: "";
+    //   background-image: linear-gradient(
+    //     270deg,
+    //     #78899f 13.59%,
+    //     rgba(255, 255, 255, 0) 114.76%
+    //   );
+    //   position: absolute;
+    //   right: 0;
+    //   top: 0;
+    //   width: 100%;
+    //   height: 100%;
+    //   pointer-events: none;
+    // }
   }
 }
 
@@ -366,15 +366,19 @@
 
 .ymaps-2-1-79-events-pane:after {
   content: "";
-  background-image: linear-gradient(
-    270deg,
-    #78899f 13.59%,
-    rgba(255, 255, 255, 0) 114.76%
-  );
+  // background-image: linear-gradient(
+  //   270deg,
+  //   #78899f 13.59%,
+  //   rgba(255, 255, 255, 0) 114.76%
+  // );
   position: absolute;
   right: 0;
   top: 0;
   width: 100%;
   height: 100%;
   pointer-events: none;
+  background-image: url(../img/Linear.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: right center;
 }
