@@ -1,6 +1,6 @@
 include ../helpers/data/header.pug
 
-header.header#header
+header.header#header(class=plan===true?'header--plan':"")
 	.header__inner
 		.header__left.header-left
 
@@ -11,7 +11,7 @@ header.header#header
 
 
 		.header__middle.header-middle
-			a.header-middle__logo.js-top(href="/")
+			a.header-middle__logo.js-top(href="./")
 				+svg('logo')
 
 			a.header-middle__choose(href="#") выбрать квартиру
@@ -26,7 +26,7 @@ header.header#header
 				.camera__pulse
 				+svg('camera')
 
-	.header__menu.menu
+	.header__menu.menu.scroll
 		.menu__inner
 			.menu__content.menu-contetnt
 				.menu-contetnt__wrap

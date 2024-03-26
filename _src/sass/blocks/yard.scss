@@ -116,8 +116,11 @@
   &__pagination {
     position: absolute;
     @include centered("x");
-    bottom: 2.5rem;
+    bottom: 2.5rem !important;
     z-index: 1;
+    width: auto !important;
+    left: 50% !important;
+    top: auto !important;
   }
 }
 

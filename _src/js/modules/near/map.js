@@ -1,7 +1,15 @@
+import { width } from "../../modules/sliders/dubrovka.js";
+import { body } from "../header/menu.js";
+
 export const createMap = () => {
+  const el = body.querySelector("#map");
+
+  if (!el) return;
+
   const map = new ymaps.Map("map", {
     center: [59.842503, 30.938881],
     zoom: 16,
+    controls: [],
   });
 
   const placemark = new ymaps.Placemark(
@@ -21,7 +29,8 @@ export const createMap = () => {
   map.controls.remove("typeSelector"); // удаляем тип
   map.controls.remove("fullscreenControl"); // удаляем кнопку перехода в полноэкранный режим
   map.controls.remove("zoomControl"); // удаляем контрол зуммирования
-  map.behaviors.disable("drag");
-
   map.geoObjects.add(placemark);
+
+  if (width > 768) return;
+  map.behaviors.disable("drag");
 };

@@ -160,7 +160,7 @@ export const animationAbout = () => {
       scrollTrigger: {
         trigger: img,
         toggleActions: "play none none pause",
-        start: `bottom 100%`,
+        start: `top 70%`,
         end: "+=100",
         // markers: true,
         once: true,

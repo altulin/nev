@@ -6,6 +6,43 @@
   z-index: 10;
   transition: 0.3s;
 
+  &--plan {
+    .header {
+      &__inner {
+        border-color: #000;
+      }
+    }
+
+    .menu-icon__line {
+      background-color: #000;
+    }
+
+    .header-middle__logo svg {
+      fill: #78899f;
+    }
+
+    .header-middle__choose {
+      color: #000;
+      border-color: #000;
+    }
+
+    .header-middle__tel {
+      color: #000;
+    }
+
+    .header-middle {
+      border-color: #000;
+    }
+
+    .header-right__mail svg {
+      stroke: #000;
+    }
+
+    .header-right__camera svg {
+      stroke: #000;
+    }
+  }
+
   &--down {
     transform: translateY(-100%);
     background-color: rgba(#78899f, 0.8);
@@ -210,7 +247,8 @@
   position: fixed;
   width: 100%;
   height: 100%;
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
   left: 0;
   top: 0;
   display: flex;
@@ -251,6 +289,9 @@
   }
 
   &__img {
+    position: absolute;
+    left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -279,7 +320,7 @@
   }
 }
 .menu-nav {
-  @include mw($ph) {
+  @include mw($tb) {
     margin-bottom: 3rem;
   }
 
@@ -304,7 +345,7 @@
     border-bottom: 0.06rem solid transparent;
     transform: 0.5s;
 
-    @include mw($tb) {
+    @include mw($dt) {
       font-size: 1.25rem;
       line-height: 1;
     }

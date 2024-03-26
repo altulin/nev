@@ -37,4 +37,4 @@ const animationPromo = () => {
     );
 };
 
-animationPromo();
+requestAnimationFrame(animationPromo);

@@ -8,7 +8,7 @@ import { setToTop } from "./modules/header/toTop.js";
 import { anchorPromoOrder } from "./modules/promo/anchor.js";
 import { tlPromo } from "./modules/promo/animation.js";
 import { animationDubrovka } from "./modules/dubrovka/animation.js";
-import { animationLine } from "./modules/near/animation.js";
+import { animationLine, animationSection } from "./modules/near/animation.js";
 import { animationPins } from "./modules/location/location.js";
 import { animationAbout } from "./modules/about/animation.js";
 import { createCircleDots } from "./modules/circle/dot.js";
@@ -23,6 +23,7 @@ import { animationAesthetics } from "./modules/aesthetics/animation.js";
 import { animationChoose } from "./modules/choose/animation.js";
 import { createTabs } from "./modules/dubrovka/tabs.js";
 import { createMap } from "./modules/near/map.js";
+import { chooseLink } from "./modules/choose/link.js";
 
 const handler = () => {
   tlPromo.play().then(() => {
@@ -53,6 +54,8 @@ const handler = () => {
   animationAesthetics();
   animationChoose();
   ymaps.ready(createMap);
+  animationSection();
+  chooseLink();
 
   if (width < 769) return;
 };

@@ -30,8 +30,6 @@ const animationNearTitle = () => {
 animationNearTitle();
 
 export const animationLine = () => {
-  // const line = body.querySelector(".near-indication__line--0");
-
   const list = Array.from(body.querySelectorAll(".near-indication__line"));
 
   list.forEach((item, i) => {
@@ -39,8 +37,8 @@ export const animationLine = () => {
       scrollTrigger: {
         trigger: item,
         toggleActions: "play pause none pause",
-        start: `top ${80 - i * 5}%`,
-        end: "+=500",
+        start: `top ${90 - i * 1}%`,
+        end: "+=300",
         // markers: true,
         once: true,
         scrub: true,
@@ -48,5 +46,32 @@ export const animationLine = () => {
       width: "100%",
       duration: 5,
     });
+  });
+};
+
+export const animationSection = () => {
+  if (!near) return;
+  const el = near.querySelector(".near__inner");
+  if (!el) return;
+
+  const tlNear = gsap
+    .timeline()
+    .fromTo(el, { autoAlpha: 1 }, { autoAlpha: 0, duration: 0.5 });
+
+  gsap.to(el, {
+    scrollTrigger: {
+      trigger: el,
+      toggleActions: "play pause none pause",
+      start: "top 70%",
+      end: "+=100",
+      // markers: true,
+      once: true,
+
+      onToggle: ({ isActive }) => {
+        if (!isActive) {
+          tlNear.reverse();
+        }
+      },
+    },
   });
 };

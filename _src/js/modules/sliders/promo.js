@@ -1,7 +1,6 @@
 import Swiper from "swiper";
-import { Pagination, Autoplay } from "swiper/modules";
+import { Pagination, Autoplay, EffectFade } from "swiper/modules";
 import gsap from "gsap";
-// import { tlPromo } from "../promo/animation.js";
 
 let tlList;
 const progressTime = 3;
@@ -44,9 +43,13 @@ const initHandle = (s) => {
 export const sliderPromo = new Swiper(".promo__swiper", {
   enabled: false,
   init: false,
-  modules: [Pagination, Autoplay],
+  modules: [Pagination, Autoplay, EffectFade],
   autoplay: {
     delay: progressTime * 1000,
+  },
+  effect: "fade",
+  fadeEffect: {
+    crossFade: true,
   },
   loop: true,
   pagination: {

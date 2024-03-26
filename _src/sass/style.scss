@@ -8,7 +8,8 @@
 @import "./UI/title.scss";
 @import "./UI/control.scss";
 @import "./UI/container.scss";
-@import "../../node_modules/swiper/swiper.scss"; // Critical style
+// @import "../../node_modules/swiper/swiper.scss"; // Critical style
+@import "../../node_modules/swiper/swiper-bundle.min"; // Critical style
 @import "./blocks/header";
 
 @import "./blocks/promo";
