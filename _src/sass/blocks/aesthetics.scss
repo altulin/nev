@@ -28,13 +28,23 @@
   }
 
   &__title {
-    color: rgb(167, 167, 171);
     font-size: 4rem;
     font-weight: 600;
     line-height: 1;
     letter-spacing: 0.4rem;
     text-transform: uppercase;
     margin-bottom: 4.5rem;
+    color: transparent;
+    background-image: linear-gradient(
+      0deg,
+      #a7a7ab 0,
+      #a7a7ab 50%,
+      transparent 0
+    );
+    background-clip: text;
+    background-size: 100% 200%;
+    background-position-x: 0%;
+    background-position-y: 100%;
 
     @include mw($dt) {
       font-size: 2.2rem;
@@ -249,15 +259,21 @@
     box-sizing: border-box;
     column-gap: 0;
     justify-content: center;
+    align-items: stretch;
+    gap: 1rem;
   }
 
   &__item {
     @include mw($tb) {
-      width: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 47%;
     }
   }
 
   &__link {
+    flex-grow: 1;
     color: rgb(0, 0, 0);
     font-size: 1.25rem;
     font-weight: 300;
@@ -274,7 +290,7 @@
     @include mw($tb) {
       font-size: 0.88rem;
       line-height: 1;
-      padding: 0.63rem;
+      padding: 0.63rem 1.25rem;
       text-align: center;
     }
 
@@ -291,13 +307,19 @@
     align-items: center;
     gap: 0.5rem;
     padding: 0.1rem;
-    min-width: 13rem;
+    // min-width: 13rem;
     transition: 0.3s;
     cursor: auto;
+    pointer-events: none;
 
     @include mw($dt) {
-      left: 0;
-      min-width: 12rem;
+    }
+
+    @include mw($tb) {
+      // min-width: 12rem;
+      flex-direction: row-reverse;
+      left: auto;
+      right: 0.1rem;
     }
 
     &--active {
@@ -322,6 +344,7 @@
     font-weight: 300;
     line-height: 0.88rem;
     flex-shrink: 0;
+    pointer-events: all;
   }
 
   &__text {
@@ -330,17 +353,23 @@
     font-weight: 300;
     line-height: 1.25rem;
     pointer-events: none;
+    overflow: hidden;
+    // width: fit-content;
+    white-space: nowrap;
+    text-align: left;
+    // display: none;
 
-    visibility: hidden;
-    opacity: 0;
-
+    // visibility: hidden;
+    // opacity: 0;
     @include mw($tb) {
-      font-size: 0.2rem;
+      font-size: 0.88rem;
+      text-align: right;
     }
 
     &--visible {
-      visibility: visible;
-      opacity: 1;
+      // visibility: visible;
+      // opacity: 1;
+      // display: block;
     }
   }
 }

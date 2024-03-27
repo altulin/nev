@@ -15,9 +15,10 @@ export const animationAesthetics = () => {
     .timeline({ paused: true })
     .fromTo(
       title,
-      { autoAlpha: 1, y: 0 },
-      { autoAlpha: 0, y: 100, duration: 0.5 },
-    );
+      { backgroundPositionY: "100%" },
+      { backgroundPositionY: "200%", duration: 1 },
+    )
+    .fromTo(title, { y: 0 }, { y: "100%", duration: 1 }, "<");
 
   animationTitle.play();
 
@@ -25,7 +26,7 @@ export const animationAesthetics = () => {
     scrollTrigger: {
       trigger: title,
       toggleActions: "play pause reverce pause",
-      start: `${width < 769 ? "top 100%" : "top 70%"}`,
+      start: `${width < 769 ? "top 100%" : "top 80%"}`,
       end: `${width < 769 ? "+=200" : "+=300"}`,
       once: true,
       // markers: true,

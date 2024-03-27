@@ -1,6 +1,6 @@
 .choose {
   padding-top: 5rem;
-  overflow: hidden;
+  // overflow: hidden;
 
   @include mw($dt) {
     display: none;

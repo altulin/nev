@@ -11,30 +11,35 @@ export const animationCircle = () => {
   const title = circle.querySelector(".title");
   if (!title) return;
 
-  const titleTl = gsap
-    .timeline({ paused: true })
-    .fromTo(
-      title,
-      { autoAlpha: 1, y: 0 },
-      { autoAlpha: 0, y: 50, duration: 1 },
-    );
+  const words = Array.from(title.querySelectorAll("span"));
 
-  titleTl.play();
+  words.forEach((item) => {
+    const animationTitle = gsap
+      .timeline({ paused: true })
+      .fromTo(
+        item,
+        { backgroundPositionY: "100%" },
+        { backgroundPositionY: "200%", duration: 1 },
+      )
+      .fromTo(item, { y: 0 }, { y: "100%", duration: 1 }, "<");
 
-  gsap.to(title, {
-    scrollTrigger: {
-      trigger: circle,
-      toggleActions: "play none none pause",
-      // start: `top 60%`,
-      start: `top 80%`,
-      end: "+=100",
-      // markers: true,
-      once: true,
-      onToggle: ({ isActive }) => {
-        if (!isActive) {
-          titleTl.reverse();
-        }
+    animationTitle.play();
+
+    gsap.to(title, {
+      scrollTrigger: {
+        trigger: circle,
+        toggleActions: "play none none pause",
+        // start: `top 60%`,
+        start: `top 80%`,
+        end: "+=100",
+        // markers: true,
+        once: true,
+        onToggle: ({ isActive }) => {
+          if (!isActive) {
+            animationTitle.reverse();
+          }
+        },
       },
-    },
+    });
   });
 };

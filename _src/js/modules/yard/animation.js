@@ -35,20 +35,81 @@ export const animationYard = () => {
     })
     .to(bar, { autoAlpha: 1 });
 
-  gsap.to(title, {
-    scrollTrigger: {
-      trigger: yard,
-      toggleActions: "play none none pause",
-      start: `${width < 769 ? "top 90%" : "top 60%"}`,
-      end: `${width < 769 ? "+=200" : "+=300"}`,
+  const tlYardMobPic = gsap
+    .timeline({
+      paused: true,
+    })
+    .to(cover, { y: "100%", duration: 1 }, "<")
+    .call(() => {
+      sliderYard.enable();
+      sliderYard.slideNext(2000);
+    })
+    .to(bar, { autoAlpha: 1 });
 
-      once: true,
-      // markers: true,
-      onToggle: ({ isActive }) => {
-        if (!isActive) {
-          tlYard.play();
-        }
+  const tlYartTypograthy = gsap
+    .timeline({ paused: true })
+    .fromTo(
+      title,
+      { autoAlpha: 0, y: "200" },
+      { autoAlpha: 1, y: "0", duration: 1 },
+    )
+    .fromTo(
+      text,
+      { autoAlpha: 0, y: 200 },
+      { autoAlpha: 1, y: 0, duration: 1 },
+      "<",
+    );
+
+  if (width > 768) {
+    gsap.to(title, {
+      scrollTrigger: {
+        trigger: yard,
+        toggleActions: "play none none pause",
+        start: "top 80%",
+        end: "+=300",
+
+        once: true,
+        // markers: true,
+        onToggle: ({ isActive }) => {
+          if (!isActive) {
+            tlYard.play();
+          }
+        },
       },
-    },
-  });
+    });
+  } else {
+    gsap.to(title, {
+      scrollTrigger: {
+        trigger: yard,
+        toggleActions: "play none none pause",
+        start: "top 90%",
+        end: "+=200",
+
+        once: true,
+        // markers: true,
+        onToggle: ({ isActive }) => {
+          if (!isActive) {
+            tlYardMobPic.play();
+          }
+        },
+      },
+    });
+
+    gsap.to(title, {
+      scrollTrigger: {
+        trigger: title,
+        toggleActions: "play none none pause",
+        start: "top 90%",
+        end: "+=50",
+
+        once: true,
+        markers: true,
+        onToggle: ({ isActive }) => {
+          if (!isActive) {
+            tlYartTypograthy.play();
+          }
+        },
+      },
+    });
+  }
 };

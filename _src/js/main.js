@@ -8,7 +8,11 @@ import { setToTop } from "./modules/header/toTop.js";
 import { anchorPromoOrder } from "./modules/promo/anchor.js";
 import { tlPromo } from "./modules/promo/animation.js";
 import { animationDubrovka } from "./modules/dubrovka/animation.js";
-import { animationLine, animationSection } from "./modules/near/animation.js";
+import {
+  animationLine,
+  animationNearTitle,
+  animationSection,
+} from "./modules/near/animation.js";
 import { animationPins } from "./modules/location/location.js";
 import { animationAbout } from "./modules/about/animation.js";
 import { createCircleDots } from "./modules/circle/dot.js";
@@ -56,6 +60,7 @@ const handler = () => {
   ymaps.ready(createMap);
   animationSection();
   chooseLink();
+  animationNearTitle();
 
   if (width < 769) return;
 };

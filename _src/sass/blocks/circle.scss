@@ -11,6 +11,21 @@
     margin-right: auto;
     letter-spacing: 0.4rem;
     margin-bottom: 3rem;
+    color: transparent;
+
+    span {
+      color: transparent;
+      background-image: linear-gradient(
+        0deg,
+        #a7a7ab 0,
+        #a7a7ab 50%,
+        transparent 0
+      );
+      background-clip: text;
+      background-size: 100% 200%;
+      background-position-x: 0%;
+      background-position-y: 100%;
+    }
 
     @include mw($ldt) {
       width: 100%;
@@ -38,6 +53,11 @@
 
   &__slider {
     width: 100%;
+    padding: 6rem 0;
+
+    @include mw($tb) {
+      padding: 0;
+    }
   }
 
   &__slide {
@@ -128,18 +148,17 @@
 .circle-cover {
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: calc(100% - 12.5rem);
   left: 0;
-  top: 0;
+  @include centered("y");
   display: flex;
   column-gap: 5px;
   z-index: 1;
 
   @include mw($tb) {
-    @include mw($tb) {
-      height: calc(100% - 1rem - 0.19rem);
-      pointer-events: none;
-    }
+    height: calc(100% - 1rem - 0.19rem);
+    pointer-events: none;
+    transform: none;
   }
 
   &__block {

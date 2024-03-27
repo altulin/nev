@@ -4,15 +4,17 @@ section.yard
 			h2.yard__title Современный двор-какой он
 			p.yard__text Закрытая территория, продуманный ландшафтный дизайн,  детские площадки, фитнес-уголок, футбольное поле, и малые архитектурные элементы, формируют благоустроенное современное пространство для детей и взрослых.
 
-		.yard__slider.swiper
-			.yard__cover
-			.swiper-wrapper
-				each item in ['','','','','','']
-					.swiper-slide.yard__slide
-						figure.yard__figure
-							+img-retina('yard', 'jpg', 'yard', 'yard__img', '669', '824')
+		.yard__wrap
 
-			.yard__pagination.pagination-bar
+			.yard__slider.swiper
+				.yard__cover
+				.swiper-wrapper
+					each item in ['','','','','','']
+						.swiper-slide.yard__slide
+							figure.yard__figure
+								+img-retina('yard', 'jpg', 'yard', 'yard__img', '669', '824')
+
+				.yard__pagination.pagination-bar
 
 			.yard__touch.yard-touch
 				.yard-touch__block.yard-touch__block--prev

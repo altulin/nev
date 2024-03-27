@@ -7,7 +7,7 @@ import Splitting from "splitting";
 // import { width } from "../sliders/dubrovka.js";
 const near = body.querySelector(".near");
 
-const animationNearTitle = () => {
+export const animationNearTitle = () => {
   if (!near) return;
   // if (width < 769) return;
   const title = near.querySelector(".near-title");
@@ -27,7 +27,7 @@ const animationNearTitle = () => {
   });
 };
 
-animationNearTitle();
+// animationNearTitle();
 
 export const animationLine = () => {
   const list = Array.from(body.querySelectorAll(".near-indication__line"));

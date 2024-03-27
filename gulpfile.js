@@ -24,9 +24,9 @@ const development = series(
     getStyleFile,
     getScriptFile,
     createWebp,
-    transformPug
+    transformPug,
   ),
-  parallel(getWatchers, browserSync)
+  parallel(getWatchers, browserSync),
 );
 
 const production = series(
@@ -38,9 +38,10 @@ const production = series(
     getStyleFile,
     getScriptFile,
     createWebp,
-    transformPug
+    transformPug,
   ),
-  series(getCopying, creteArchive)
+  // series(getCopying, creteArchive)
+  series(getCopying),
 );
 
 const section = series(createSection);

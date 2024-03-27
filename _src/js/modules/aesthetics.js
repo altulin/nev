@@ -1,10 +1,10 @@
-import Tabby from "tabbyjs";
+// import Tabby from "tabbyjs";
 
-try {
-  const tabs = new Tabby(".aesthetics-head");
-  const el = document.querySelector('[href*="#exit"]');
-  // console.log(el);
-  // el.addEventListener("click", (e) => e.preventDefault());
+// try {
+//   const tabs = new Tabby(".aesthetics-head");
+//   const el = document.querySelector('[href*="#exit"]');
+//   // console.log(el);
+//   // el.addEventListener("click", (e) => e.preventDefault());
 
-  tabs.toggle(el);
-} catch (error) {}
+//   tabs.toggle(el);
+// } catch (error) {}

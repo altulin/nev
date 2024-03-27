@@ -4,9 +4,14 @@ import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 import Splitting from "splitting";
 gsap.registerPlugin(ScrollTrigger);
 
-let title, subTitle, text, list, link, img, about;
+let title, subTitle, text, link, img, about, itemUp, itemDown, list;
 
-let tlAboutSubtitle, tlAboutText, tlAboutList, tlAboutLink, tlAboutImg;
+let tlAboutSubtitle,
+  tlAboutText,
+  tlAboutLink,
+  tlAboutImg,
+  tlAboutItemUp,
+  tlAboutItemDown;
 
 const createAnimation = () => {
   about = body.querySelector(".about");
@@ -16,9 +21,27 @@ const createAnimation = () => {
   title = about.querySelector(".about__title");
   subTitle = about.querySelector(".about__subtitle");
   text = about.querySelector(".about__text");
-  list = about.querySelector(".about__list");
+  itemUp = Array.from(about.querySelectorAll(".about__item--up"));
+  itemDown = Array.from(about.querySelectorAll(".about__item--down"));
+  list = about.querySelectorAll(".about__list");
   link = about.querySelector(".about__link");
   img = about.querySelector(".picture__img");
+
+  tlAboutItemUp = gsap
+    .timeline({ paused: true })
+    .fromTo(
+      itemUp,
+      { autoAlpha: 1, y: "0" },
+      { autoAlpha: 0, y: "50", duration: 1 },
+    );
+
+  tlAboutItemDown = gsap
+    .timeline({ paused: true })
+    .fromTo(
+      itemDown,
+      { autoAlpha: 1, y: "0" },
+      { autoAlpha: 0, y: "50", duration: 1 },
+    );
 
   tlAboutSubtitle = gsap
     .timeline({
@@ -36,16 +59,6 @@ const createAnimation = () => {
     })
     .fromTo(
       text,
-      { autoAlpha: 1, y: "0" },
-      { autoAlpha: 0, y: "50", duration: 1 },
-    );
-
-  tlAboutList = gsap
-    .timeline({
-      paused: true,
-    })
-    .fromTo(
-      list,
       { autoAlpha: 1, y: "0" },
       { autoAlpha: 0, y: "50", duration: 1 },
     );
@@ -80,6 +93,43 @@ export const animationAbout = () => {
   if (title) {
     Splitting({ target: title, whitespace: true, by: "chars" });
     word = title.querySelector(".word");
+  }
+
+  if (list) {
+    tlAboutItemUp.play();
+    tlAboutItemDown.play();
+
+    gsap.to(list, {
+      scrollTrigger: {
+        trigger: list,
+        toggleActions: "play none none pause",
+        start: `top 90%`,
+        end: "+=100",
+        // markers: true,
+        once: true,
+        onToggle: ({ isActive }) => {
+          if (!isActive) {
+            tlAboutItemUp.reverse();
+          }
+        },
+      },
+    });
+
+    gsap.to(list, {
+      scrollTrigger: {
+        trigger: list,
+        toggleActions: "play none none pause",
+        start: `top 80%`,
+        end: "+=100",
+        // markers: true,
+        once: true,
+        onToggle: ({ isActive }) => {
+          if (!isActive) {
+            tlAboutItemDown.reverse();
+          }
+        },
+      },
+    });
   }
 
   if (subTitle) {
@@ -118,24 +168,7 @@ export const animationAbout = () => {
       },
     });
   }
-  if (tlAboutList) {
-    tlAboutList.play();
-    gsap.to(list, {
-      scrollTrigger: {
-        trigger: list,
-        toggleActions: "play none none pause",
-        start: `top 100%`,
-        end: "+=100",
-        // markers: true,
-        once: true,
-        onToggle: ({ isActive }) => {
-          if (!isActive) {
-            tlAboutList.reverse();
-          }
-        },
-      },
-    });
-  }
+
   if (link) {
     tlAboutLink.play();
     gsap.to(link, {
