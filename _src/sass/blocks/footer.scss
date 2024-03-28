@@ -157,6 +157,10 @@
     align-items: center;
     justify-content: space-between;
 
+    @include mw($tb) {
+      justify-content: space-around;
+    }
+
     &-top {
       @include mw($dt) {
         display: none;
@@ -170,6 +174,10 @@
         display: flex;
         margin-bottom: 1rem;
       }
+
+      @include mw($tb) {
+        margin-bottom: 2.5rem;
+      }
     }
   }
 
@@ -181,21 +189,39 @@
 
   &__link {
     display: block;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
   }
 
   &__link--vk {
     width: 3.44rem;
     height: 2.38rem;
+
+    @include mw($tb) {
+      width: 1.49rem;
+      height: 1.01rem;
+    }
   }
 
   &__link--tg {
     width: 3.25rem;
     height: 2.88rem;
+
+    @include mw($tb) {
+      width: 1.39rem;
+      height: 1.25rem;
+    }
   }
 
   &__link--wa {
     width: 2.56rem;
     height: 2.5rem;
+
+    @include mw($tb) {
+      width: 1.11rem;
+      height: 1.11rem;
+    }
   }
 }
 .connection {
@@ -207,19 +233,17 @@
     width: 5rem;
     height: 5rem;
     border: 0.06rem solid rgb(0, 0, 0);
-    background-color: transparent;
     cursor: pointer;
     transition: 0.3s;
-    margin-bottom: 5.8rem;
-    margin-left: 44%;
+    position: fixed;
+    z-index: 9;
+    right: 2rem;
+    bottom: 2rem;
+    background-color: #fff;
 
     @include mw($dt) {
       width: 3.13rem;
       height: 3.13rem;
-      position: absolute;
-      right: 0.5rem;
-      top: 0.5rem;
-      margin: 0;
     }
 
     @include hocus() {
@@ -273,7 +297,6 @@
   }
 
   &__mail {
-    /* TKO 1 */
     color: rgb(0, 0, 0);
     font-size: 1.5rem;
     font-weight: 300;
@@ -293,6 +316,10 @@
   @include mw($dt) {
     display: block;
     margin-bottom: 5rem;
+  }
+
+  @include mw($tb) {
+    margin-bottom: 2.5rem;
   }
 
   &__list {

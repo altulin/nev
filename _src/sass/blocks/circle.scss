@@ -51,13 +51,18 @@
     }
   }
 
+  &__wrap {
+    width: 100%;
+    position: relative;
+  }
+
   &__slider {
     width: 100%;
-    padding: 6rem 0;
+    // // padding: 6rem 0;
 
-    @include mw($tb) {
-      padding: 0;
-    }
+    // @include mw($tb) {
+    //   // padding: 0;
+    // }
   }
 
   &__slide {
@@ -117,53 +122,23 @@
     }
   }
 }
-.title {
-}
-.title--lg {
-}
-.title--gray {
-}
-.swiper {
-}
-.swiper-wrapper {
-}
-.swiper-slide {
-}
-.circle {
-  &__control {
-  }
 
-  &__btn--prev-undefined {
-  }
-
-  &__btn--next-undefined {
-  }
-}
-.control {
-}
-.control--prev {
-}
-.control--next {
-}
 .circle-cover {
   position: absolute;
   width: 100%;
-  height: calc(100% - 12.5rem);
+  height: 100%;
   left: 0;
   @include centered("y");
   display: flex;
-  column-gap: 5px;
   z-index: 1;
 
   @include mw($tb) {
-    height: calc(100% - 1rem - 0.19rem);
     pointer-events: none;
-    transform: none;
   }
 
   &__block {
     &--center {
-      width: 85.5%;
+      width: 85%;
 
       @include mw($tb) {
         width: 78%;

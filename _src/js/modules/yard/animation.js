@@ -103,7 +103,7 @@ export const animationYard = () => {
         end: "+=50",
 
         once: true,
-        markers: true,
+        // markers: true,
         onToggle: ({ isActive }) => {
           if (!isActive) {
             tlYartTypograthy.play();

@@ -7,30 +7,66 @@ export const createMap = () => {
   if (!el) return;
 
   const map = new ymaps.Map("map", {
-    // center: [59.842503, 30.938881],
-    // center: [59.84382055211919, 30.933211330293744],
     center: [59.84347032994195, 30.938058359802223],
     zoom: 16,
     controls: [],
   });
 
   const placemark = new ymaps.Placemark(
-    [59.842503, 30.938881],
+    [59.84294662775576, 30.94030068653868],
     {},
     {
       iconLayout: "default#image",
-      iconImageHref: "/img/map-mark.png",
-      iconImageSize: [80, 80],
-      iconImageOffset: [-15, -15],
+      iconImageHref: "./img/map-mark.png",
+      // iconImageSize: [80, 80],
+      iconImageSize: width < 769 ? [40, 40] : [80, 80],
+      iconImageOffset: width < 769 ? [-20, -20] : [-40, -40],
     },
   );
 
-  map.controls.remove("geolocationControl"); // удаляем геолокацию
-  map.controls.remove("searchControl"); // удаляем поиск
-  map.controls.remove("trafficControl"); // удаляем контроль трафика
-  map.controls.remove("typeSelector"); // удаляем тип
-  map.controls.remove("fullscreenControl"); // удаляем кнопку перехода в полноэкранный режим
-  map.controls.remove("zoomControl"); // удаляем контрол зуммирования
+  const ZoomLayout = ymaps.templateLayoutFactory.createClass(
+      "<div class='zoom-control'>" +
+        "<div id='zoom-in' class='zoom-control__btn zoom-control__btn--in'><i class='icon-plus'></i></div>" +
+        "<div id='zoom-out' class='zoom-control__btn zoom-control__btn--out'><i class='icon-minus'></i></div>" +
+        "</div>",
+      {
+        build: function () {
+          ZoomLayout.superclass.build.call(this);
+
+          const zoomInBtn = body.querySelector("#zoom-in");
+          const zoomOutBtn = body.querySelector("#zoom-out");
+
+          if (!zoomInBtn || !zoomOutBtn) return;
+
+          this.zoomInCallback = ymaps.util.bind(this.zoomIn, this);
+          this.zoomOutCallback = ymaps.util.bind(this.zoomOut, this);
+
+          zoomInBtn.addEventListener("click", this.zoomInCallback);
+          zoomOutBtn.addEventListener("click", this.zoomOutCallback);
+        },
+
+        zoomIn: function () {
+          const map = this.getData().control.getMap();
+          map.setZoom(map.getZoom() + 1, { checkZoomRange: true });
+        },
+
+        zoomOut: function () {
+          const map = this.getData().control.getMap();
+          map.setZoom(map.getZoom() - 1, { checkZoomRange: true });
+        },
+      },
+    ),
+    zoomControl = new ymaps.control.ZoomControl({
+      options: { layout: ZoomLayout },
+    });
+
+  map.controls.add(zoomControl, {
+    position: {
+      float: "none",
+      top: `${width < 769 ? "5.5rem" : "20rem"}`,
+      left: `${width < 769 ? "1rem" : "3rem"}`,
+    },
+  });
   map.behaviors.disable("scrollZoom");
   map.geoObjects.add(placemark);
 

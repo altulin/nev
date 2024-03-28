@@ -258,6 +258,11 @@
     height: 0.5rem;
     width: 3.75rem;
     background-color: #88d68b;
+
+    @include mw($tb) {
+      width: 1.87rem;
+      height: 0.25rem;
+    }
   }
 }
 
@@ -272,7 +277,7 @@
     width: 5rem;
     height: 5rem;
     border: 0.06rem solid rgb(255, 255, 255);
-    background: rgb(136, 214, 139);
+    background: #88d68b;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -366,11 +371,6 @@
 
 .ymaps-2-1-79-events-pane:after {
   content: "";
-  // background-image: linear-gradient(
-  //   270deg,
-  //   #78899f 13.59%,
-  //   rgba(255, 255, 255, 0) 114.76%
-  // );
   position: absolute;
   right: 0;
   top: 0;
@@ -381,4 +381,50 @@
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-position: right center;
+}
+
+.zoom-control {
+  // position: absolute;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5rem;
+
+  &__btn {
+    width: 5.5rem;
+    height: 5.5rem;
+    border-radius: 50%;
+    background-color: #88d68b;
+    cursor: pointer;
+    position: relative;
+
+    @include mw($tb) {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+
+    &::after,
+    &::before {
+      content: "";
+      width: 30%;
+      height: 0.06rem;
+      background-color: #fff;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+    }
+
+    &::after {
+      transform: translate(-50%, -50%);
+    }
+
+    &::before {
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+
+    &--out {
+      &::before {
+        content: none;
+      }
+    }
+  }
 }

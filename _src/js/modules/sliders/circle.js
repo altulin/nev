@@ -8,7 +8,7 @@ export const sliderCircle = new Swiper(".circle__slider", {
   speed: 1000,
   centeredSlides: true,
   slidesPerView: "auto",
-  cssMode: true,
+  // cssMode: true,
   // spaceBetween: 5,
   navigation: {
     nextEl: `.circle-control__block--right`,

@@ -312,11 +312,8 @@
     cursor: auto;
     pointer-events: none;
 
-    @include mw($dt) {
-    }
-
     @include mw($tb) {
-      // min-width: 12rem;
+      display: none;
       flex-direction: row-reverse;
       left: auto;
       right: 0.1rem;

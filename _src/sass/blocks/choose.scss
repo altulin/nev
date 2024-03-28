@@ -18,13 +18,47 @@
     margin-bottom: 7rem;
 
     @media screen and (max-width: 1920px) {
-      width: 78rem;
-      max-width: 100%;
+      width: 80%;
     }
 
-    span:last-child {
-      align-self: flex-end;
+    @include mw($ldt) {
+      width: 100%;
     }
+
+    .words {
+      display: flex;
+    }
+
+    .word {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .words:first-child {
+      .word {
+        span:first-child {
+          margin-right: 1.5rem;
+        }
+      }
+    }
+
+    .words:last-child {
+      justify-content: flex-end;
+      .word {
+        span:nth-child(2) {
+          margin-right: 1.5rem;
+        }
+      }
+    }
+
+    // @media screen and (max-width: 1920px) {
+    //   width: 78rem;
+    //   max-width: 100%;
+    // }
+
+    // span:last-child {
+    //   align-self: flex-end;
+    // }
   }
 
   &__content {
@@ -60,7 +94,10 @@
     position: relative;
     background-repeat: no-repeat;
     background-size: cover;
-    display: block;
+    display: flex;
+    align-items: center;
+    // padding-right: 3rem;
+    justify-content: flex-end;
   }
 
   &__block {
@@ -70,7 +107,10 @@
     width: 50%;
     position: relative;
     background-color: #78899f;
-    display: block;
+    display: flex;
+    align-items: center;
+    // padding-left: 3rem;
+    // justify-content: center;
   }
 
   &__figure {
@@ -87,12 +127,13 @@
 }
 
 .choose-block {
-  position: absolute;
-  @include centered("y");
+  // position: absolute;
+  // @include centered("y");
   display: flex;
   flex-direction: column;
   align-items: center;
   pointer-events: none;
+  position: relative;
 
   &__link {
     display: block;
@@ -111,7 +152,7 @@
   &__title {
     color: rgb(255, 255, 255);
     font-size: 3rem;
-    font-weight: 400;
+    font-weight: 600;
     line-height: 4.25rem;
     text-transform: uppercase;
   }
@@ -120,7 +161,7 @@
     /* TKO 1 */
     color: rgb(255, 255, 255);
     font-size: 1.5rem;
-    font-weight: 300;
+    font-weight: 500;
     line-height: 2.25rem;
   }
 }

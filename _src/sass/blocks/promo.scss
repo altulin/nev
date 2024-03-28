@@ -194,8 +194,17 @@
     border-radius: 0.5rem;
     background-color: #fff;
 
+    @include mw($tb) {
+      width: 0.63rem;
+      height: 0.63rem;
+    }
+
     & + span {
       margin-left: 1.25rem;
+
+      @include mw($tb) {
+        margin-left: 0.63rem;
+      }
     }
 
     &--active {
@@ -212,8 +221,11 @@
         left: 0;
         border: 0.06rem solid rgb(255, 255, 255);
         background-color: transparent;
-
         border-radius: 0.5rem;
+
+        @include mw($tb) {
+          width: 2.5rem;
+        }
       }
     }
   }

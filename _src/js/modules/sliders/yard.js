@@ -1,6 +1,7 @@
 import Swiper from "swiper";
 import { Pagination, Autoplay, Navigation } from "swiper/modules";
 import gsap from "gsap";
+import { width } from "./dubrovka.js";
 
 let tlList;
 const progressTime = 3;
@@ -23,11 +24,17 @@ const initHandle = (s) => {
   tlList = bullets.map((item, i) => {
     return gsap
       .timeline({ paused: true })
-      .set(bullets[i], { width: "1rem", marginRight: 0 })
-      .to(bullets[i], { marginRight: "4.6rem", duration: 0.01 })
+      .set(bullets[i], {
+        width: `${width < 769 ? "0.63rem" : "1rem"}`,
+        marginRight: 0,
+      })
+      .to(bullets[i], {
+        marginRight: `${width < 769 ? "1.87rem" : "4.6rem"}`,
+        duration: 0.01,
+      })
       .add("clear", "<")
       .to(bullets[i], {
-        width: "5.6rem",
+        width: `${width < 769 ? "2.5rem" : "5.6rem"}`,
         marginRight: 0,
         duration: progressTime,
       })

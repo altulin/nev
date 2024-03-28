@@ -4,6 +4,7 @@ import { body } from "../header/menu.js";
 export const infoVisible = () => {
   const aesthetics = body.querySelector(".aesthetics");
   if (!aesthetics) return;
+
   const listInfo = Array.from(
     aesthetics.querySelectorAll(".aesthetics-head__info"),
   );
