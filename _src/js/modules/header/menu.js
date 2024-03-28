@@ -29,9 +29,8 @@ export const menuTl = gsap
 const openHandle = async () => {
   btnMenu.classList.add("menu-icon--active");
   header.classList.add("header--menu-active");
-  await menuTl.play();
-
   body.classList.add("scroll-lock");
+  await menuTl.play();
 
   anchorList.forEach((element) => {
     element.addEventListener("click", anchorHandle);
@@ -40,11 +39,11 @@ const openHandle = async () => {
 
 export const closeHandle = async () => {
   btnMenu.classList.remove("menu-icon--active");
+  body.classList.remove("scroll-lock");
 
   await menuTl.reverse();
   header.classList.remove("header--menu-active");
 
-  body.classList.remove("scroll-lock");
   anchorList.forEach((element) => {
     element.removeEventListener("click", anchorHandle);
   });

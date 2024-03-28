@@ -258,6 +258,7 @@
     height: 0.5rem;
     width: 3.75rem;
     background-color: #88d68b;
+    border-radius: 0.5rem;
 
     @include mw($tb) {
       width: 1.87rem;

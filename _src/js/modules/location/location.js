@@ -52,14 +52,14 @@ export const animationPins = () => {
     duration: 1,
   });
 
-  gsap.to(logo, {
-    scrollTrigger: {
-      trigger: location,
-      toggleActions: "play none none pause",
-      start: `top 50%`,
-      end: "+=300",
-    },
-    autoAlpha: 1,
-    duration: 1,
-  });
+  // gsap.to(logo, {
+  //   scrollTrigger: {
+  //     trigger: location,
+  //     toggleActions: "play none none pause",
+  //     start: `top 50%`,
+  //     end: "+=300",
+  //   },
+  //   autoAlpha: 1,
+  //   duration: 1,
+  // });
 };

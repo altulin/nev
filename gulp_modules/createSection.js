@@ -8,7 +8,7 @@ const {
 } = paths;
 
 export const createSection = async () => {
-  const list = ["contacts"];
+  const list = ["plan"];
 
   for (const name of list) {
     fs.writeFile(`${pug}/${name}.pug`, "", function (err) {

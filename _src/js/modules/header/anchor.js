@@ -7,7 +7,10 @@ export const anchorHandle = async (e) => {
 
   await closeHandle();
 
-  if (!element) return;
+  if (!element) {
+    window.location.assign(`/index.html${e.target.dataset.anchor}`);
+    return;
+  }
 
   element.scrollIntoView({
     behavior: "smooth",

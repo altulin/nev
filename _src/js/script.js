@@ -2464,9 +2464,9 @@
     Hi.core.Tween;
     const Xi = async e => {
       const t = ji.querySelector(`${e.target.dataset.anchor}`);
-      e.preventDefault(), await Qi(), t && t.scrollIntoView({
+      e.preventDefault(), await Qi(), t ? t.scrollIntoView({
         behavior: "smooth"
-      });
+      }) : window.location.assign(`/index.html${e.target.dataset.anchor}`);
     }, ji = document.querySelector("body"), Wi = ji.querySelector(".header"), Ui = Wi.querySelector(".header-left__btn"), Zi = Array.from(Wi.querySelectorAll(".js-anchor")), Ki = Hi.timeline({
       paused: !0
     }).fromTo(Wi.querySelector(".menu"), {
@@ -2489,14 +2489,14 @@
       autoAlpha: 1,
       duration: .3
     }, "<"), Qi = async () => {
-      Ui.classList.remove("menu-icon--active"), await Ki.reverse(), Wi.classList.remove("header--menu-active"), 
-      ji.classList.remove("scroll-lock"), Zi.forEach((e => {
+      Ui.classList.remove("menu-icon--active"), ji.classList.remove("scroll-lock"), await Ki.reverse(), 
+      Wi.classList.remove("header--menu-active"), Zi.forEach((e => {
         e.removeEventListener("click", Xi);
       }));
     }, Ji = () => {
       0 === Ki.progress() ? (async () => {
         Ui.classList.add("menu-icon--active"), Wi.classList.add("header--menu-active"), 
-        await Ki.play(), ji.classList.add("scroll-lock"), Zi.forEach((e => {
+        ji.classList.add("scroll-lock"), await Ki.play(), Zi.forEach((e => {
           e.addEventListener("click", Xi);
         }));
       })() : Qi();
@@ -7200,11 +7200,10 @@
         Hi.to(e, {
           scrollTrigger: {
             trigger: e,
-            toggleActions: "play pause none pause",
+            toggleActions: "restart pause reverce pause",
             start: `top ${90 - 1 * t}%`,
             end: "+=300",
-            once: !0,
-            scrub: !0
+            scrub: 3
           },
           width: "100%",
           duration: 5
@@ -7214,8 +7213,8 @@
         if (!t) {
           return;
         }
-        const r = t.querySelector(".location-logo__figure"), i = t.querySelector(".location-logo__link");
-        e.forEach(((e, r) => {
+        const r = t.querySelector(".location-logo__figure");
+        t.querySelector(".location-logo__link"), e.forEach(((e, r) => {
           const i = Hi.timeline({
             paused: !0
           }).fromTo(t.querySelector(`.location-flag__title--${r + 1}`), {
@@ -7247,15 +7246,6 @@
             end: "+=300"
           },
           scale: 1,
-          duration: 1
-        }), Hi.to(i, {
-          scrollTrigger: {
-            trigger: t,
-            toggleActions: "play none none pause",
-            start: "top 50%",
-            end: "+=300"
-          },
-          autoAlpha: 1,
           duration: 1
         });
       })(), (() => {
@@ -7644,8 +7634,8 @@
           scrollTrigger: {
             trigger: e,
             toggleActions: "play pause reverce pause",
-            start: ds < 769 ? "top 100%" : "top 80%",
-            end: ds < 769 ? "+=200" : "+=300",
+            start: ds < 769 ? "top 100%" : "top 90%",
+            end: ds < 769 ? "+=200" : "+=100",
             once: !0,
             onToggle: ({isActive: e}) => {
               e || t.reverse();

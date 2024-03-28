@@ -36,12 +36,12 @@ export const animationLine = () => {
     gsap.to(item, {
       scrollTrigger: {
         trigger: item,
-        toggleActions: "play pause none pause",
+        toggleActions: "restart pause reverce pause",
         start: `top ${90 - i * 1}%`,
         end: "+=300",
         // markers: true,
-        once: true,
-        scrub: true,
+        // once: true,
+        scrub: 3,
       },
       width: "100%",
       duration: 5,

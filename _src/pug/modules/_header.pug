@@ -1,10 +1,11 @@
 include ../helpers/data/header.pug
 
-header.header#header(class=plan===true?'header--plan':"")
+header.header#header(class=plan===true?'header--plan':"" )
 	.header__inner
-		hr.header__line
+		if !choose
+			hr.header__line
 
-		.header__left.header-left
+		.header__left.header-left(class=`${choose ? 'header-left--choose':''}`)
 
 			button.header-left__btn.menu-icon(type="button")
 				.menu-icon__inner
@@ -12,21 +13,35 @@ header.header#header(class=plan===true?'header--plan':"")
 					span.menu-icon__line.menu-icon__line--down
 
 
-		.header__middle.header-middle
-			a.header-middle__logo.js-top(href="./index.html")
-				+svg('logo')
+		.header__middle.header-middle(class=`${choose ? 'header-middle--choose':''}`)
 
-			a.header-middle__choose(href="#") выбрать квартиру
+			if !choose
 
-			a.header-middle__tel(href="tel:+78124435659") +7 (812) 443-56-59
+				a.header-middle__logo(href="/index.html")
+					+svg('logo')
+
+				a.header-middle__choose(href="#") выбрать квартиру
+
+				a.header-middle__tel(href="tel:+78124435659") +7 (812) 443-56-59
 
 
-		.header__right.header-right
-			a.header-right__mail(href="mailto:sales@lenoblstroy47.ru")
-				+svg('mail')
-			a.header-right__camera.camera(href="#" target="_blank")
-				.camera__pulse
-				+svg('camera')
+		.header__right.header-right(class=`${choose ? 'header-right--choose':''}`)
+			if !choose
+				a.header-right__mail(href="mailto:sales@lenoblstroy47.ru")
+					+svg('mail')
+				a.header-right__camera.camera(href="#" target="_blank")
+					.camera__pulse
+					+svg('camera')
+
+			if choose
+				a.header-right__choose.header-choose(href="#")
+					+svg('choose')
+
+					p.header-choose__text
+						span выбрать по
+						span параметрам
+
+
 
 	.header__menu.menu.scroll
 		.menu__inner

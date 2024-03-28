@@ -174,19 +174,8 @@
 
     @include hocus() {
     }
-
-    &:active {
-    }
   }
 
-  .container {
-  }
-  .title {
-  }
-  .title--lg {
-  }
-  .title--light {
-  }
   .picture {
     position: absolute;
     width: 37%;
@@ -219,7 +208,5 @@
       object-position: right bottom;
       transform-origin: right bottom;
     }
-  }
-  .figure {
   }
 }
