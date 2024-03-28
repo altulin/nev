@@ -15,7 +15,7 @@ html {
 
 body {
   @include font("Montserrat");
-
+  background-color: #ececec;
   display: flex;
   flex-direction: column;
   width: 100%;

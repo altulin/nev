@@ -99,6 +99,15 @@
         }
       }
     }
+
+    .menu-icon:hover {
+      .menu-icon__line--up {
+        background-color: #000;
+      }
+      .menu-icon__line--down {
+        background-color: #000;
+      }
+    }
   }
 
   &--menu-active {

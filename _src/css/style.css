@@ -443,6 +443,7 @@ html {
 
 body {
   font-family: "Montserrat", "Arial", sans-serif;
+  background-color: #ececec;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1694,6 +1695,14 @@ button.swiper-pagination-bullet {
   stroke: #000;
 }
 
+.header--up .menu-icon:hover .menu-icon__line--up {
+  background-color: #000;
+}
+
+.header--up .menu-icon:hover .menu-icon__line--down {
+  background-color: #000;
+}
+
 .header--menu-active .header__inner {
   border-color: #000;
   background-color: #fff;
@@ -2405,9 +2414,8 @@ button.swiper-pagination-bullet {
 
 .location__figure {
   width: 100%;
-  padding-top: 61%;
+  padding-top: 75.6%;
   position: relative;
-  overflow: hidden;
 }
 
 .location__img {
@@ -2418,15 +2426,15 @@ button.swiper-pagination-bullet {
   top: 0;
   -o-object-fit: cover;
      object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  -o-object-position: center bottom;
+     object-position: center bottom;
 }
 
 .location-logo {
   position: absolute;
   width: 13.3%;
-  top: 20.5%;
-  left: 17%;
+  top: 31.5%;
+  left: 14%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2455,12 +2463,14 @@ button.swiper-pagination-bullet {
 .location-logo__figure {
   width: 100%;
   padding-top: 100%;
-  background-image: url("../../img/magnifier.png");
+  background-image: url("../../img/magnifier.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   -webkit-transform: scale(0);
       -ms-transform: scale(0);
           transform: scale(0);
+  border-radius: 50%;
+  outline: 0.6rem solid #8ed688;
 }
 
 .location-flag {
@@ -2481,59 +2491,101 @@ button.swiper-pagination-bullet {
   color: rgb(255, 255, 255);
   font-size: 1.5rem;
   font-weight: 300;
-  line-height: 2.25rem;
-  margin-top: -0.7rem;
+  line-height: 1.3;
+  margin-top: -0.03vw;
 }
 
 .location-flag--1 {
-  top: 10%;
-  left: 22.7%;
+  bottom: 62%;
+  right: 72%;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-}
-
-.location-flag--1 h3 {
-  margin-bottom: 20.5rem;
+  height: 20%;
 }
 
 .location-flag--2 {
-  top: 18%;
-  left: 34.7%;
-}
-
-.location-flag--2 h3 {
-  margin-bottom: 16rem;
+  bottom: 58.6%;
+  left: 32%;
+  height: 16%;
 }
 
 .location-flag--3 {
   width: 11rem;
-  top: 9%;
-  left: 46%;
-}
-
-.location-flag--3 h3 {
-  margin-bottom: 13rem;
+  bottom: 66.5%;
+  left: 44.5%;
+  height: 16%;
 }
 
 .location-flag--4 {
   width: 15rem;
-  top: 2%;
-  left: 61.7%;
-}
-
-.location-flag--4 h3 {
-  margin-bottom: 19rem;
+  bottom: 67.3%;
+  left: 63%;
+  height: 21%;
 }
 
 .location-flag--5 {
-  top: 12%;
-  left: 71%;
+  bottom: 64.7%;
+  left: 70.5%;
+  height: 16%;
 }
 
-.location-flag--5 h3 {
-  margin-bottom: 17rem;
+.location-flag--6 {
+  bottom: 58.5%;
+  left: 1.5%;
+  height: 29.5%;
+}
+
+.location-flag--7 {
+  bottom: 67.3%;
+  right: 87%;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: 16%;
+  text-align: right;
+  width: 10rem;
+}
+
+.location-flag--8 {
+  bottom: 67.3%;
+  right: 40%;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: 22%;
+}
+
+.location-flag--9 {
+  bottom: 53.5%;
+  left: 78%;
+  height: 20%;
+  width: 11rem;
+}
+
+.location-flag--10 {
+  bottom: 63%;
+  right: 5%;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: 18%;
+}
+
+.location-flag--11 {
+  bottom: 60.3%;
+  right: 1.5%;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: 27%;
+  width: 10rem;
+  text-align: right;
 }
 
 .location-flag__vertical {
@@ -2737,7 +2789,7 @@ button.swiper-pagination-bullet {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding-bottom: 17rem;
+  padding-bottom: 5rem;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -3135,6 +3187,14 @@ button.swiper-pagination-bullet {
   border: 0.06rem solid #000;
   letter-spacing: 0.15rem;
   background-color: transparent;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.department__route:hover,
+.department__route:focus {
+  background-color: #fff;
 }
 
 .soc__logo {
@@ -3216,6 +3276,11 @@ button.swiper-pagination-bullet {
   z-index: 9;
   right: 2rem;
   bottom: 2rem;
+  background-color: #ececec;
+}
+
+.connection__top:hover,
+.connection__top:focus {
   background-color: #fff;
 }
 
@@ -3480,6 +3545,10 @@ button.swiper-pagination-bullet {
           flex-grow: 1;
 }
 
+.tabs-block__btn svg {
+  stroke: #000;
+}
+
 .tabs-block__slider {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
@@ -3720,7 +3789,7 @@ button.swiper-pagination-bullet {
   position: absolute;
   left: 0;
   top: 0;
-  background-color: #fff;
+  background-color: #ececec;
   z-index: 2;
 }
 
@@ -3920,20 +3989,7 @@ button.swiper-pagination-bullet {
           flex-direction: column;
 }
 
-.aesthetics-tab__slide::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  background-color: rgba(255, 255, 255, 0.5);
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-  opacity: 0;
-}
-
-.aesthetics-tab__slide--cover::after {
+.aesthetics-tab__slide--cover .aesthetics-tab__figure::after {
   opacity: 1;
 }
 
@@ -3945,6 +4001,19 @@ button.swiper-pagination-bullet {
   width: 100%;
   padding-top: 100%;
   position: relative;
+}
+
+.aesthetics-tab__figure::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  opacity: 0;
 }
 
 .aesthetics-tab__img {
@@ -4365,7 +4434,7 @@ button.swiper-pagination-bullet {
   height: 100%;
   left: 0;
   top: 100%;
-  background-color: #fff;
+  background-color: #ececec;
   z-index: 1;
   pointer-events: 0;
 }
@@ -4676,43 +4745,6 @@ button.swiper-pagination-bullet {
     width: 100rem;
   }
 
-  .location__figure {
-    width: 1920px;
-    padding-top: 1170px;
-  }
-
-  .location__img {
-    -o-object-fit: cover;
-       object-fit: cover;
-    -o-object-position: center;
-       object-position: center;
-  }
-
-  .location-flag--1 {
-    top: 125px;
-    left: 451px;
-  }
-
-  .location-flag--2 {
-    top: 232px;
-    left: 636px;
-  }
-
-  .location-flag--3 {
-    top: 121px;
-    left: 840px;
-  }
-
-  .location-flag--4 {
-    top: 15px;
-    left: 1176px;
-  }
-
-  .location-flag--5 {
-    top: 156px;
-    left: 1325px;
-  }
-
   .about .picture {
     width: 43%;
   }
@@ -4737,46 +4769,52 @@ button.swiper-pagination-bullet {
 }
 
 @media screen and (max-width: 1440px) {
-  .location__figure {
-    width: 1440px;
-    padding-top: 878px;
-  }
-
   .location-flag__title {
     font-size: 1.3rem;
   }
 
   .location-flag--1 {
-    top: 50px;
-    left: 348px;
+    bottom: 59%;
   }
 
   .location-flag--2 {
-    top: 139px;
-    left: 507px;
+    bottom: 56%;
   }
 
   .location-flag--3 {
-    top: 64px;
-    left: 672px;
-  }
-
-  .location-flag--4 h3 {
-    margin-bottom: 15rem;
+    bottom: 64.5%;
   }
 
   .location-flag--4 {
-    top: 30px;
-    left: 862px;
-  }
-
-  .location-flag--5 h3 {
-    margin-bottom: 10rem;
+    bottom: 65.3%;
   }
 
   .location-flag--5 {
-    top: 170px;
-    left: 1014px;
+    bottom: 62.7%;
+  }
+
+  .location-flag--6 {
+    bottom: 58.5%;
+  }
+
+  .location-flag--7 {
+    bottom: 65.3%;
+  }
+
+  .location-flag--8 {
+    bottom: 65.3%;
+  }
+
+  .location-flag--9 {
+    bottom: 51.3%;
+  }
+
+  .location-flag--10 {
+    bottom: 61%;
+  }
+
+  .location-flag--11 {
+    bottom: 58.3%;
   }
 
   .near__inner {
@@ -4885,38 +4923,6 @@ button.swiper-pagination-bullet {
     position: static;
     margin-bottom: 2rem;
     margin-left: auto;
-  }
-
-  .location__figure {
-    width: 1200px;
-    padding-top: 732px;
-  }
-
-  .location-flag--1 {
-    top: 11px;
-    left: 248px;
-  }
-
-  .location-flag--2 {
-    top: 103px;
-    left: 405px;
-  }
-
-  .location-flag--3 {
-    top: 38px;
-    left: 552px;
-  }
-
-  .location-flag--4 {
-    top: 0;
-    left: 719px;
-    display: none;
-  }
-
-  .location-flag--5 {
-    top: 136px;
-    left: 833px;
-    display: none;
   }
 
   .near__inner {
@@ -5315,31 +5321,34 @@ button.swiper-pagination-bullet {
   }
 
   .location__figure {
-    width: 768px;
-    padding-top: 468px;
+    padding-top: 157%;
   }
 
-  .location-flag--1 h3 {
-    margin-bottom: 13rem;
+  .location-logo {
+    top: 39.5%;
+    left: 9%;
   }
 
   .location-flag--1 {
-    top: 55px;
-    left: 113px;
+    bottom: 60%;
+    right: 63%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    height: 19%;
   }
 
   .location-flag--2 {
-    top: 21px;
-    left: 270px;
-  }
-
-  .location-flag--3 h3 {
-    margin-bottom: 9rem;
+    bottom: 57%;
+    left: 42%;
+    height: 26%;
   }
 
   .location-flag--3 {
-    top: 48px;
-    left: 352px;
+    bottom: 64.5%;
+    left: 68.5%;
+    height: 15%;
   }
 
   .location-flag--4 {
@@ -5347,6 +5356,30 @@ button.swiper-pagination-bullet {
   }
 
   .location-flag--5 {
+    display: none;
+  }
+
+  .location-flag--6 {
+    display: none;
+  }
+
+  .location-flag--7 {
+    display: none;
+  }
+
+  .location-flag--8 {
+    display: none;
+  }
+
+  .location-flag--9 {
+    display: none;
+  }
+
+  .location-flag--10 {
+    display: none;
+  }
+
+  .location-flag--11 {
     display: none;
   }
 
@@ -5789,7 +5822,7 @@ button.swiper-pagination-bullet {
         align-self: flex-end;
   }
 
-  .aesthetics-tab__slide--cover::after {
+  .aesthetics-tab__slide--cover .aesthetics-tab__figure::after {
     opacity: 0;
     content: none;
   }
@@ -6056,11 +6089,6 @@ button.swiper-pagination-bullet {
     padding: 0 1rem;
   }
 
-  .location__figure {
-    width: 600px;
-    padding-top: 366px;
-  }
-
   .location-logo {
     width: 27.3%;
   }
@@ -6071,33 +6099,20 @@ button.swiper-pagination-bullet {
             column-gap: 0.3rem;
   }
 
-  .location-flag__title {
-    font-size: 0.88rem;
-    line-height: 1;
-    margin-top: 0;
-  }
-
   .location-flag--1 {
-    top: 36px;
-    left: 87px;
-  }
-
-  .location-flag--2 h3 {
-    margin-bottom: 14rem;
+    bottom: 54%;
+    right: 59%;
   }
 
   .location-flag--2 {
-    top: 33px;
-    left: 198px;
+    bottom: 51.6%;
+    left: 42%;
   }
 
   .location-flag--3 {
+    bottom: 58.5%;
+    left: 76.5%;
     width: 5rem;
-  }
-
-  .location-flag--3 {
-    top: 77px;
-    left: 271px;
   }
 
   .about__inner {

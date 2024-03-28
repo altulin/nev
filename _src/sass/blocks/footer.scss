@@ -110,6 +110,12 @@
     border: 0.06rem solid #000;
     letter-spacing: 0.15rem;
     background-color: transparent;
+    transition: 0.3s;
+    cursor: pointer;
+
+    @include hocus() {
+      background-color: #fff;
+    }
 
     @include mw($dt) {
       font-size: 0.94rem;
@@ -239,7 +245,11 @@
     z-index: 9;
     right: 2rem;
     bottom: 2rem;
-    background-color: #fff;
+    background-color: #ececec;
+
+    @include hocus() {
+      background-color: #fff;
+    }
 
     @include mw($dt) {
       width: 3.13rem;

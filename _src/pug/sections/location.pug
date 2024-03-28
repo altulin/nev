@@ -3,11 +3,11 @@ include ../helpers/data/location.pug
 section.location#location
 	.locaton__wrap
 		figure.location__figure
-			+img-retina('location', 'png', 'location', 'location__img', '2371', '1452')
+			+img-retina('location', 'png', 'location', 'location__img', 1920, 1452, 768)
 
 	.location__logo.location-logo
-		a.location-logo__link("/")
-			+svg('logo')
+		//- a.location-logo__link("/")
+		//- 	+svg('logo')
 		figure.location-logo__figure
 
 	each item,i in locationlist
