@@ -211,6 +211,7 @@
       margin-right: 0.3rem;
       margin-top: 1rem;
       flex-shrink: 0;
+      border-radius: 0.25rem;
 
       @include mw($tb) {
         width: 0.94rem;

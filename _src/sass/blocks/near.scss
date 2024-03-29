@@ -429,3 +429,20 @@
     }
   }
 }
+
+.near-title {
+  &--phone {
+    display: none;
+
+    @include mw($tb) {
+      display: block;
+      text-align: center;
+    }
+  }
+
+  &--desk {
+    @include mw($tb) {
+      display: none;
+    }
+  }
+}

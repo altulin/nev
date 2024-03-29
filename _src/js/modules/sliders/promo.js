@@ -51,9 +51,9 @@ export const sliderPromo = new Swiper(".promo__swiper", {
   enabled: false,
   init: false,
   modules: [Pagination, Autoplay, EffectFade],
-  autoplay: {
-    delay: progressTime * 1000,
-  },
+  // autoplay: {
+  //   delay: progressTime * 1000,
+  // },
   effect: "fade",
   fadeEffect: {
     crossFade: true,

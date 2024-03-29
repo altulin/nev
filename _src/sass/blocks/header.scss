@@ -366,6 +366,20 @@
   &__figure {
     position: relative;
     width: 38.5%;
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      background-image: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.4),
+        rgba(255, 255, 255, 0) 43.973%
+      );
+      background-size: cover;
+    }
 
     @include mw($dt) {
       width: 0;

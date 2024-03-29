@@ -25,7 +25,7 @@
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  padding-bottom: 9rem;
+  padding-bottom: 8rem;
   box-sizing: border-box;
   padding-left: 1.25rem;
   padding-right: 1.25rem;
@@ -59,14 +59,19 @@
   &__inner {
     position: relative;
     z-index: 1;
-    width: 78rem;
+    width: 74rem;
     max-width: 100%;
+    transform: translateX(3rem);
+
+    @include mw($ldt) {
+      transform: none;
+    }
   }
 
   &__title {
     display: flex;
     flex-direction: column;
-    margin-bottom: 3rem;
+    margin-bottom: 0rem;
     line-height: 1;
 
     span:last-child {
@@ -80,10 +85,12 @@
 
   &__block {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
+    column-gap: 3.6rem;
 
     @include mw($dt) {
+      align-items: center;
       flex-direction: column-reverse;
       row-gap: 3.6rem;
       column-gap: 0;
@@ -120,10 +127,12 @@
     font-size: 1.5rem;
     font-weight: 500;
     line-height: 2.5rem;
-    width: 53%;
+    padding-right: 2rem;
+    // width: 53%;
 
     @include mw($dt) {
       width: 100%;
+      padding-right: 0;
     }
 
     @include mw($tb) {
@@ -149,8 +158,8 @@
   // flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  right: 0%;
-  top: -29%;
+  right: 2%;
+  top: -62%;
   text-align: center;
 
   @include mw($dt) {

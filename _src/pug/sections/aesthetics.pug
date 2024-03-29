@@ -8,7 +8,7 @@ section.aesthetics
 		.aesthetics__tab.aesthetics-tab
 			ul.aesthetics-tab__head.aesthetics-head
 				each item,i in aesthetics_tabs
-					li.aesthetics-head__item
+					li.aesthetics-head__item(class=`${i===2?"aesthetics-head__item--width":""}`)
 						//- a.aesthetics-head__link(href=`#${item.href}`)= item.label
 						button.aesthetics-head__link.tab-btn( data-tab-content-id=`${item.href}` class=i===0?"selected":'')= item.label
 							if item.info

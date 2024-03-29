@@ -8,6 +8,7 @@ const aesthetics = body.querySelector(".aesthetics");
 import { width } from "../sliders/dubrovka.js";
 
 export const animationAesthetics = () => {
+  if (width < 769) return;
   if (!aesthetics) return;
   const title = aesthetics.querySelector(".aesthetics__title");
 

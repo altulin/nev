@@ -1,5 +1,5 @@
 .footer {
-  padding-bottom: 4.5rem;
+  padding-bottom: 1rem;
   color: rgb(0, 0, 0);
 
   &__inner {
@@ -36,6 +36,10 @@
 .container {
   &--footer {
     width: 94.5%;
+
+    @include mw($tb) {
+      width: 100%;
+    }
   }
 }
 .footer-up {
@@ -145,8 +149,8 @@
         display: block;
         order: 4;
         align-self: auto;
-        width: 10.42rem;
-        height: 2.95rem;
+        // width: 10.42rem;
+        // height: 2.95rem;
         margin-bottom: 2.3rem;
       }
     }
@@ -155,6 +159,12 @@
       fill: #78899f;
       aspect-ratio: 3.6 / 1;
       width: 21.3rem;
+
+      @include mw($dt) {
+        width: 14.16rem;
+        height: 3.5rem;
+        aspect-ratio: auto;
+      }
     }
   }
 

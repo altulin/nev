@@ -3,15 +3,18 @@ include ../helpers/data/dubrovka.pug
 section.dubrovka#dubrovka
 	.dubrovka__inner
 		h2.dubrovka__title.title.title--lg.title--gray
-			span одубровке
-			span наневе
+			span.dubrovka__title--desk одубровке
+			span.dubrovka__title--phone о дубровке
+			span.dubrovka__title--desk наневе
+			span.dubrovka__title--phone на неве
 
 		.dubrovka__content.tabs.container-lt
 			ul.tabs__head.tabs-head
 				each item,i in dubrovka_tabs
 					li.tabs-head__item
-						//- a.tabs-head__link(href=`#${item.href}`)= item.label
-						button.tabs-head__link.tab-btn( data-tab-content-id=`${item.href}` class=i===0?"selected":'')= item.label
+						if item.mobile
+							button.tabs-head__link.tab-btn( data-tab-content-id=`${item.href}` class=i===0?"selected":'' class=`${item.mobile?'tab-btn--mobile':''}`)= item.labelPhone
+						button.tabs-head__link.tab-btn( data-tab-content-id=`${item.href}` class=i===0?"selected":'' class=`${item.mobile?'tab-btn--change':''}`)= item.label
 
 
 			.tabs__wrapper

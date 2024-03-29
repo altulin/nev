@@ -70,6 +70,10 @@
     transform: scale(0);
     border-radius: 50%;
     outline: 0.6rem solid #8ed688;
+
+    @include mw($tb) {
+      outline-width: 0.4rem;
+    }
   }
 }
 
@@ -93,6 +97,11 @@
 
     @include mw($ldt) {
       font-size: 1.3rem;
+    }
+
+    @include mw($tb) {
+      font-size: 0.88rem;
+      line-height: 1;
     }
 
     // @include mw($ph) {
@@ -164,7 +173,7 @@
 
     @include mw($ph) {
       bottom: 58.5%;
-      left: 76.5%;
+      left: 68.5%;
       width: 5rem;
     }
   }

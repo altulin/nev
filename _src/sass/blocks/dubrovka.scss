@@ -25,6 +25,24 @@
     margin-right: auto;
     width: 68%;
 
+    &--phone {
+      display: none;
+
+      @include mw($tb) {
+        display: inline;
+
+        &:last-child {
+          align-self: flex-end;
+        }
+      }
+    }
+
+    &--desk {
+      @include mw($tb) {
+        display: none;
+      }
+    }
+
     @media screen and (max-width: 1920px) {
       width: 90%;
     }
@@ -368,6 +386,22 @@
       text-align: left;
       opacity: 1;
       visibility: visible;
+    }
+  }
+}
+
+.tab-btn {
+  &--mobile {
+    display: none;
+
+    @include mw($dt) {
+      display: block;
+    }
+  }
+
+  &--change {
+    @include mw($dt) {
+      display: none;
     }
   }
 }

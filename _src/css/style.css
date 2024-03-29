@@ -1949,6 +1949,18 @@ button.swiper-pagination-bullet {
   width: 38.5%;
 }
 
+.menu__figure::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.4)), color-stop(43.973%, rgba(255, 255, 255, 0)));
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0) 43.973%);
+  background-size: cover;
+}
+
 .menu__img {
   position: absolute;
   left: 0;
@@ -2333,7 +2345,7 @@ button.swiper-pagination-bullet {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-bottom: 9rem;
+  padding-bottom: 8rem;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding-left: 1.25rem;
@@ -2358,8 +2370,11 @@ button.swiper-pagination-bullet {
 .promo-slide__inner {
   position: relative;
   z-index: 1;
-  width: 78rem;
+  width: 74rem;
   max-width: 100%;
+  -webkit-transform: translateX(3rem);
+      -ms-transform: translateX(3rem);
+          transform: translateX(3rem);
 }
 
 .promo-slide__title {
@@ -2370,7 +2385,7 @@ button.swiper-pagination-bullet {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-bottom: 3rem;
+  margin-bottom: 0rem;
   line-height: 1;
 }
 
@@ -2383,12 +2398,15 @@ button.swiper-pagination-bullet {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-column-gap: 3.6rem;
+     -moz-column-gap: 3.6rem;
+          column-gap: 3.6rem;
 }
 
 .promo-slide__link {
@@ -2419,7 +2437,7 @@ button.swiper-pagination-bullet {
   font-size: 1.5rem;
   font-weight: 500;
   line-height: 2.5rem;
-  width: 53%;
+  padding-right: 2rem;
 }
 
 .slide-label {
@@ -2447,8 +2465,8 @@ button.swiper-pagination-bullet {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  right: 0%;
-  top: -29%;
+  right: 2%;
+  top: -62%;
   text-align: center;
 }
 
@@ -3219,8 +3237,12 @@ button.swiper-pagination-bullet {
   content: none;
 }
 
+.near-title--phone {
+  display: none;
+}
+
 .footer {
-  padding-bottom: 4.5rem;
+  padding-bottom: 1rem;
   color: rgb(0, 0, 0);
 }
 
@@ -3527,6 +3549,10 @@ button.swiper-pagination-bullet {
   width: 68%;
 }
 
+.dubrovka__title--phone {
+  display: none;
+}
+
 .dubrovka__title .words {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3725,6 +3751,10 @@ button.swiper-pagination-bullet {
   visibility: hidden;
 }
 
+.tab-btn--mobile {
+  display: none;
+}
+
 .circle {
   padding-top: 3rem;
 }
@@ -3848,7 +3878,7 @@ button.swiper-pagination-bullet {
   height: 100%;
   top: 0;
   width: 5px;
-  background-color: #fff;
+  background-color: #ececec;
 }
 
 .circle-cover__block--sm--left::after {
@@ -4635,6 +4665,7 @@ button.swiper-pagination-bullet {
   margin-top: 1rem;
   -ms-flex-negative: 0;
       flex-shrink: 0;
+  border-radius: 0.25rem;
 }
 
 .developer-project__link {
@@ -4952,6 +4983,12 @@ button.swiper-pagination-bullet {
 }
 
 @media screen and (max-width: 1440px) {
+  .promo-slide__inner {
+    -webkit-transform: none;
+        -ms-transform: none;
+            transform: none;
+  }
+
   .location-flag__title {
     font-size: 1.3rem;
   }
@@ -5088,6 +5125,9 @@ button.swiper-pagination-bullet {
   }
 
   .promo-slide__block {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
         -ms-flex-direction: column-reverse;
@@ -5100,6 +5140,7 @@ button.swiper-pagination-bullet {
 
   .promo-slide__text {
     width: 100%;
+    padding-right: 0;
   }
 
   .slide-label {
@@ -5203,9 +5244,13 @@ button.swiper-pagination-bullet {
     -ms-flex-item-align: auto;
         -ms-grid-row-align: auto;
         align-self: auto;
-    width: 10.42rem;
-    height: 2.95rem;
     margin-bottom: 2.3rem;
+  }
+
+  .soc__logo svg {
+    width: 14.16rem;
+    height: 3.5rem;
+    aspect-ratio: auto;
   }
 
   .soc__list-top {
@@ -5279,6 +5324,14 @@ button.swiper-pagination-bullet {
 
   .footer-info__text {
     width: 100%;
+  }
+
+  .tab-btn--mobile {
+    display: block;
+  }
+
+  .tab-btn--change {
+    display: none;
   }
 
   .circle__title {
@@ -5552,6 +5605,15 @@ button.swiper-pagination-bullet {
     left: 9%;
   }
 
+  .location-logo__figure {
+    outline-width: 0.4rem;
+  }
+
+  .location-flag__title {
+    font-size: 0.88rem;
+    line-height: 1;
+  }
+
   .location-flag--1 {
     bottom: 60%;
     right: 63%;
@@ -5680,6 +5742,9 @@ button.swiper-pagination-bullet {
     min-width: auto;
     font-size: 0.94rem;
     line-height: 1;
+    width: 76%;
+    padding: 1.05rem 1rem;
+    margin: 0 auto;
   }
 
   .about .picture {
@@ -5761,6 +5826,19 @@ button.swiper-pagination-bullet {
     height: 2.5rem;
   }
 
+  .near-title--phone {
+    display: block;
+    text-align: center;
+  }
+
+  .near-title--desk {
+    display: none;
+  }
+
+  .container--footer {
+    width: 100%;
+  }
+
   .soc__list {
     -ms-flex-pack: distribute;
         justify-content: space-around;
@@ -5800,6 +5878,19 @@ button.swiper-pagination-bullet {
 
   .dubrovka__inner {
     padding-top: 2.5rem;
+  }
+
+  .dubrovka__title--phone {
+    display: inline;
+  }
+
+  .dubrovka__title--phone:last-child {
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+  }
+
+  .dubrovka__title--desk {
+    display: none;
   }
 
   .dubrovka__title {
@@ -6143,6 +6234,10 @@ button.swiper-pagination-bullet {
     width: 47%;
   }
 
+  .aesthetics-head__item--width {
+    width: auto;
+  }
+
   .aesthetics-head__link {
     font-size: 0.88rem;
     line-height: 1;
@@ -6352,7 +6447,7 @@ button.swiper-pagination-bullet {
 
   .location-flag--3 {
     bottom: 58.5%;
-    left: 76.5%;
+    left: 68.5%;
     width: 5rem;
   }
 

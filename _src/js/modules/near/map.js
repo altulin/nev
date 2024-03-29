@@ -18,7 +18,6 @@ export const createMap = () => {
     {
       iconLayout: "default#image",
       iconImageHref: "./img/map-mark.png",
-      // iconImageSize: [80, 80],
       iconImageSize: width < 769 ? [40, 40] : [80, 80],
       iconImageOffset: width < 769 ? [-20, -20] : [-40, -40],
     },
@@ -69,6 +68,12 @@ export const createMap = () => {
   });
   map.behaviors.disable("scrollZoom");
   map.geoObjects.add(placemark);
+
+  map.addChild(
+    new YMapDefaultSchemeLayer({
+      customization: PASTE_JSON_HERE,
+    }),
+  );
 
   if (width > 768) return;
   map.behaviors.disable("drag");
