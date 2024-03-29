@@ -69,12 +69,6 @@ export const createMap = () => {
   map.behaviors.disable("scrollZoom");
   map.geoObjects.add(placemark);
 
-  map.addChild(
-    new YMapDefaultSchemeLayer({
-      customization: PASTE_JSON_HERE,
-    }),
-  );
-
   if (width > 768) return;
   map.behaviors.disable("drag");
 };

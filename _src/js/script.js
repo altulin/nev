@@ -7361,9 +7361,7 @@
           top: "" + (ds < 769 ? "5.5rem" : "20rem"),
           left: "" + (ds < 769 ? "1rem" : "3rem")
         }
-      }), e.behaviors.disable("scrollZoom"), e.geoObjects.add(t), e.addChild(new YMapDefaultSchemeLayer({
-        customization: PASTE_JSON_HERE
-      })), ds > 768 || e.behaviors.disable("drag");
+      }), e.behaviors.disable("scrollZoom"), e.geoObjects.add(t), ds > 768 || e.behaviors.disable("drag");
     }, yc = ji.querySelector(".choose__content"), _c = () => {
       if (!yc) {
         return;

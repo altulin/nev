@@ -3549,8 +3549,8 @@ button.swiper-pagination-bullet {
   width: 68%;
 }
 
-.dubrovka__title--phone {
-  display: none;
+.dubrovka__title .title__space {
+  display: none !important;
 }
 
 .dubrovka__title .words {
@@ -5878,19 +5878,6 @@ button.swiper-pagination-bullet {
 
   .dubrovka__inner {
     padding-top: 2.5rem;
-  }
-
-  .dubrovka__title--phone {
-    display: inline;
-  }
-
-  .dubrovka__title--phone:last-child {
-    -ms-flex-item-align: end;
-        align-self: flex-end;
-  }
-
-  .dubrovka__title--desk {
-    display: none;
   }
 
   .dubrovka__title {

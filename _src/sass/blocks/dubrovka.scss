@@ -25,22 +25,8 @@
     margin-right: auto;
     width: 68%;
 
-    &--phone {
-      display: none;
-
-      @include mw($tb) {
-        display: inline;
-
-        &:last-child {
-          align-self: flex-end;
-        }
-      }
-    }
-
-    &--desk {
-      @include mw($tb) {
-        display: none;
-      }
+    .title__space {
+      display: none !important;
     }
 
     @media screen and (max-width: 1920px) {
