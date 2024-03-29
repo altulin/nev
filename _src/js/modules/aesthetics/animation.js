@@ -25,7 +25,7 @@ export const animationAesthetics = () => {
   gsap.to(title, {
     scrollTrigger: {
       trigger: title,
-      toggleActions: "play pause reverce pause",
+      toggleActions: "play pause reverse pause",
       start: `${width < 769 ? "top 100%" : "top 90%"}`,
       end: `${width < 769 ? "+=200" : "+=100"}`,
       once: true,

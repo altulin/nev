@@ -18,7 +18,7 @@ const getWidth = () => {
 };
 
 export const animationDubrovka = () => {
-  // if (width < 769) return;
+  if (width < 769) return;
   const title = body.querySelector(".dubrovka__title");
 
   if (!title) return;
@@ -30,27 +30,43 @@ export const animationDubrovka = () => {
 
   const word = words.map((item) => item.querySelector(".word"));
 
+  gsap
+    .timeline()
+    // .to(title, { width: getWidth() }, { width: "100%", duration: 1 })
+    // .to(word, { flexGrow: 0 }, { flexGrow: 1, duration: 1 }, "<");
+    .set(title, { width: "100%" })
+    .set(word, { flexGrow: 1 });
+
+  // tl.play();
+
   const tl = gsap
-    .timeline({ paused: true })
-    .fromTo(title, { width: getWidth() }, { width: "100%", duration: 1 })
-    .fromTo(word, { flexGrow: 0 }, { flexGrow: 1, duration: 1 }, "<");
-
-  tl.play();
-
-  gsap.to(title, {
-    scrollTrigger: {
-      trigger: title,
-      toggleActions: "play pause reverce pause",
-      start: "top 70%",
-      end: "+=50",
-      // markers: true,
-      once: true,
-
-      onToggle: ({ isActive }) => {
-        if (!isActive) {
-          tl.reverse();
-        }
+    .timeline({
+      scrollTrigger: {
+        trigger: title,
+        toggleActions: "restart pause reverse pause",
+        start: "top 60%",
+        end: "bottom 40%",
+        // markers: true,
+        scrub: 2,
       },
-    },
-  });
+    })
+    .to(title, { width: getWidth(), duration: 1 })
+    .to(word, { flexGrow: 0, duration: 1 }, "<");
+
+  // gsap.to(title, {
+  //   scrollTrigger: {
+  //     trigger: title,
+  //     toggleActions: "play pause reverse pause",
+  //     start: "top 70%",
+  //     end: "+=50",
+  //     // markers: true,
+  //     once: true,
+
+  //     onToggle: ({ isActive }) => {
+  //       if (!isActive) {
+  //         tl.reverse();
+  //       }
+  //     },
+  //   },
+  // });
 };

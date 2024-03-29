@@ -53,7 +53,7 @@ export const animationDeveloper = () => {
       toggleActions: "play none none pause",
       start: `${width < 769 ? "top 100%" : "top 60%"}`,
       end: `${width < 769 ? "+=200" : "+=300"}`,
-      once: true,
+      // once: true,
       // markers: true,
       onToggle: ({ isActive }) => {
         if (!isActive) {
@@ -70,7 +70,7 @@ export const animationDeveloper = () => {
       start: `${width < 769 ? "top 80%" : "top 60%"}`,
       end: `${width < 769 ? "+=200" : "+=300"}`,
       // markers: true,
-      once: true,
+      // once: true,
       onToggle: ({ isActive }) => {
         if (!isActive) {
           animationCover.reverse();

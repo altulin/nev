@@ -50,11 +50,29 @@ header.header#header(class=plan===true?'header--plan':"" )
 					nav.menu-contetnt__nav.menu-nav
 						ul.menu-nav__list
 							each item in header_nav
-								li.menu-nav__item
-									a.menu-nav__link(href=`${item.href}` class=item.anchor && 'js-anchor' target=item.anchor ? null:'_blank' data-anchor=item.anchor && `${item.href}`)= item.label
+								if !item.accordion
+									li.menu-nav__item
+										a.menu-nav__link(href=`${item.href}` class=item.anchor && 'js-anchor' target=item.anchor ? null:'_blank' data-anchor=item.anchor && `${item.href}`)= item.label
+
+								else
+									li.menu-nav__item.menu-nav__item--acc.js-accordion
+										.ac.accordion
+											p.ac-header.accordion__header
+												button.ac-trigger.menu-nav__link.accordion__btn(type="button")
+													span= item.label
+													+svg('acc')
+
+											ul.contetnt-point__list.contetnt-point__list--ph.ac-panel.accordion__panel
+												each item in header_point
+													li.contetnt-point__item.ac-text.accordion__text
+														a.contetnt-point__link(href=`${item.href}` class=item.anchor && 'js-anchor' target=item.anchor ? null:'_blank')= item.label
+
+
+
+
 
 					.menu-contetnt__point.contetnt-point
-						ul.contetnt-point__list
+						ul.contetnt-point__list.contetnt-point__list--dt
 							each item in header_point
 								li.contetnt-point__item
 									a.contetnt-point__link(href=`${item.href}` class=item.anchor && 'js-anchor' target=item.anchor ? null:'_blank')= item.label

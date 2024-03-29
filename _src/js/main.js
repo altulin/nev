@@ -28,6 +28,7 @@ import { animationChoose } from "./modules/choose/animation.js";
 import { createTabs } from "./modules/dubrovka/tabs.js";
 import { createMap } from "./modules/near/map.js";
 import { chooseLink } from "./modules/choose/link.js";
+import { makeAccordionHeder } from "./modules/header/accordion.js";
 
 const handler = () => {
   tlPromo.play().then(() => {
@@ -61,6 +62,7 @@ const handler = () => {
   animationSection();
   chooseLink();
   animationNearTitle();
+  makeAccordionHeder();
 
   if (width < 769) return;
 };

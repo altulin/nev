@@ -32,29 +32,35 @@ export const animationChoose = () => {
 
   const word = words.map((item) => item.querySelector(".word"));
 
-  const tl = gsap
-    .timeline({ paused: true })
-    .fromTo(title, { width: getWidth() }, { width: "100%", duration: 1 })
-    .fromTo(word, { flexGrow: 0 }, { flexGrow: 1, duration: 1 }, "<");
+  // const tl = gsap
+  //   .timeline({ paused: true })
+  //   .fromTo(title, { width: getWidth() }, { width: "100%", duration: 1 })
+  //   .fromTo(word, { flexGrow: 0 }, { flexGrow: 1, duration: 1 }, "<");
 
-  tl.play();
+  gsap.timeline().set(title, { width: "100%" }).set(word, { flexGrow: 1 });
 
-  gsap.to(title, {
-    scrollTrigger: {
-      trigger: title,
-      toggleActions: "play pause reverce pause",
-      start: "top 70%",
-      end: "+=50",
-      // markers: true,
-      once: true,
+  // tl.play();
 
-      onToggle: ({ isActive }) => {
-        if (!isActive) {
-          tl.reverse();
-        }
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: title,
+        toggleActions: "play pause reverse pause",
+        start: "top 70%",
+
+        end: "bottom 30%",
+        // markers: true,
+        scrub: 2,
+
+        // onToggle: ({ isActive }) => {
+        //   if (!isActive) {
+        //     tl.reverse();
+        //   }
+        // },
       },
-    },
-  });
+    })
+    .to(title, { width: getWidth(), duration: 1 })
+    .to(word, { flexGrow: 0, duration: 1 }, "<");
 
   // if (!choose) return;
   // if (width < 769) return;
@@ -68,7 +74,7 @@ export const animationChoose = () => {
   // gsap.to(title, {
   //   scrollTrigger: {
   //     trigger: title,
-  //     toggleActions: "play pause reverce pause",
+  //     toggleActions: "play pause reverse pause",
   //     start: "top 70%",
   //     end: "+=100",
   //     // markers: true,

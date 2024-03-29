@@ -114,8 +114,13 @@
     .header {
       &__inner {
         border-color: #000;
-        background-color: #fff;
-      }
+
+        @include mw($tb) {
+          background-color: #fff;
+        }
+        //
+      } // visibility: hidden;
+      // opacity: 0;
 
       &__line {
         background-color: #000;
@@ -130,10 +135,14 @@
           }
         }
 
-        &__choose,
+        &__choose {
+          display: none;
+          // visibility: hidden;
+          // opacity: 0;
+        }
         &__tel {
-          visibility: hidden;
-          opacity: 0;
+          margin-left: auto;
+          color: #000;
         }
       }
 
@@ -347,9 +356,10 @@
     flex-grow: 1;
 
     @include mw($tb) {
-      padding-left: 1rem;
+      // padding-left: 1rem;
       padding-right: 1rem;
-      padding-top: 7.5rem;
+      padding-top: 7rem;
+      padding-left: 3rem;
     }
   }
 
@@ -396,17 +406,28 @@
 }
 .menu-nav {
   @include mw($tb) {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
   }
 
   &__list {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    row-gap: 2.5rem;
+    row-gap: 1.5rem;
+
+    @include mw($tb) {
+      row-gap: 0.95rem;
+    }
   }
 
   &__item {
+    &--acc {
+      display: none;
+
+      @include mw($tb) {
+        display: block;
+      }
+    }
   }
 
   &__link {
@@ -422,7 +443,7 @@
 
     @include mw($dt) {
       font-size: 1.25rem;
-      line-height: 1;
+      line-height: 2.2;
     }
 
     @include hocus() {
@@ -450,6 +471,24 @@
     margin-left: 3.5rem;
 
     @include mw($tb) {
+      row-gap: 0.8rem;
+    }
+
+    &--ph {
+      display: none;
+
+      @include mw($tb) {
+        display: flex;
+      }
+    }
+
+    &--dt {
+      @include mw($tb) {
+        display: none;
+      }
+    }
+
+    @include mw($tb) {
       margin-left: 0;
     }
   }
@@ -465,6 +504,11 @@
     border-bottom: 0.06rem solid transparent;
     transform: 0.5s;
     display: block;
+
+    @include mw($tb) {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
 
     @include hocus() {
       border-color: #a7a7ab;
@@ -483,9 +527,12 @@
     display: block;
 
     @include mw($tb) {
-      padding-left: 1rem;
-      padding-right: 1rem;
+      padding: 0.95rem 1rem;
       text-align: center;
+      letter-spacing: 0.1rem;
+      font-size: 1rem;
+      max-width: 16rem;
+      line-height: 1;
     }
   }
 }
@@ -650,5 +697,58 @@
     font-weight: 600;
     line-height: 1.56rem;
     text-transform: uppercase;
+  }
+}
+
+.accordion {
+  &__btn {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    column-gap: 0.88rem;
+
+    @include hocus() {
+      border-color: transparent;
+    }
+
+    svg {
+      fill: transparent;
+      stroke: #a7a7ab;
+      width: 1.19rem;
+      height: 0.5rem;
+      transition: 0.3s;
+    }
+  }
+
+  &__panel {
+    overflow: hidden;
+
+    @include mw($tb) {
+      margin-bottom: 0;
+      padding-left: 1.5rem;
+      padding-top: 0.7rem;
+    }
+  }
+}
+
+.js-enabled {
+  .accordion {
+    &__panel {
+      visibility: hidden;
+    }
+  }
+}
+
+.is-active {
+  .accordion {
+    &__panel {
+      visibility: visible;
+    }
+
+    &__btn {
+      svg {
+        transform: rotate(180deg);
+      }
+    }
   }
 }

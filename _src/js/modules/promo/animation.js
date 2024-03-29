@@ -1,6 +1,7 @@
 import gsap from "gsap";
 import { body } from "../header/menu.js";
 import { sliderPromo } from "../sliders/promo.js";
+import { width } from "../sliders/dubrovka.js";
 
 export let tlPromo = gsap.timeline({
   paused: true,
@@ -18,7 +19,11 @@ const animationPromo = () => {
   const label = promoSlide.querySelector(".promo-slide__label");
 
   tlPromo
-    .fromTo(line, { width: "0%" }, { width: "100%", duration: 3 })
+    .fromTo(
+      line,
+      { width: "0%" },
+      { width: "100%", duration: width > 768 ? 3 : 1 },
+    )
     .fromTo(
       text,
       { backgroundPositionY: "200%" },

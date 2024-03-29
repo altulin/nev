@@ -4,27 +4,42 @@ import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 gsap.registerPlugin(ScrollTrigger);
 import Splitting from "splitting";
 
-// import { width } from "../sliders/dubrovka.js";
+import { width } from "../sliders/dubrovka.js";
 const near = body.querySelector(".near");
 
 export const animationNearTitle = () => {
+  if (width < 769) return;
   if (!near) return;
-  // if (width < 769) return;
   const title = near.querySelector(".near-title");
   Splitting({ target: title, whitespace: true, by: "chars" });
 
   const word = title.querySelector(".word");
 
-  gsap.to(word, {
-    scrollTrigger: {
-      trigger: title,
-      toggleActions: "play pause reverce pause",
-      start: "top 70%",
-      once: true,
-    },
-    flexGrow: 0,
-    duration: 1,
-  });
+  gsap.timeline().set(word, { flexGrow: 1 });
+
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: title,
+        toggleActions: "restart pause reverse pause",
+        start: "top 70%",
+        end: "bottom 30%",
+        scrub: 2,
+        // markers: true,
+      },
+    })
+    .to(word, { flexGrow: 0, duration: 1 });
+
+  // gsap.to(word, {
+  //   scrollTrigger: {
+  //     trigger: title,
+  //     toggleActions: "play pause reverse pause",
+  //     start: "top 70%",
+  //     once: true,
+  //   },
+  //   flexGrow: 0,
+  //   duration: 1,
+  // });
 };
 
 animationNearTitle();
@@ -36,7 +51,7 @@ export const animationLine = () => {
     gsap.to(item, {
       scrollTrigger: {
         trigger: item,
-        toggleActions: "restart pause reverce pause",
+        toggleActions: "restart pause reverse pause",
         // start: `top ${90 - i * 1}%`,
         // end: "+=300",
         start: "top 60%",
@@ -67,7 +82,7 @@ export const animationSection = () => {
       start: "top 70%",
       end: "+=100",
       // markers: true,
-      once: true,
+      // once: true,
 
       onToggle: ({ isActive }) => {
         if (!isActive) {

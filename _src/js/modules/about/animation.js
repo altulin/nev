@@ -106,7 +106,7 @@ export const animationAbout = () => {
         start: `top 90%`,
         end: "+=100",
         // markers: true,
-        once: true,
+        // once: true,
         onToggle: ({ isActive }) => {
           if (!isActive) {
             tlAboutItemUp.reverse();
@@ -122,7 +122,7 @@ export const animationAbout = () => {
         start: `top 80%`,
         end: "+=100",
         // markers: true,
-        once: true,
+        // once: true,
         onToggle: ({ isActive }) => {
           if (!isActive) {
             tlAboutItemDown.reverse();
@@ -141,7 +141,7 @@ export const animationAbout = () => {
         start: `top 100%`,
         end: "+=100",
         // markers: true,
-        once: true,
+        // once: true,
         onToggle: ({ isActive }) => {
           if (!isActive) {
             tlAboutSubtitle.reverse();
@@ -159,7 +159,7 @@ export const animationAbout = () => {
         start: `top 100%`,
         end: "+=100",
         // markers: true,
-        once: true,
+        // once: true,
         onToggle: ({ isActive }) => {
           if (!isActive) {
             tlAboutText.reverse();
@@ -178,7 +178,7 @@ export const animationAbout = () => {
         start: `top 100%`,
         end: "+=100",
         // markers: true,
-        once: true,
+        // once: true,
         onToggle: ({ isActive }) => {
           if (!isActive) {
             tlAboutLink.reverse();
@@ -196,7 +196,7 @@ export const animationAbout = () => {
         start: `top 70%`,
         end: "+=100",
         // markers: true,
-        once: true,
+        // once: true,
         onToggle: ({ isActive }) => {
           if (!isActive) {
             tlAboutImg.reverse();
@@ -210,9 +210,11 @@ export const animationAbout = () => {
     gsap.to(word, {
       scrollTrigger: {
         trigger: title,
-        toggleActions: "play pause reverce pause",
+        toggleActions: "restart pause reverse pause",
         start: "top 70%",
-        once: true,
+        end: "bottom 30%",
+        scrub: 2,
+        // once: true,
         // markers: true,
       },
       flexGrow: 0,

@@ -68,7 +68,7 @@ export const animationYard = () => {
         start: "top 80%",
         end: "+=300",
 
-        once: true,
+        // once: true,
         // markers: true,
         onToggle: ({ isActive }) => {
           if (!isActive) {
@@ -85,7 +85,7 @@ export const animationYard = () => {
         start: "top 90%",
         end: "+=200",
 
-        once: true,
+        // once: true,
         // markers: true,
         onToggle: ({ isActive }) => {
           if (!isActive) {
@@ -102,7 +102,7 @@ export const animationYard = () => {
         start: "top 90%",
         end: "+=50",
 
-        once: true,
+        // once: true,
         // markers: true,
         onToggle: ({ isActive }) => {
           if (!isActive) {

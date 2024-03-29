@@ -1709,7 +1709,6 @@ button.swiper-pagination-bullet {
 
 .header--menu-active .header__inner {
   border-color: #000;
-  background-color: #fff;
 }
 
 .header--menu-active .header__line {
@@ -1724,10 +1723,13 @@ button.swiper-pagination-bullet {
   fill: #78899f;
 }
 
-.header--menu-active .header-middle__choose,
+.header--menu-active .header-middle__choose {
+  display: none;
+}
+
 .header--menu-active .header-middle__tel {
-  visibility: hidden;
-  opacity: 0;
+  margin-left: auto;
+  color: #000;
 }
 
 .header--menu-active .header-right__mail svg {
@@ -1982,7 +1984,11 @@ button.swiper-pagination-bullet {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  row-gap: 2.5rem;
+  row-gap: 1.5rem;
+}
+
+.menu-nav__item--acc {
+  display: none;
 }
 
 .menu-nav__link {
@@ -2023,6 +2029,10 @@ button.swiper-pagination-bullet {
   row-gap: 1.68rem;
   margin-bottom: 4rem;
   margin-left: 3.5rem;
+}
+
+.contetnt-point__list--ph {
+  display: none;
 }
 
 .contetnt-point__link {
@@ -2246,6 +2256,51 @@ button.swiper-pagination-bullet {
   font-weight: 600;
   line-height: 1.56rem;
   text-transform: uppercase;
+}
+
+.accordion__btn {
+  background-color: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 0.88rem;
+     -moz-column-gap: 0.88rem;
+          column-gap: 0.88rem;
+}
+
+.accordion__btn:hover,
+.accordion__btn:focus {
+  border-color: transparent;
+}
+
+.accordion__btn svg {
+  fill: transparent;
+  stroke: #a7a7ab;
+  width: 1.19rem;
+  height: 0.5rem;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.accordion__panel {
+  overflow: hidden;
+}
+
+.js-enabled .accordion__panel {
+  visibility: hidden;
+}
+
+.is-active .accordion__panel {
+  visibility: visible;
+}
+
+.is-active .accordion__btn svg {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
 .promo-swiper {
@@ -2872,9 +2927,6 @@ button.swiper-pagination-bullet {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -5028,7 +5080,7 @@ button.swiper-pagination-bullet {
 
   .menu-nav__link {
     font-size: 1.25rem;
-    line-height: 1;
+    line-height: 2.2;
   }
 
   .promo-slide {
@@ -5315,6 +5367,10 @@ button.swiper-pagination-bullet {
     stroke: #fff;
   }
 
+  .header--menu-active .header__inner {
+    background-color: #fff;
+  }
+
   .header__inner {
     min-height: 4.5rem;
   }
@@ -5339,9 +5395,9 @@ button.swiper-pagination-bullet {
   }
 
   .menu__content {
-    padding-left: 1rem;
     padding-right: 1rem;
-    padding-top: 7.5rem;
+    padding-top: 7rem;
+    padding-left: 3rem;
   }
 
   .menu-contetnt__wrap {
@@ -5352,7 +5408,15 @@ button.swiper-pagination-bullet {
   }
 
   .menu-nav {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  .menu-nav__list {
+    row-gap: 0.95rem;
+  }
+
+  .menu-nav__item--acc {
+    display: block;
   }
 
   .contetnt-point {
@@ -5363,13 +5427,35 @@ button.swiper-pagination-bullet {
   }
 
   .contetnt-point__list {
+    row-gap: 0.8rem;
+  }
+
+  .contetnt-point__list--ph {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .contetnt-point__list--dt {
+    display: none;
+  }
+
+  .contetnt-point__list {
     margin-left: 0;
   }
 
+  .contetnt-point__link {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
   .contetnt-point__choose {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding: 0.95rem 1rem;
     text-align: center;
+    letter-spacing: 0.1rem;
+    font-size: 1rem;
+    max-width: 16rem;
+    line-height: 1;
   }
 
   .menu-icon {
@@ -5396,6 +5482,12 @@ button.swiper-pagination-bullet {
   .menu-icon__inner {
     width: 63%;
     height: 0.44rem;
+  }
+
+  .accordion__panel {
+    margin-bottom: 0;
+    padding-left: 1.5rem;
+    padding-top: 0.7rem;
   }
 
   .promo-slide {
