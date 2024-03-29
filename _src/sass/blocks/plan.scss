@@ -31,5 +31,12 @@
     background-position: center;
     bottom: 4.5rem;
     right: 6.25rem;
+
+    @include mw($tb) {
+      width: 4rem;
+      height: 4rem;
+      bottom: 1rem;
+      right: 1rem;
+    }
   }
 }

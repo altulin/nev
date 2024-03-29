@@ -30,7 +30,7 @@ export const chooseLink = () => {
       .fromTo(rightLink, { width: "50%" }, { width: 0, duration: 1 }, "<")
       .to(bg, { scale: 1.1, duration: 1 })
       .then(() => {
-        location();
+        window.location.assign("/choose.html");
       });
   });
 

@@ -6919,24 +6919,37 @@
     var Gl = r(348);
     Hi.registerPlugin(Ll);
     Hi.registerPlugin(Ll);
-    const Vl = ji.querySelector(".near");
+    const Vl = ji.querySelector(".near"), $l = () => {
+      if (!Vl) {
+        return;
+      }
+      const e = Vl.querySelector(".near-title");
+      Gl({
+        target: e,
+        whitespace: !0,
+        by: "chars"
+      });
+      const t = e.querySelector(".word");
+      Hi.to(t, {
+        scrollTrigger: {
+          trigger: e,
+          toggleActions: "play pause reverce pause",
+          start: "top 70%",
+          once: !0
+        },
+        flexGrow: 0,
+        duration: 1
+      });
+    };
+    $l();
     Hi.registerPlugin(Ll);
-    let $l, Yl, Hl, Xl, jl, Wl, Ul, Zl, Kl, Ql, Jl, ec, tc, rc, ic;
+    let Yl, Hl, Xl, jl, Wl, Ul, Zl, Kl, Ql, Jl, ec, tc, rc, ic, nc;
     Hi.registerPlugin(Ll);
-    Wl = ji.querySelector(".about"), Wl && ($l = Wl.querySelector(".about__title"), 
-    Yl = Wl.querySelector(".about__subtitle"), Hl = Wl.querySelector(".about__text"), 
-    Ul = Array.from(Wl.querySelectorAll(".about__item--up")), Zl = Array.from(Wl.querySelectorAll(".about__item--down")), 
-    Kl = Wl.querySelectorAll(".about__list"), Xl = Wl.querySelector(".about__link"), 
-    jl = Wl.querySelector(".picture__img"), rc = Hi.timeline({
-      paused: !0
-    }).fromTo(Ul, {
-      autoAlpha: 1,
-      y: "0"
-    }, {
-      autoAlpha: 0,
-      y: "50",
-      duration: 1
-    }), ic = Hi.timeline({
+    Ul = ji.querySelector(".about"), Ul && (Yl = Ul.querySelector(".about__title"), 
+    Hl = Ul.querySelector(".about__subtitle"), Xl = Ul.querySelector(".about__text"), 
+    Zl = Array.from(Ul.querySelectorAll(".about__item--up")), Kl = Array.from(Ul.querySelectorAll(".about__item--down")), 
+    Ql = Ul.querySelectorAll(".about__list"), jl = Ul.querySelector(".about__link"), 
+    Wl = Ul.querySelector(".picture__img"), ic = Hi.timeline({
       paused: !0
     }).fromTo(Zl, {
       autoAlpha: 1,
@@ -6945,9 +6958,9 @@
       autoAlpha: 0,
       y: "50",
       duration: 1
-    }), Ql = Hi.timeline({
+    }), nc = Hi.timeline({
       paused: !0
-    }).fromTo(Yl, {
+    }).fromTo(Kl, {
       autoAlpha: 1,
       y: "0"
     }, {
@@ -6975,16 +6988,25 @@
     }), tc = Hi.timeline({
       paused: !0
     }).fromTo(jl, {
+      autoAlpha: 1,
+      y: "0"
+    }, {
+      autoAlpha: 0,
+      y: "50",
+      duration: 1
+    }), rc = Hi.timeline({
+      paused: !0
+    }).fromTo(Wl, {
       scale: 1
     }, {
       scale: .9,
       duration: 1
     }));
-    const nc = ji.querySelector(".circle-cover__block--center");
+    const sc = ji.querySelector(".circle-cover__block--center");
     Hi.registerPlugin(Ll);
-    const sc = ji.querySelector(".circle");
-    let ac;
-    const oc = new rs(".yard__slider", {
+    const ac = ji.querySelector(".circle");
+    let oc;
+    const lc = new rs(".yard__slider", {
       enabled: !1,
       modules: [ as, ls, ns ],
       autoplay: {
@@ -7005,7 +7027,7 @@
       on: {
         init: e => (e => {
           const t = e.pagination.bullets;
-          ac = t.map(((e, r) => Hi.timeline({
+          oc = t.map(((e, r) => Hi.timeline({
             paused: !0
           }).set(t[r], {
             width: ds < 769 ? "0.63rem" : "1rem",
@@ -7017,26 +7039,26 @@
             width: ds < 769 ? "2.5rem" : "5.6rem",
             marginRight: 0,
             duration: 3
-          }).add("ready", "<"))), ac[e.realIndex].play();
+          }).add("ready", "<"))), oc[e.realIndex].play();
         })(e),
         realIndexChange: e => (e => {
-          ac.forEach((e => {
+          oc.forEach((e => {
             e.pause("clear");
-          })), ac[e.realIndex].pause("ready");
+          })), oc[e.realIndex].pause("ready");
         })(e),
         slideChangeTransitionEnd: e => (e => {
-          ac[e.realIndex].play("ready");
+          oc[e.realIndex].play("ready");
         })(e)
       }
     });
     Hi.registerPlugin(Ll);
-    const lc = ji.querySelector(".yard-touch"), cc = ji.querySelector(".aesthetics-touch"), uc = Array.from(ji.querySelectorAll(".aesthetics-touch")), dc = ji.querySelector(".choose__content");
+    const cc = ji.querySelector(".yard-touch"), uc = ji.querySelector(".aesthetics-touch"), dc = Array.from(ji.querySelectorAll(".aesthetics-touch")), pc = ji.querySelector(".choose__content");
     Hi.registerPlugin(Ll);
-    const pc = ji.querySelector(".developer");
+    const fc = ji.querySelector(".developer");
     Hi.registerPlugin(Ll);
-    const fc = ji.querySelector(".aesthetics");
+    const hc = ji.querySelector(".aesthetics");
     Hi.registerPlugin(Ll);
-    const hc = ji.querySelector(".choose"), mc = e => {
+    const mc = ji.querySelector(".choose"), gc = e => {
       const t = ji.querySelector(e);
       if (!t) {
         return;
@@ -7053,7 +7075,7 @@
           })), n.classList.remove("hidden"));
         }));
       }));
-    }, gc = () => {
+    }, vc = () => {
       if (!ji.querySelector("#map")) {
         return;
       }
@@ -7097,13 +7119,61 @@
           left: "" + (ds < 769 ? "1rem" : "3rem")
         }
       }), e.behaviors.disable("scrollZoom"), e.geoObjects.add(t), ds > 768 || e.behaviors.disable("drag");
-    }, vc = ji.querySelector(".choose__content"), yc = () => {
-      window.location.assign("https://plan7.ru/catalog/adm/?page=zk&id=103&path=embed");
+    }, yc = ji.querySelector(".choose__content"), _c = () => {
+      if (!yc) {
+        return;
+      }
+      const e = yc.querySelector(".choose__left"), t = yc.querySelector(".choose__right"), r = yc.querySelector(".choose__bg");
+      e.addEventListener("click", (i => {
+        i.preventDefault(), Hi.timeline().to(e.querySelector(".choose-block"), {
+          display: "none",
+          duration: .1
+        }).to(t.querySelector(".choose-block"), {
+          display: "none",
+          duration: .1
+        }).fromTo(e, {
+          width: "50%"
+        }, {
+          width: "100%",
+          duration: 1
+        }).fromTo(t, {
+          width: "50%"
+        }, {
+          width: 0,
+          duration: 1
+        }, "<").to(r, {
+          scale: 1.1,
+          duration: 1
+        }).then((() => {
+          window.location.assign("/choose.html");
+        }));
+      })), t.addEventListener("click", (r => {
+        r.preventDefault(), Hi.timeline().to(e.querySelector(".choose-block"), {
+          display: "none",
+          duration: .1
+        }).to(t.querySelector(".choose-block"), {
+          x: "-50%",
+          left: "50%",
+          duration: 1
+        }, "<").fromTo(t, {
+          width: "50%"
+        }, {
+          width: "100%",
+          duration: 1
+        }, "<").fromTo(e, {
+          width: "50%"
+        }, {
+          width: 0,
+          duration: 1
+        }, "<").then((() => {
+          window.location.assign("https://plan7.ru/catalog/adm/?page=zk&id=103&path=embed");
+        }));
+      }));
     };
     document.addEventListener("DOMContentLoaded", (() => {
       Ss.play().then((() => {
         gs.init(), gs.enable();
-      })), mc(".dubrovka"), mc(".aesthetics"), Ui && Ui.addEventListener("click", Ji), 
+      })), gc(".dubrovka"), gc(".aesthetics"), Ui && Ui.addEventListener("click", Ji), 
       Wi && window.addEventListener("scroll", tn), hs(), vs.enable(), Array.from(ji.querySelectorAll(".js-aesthetics-tabs")).map(((e, t) => new rs(e, {
         modules: [ ns, os ],
         speed: 1e3,
@@ -7196,13 +7266,13 @@
             }
           }
         });
-      })(), Array.from(ji.querySelectorAll(".near-indication__line")).forEach(((e, t) => {
+      })(), Array.from(ji.querySelectorAll(".near-indication__line")).forEach((e => {
         Hi.to(e, {
           scrollTrigger: {
             trigger: e,
             toggleActions: "restart pause reverce pause",
-            start: `top ${90 - 1 * t}%`,
-            end: "+=300",
+            start: "top 60%",
+            end: "bottom 40%",
             scrub: 3
           },
           width: "100%",
@@ -7250,41 +7320,30 @@
         });
       })(), (() => {
         let e;
-        $l && (Gl({
-          target: $l,
+        Yl && (Gl({
+          target: Yl,
           whitespace: !0,
           by: "chars"
-        }), e = $l.querySelector(".word")), Kl && (rc.play(), ic.play(), Hi.to(Kl, {
+        }), e = Yl.querySelector(".word")), Ql && (ic.play(), nc.play(), Hi.to(Ql, {
           scrollTrigger: {
-            trigger: Kl,
+            trigger: Ql,
             toggleActions: "play none none pause",
             start: "top 90%",
-            end: "+=100",
-            once: !0,
-            onToggle: ({isActive: e}) => {
-              e || rc.reverse();
-            }
-          }
-        }), Hi.to(Kl, {
-          scrollTrigger: {
-            trigger: Kl,
-            toggleActions: "play none none pause",
-            start: "top 80%",
             end: "+=100",
             once: !0,
             onToggle: ({isActive: e}) => {
               e || ic.reverse();
             }
           }
-        })), Yl && (Ql.play(), Hi.to(Yl, {
+        }), Hi.to(Ql, {
           scrollTrigger: {
-            trigger: Yl,
+            trigger: Ql,
             toggleActions: "play none none pause",
-            start: "top 100%",
+            start: "top 80%",
             end: "+=100",
             once: !0,
             onToggle: ({isActive: e}) => {
-              e || Ql.reverse();
+              e || nc.reverse();
             }
           }
         })), Hl && (Jl.play(), Hi.to(Hl, {
@@ -7313,16 +7372,27 @@
           scrollTrigger: {
             trigger: jl,
             toggleActions: "play none none pause",
-            start: "top 70%",
+            start: "top 100%",
             end: "+=100",
             once: !0,
             onToggle: ({isActive: e}) => {
               e || tc.reverse();
             }
           }
+        })), Wl && (rc.play(), Hi.to(Wl, {
+          scrollTrigger: {
+            trigger: Wl,
+            toggleActions: "play none none pause",
+            start: "top 70%",
+            end: "+=100",
+            once: !0,
+            onToggle: ({isActive: e}) => {
+              e || rc.reverse();
+            }
+          }
         })), e && Hi.to(e, {
           scrollTrigger: {
-            trigger: $l,
+            trigger: Yl,
             toggleActions: "play pause reverce pause",
             start: "top 70%",
             once: !0
@@ -7331,13 +7401,13 @@
           duration: 1
         });
       })(), (() => {
-        if (!nc) {
+        if (!sc) {
           return;
         }
         if (ds < 769) {
           return;
         }
-        Array.from(nc.querySelectorAll(".circle-control__block")).forEach((e => {
+        Array.from(sc.querySelectorAll(".circle-control__block")).forEach((e => {
           let t = 0, r = 0, i = 0, n = 0;
           const s = e.querySelector(".control");
           !function e() {
@@ -7350,10 +7420,10 @@
           }));
         }));
       })(), (() => {
-        if (!sc) {
+        if (!ac) {
           return;
         }
-        const e = sc.querySelector(".title");
+        const e = ac.querySelector(".title");
         if (!e) {
           return;
         }
@@ -7373,7 +7443,7 @@
           }, "<");
           r.play(), Hi.to(e, {
             scrollTrigger: {
-              trigger: sc,
+              trigger: ac,
               toggleActions: "play none none pause",
               start: "top 80%",
               end: "+=100",
@@ -7409,7 +7479,7 @@
           y: "100%",
           duration: 1
         }, "<").call((() => {
-          oc.enable(), oc.slideNext(2e3);
+          lc.enable(), lc.slideNext(2e3);
         })).to(n, {
           autoAlpha: 1
         }), a = Hi.timeline({
@@ -7418,7 +7488,7 @@
           y: "100%",
           duration: 1
         }, "<").call((() => {
-          oc.enable(), oc.slideNext(2e3);
+          lc.enable(), lc.slideNext(2e3);
         })).to(n, {
           autoAlpha: 1
         }), o = Hi.timeline({
@@ -7473,13 +7543,13 @@
           }
         }));
       })(), (() => {
-        if (!lc) {
+        if (!cc) {
           return;
         }
         if (ds < 769) {
           return;
         }
-        Array.from(lc.querySelectorAll(".yard-touch__block")).forEach((e => {
+        Array.from(cc.querySelectorAll(".yard-touch__block")).forEach((e => {
           let t = 0, r = 0, i = 0, n = 0;
           const s = e.querySelector(".control");
           !function e() {
@@ -7495,10 +7565,10 @@
         if (ds < 769) {
           return;
         }
-        if (!cc) {
+        if (!uc) {
           return;
         }
-        uc.map((e => Array.from(e.querySelectorAll(".aesthetics-touch__block")))).flat().forEach((e => {
+        dc.map((e => Array.from(e.querySelectorAll(".aesthetics-touch__block")))).flat().forEach((e => {
           let t = 0, r = 0, i = 0, n = 0;
           const s = e.querySelector(".control");
           !function e() {
@@ -7511,13 +7581,13 @@
           }));
         }));
       })(), (() => {
-        if (!dc) {
+        if (!pc) {
           return;
         }
         if (ds < 769) {
           return;
         }
-        Array.from(dc.querySelectorAll(".choose__control")).forEach((e => {
+        Array.from(pc.querySelectorAll(".choose__control")).forEach((e => {
           let t = 0, r = 0, i = 0, n = 0;
           const s = e.querySelector(".control");
           !function e() {
@@ -7531,10 +7601,10 @@
           }));
         }));
       })(), (() => {
-        if (!pc) {
+        if (!fc) {
           return;
         }
-        const e = pc.querySelector(".developer__title--" + (ds < 769 ? "tb" : "dt")), t = pc.querySelector(".developer-info__logo"), r = pc.querySelector(".developer__figure-cover"), i = pc.querySelector(".info-block"), n = pc.querySelector(".info-list"), s = Hi.timeline({
+        const e = fc.querySelector(".developer__title--" + (ds < 769 ? "tb" : "dt")), t = fc.querySelector(".developer-info__logo"), r = fc.querySelector(".developer__figure-cover"), i = fc.querySelector(".info-block"), n = fc.querySelector(".info-list"), s = Hi.timeline({
           paused: !0
         }).fromTo(r, {
           y: 0
@@ -7572,7 +7642,7 @@
         }, "<");
         a.play(), s.play(), Hi.to(e, {
           scrollTrigger: {
-            trigger: pc,
+            trigger: fc,
             toggleActions: "play none none pause",
             start: ds < 769 ? "top 100%" : "top 60%",
             end: ds < 769 ? "+=200" : "+=300",
@@ -7583,7 +7653,7 @@
           }
         }), Hi.to(i, {
           scrollTrigger: {
-            trigger: pc,
+            trigger: fc,
             toggleActions: "play none none pause",
             start: ds < 769 ? "top 80%" : "top 60%",
             end: ds < 769 ? "+=200" : "+=300",
@@ -7614,10 +7684,10 @@
           }));
         }));
       })(), (() => {
-        if (!fc) {
+        if (!hc) {
           return;
         }
-        const e = fc.querySelector(".aesthetics__title"), t = Hi.timeline({
+        const e = hc.querySelector(".aesthetics__title"), t = Hi.timeline({
           paused: !0
         }).fromTo(e, {
           backgroundPositionY: "100%"
@@ -7644,10 +7714,10 @@
           duration: 1
         });
       })(), (() => {
-        if (!hc) {
+        if (!mc) {
           return;
         }
-        const e = hc.querySelector(".choose__title");
+        const e = mc.querySelector(".choose__title");
         if (!e) {
           return;
         }
@@ -7684,7 +7754,7 @@
             }
           }
         });
-      })(), ymaps.ready(gc), (() => {
+      })(), ymaps.ready(vc), (() => {
         if (!Vl) {
           return;
         }
@@ -7710,78 +7780,7 @@
             }
           }
         });
-      })(), (() => {
-        if (!vc) {
-          return;
-        }
-        const e = vc.querySelector(".choose__left"), t = vc.querySelector(".choose__right"), r = vc.querySelector(".choose__bg");
-        e.addEventListener("click", (i => {
-          i.preventDefault(), Hi.timeline().to(e.querySelector(".choose-block"), {
-            display: "none",
-            duration: .1
-          }).to(t.querySelector(".choose-block"), {
-            display: "none",
-            duration: .1
-          }).fromTo(e, {
-            width: "50%"
-          }, {
-            width: "100%",
-            duration: 1
-          }).fromTo(t, {
-            width: "50%"
-          }, {
-            width: 0,
-            duration: 1
-          }, "<").to(r, {
-            scale: 1.1,
-            duration: 1
-          }).then((() => {
-            yc();
-          }));
-        })), t.addEventListener("click", (r => {
-          r.preventDefault(), Hi.timeline().to(e.querySelector(".choose-block"), {
-            display: "none",
-            duration: .1
-          }).to(t.querySelector(".choose-block"), {
-            x: "-50%",
-            left: "50%",
-            duration: 1
-          }, "<").fromTo(t, {
-            width: "50%"
-          }, {
-            width: "100%",
-            duration: 1
-          }, "<").fromTo(e, {
-            width: "50%"
-          }, {
-            width: 0,
-            duration: 1
-          }, "<").then((() => {
-            yc();
-          }));
-        }));
-      })(), (() => {
-        if (!Vl) {
-          return;
-        }
-        const e = Vl.querySelector(".near-title");
-        Gl({
-          target: e,
-          whitespace: !0,
-          by: "chars"
-        });
-        const t = e.querySelector(".word");
-        Hi.to(t, {
-          scrollTrigger: {
-            trigger: e,
-            toggleActions: "play pause reverce pause",
-            start: "top 70%",
-            once: !0
-          },
-          flexGrow: 0,
-          duration: 1
-        });
-      })();
+      })(), _c(), $l();
     }));
   })();
 })();

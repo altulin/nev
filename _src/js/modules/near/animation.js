@@ -27,18 +27,20 @@ export const animationNearTitle = () => {
   });
 };
 
-// animationNearTitle();
+animationNearTitle();
 
 export const animationLine = () => {
   const list = Array.from(body.querySelectorAll(".near-indication__line"));
 
-  list.forEach((item, i) => {
+  list.forEach((item) => {
     gsap.to(item, {
       scrollTrigger: {
         trigger: item,
         toggleActions: "restart pause reverce pause",
-        start: `top ${90 - i * 1}%`,
-        end: "+=300",
+        // start: `top ${90 - i * 1}%`,
+        // end: "+=300",
+        start: "top 60%",
+        end: "bottom 40%",
         // markers: true,
         // once: true,
         scrub: 3,

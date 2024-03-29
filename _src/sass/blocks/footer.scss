@@ -256,6 +256,10 @@
       height: 3.13rem;
     }
 
+    @include mw($tb) {
+      display: none;
+    }
+
     @include hocus() {
       opacity: 0.6;
     }

@@ -12,6 +12,7 @@ export const toTopHandle = (e) => {
 export const setToTop = () => {
   if (!main) return;
   const links = Array.from(body.querySelectorAll(".js-top"));
+
   links.forEach((link) => {
     link.addEventListener("click", toTopHandle);
   });
