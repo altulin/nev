@@ -1,5 +1,5 @@
 import Swiper from "swiper";
-import { Pagination, Autoplay, Navigation } from "swiper/modules";
+import { Pagination, Autoplay, Navigation, EffectFade } from "swiper/modules";
 import gsap from "gsap";
 import { width } from "./dubrovka.js";
 
@@ -46,9 +46,13 @@ const initHandle = (s) => {
 
 export const sliderYard = new Swiper(".yard__slider", {
   enabled: false,
-  modules: [Pagination, Autoplay, Navigation],
+  modules: [Pagination, Autoplay, Navigation, EffectFade],
   autoplay: {
     delay: progressTime * 1000,
+  },
+  effect: "fade",
+  fadeEffect: {
+    crossFade: true,
   },
   loop: true,
   spaceBetween: 5,

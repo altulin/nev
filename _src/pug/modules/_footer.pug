@@ -24,11 +24,11 @@ footer.footer
 						li.soc__item
 							a.soc__link(href=`${item.href}` class=`soc__link--${item.name}` style={'background-image': `url(/img/${item.name}.png)`})
 			.footer-up__connection.connection
-				button.connection__top.js-top(type="button")
-					<svg  viewBox="0 0 23 59" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M1 11.5L11.5 1L22 11.5" stroke="black" stroke-linecap="round"/>
-						<path d="M11.5 1L11.5 58" stroke="black" stroke-linecap="round"/>
-					</svg>
+				//- button.connection__top.js-top(type="button")
+				//- 	<svg  viewBox="0 0 23 59" fill="none" xmlns="http://www.w3.org/2000/svg">
+				//- 		<path d="M1 11.5L11.5 1L22 11.5" stroke="black" stroke-linecap="round"/>
+				//- 		<path d="M11.5 1L11.5 58" stroke="black" stroke-linecap="round"/>
+				//- 	</svg>
 
 				.connection__inner
 					span.connection__title Связаться с нами:
@@ -48,3 +48,15 @@ footer.footer
 
 		.footer__down.footer-info
 			p.footer-info__text Любая информация, представленная на данном сайте, носит исключительно информационный характер и ни при каких условиях не является публичной офертой, определяемой положениями статьи 437 ГК РФ
+
+	button.footer__top.footer__top--fixed.js-top(type="button")
+		<svg  viewBox="0 0 23 59" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M1 11.5L11.5 1L22 11.5" stroke="black" stroke-linecap="round"/>
+			<path d="M11.5 1L11.5 58" stroke="black" stroke-linecap="round"/>
+		</svg>
+
+	button.footer__top.footer__top--absolute.js-top(type="button")
+		<svg  viewBox="0 0 23 59" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M1 11.5L11.5 1L22 11.5" stroke="black" stroke-linecap="round"/>
+			<path d="M11.5 1L11.5 58" stroke="black" stroke-linecap="round"/>
+		</svg>

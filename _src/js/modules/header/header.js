@@ -10,12 +10,14 @@ const updateScrollDirection = () => {
     direction !== scrollDirection &&
     (scrollY - lastScrollY > 10 || scrollY - lastScrollY < -10)
   ) {
-    header.className = "";
-    header.classList.add(`header`);
+    setTimeout(() => {
+      header.className = "";
+      header.classList.add(`header`);
 
-    if (scrollY > 50) {
-      header.classList.add(`header--${direction}`);
-    }
+      if (scrollY > 50) {
+        header.classList.add(`header--${direction}`);
+      }
+    }, 1000);
   }
   lastScrollY = scrollY > 0 ? scrollY : 0;
 };

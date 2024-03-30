@@ -29,6 +29,7 @@ import { createTabs } from "./modules/dubrovka/tabs.js";
 import { createMap } from "./modules/near/map.js";
 import { chooseLink } from "./modules/choose/link.js";
 import { makeAccordionHeder } from "./modules/header/accordion.js";
+import { topBtnAnimation } from "./modules/footer/top.js";
 
 const handler = () => {
   tlPromo.play().then(() => {
@@ -63,6 +64,7 @@ const handler = () => {
   chooseLink();
   animationNearTitle();
   makeAccordionHeder();
+  // topBtnAnimation();
 
   if (width < 769) return;
 };

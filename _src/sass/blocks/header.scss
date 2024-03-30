@@ -4,12 +4,20 @@
   width: 100%;
   top: 0;
   z-index: 10;
-  transition: 0.3s;
+  transition: 0.8s ease-in-out;
 
   &--plan {
+    .header__line-middle {
+      background-color: #000;
+    }
+
+    .header-middle__choose {
+      border-color: #000;
+    }
+
     .header {
       &__inner {
-        border-color: #000;
+        // border-color: #000;
       }
 
       &__line {
@@ -27,7 +35,7 @@
 
     .header-middle__choose {
       color: #000;
-      border-color: #000;
+      // border-color: #000;
     }
 
     .header-middle__tel {
@@ -35,7 +43,7 @@
     }
 
     .header-middle {
-      border-color: #000;
+      // border-color: #000;
     }
 
     .header-right__mail svg {
@@ -50,20 +58,30 @@
   &--down {
     transform: translateY(-100%);
     // background-color: rgba(#78899f, 0.8);
-    background-color: #fff;
+    // background-color: rgba(#fff, 0.9);
+
+    .header {
+      &__inner {
+        background-color: rgba(#fff, 0.9);
+      }
+    }
   }
 
   &--up {
     // background-color: rgba(#78899f, 0.8);
-    // background-color: #fff;
+    // background-color: rgba(#fff, 0.9);
 
     .menu-icon__line {
       background-color: #000;
     }
 
+    .header__line-middle {
+      background-color: #000;
+    }
+
     .header {
       &__inner {
-        border-color: #000;
+        // border-color: #000;
         background-color: rgba(#fff, 0.9);
       }
 
@@ -72,7 +90,7 @@
       }
 
       &-middle {
-        border-color: #000;
+        // border-color: #000;
 
         &__logo {
           svg {
@@ -115,6 +133,9 @@
   }
 
   &--menu-active {
+    .header__line-middle {
+      background-color: #000;
+    }
     .header {
       &__inner {
         border-color: #000;
@@ -213,8 +234,8 @@
 
   &__middle {
     flex-grow: 1;
-    border-left: 0.06rem solid #fff;
-    border-right: 0.06rem solid #fff;
+    // border-left: 0.06rem solid #fff;
+    // border-right: 0.06rem solid #fff;
   }
 
   &__right {
@@ -237,6 +258,7 @@
   align-items: center;
   padding: 0 2rem;
   flex-wrap: wrap;
+  position: relative;
 
   @include mw($tb) {
     border: 0;
@@ -768,5 +790,23 @@
         transform: rotate(180deg);
       }
     }
+  }
+}
+
+.header__line-middle {
+  position: absolute;
+  width: 0.06rem;
+  height: 100%;
+  background-color: #fff;
+  top: 0;
+
+  border: 0;
+  margin: 0;
+
+  &--left {
+    left: 0;
+  }
+  &--right {
+    right: 0;
   }
 }

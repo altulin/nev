@@ -11,6 +11,8 @@ const animationPromo = () => {
   const promoSlide = body.querySelector(".promo-slide--0");
   if (!promoSlide) return;
   const line = body.querySelector(".header__line");
+  const linesMiddle = Array.from(body.querySelectorAll(".header__line-middle"));
+  const elements = Array.from(body.querySelectorAll(".js-header"));
 
   const text = Array.from(
     promoSlide.querySelectorAll(".promo-title--0 .promo-title__text"),
@@ -19,11 +21,15 @@ const animationPromo = () => {
   const label = promoSlide.querySelector(".promo-slide__label");
 
   tlPromo
+
     .fromTo(
       line,
       { width: "0%" },
-      { width: "100%", duration: width > 768 ? 3 : 1 },
+      { width: "100%", duration: width > 768 ? 2 : 1 },
     )
+    .fromTo(linesMiddle, { height: 0 }, { height: "100%", duration: 1 })
+    .fromTo(elements, { autoAlpha: 0 }, { autoAlpha: 1, duration: 1 }, "<")
+
     .fromTo(
       text,
       { backgroundPositionY: "200%" },
