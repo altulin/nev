@@ -562,6 +562,10 @@ input:-webkit-autofill:active {
   padding-left: 15px;
 }
 
+* {
+  outline: 1px solid #ff6347;
+}
+
 .scroll-lock {
   overflow: hidden;
 }
@@ -1624,6 +1628,10 @@ button.swiper-pagination-bullet {
   border-color: #000;
 }
 
+.header--plan .header__line {
+  background-color: #000;
+}
+
 .header--plan .menu-icon__line {
   background-color: #000;
 }
@@ -2311,6 +2319,10 @@ button.swiper-pagination-bullet {
           transform: rotate(180deg);
 }
 
+.promo {
+  margin-bottom: 9rem;
+}
+
 .promo-swiper {
   width: 100%;
 }
@@ -2535,7 +2547,7 @@ button.swiper-pagination-bullet {
   background-color: #78899f;
   position: relative;
   z-index: 1;
-  padding-top: 9.8rem;
+  padding-top: 20.8rem;
   overflow: hidden;
 }
 
@@ -2563,9 +2575,9 @@ button.swiper-pagination-bullet {
 
 .location-logo {
   position: absolute;
-  width: 13.3%;
-  top: 31.5%;
-  left: 14%;
+  width: 12.3%;
+  top: 37.5%;
+  left: 17%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2627,61 +2639,61 @@ button.swiper-pagination-bullet {
 }
 
 .location-flag--1 {
-  bottom: 62%;
-  right: 72%;
+  bottom: 55.5%;
+  right: 68.6%;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  height: 20%;
+  height: 21%;
 }
 
 .location-flag--2 {
-  bottom: 58.6%;
-  left: 32%;
+  bottom: 53.6%;
+  left: 34.6%;
   height: 16%;
 }
 
 .location-flag--3 {
   width: 11rem;
-  bottom: 66.5%;
-  left: 44.5%;
+  bottom: 60.5%;
+  left: 45.5%;
   height: 16%;
 }
 
 .location-flag--4 {
   width: 15rem;
-  bottom: 67.3%;
-  left: 63%;
-  height: 21%;
+  bottom: 61%;
+  left: 62.7%;
+  height: 20%;
 }
 
 .location-flag--5 {
-  bottom: 64.7%;
-  left: 70.5%;
-  height: 16%;
+  bottom: 55.7%;
+  left: 71%;
+  height: 19%;
 }
 
 .location-flag--6 {
-  bottom: 58.5%;
-  left: 1.5%;
+  bottom: 53%;
+  left: 3%;
   height: 29.5%;
 }
 
 .location-flag--7 {
-  bottom: 67.3%;
-  right: 87%;
+  bottom: 61.3%;
+  right: 84.5%;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  height: 16%;
+  height: 15%;
   text-align: right;
-  width: 10rem;
+  width: 13rem;
 }
 
 .location-flag--8 {
-  bottom: 67.3%;
+  bottom: 60%;
   right: 40%;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
@@ -2691,15 +2703,15 @@ button.swiper-pagination-bullet {
 }
 
 .location-flag--9 {
-  bottom: 53.5%;
-  left: 78%;
+  bottom: 49.5%;
+  left: 78.2%;
   height: 20%;
   width: 11rem;
 }
 
 .location-flag--10 {
-  bottom: 63%;
-  right: 5%;
+  bottom: 57%;
+  right: 4.2%;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -2708,13 +2720,13 @@ button.swiper-pagination-bullet {
 }
 
 .location-flag--11 {
-  bottom: 60.3%;
-  right: 1.5%;
+  bottom: 55.3%;
+  right: 1.8%;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  height: 27%;
+  height: 26%;
   width: 10rem;
   text-align: right;
 }
@@ -2758,8 +2770,10 @@ button.swiper-pagination-bullet {
   padding-top: 5rem;
   padding-bottom: 3.75rem;
   position: relative;
-  margin-top: -13.2rem;
+  margin-top: -26.2rem;
   overflow: hidden;
+  z-index: 1;
+  margin-bottom: 6.2rem;
 }
 
 .about__title {
@@ -2817,7 +2831,7 @@ button.swiper-pagination-bullet {
   -ms-grid-columns: (1fr)[3];
   grid-template-columns: repeat(3, 1fr);
   row-gap: 3.5rem;
-  margin-bottom: 6rem;
+  margin-bottom: 5rem;
   max-width: 39%;
   -webkit-transform: translate(-6%);
       -ms-transform: translate(-6%);
@@ -2886,7 +2900,7 @@ button.swiper-pagination-bullet {
 
 .about .picture {
   position: absolute;
-  width: 37%;
+  width: 47.5%;
   right: 0;
   bottom: 0;
 }
@@ -2914,7 +2928,7 @@ button.swiper-pagination-bullet {
 }
 
 .near__title {
-  margin-bottom: 5.7rem;
+  margin-bottom: 16.7rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3285,6 +3299,9 @@ button.swiper-pagination-bullet {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-transform: translateX(-17%);
+      -ms-transform: translateX(-17%);
+          transform: translateX(-17%);
 }
 
 .footer-up__soc--dt {
@@ -3366,9 +3383,12 @@ button.swiper-pagination-bullet {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-column-gap: 8rem;
+     -moz-column-gap: 8rem;
+          column-gap: 8rem;
 }
 
 .soc__list-bot {
@@ -3533,7 +3553,7 @@ button.swiper-pagination-bullet {
 }
 
 .dubrovka {
-  margin-bottom: 8.5rem;
+  margin-bottom: 18.5rem;
 }
 
 .dubrovka__inner {
@@ -3549,7 +3569,7 @@ button.swiper-pagination-bullet {
       -ms-flex-direction: column;
           flex-direction: column;
   row-gap: 1rem;
-  margin-bottom: 4.6rem;
+  margin-bottom: 15.6rem;
   padding-left: 2rem;
   padding-right: 2rem;
   margin-left: auto;
@@ -3608,7 +3628,7 @@ button.swiper-pagination-bullet {
           align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin-bottom: 8.5rem;
+  margin-bottom: 2.5rem;
   margin-right: 1rem;
   -webkit-column-gap: 2rem;
      -moz-column-gap: 2rem;
@@ -3682,6 +3702,7 @@ button.swiper-pagination-bullet {
   -webkit-column-gap: 1rem;
      -moz-column-gap: 1rem;
           column-gap: 1rem;
+  margin-bottom: 3rem;
 }
 
 .tabs-block__control--tb {
@@ -3765,6 +3786,7 @@ button.swiper-pagination-bullet {
 
 .circle {
   padding-top: 3rem;
+  margin-bottom: 2rem;
 }
 
 .circle__title {
@@ -3781,7 +3803,7 @@ button.swiper-pagination-bullet {
   margin-left: auto;
   margin-right: auto;
   letter-spacing: 0.4rem;
-  margin-bottom: 3rem;
+  margin-bottom: 10.7rem;
   color: transparent;
 }
 
@@ -3934,6 +3956,7 @@ button.swiper-pagination-bullet {
 
 .yard {
   padding-top: 15rem;
+  margin-bottom: 1rem;
 }
 
 .yard__cover {
@@ -4075,6 +4098,7 @@ button.swiper-pagination-bullet {
 .aesthetics {
   padding-top: 10rem;
   position: relative;
+  margin-bottom: 9rem;
 }
 
 .aesthetics__inner {
@@ -4088,7 +4112,7 @@ button.swiper-pagination-bullet {
   line-height: 1;
   letter-spacing: 0.4rem;
   text-transform: uppercase;
-  margin-bottom: 4.5rem;
+  margin-bottom: 9.7rem;
   color: transparent;
   background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #a7a7ab), color-stop(50%, #a7a7ab), color-stop(0, transparent));
   background-image: linear-gradient(0deg, #a7a7ab 0, #a7a7ab 50%, transparent 0);
@@ -4184,11 +4208,13 @@ button.swiper-pagination-bullet {
 }
 
 .aesthetics-tab__list {
-  width: 100%;
+  width: 82%;
   margin-bottom: auto;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 1rem 2rem;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }
 
 .aesthetics-tab__item {
@@ -4364,6 +4390,11 @@ button.swiper-pagination-bullet {
 
 .choose {
   padding-top: 5rem;
+  margin-bottom: 2rem;
+}
+
+.choose__inner {
+  margin-bottom: 15rem;
 }
 
 .choose__title {
@@ -4377,7 +4408,6 @@ button.swiper-pagination-bullet {
   width: 65%;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 7rem;
 }
 
 .choose__title .words {
@@ -4414,7 +4444,7 @@ button.swiper-pagination-bullet {
   display: -ms-flexbox;
   display: flex;
   position: relative;
-  min-height: 60rem;
+  min-height: 60.6rem;
 }
 
 .choose__bg {
@@ -4553,6 +4583,7 @@ button.swiper-pagination-bullet {
   display: -ms-flexbox;
   display: flex;
   padding-left: 2rem;
+  width: 84%;
 }
 
 .developer__right {
@@ -4569,7 +4600,7 @@ button.swiper-pagination-bullet {
   line-height: 4rem;
   letter-spacing: 0.4rem;
   text-transform: uppercase;
-  margin-bottom: 5.5rem;
+  margin-bottom: 14rem;
 }
 
 .developer__title--tb {
@@ -4614,11 +4645,14 @@ button.swiper-pagination-bullet {
   padding-right: 2rem;
 }
 
+.developer-info__head {
+  margin-bottom: 11.5rem;
+}
+
 .developer-info__logo {
   display: block;
   width: 7.44rem;
   height: 9.68rem;
-  margin-bottom: 3rem;
 }
 
 .developer-info__logo img {
@@ -4964,14 +4998,6 @@ button.swiper-pagination-bullet {
 }
 
 @media screen and (max-width: 1920px) {
-  .container-lt {
-    width: 100rem;
-  }
-
-  .about .picture {
-    width: 43%;
-  }
-
   .dubrovka__title {
     width: 90%;
   }
@@ -5767,6 +5793,7 @@ button.swiper-pagination-bullet {
     display: flex;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+    margin-bottom: 4rem;
   }
 
   .about__icon {
@@ -5801,6 +5828,10 @@ button.swiper-pagination-bullet {
   .about .picture {
     position: static;
     width: 100%;
+  }
+
+  .about .picture__wrap {
+    padding-top: 141%;
   }
 
   .near__title {
@@ -6393,7 +6424,6 @@ button.swiper-pagination-bullet {
   .developer-info__logo {
     width: 4.5rem;
     height: 5.54rem;
-    margin-bottom: 0;
   }
 
   .info-block {

@@ -50,6 +50,7 @@
     min-width: 25rem;
     display: flex;
     flex-direction: column;
+    transform: translateX(-17%);
 
     @include mw($ldt) {
       margin-left: 0;
@@ -182,7 +183,8 @@
   &__list {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
+    column-gap: 8rem;
 
     // width: 89%;
     // margin: 0 auto;
