@@ -71,6 +71,11 @@ const changeHandler = (s) => {
 
 const slideNext = (s) => {
   if (width < 769) return;
+
+  s.slides.forEach((item) => {
+    gsap.set(item.querySelector(".aesthetics-tab__list"), { autoAlpha: 0 });
+  });
+
   const prev = s.slides.filter((slide) =>
     slide.classList.contains("swiper-slide-prev"),
   )[0];
@@ -93,8 +98,8 @@ export const setAestheticsSliders = () => {
       spaceBetween: 5,
       navigation: {
         enabled: true,
-        nextEl: `.aesthetics-touch__block--next`,
-        prevEl: `.aesthetics-touch__block--prev`,
+        nextEl: `.aesthetics-touch__block--next-${i}`,
+        prevEl: `.aesthetics-touch__block--prev-${i}`,
       },
       allowTouchMove: false,
       slidesOffsetBefore: 200,

@@ -9,8 +9,26 @@
 
 html {
   box-sizing: border-box;
-  font-size: 16px;
+  // font-size: 16px;
   scroll-behavior: smooth;
+
+  font-size: 0.83vw;
+
+  @include mw($ldt) {
+    font-size: 1.1vw;
+  }
+
+  @include mw($dt) {
+    font-size: 1.2vw;
+  }
+
+  @include mw($tb) {
+    font-size: 2.66vw;
+  }
+
+  @include mw($ph) {
+    font-size: 3.73vw;
+  }
 }
 
 body {
@@ -132,7 +150,7 @@ input:-webkit-autofill:active {
 }
 
 * {
-  outline: 1px solid #ff6347;
+  // outline: 1px solid #ff6347;
 }
 
 .scroll-lock {

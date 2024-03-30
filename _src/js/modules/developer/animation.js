@@ -67,8 +67,8 @@ export const animationDeveloper = () => {
     scrollTrigger: {
       trigger: developer,
       toggleActions: "play none none pause",
-      start: `${width < 769 ? "top 80%" : "top 60%"}`,
-      end: `${width < 769 ? "+=200" : "+=300"}`,
+      start: `${width < 769 ? "top 80%" : "top 80%"}`,
+      end: `${width < 769 ? "+=200" : "+=200"}`,
       // markers: true,
       // once: true,
       onToggle: ({ isActive }) => {

@@ -42,15 +42,15 @@ export const chooseLink = () => {
         display: "none",
         duration: 0.1,
       })
-      .to(
-        rightLink.querySelector(".choose-block"),
-        {
-          x: "-50%",
-          left: "50%",
-          duration: 1,
-        },
-        "<",
-      )
+      // .to(
+      //   rightLink.querySelector(".choose-block"),
+      //   {
+      //     x: "-50%",
+      //     left: "50%",
+      //     duration: 1,
+      //   },
+      //   "<",
+      // )
       .fromTo(rightLink, { width: "50%" }, { width: "100%", duration: 1 }, "<")
       .fromTo(leftLink, { width: "50%" }, { width: 0, duration: 1 }, "<")
       .then(() => {

@@ -90,6 +90,7 @@
       left: 0;
       top: 0;
       opacity: 0;
+      visibility: hidden;
       pointer-events: none;
     }
 
@@ -102,6 +103,7 @@
     height: 51rem;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 
     &--cover {
       .aesthetics-tab__figure {
@@ -424,5 +426,11 @@
         opacity: 1;
       }
     }
+  }
+}
+
+.hidden {
+  & + .aesthetics-touch {
+    pointer-events: none;
   }
 }
