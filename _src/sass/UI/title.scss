@@ -10,7 +10,7 @@
     font-size: 8rem;
 
     @include mw($dt) {
-      font-size: 5rem;
+      font-size: 4rem;
     }
 
     @include mw($tb) {

@@ -51,7 +51,7 @@
 
   &--up {
     // background-color: rgba(#78899f, 0.8);
-    background-color: #fff;
+    // background-color: #fff;
 
     .menu-icon__line {
       background-color: #000;
@@ -60,7 +60,7 @@
     .header {
       &__inner {
         border-color: #000;
-        background-color: #fff;
+        background-color: rgba(#fff, 0.9);
       }
 
       &__line {

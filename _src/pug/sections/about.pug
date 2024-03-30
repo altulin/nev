@@ -12,7 +12,8 @@ section.about#about
 		ul.about__list
 			each item,i in list
 				li.about__item(class=`about__item--${i<3?'up':'down'}`)
-					+svg(`about_${i+1}`)
+					//- +svg(`about_${i+1}`)
+					figure.about__icon(style=`background-image: url(./img/svg/about_${i+1}.svg)`)
 					span= item.title
 
 		a.about__link(href="#") узнать подробнее

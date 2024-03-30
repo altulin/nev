@@ -5,6 +5,11 @@
   padding-top: 9.8rem;
   overflow: hidden;
 
+  @include mw($tb) {
+    // padding-top: 0;
+    margin-top: -8rem;
+  }
+
   &__wrap {
     width: 100%;
   }

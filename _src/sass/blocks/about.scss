@@ -27,7 +27,7 @@
   }
 
   &__title {
-    margin-bottom: 10.875rem;
+    margin-bottom: 18rem;
     position: relative;
     z-index: 1;
     display: flex;
@@ -95,12 +95,35 @@
     grid-template-columns: repeat(3, 1fr);
     row-gap: 3.5rem;
     margin-bottom: 6rem;
-    max-width: 51%;
+    max-width: 39%;
+    transform: translate(-6%);
+
+    @include mw($ldt) {
+      transform: none;
+    }
+
+    @include mw($dt) {
+      max-width: 51%;
+    }
 
     @include mw($tb) {
       max-width: none;
       display: flex;
       flex-wrap: wrap;
+    }
+  }
+
+  &__icon {
+    width: 5rem;
+    height: 5rem;
+    margin-bottom: 0.6rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+
+    @include mw($tb) {
+      width: 4rem;
+      height: 4rem;
     }
   }
 

@@ -3,7 +3,7 @@
   color: rgb(0, 0, 0);
 
   &__inner {
-    padding-top: 6.25rem;
+    padding-top: 8.25rem;
     position: relative;
 
     @include mw($dt) {
@@ -52,6 +52,7 @@
     flex-direction: column;
 
     @include mw($ldt) {
+      margin-left: 0;
       min-width: auto;
     }
 
@@ -64,7 +65,11 @@
     display: flex;
     flex-direction: column;
 
+    @include mw($ldt) {
+    }
+
     @include mw($dt) {
+      margin-left: 0;
       width: 100%;
       margin-bottom: 2.5rem;
     }
@@ -133,8 +138,12 @@
 .soc {
   &__logo {
     display: block;
-    margin-bottom: 6rem;
+    margin-bottom: 8rem;
     align-self: flex-end;
+
+    @include mw($ldt) {
+      margin-bottom: 6rem;
+    }
 
     &--dt {
       @include mw($dt) {
@@ -157,8 +166,10 @@
 
     svg {
       fill: #78899f;
-      aspect-ratio: 3.6 / 1;
-      width: 21.3rem;
+      width: 28.32rem;
+      height: 7rem;
+      // aspect-ratio: 3.6 / 1;
+      // width: 21.3rem;
 
       @include mw($dt) {
         width: 14.16rem;
@@ -171,7 +182,15 @@
   &__list {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
+
+    // width: 89%;
+    // margin: 0 auto;
+
+    @include mw($ldt) {
+      margin: 0;
+      width: auto;
+    }
 
     @include mw($tb) {
       justify-content: space-around;

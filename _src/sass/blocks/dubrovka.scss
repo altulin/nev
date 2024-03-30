@@ -25,8 +25,22 @@
     margin-right: auto;
     width: 68%;
 
-    .title__space {
-      display: none !important;
+    &--phone {
+      display: none;
+
+      @include mw($tb) {
+        display: flex;
+
+        span:last-child {
+          align-self: flex-end;
+        }
+      }
+    }
+
+    &--desk {
+      @include mw($tb) {
+        display: none;
+      }
     }
 
     @media screen and (max-width: 1920px) {
@@ -116,12 +130,15 @@
     margin-right: 0;
     margin-bottom: 1.3rem;
     column-gap: 1rem;
-    justify-content: space-between;
+    justify-content: space-around;
+    column-gap: 0;
   }
 
   &__item {
-    & + li {
-      // margin-left: 6.5rem;
+    @include mw($tb) {
+      width: 50%;
+      display: flex;
+      justify-content: center;
     }
   }
 
@@ -286,12 +303,7 @@
     }
   }
 }
-.swiper {
-}
-.js-tabs-slider {
-}
-.swiper-wrapper {
-}
+
 .dubrovka-slide {
   display: flex;
   flex-direction: column;

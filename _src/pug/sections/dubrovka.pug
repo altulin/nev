@@ -2,9 +2,13 @@ include ../helpers/data/dubrovka.pug
 
 section.dubrovka#dubrovka
 	.dubrovka__inner
-		h2.dubrovka__title.title.title--lg.title--gray
+		h2.dubrovka__title.dubrovka__title--desk.title.title--lg.title--gray
 			span одубровке
 			span наневе
+
+		h2.dubrovka__title.dubrovka__title--phone.title.title--lg.title--gray
+			span о дубровке
+			span на неве
 
 		.dubrovka__content.tabs.container-lt
 			ul.tabs__head.tabs-head
@@ -35,6 +39,7 @@ section.dubrovka#dubrovka
 								- var n = 0;
 									while n < 6
 										.swiper-slide.tabs-slider__item.dubrovka-slide
+											//- .dubrovka-slide__inner
 											figure.dubrovka-slide__figure
 												img.dubrovka-slide__img(src='/img/dubrovka.jpg', alt="слайд" width="488" height="746")
 
