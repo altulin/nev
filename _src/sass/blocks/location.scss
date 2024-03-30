@@ -10,6 +10,10 @@
     margin-top: -8rem;
   }
 
+  @include mw($ph) {
+    padding-top: 7.8rem;
+  }
+
   &__wrap {
     width: 100%;
   }
@@ -49,7 +53,9 @@
   }
 
   @include mw($ph) {
-    width: 27.3%;
+    width: 25.3%;
+    top: 36%;
+    left: 11%;
   }
 
   &__link {
@@ -123,19 +129,22 @@
     height: 21%;
 
     @include mw($ldt) {
-      bottom: 59%;
+      bottom: 52%;
     }
 
     @include mw($tb) {
-      bottom: 60%;
+      bottom: 50%;
       right: 63%;
       flex-direction: row;
       height: 19%;
     }
 
     @include mw($ph) {
-      bottom: 54%;
-      right: 59%;
+      bottom: 57%;
+      right: 60%;
+      height: 21%;
+      width: 5rem;
+      text-align: right;
     }
   }
 
@@ -145,18 +154,19 @@
     height: 16%;
 
     @include mw($ldt) {
-      bottom: 56%;
+      bottom: 50%;
     }
 
     @include mw($tb) {
-      bottom: 57%;
+      bottom: 48%;
       left: 42%;
       height: 26%;
     }
 
     @include mw($ph) {
-      bottom: 51.6%;
-      left: 42%;
+      bottom: 54.6%;
+      left: 46%;
+      height: 29%;
     }
   }
 
@@ -167,19 +177,20 @@
     height: 16%;
 
     @include mw($ldt) {
-      bottom: 64.5%;
+      bottom: 56.5%;
     }
 
     @include mw($tb) {
-      bottom: 64.5%;
+      bottom: 54.5%;
       left: 68.5%;
       height: 15%;
     }
 
     @include mw($ph) {
-      bottom: 58.5%;
-      left: 68.5%;
+      bottom: 51.5%;
+      left: 69.5%;
       width: 5rem;
+      height: 17%;
     }
   }
 
@@ -190,7 +201,8 @@
     height: 20%;
 
     @include mw($ldt) {
-      bottom: 65.3%;
+      bottom: 57.3%;
+      left: 61.7%;
     }
 
     @include mw($tb) {
@@ -204,7 +216,7 @@
     height: 19%;
 
     @include mw($ldt) {
-      bottom: 62.7%;
+      bottom: 54.7%;
     }
 
     @include mw($tb) {
@@ -218,7 +230,7 @@
     height: 29.5%;
 
     @include mw($ldt) {
-      bottom: 58.5%;
+      bottom: 51.5%;
     }
     @include mw($tb) {
       display: none;
@@ -234,7 +246,7 @@
     width: 13rem;
 
     @include mw($ldt) {
-      bottom: 65.3%;
+      bottom: 55.3%;
     }
     @include mw($tb) {
       display: none;
@@ -248,7 +260,7 @@
     height: 22%;
 
     @include mw($ldt) {
-      bottom: 65.3%;
+      bottom: 56.3%;
     }
     @include mw($tb) {
       display: none;
@@ -262,7 +274,7 @@
     width: 11rem;
 
     @include mw($ldt) {
-      bottom: 51.3%;
+      bottom: 46.3%;
     }
     @include mw($tb) {
       display: none;
@@ -276,7 +288,7 @@
     height: 18%;
 
     @include mw($ldt) {
-      bottom: 61%;
+      bottom: 54%;
     }
     @include mw($tb) {
       display: none;
@@ -292,7 +304,7 @@
     text-align: right;
 
     @include mw($ldt) {
-      bottom: 58.3%;
+      bottom: 51.3%;
     }
     @include mw($tb) {
       display: none;

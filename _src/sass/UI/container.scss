@@ -1,9 +1,17 @@
 .container-lt {
   width: 83%;
-  max-width: 100%;
   padding-left: 1rem;
   margin-left: auto;
 
-  @media screen and (max-width: 1920px) {
+  @include mw($ldt) {
+    width: 95%;
+  }
+
+  @include mw($dt) {
+    width: 98%;
+  }
+
+  @include mw($tb) {
+    width: 100%;
   }
 }

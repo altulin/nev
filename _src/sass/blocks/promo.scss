@@ -1,9 +1,8 @@
 .promo {
   margin-bottom: 9rem;
-  &__inner {
-  }
 
-  &__swiper {
+  @include mw($tb) {
+    margin-bottom: 0;
   }
 }
 
@@ -17,6 +16,10 @@
     left: 0;
     z-index: 1;
     justify-content: center;
+
+    @include mw($tb) {
+      bottom: 5rem !important;
+    }
   }
 }
 
@@ -32,7 +35,7 @@
   padding-right: 1.25rem;
 
   @include mw($dt) {
-    padding-top: 7.3rem;
+    padding-top: 8.3rem;
   }
 
   @include mw($tb) {
@@ -40,7 +43,7 @@
     padding-right: 1rem;
     justify-content: flex-start;
     min-height: auto;
-    padding-bottom: 8.5rem;
+    padding-bottom: 10.5rem;
   }
 
   &__figure {
@@ -80,7 +83,8 @@
     }
 
     @include mw($tb) {
-      margin-bottom: 2rem;
+      margin-bottom: 2.5rem;
+      font-size: 3rem;
     }
   }
 
@@ -138,7 +142,7 @@
 
     @include mw($tb) {
       font-size: 1rem;
-      line-height: 1.5;
+      line-height: 1.8;
     }
   }
 }
@@ -165,14 +169,15 @@
 
   @include mw($dt) {
     position: static;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     margin-left: auto;
   }
 
   @include mw($tb) {
-    width: 11rem;
-    height: 11rem;
+    width: 12rem;
+    height: 12rem;
     font-size: 1rem;
+    margin-right: 1rem;
   }
 
   &__head {

@@ -2,6 +2,10 @@
   padding-top: 8.5rem;
   border-bottom: 0.06rem solid rgb(167, 167, 171);
 
+  @include mw($tb) {
+    padding-top: 5.7rem;
+  }
+
   &__inner {
     display: flex;
     padding-left: 2rem;
@@ -37,7 +41,7 @@
     margin-bottom: 14rem;
 
     @include mw($tb) {
-      font-size: 1.3rem;
+      font-size: 1.7rem;
       letter-spacing: 0rem;
       margin-bottom: 0;
     }
@@ -104,17 +108,18 @@
   padding-right: 2rem;
 
   @include mw($tb) {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 
   &__head {
     margin-bottom: 11.5rem;
+
     @include mw($tb) {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 2.3rem;
+      margin-bottom: 2.8rem;
     }
   }
 
@@ -124,8 +129,8 @@
     height: 9.68rem;
 
     @include mw($tb) {
-      width: 4.5rem;
-      height: 5.54rem;
+      width: 5.5rem;
+      height: 6.54rem;
     }
 
     img {
@@ -154,12 +159,15 @@
   @include mw($tb) {
     font-size: 1rem;
     line-height: 1.6;
-    margin-bottom: 1rem;
+    margin-bottom: 4rem;
   }
 
   &__title {
     font-weight: 600;
+
     @include mw($tb) {
+      font-size: 1.2rem;
+
       width: 80%;
       display: block;
     }
@@ -167,6 +175,11 @@
 
   &__text {
     font-weight: 300;
+
+    @include mw($tb) {
+      line-height: 1.8;
+      font-size: 1rem;
+    }
   }
 }
 .info-list {
@@ -177,14 +190,18 @@
 
   @include mw($tb) {
     margin-bottom: 2rem;
+    font-size: 3rem;
   }
 
   &__title {
     font-weight: 600;
 
     @include mw($tb) {
-      font-size: 1rem;
-      line-height: 1;
+      font-size: 1.2rem;
+      line-height: 1.2;
+      width: 69%;
+      display: block;
+      margin-bottom: 1.5rem;
     }
   }
 
@@ -194,12 +211,12 @@
     display: flex;
 
     @include mw($tb) {
-      font-size: 1rem;
+      font-size: 1.1rem;
       line-height: 1.5;
     }
 
     @include mw($tb) {
-      margin: 0.7rem 0;
+      margin: 1.1rem 0;
     }
 
     &::before {
@@ -233,7 +250,7 @@
     justify-content: flex-end;
 
     @include mw($tb) {
-      font-size: 1rem;
+      font-size: 1.15rem;
       line-height: 1.6;
     }
 
@@ -266,7 +283,7 @@
     display: inline-block;
 
     @include mw($tb) {
-      font-size: 1rem;
+      font-size: 1.15rem;
     }
   }
 }

@@ -5,6 +5,8 @@
   &__inner {
     padding-top: 8.25rem;
     position: relative;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
 
     @include mw($dt) {
       padding-top: 5rem;
@@ -105,7 +107,7 @@
     flex-direction: column;
 
     @include mw($dt) {
-      font-size: 1rem;
+      font-size: 1.2rem;
       line-height: 1.6;
       margin-bottom: 2rem;
     }
@@ -161,7 +163,7 @@
         align-self: auto;
         // width: 10.42rem;
         // height: 2.95rem;
-        margin-bottom: 2.3rem;
+        margin-bottom: 3.3rem;
       }
     }
 
@@ -195,7 +197,8 @@
     }
 
     @include mw($tb) {
-      justify-content: space-around;
+      column-gap: 5rem;
+      // justify-content: space-around;
     }
 
     &-top {
@@ -229,6 +232,10 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
+
+    @include mw($tb) {
+      transform: scale(1.3);
+    }
   }
 
   &__link--vk {
@@ -323,7 +330,7 @@
     margin-bottom: 2.3rem;
 
     @include mw($dt) {
-      font-size: 1rem;
+      font-size: 1.3rem;
       line-height: 1.6;
       margin-bottom: 0.7rem;
     }
@@ -336,7 +343,7 @@
     line-height: 2.25rem;
 
     @include mw($dt) {
-      font-size: 1rem;
+      font-size: 1.2rem;
       line-height: 1.6;
     }
   }
@@ -348,7 +355,7 @@
     line-height: 2.25rem;
 
     @include mw($dt) {
-      font-size: 1rem;
+      font-size: 1.2rem;
       line-height: 1.6;
     }
   }
@@ -364,7 +371,7 @@
   }
 
   @include mw($tb) {
-    margin-bottom: 2.5rem;
+    margin-bottom: 3.5rem;
   }
 
   &__list {
@@ -398,7 +405,7 @@
     line-height: 2.25rem;
 
     @include mw($dt) {
-      font-size: 1rem;
+      font-size: 1.2rem;
       line-height: 1.6;
       padding-left: 2rem;
     }

@@ -5,7 +5,6 @@
   position: relative;
   margin-top: -26.2rem;
   overflow: hidden;
-  z-index: 1;
   margin-bottom: 6.2rem;
 
   @include mw($tb) {
@@ -13,6 +12,8 @@
     flex-direction: column;
     row-gap: 2rem;
     padding-bottom: 0;
+    margin-top: -18.2rem;
+    margin-bottom: 0;
   }
 
   &__inner {
@@ -20,6 +21,8 @@
       padding-left: 2.5rem;
       padding-right: 2.5rem;
       padding-top: 2rem;
+      position: relative;
+      z-index: 1;
     }
 
     @include mw($ph) {
@@ -51,8 +54,9 @@
     @include mw($tb) {
       text-align: center;
       font-size: 2.4rem;
-      margin-bottom: 4rem;
+      margin-bottom: 4.5rem;
       line-height: 1;
+      padding: 0 1rem;
     }
   }
 
@@ -68,11 +72,15 @@
 
     @include mw($tb) {
       max-width: none;
-      font-size: 1.5rem;
-      line-height: 1.2;
+      font-size: 1.7rem;
+      line-height: 1.5;
       position: relative;
       z-index: 1;
-      margin-bottom: 2rem;
+      margin-bottom: 1.2rem;
+      padding-left: 0.5rem;
+      letter-spacing: 0.2rem;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
     }
   }
 
@@ -83,12 +91,13 @@
     line-height: 2.25rem;
     margin-bottom: 4.1rem;
     max-width: 50%;
+    padding: 0 1.5rem;
 
     @include mw($tb) {
       max-width: none;
       font-size: 1rem;
-      line-height: 1.63;
-      margin-bottom: 1.5rem;
+      line-height: 1.9;
+      margin-bottom: 2.9rem;
     }
   }
 
@@ -112,7 +121,7 @@
       max-width: none;
       display: flex;
       flex-wrap: wrap;
-      margin-bottom: 4rem;
+      margin-bottom: 4.5rem;
     }
   }
 
@@ -210,6 +219,7 @@
     width: 47.5%;
     right: 0;
     bottom: 0;
+    z-index: 1;
 
     @include mw($tb) {
       position: static;
