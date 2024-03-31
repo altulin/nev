@@ -11,7 +11,6 @@ section.aesthetics
 			ul.aesthetics-tab__head.aesthetics-head
 				each item,i in aesthetics_tabs
 					li.aesthetics-head__item(class=`${i===2?"aesthetics-head__item--width":""}`)
-						//- a.aesthetics-head__link(href=`#${item.href}`)= item.label
 						button.aesthetics-head__link.tab-btn( data-tab-content-id=`${item.href}` class=i===0?"selected":'')= item.label
 							if item.info
 								.aesthetics-head__info
@@ -42,10 +41,4 @@ section.aesthetics
 						+svg('arr-top')
 				.aesthetics-touch__block.aesthetics-touch__block--next(class=`aesthetics-touch__block--next-${i}`)
 					button.control.control--next.aesthetics-touch__btn--next.aesthetics-touch__btn(type='button')
-						+svg('arr-top')
-
-				//- .aesthetics__control
-					button.aesthetics__btn.control.control--prev(type='button' class=`aesthetics__btn--prev-${i}`)
-						+svg('arr-top')
-					button.aesthetics__btn.control.control--next(type='button' class=`aesthetics__btn--next-${i}`)
 						+svg('arr-top')

@@ -7546,7 +7546,7 @@
           return;
         }
         const r = t.querySelector(".location-logo__figure");
-        t.querySelector(".location-logo__link"), e.forEach(((e, r) => {
+        e.forEach(((e, r) => {
           const i = t.querySelector(`.location-flag__title--${r + 1}`);
           Hi.timeline().set(i, {
             autoAlpha: 0
@@ -7556,8 +7556,8 @@
             scrollTrigger: {
               trigger: i,
               toggleActions: "restart none reverse none",
-              start: "top 90%",
-              end: "top 10%",
+              start: "top 80%",
+              end: "top 40%",
               scrub: .5
             }
           }).to(e, {
@@ -8024,7 +8024,35 @@
             }
           }
         });
-      })(), wc(), Hl(), 0 === xc.offsetHeight && 0 === xc.offsetWidth || xc && new Tc(".js-accordion", {});
+      })(), wc(), Hl(), 0 === xc.offsetHeight && 0 === xc.offsetWidth || xc && new Tc(".js-accordion", {}), 
+      (() => {
+        if (fs < 769) {
+          return;
+        }
+        const e = ji.querySelector(".footer");
+        if (!e) {
+          return;
+        }
+        const t = e.querySelector(".footer__top--absolute"), r = e.querySelector(".footer__top--fixed");
+        if (!r || !t) {
+          return;
+        }
+        const i = r.getBoundingClientRect();
+        Hi.set(t, {
+          autoAlpha: 0
+        }), Hi.timeline({
+          scrollTrigger: {
+            trigger: t,
+            start: `top ${i.top}px`,
+            end: `top ${i.top}px`,
+            toggleActions: "play none none reverse"
+          }
+        }).set(r, {
+          autoAlpha: 0
+        }).set(t, {
+          autoAlpha: 1
+        });
+      })();
     }));
   })();
 })();

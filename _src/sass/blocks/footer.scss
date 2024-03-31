@@ -280,33 +280,24 @@
     border: 0.06rem solid rgb(0, 0, 0);
     cursor: pointer;
     transition: 0.3s;
-    // position: fixed;
     z-index: 9;
-    // right: 2rem;
-    // bottom: 2rem;
     background-color: #ececec;
     margin-bottom: 3.8rem;
     margin-left: 48%;
+    display: none;
 
     @include hocus() {
       background-color: #fff;
     }
 
-    @include mw($dt) {
-      width: 3.13rem;
-      height: 3.13rem;
+    @include mw($tb) {
+      width: 4rem;
+      height: 4rem;
       position: absolute;
       right: 0.5rem;
       top: 0.5rem;
       margin: 0;
-    }
-
-    @include mw($tb) {
-      display: none;
-    }
-
-    @include hocus() {
-      opacity: 0.6;
+      display: flex;
     }
 
     svg {
@@ -452,7 +443,7 @@
   height: 5rem;
   border: 0.06rem solid rgb(0, 0, 0);
   cursor: pointer;
-  transition: 0.3s;
+  transition: background-color 0.3s;
   z-index: 9;
 
   background-color: #ececec;
@@ -469,17 +460,8 @@
     top: 10rem;
   }
 
-  @include hocus() {
+  &:hover {
     background-color: #fff;
-  }
-
-  @include mw($dt) {
-    width: 3.13rem;
-    height: 3.13rem;
-    position: absolute;
-    right: 0.5rem;
-    top: 0.5rem;
-    margin: 0;
   }
 
   @include mw($tb) {

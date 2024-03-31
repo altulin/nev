@@ -64,7 +64,7 @@ const handler = () => {
   chooseLink();
   animationNearTitle();
   makeAccordionHeder();
-  // topBtnAnimation();
+  topBtnAnimation();
 
   if (width < 769) return;
 };
