@@ -239,6 +239,7 @@
 
     @include mw($ldt) {
       bottom: 51.5%;
+      height: 26%;
     }
     @include mw($tb) {
       display: none;

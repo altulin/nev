@@ -7535,6 +7535,7 @@
             toggleActions: "restart pause reverse pause",
             start: "top 60%",
             end: "bottom 40%",
+            markers: !0,
             scrub: 3
           },
           width: "100%",
