@@ -5,11 +5,13 @@ html(lang="ru")
     include ../modules/_style
 
   body.page-body.scroll
-    - const choose = true
+    - const plan = true
+    - const param = true
 
     include ../modules/_header
 
     main.page-main
       block content
 
+    include ../modules/_footer
     include ../modules/_scripts

@@ -26,8 +26,8 @@ export const animationPins = () => {
         scrollTrigger: {
           trigger: flag,
           toggleActions: "restart none reverse none",
-          start: "top 80%",
-          end: "top 40%",
+          start: "top 90%",
+          end: "top 60%",
           scrub: 0.5,
           // markers: true,
         },

@@ -1,7 +1,7 @@
 include ../helpers/data/header.pug
 
 header.header#header(class=plan===true?'header--plan':"" )
-	.header__inner
+	.header__inner(class=plan===true?'header__inner--plan':"" )
 		if !choose
 			hr.header__line
 
@@ -22,6 +22,12 @@ header.header#header(class=plan===true?'header--plan':"" )
 
 				a.header-middle__logo.js-header(href="/index.html")
 					+svg('logo')
+
+				if chema
+					a.header-middle__spec.header-middle--chema(href="") выбор на схеме
+
+				if param
+					a.header-middle__spec.header-middle--param(href="") выбор по секциям
 
 				a.header-middle__choose.js-header(href="#") выбрать квартиру
 
@@ -80,7 +86,7 @@ header.header#header(class=plan===true?'header--plan':"" )
 								li.contetnt-point__item
 									a.contetnt-point__link(href=`${item.href}` class=item.anchor && 'js-anchor' target=item.anchor ? null:'_blank')= item.label
 
-						a.contetnt-point__choose(href="/" taeget="_blank") выбрать  квартиру
+						a.contetnt-point__choose.js-anchor(href="#choose" data-anchor="#choose" ) выбрать  квартиру
 
 			figure.menu__figure
 				+img-retina('menu', 'jpg', 'menu', 'menu__img', '740', '970')

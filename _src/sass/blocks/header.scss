@@ -18,6 +18,7 @@
     .header {
       &__inner {
         // border-color: #000;
+        background-color: #ececec;
       }
 
       &__line {
@@ -204,6 +205,58 @@
     @include mw($tb) {
       min-height: 4.5rem;
     }
+
+    &--plan {
+      background-color: #ececec;
+
+      .header__line-middle {
+        background-color: #000;
+      }
+
+      .header-middle__choose {
+        border-color: #000;
+      }
+
+      .header {
+        &__inner {
+          // border-color: #000;
+          background-color: #ececec;
+        }
+
+        &__line {
+          background-color: #000;
+        }
+      }
+
+      .menu-icon__line {
+        background-color: #000;
+      }
+
+      .header-middle__logo svg {
+        fill: #78899f;
+      }
+
+      .header-middle__choose {
+        color: #000;
+        // border-color: #000;
+      }
+
+      .header-middle__tel {
+        color: #000;
+      }
+
+      .header-middle {
+        // border-color: #000;
+      }
+
+      .header-right__mail svg {
+        stroke: #000;
+      }
+
+      .header-right__camera svg {
+        stroke: #000;
+      }
+    }
   }
 
   &__line {
@@ -296,6 +349,31 @@
     display: block;
     margin-left: auto;
     transition: 0.3s;
+
+    @include hocus() {
+      background-color: #fff;
+      color: #000;
+    }
+
+    @include mw($dt) {
+      display: none;
+    }
+  }
+
+  &__spec {
+    color: #000;
+    font-size: 1.13rem;
+    font-weight: 500;
+    line-height: 1.38rem;
+    letter-spacing: 10%;
+    align-items: center;
+    padding: 0.63rem 1.25rem 0.63rem 1.25rem;
+    border: 0.06rem solid #000;
+    display: block;
+    margin-left: auto;
+    transition: 0.3s;
+    margin-left: auto;
+    margin-right: auto;
 
     @include hocus() {
       background-color: #fff;

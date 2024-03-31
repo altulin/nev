@@ -44,8 +44,8 @@ export const animationDubrovka = () => {
       scrollTrigger: {
         trigger: title,
         toggleActions: "restart pause reverse pause",
-        start: "top 60%",
-        end: "bottom 40%",
+        start: "top 90%",
+        end: "bottom 60%",
         // markers: true,
         scrub: 2,
       },

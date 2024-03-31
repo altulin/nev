@@ -1,6 +1,6 @@
 include ../helpers/data/near.pug
 
-section.near
+section.near#near
 
 	h2.title.title--lg.near__title.near-title.near-title--desk(data-splitting) всерядом
 	h2.title.title--lg.near__title.near-title.near-title--phone(data-splitting) все рядом
@@ -25,7 +25,7 @@ section.near
 							span.near-item__min мин
 							p.near-item__text
 								each el in item.text
-									span= el
+									span(class=`${item.last?"near-item__text--mini":""}`)= el
 
 
 							if item.span

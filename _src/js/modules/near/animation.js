@@ -22,8 +22,8 @@ export const animationNearTitle = () => {
       scrollTrigger: {
         trigger: title,
         toggleActions: "restart pause reverse pause",
-        start: "top 70%",
-        end: "bottom 30%",
+        start: "top 90%",
+        end: "bottom 60%",
         scrub: 2,
         // markers: true,
       },

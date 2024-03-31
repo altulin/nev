@@ -1627,6 +1627,10 @@ button.swiper-pagination-bullet {
   border-color: #000;
 }
 
+.header--plan .header__inner {
+  background-color: #ececec;
+}
+
 .header--plan .header__line {
   background-color: #000;
 }
@@ -1762,6 +1766,50 @@ button.swiper-pagination-bullet {
   position: relative;
 }
 
+.header__inner--plan {
+  background-color: #ececec;
+}
+
+.header__inner--plan .header__line-middle {
+  background-color: #000;
+}
+
+.header__inner--plan .header-middle__choose {
+  border-color: #000;
+}
+
+.header__inner--plan .header__inner {
+  background-color: #ececec;
+}
+
+.header__inner--plan .header__line {
+  background-color: #000;
+}
+
+.header__inner--plan .menu-icon__line {
+  background-color: #000;
+}
+
+.header__inner--plan .header-middle__logo svg {
+  fill: #78899f;
+}
+
+.header__inner--plan .header-middle__choose {
+  color: #000;
+}
+
+.header__inner--plan .header-middle__tel {
+  color: #000;
+}
+
+.header__inner--plan .header-right__mail svg {
+  stroke: #000;
+}
+
+.header__inner--plan .header-right__camera svg {
+  stroke: #000;
+}
+
 .header__line {
   position: absolute;
   width: 100%;
@@ -1851,6 +1899,31 @@ button.swiper-pagination-bullet {
 
 .header-middle__choose:hover,
 .header-middle__choose:focus {
+  background-color: #fff;
+  color: #000;
+}
+
+.header-middle__spec {
+  color: #000;
+  font-size: 1.13rem;
+  font-weight: 500;
+  line-height: 1.38rem;
+  letter-spacing: 10%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.63rem 1.25rem 0.63rem 1.25rem;
+  border: 0.06rem solid #000;
+  display: block;
+  margin-left: auto;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header-middle__spec:hover,
+.header-middle__spec:focus {
   background-color: #fff;
   color: #000;
 }
@@ -3096,6 +3169,10 @@ button.swiper-pagination-bullet {
           flex-direction: column;
   row-gap: 0.3rem;
   margin-left: 2rem;
+}
+
+.near-item__text--mini:last-child {
+  font-size: 1.3rem;
 }
 
 .near-indication {
@@ -4513,6 +4590,7 @@ button.swiper-pagination-bullet {
   display: -ms-flexbox;
   display: flex;
   position: relative;
+  overflow-x: hidden;
 }
 
 .choose__bg {
@@ -5253,6 +5331,10 @@ button.swiper-pagination-bullet {
   }
 
   .header-middle__choose {
+    display: none;
+  }
+
+  .header-middle__spec {
     display: none;
   }
 
@@ -6037,6 +6119,10 @@ button.swiper-pagination-bullet {
 
   .near-item__min {
     font-size: 1rem;
+  }
+
+  .near-item__text--mini:last-child {
+    font-size: 0.7rem;
   }
 
   .near-item__text {
@@ -6848,4 +6934,3 @@ button.swiper-pagination-bullet {
     font-size: 2rem;
   }
 }
-/*# sourceMappingURL=style.css.map */

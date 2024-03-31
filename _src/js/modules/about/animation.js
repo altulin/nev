@@ -80,10 +80,14 @@ const createAnimation = () => {
     })
     .fromTo(
       img,
-      {
-        scale: 1,
-      },
-      { scale: 0.9, duration: 1 },
+      width < 769
+        ? { autoAlpha: 1, y: 0 }
+        : {
+            scale: 1,
+          },
+      width < 769
+        ? { autoAlpha: 0, y: 100, duration: 1 }
+        : { scale: 0.9, duration: 1 },
     );
 };
 
@@ -215,8 +219,8 @@ export const animationAbout = () => {
         scrollTrigger: {
           trigger: title,
           toggleActions: "restart pause reverse pause",
-          start: "top 70%",
-          end: "bottom 30%",
+          start: "top 90%",
+          end: "bottom 60%",
           scrub: 2,
           // once: true,
           // markers: true,
