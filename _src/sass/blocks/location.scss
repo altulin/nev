@@ -191,7 +191,7 @@
     }
 
     @include mw($ph) {
-      bottom: 51.5%;
+      bottom: 61.5%;
       left: 69.5%;
       width: 5rem;
       height: 17%;
@@ -258,7 +258,17 @@
       width: 9rem;
     }
     @include mw($tb) {
-      display: none;
+      bottom: 55.3%;
+      flex-direction: row-reverse;
+      right: auto;
+      left: 5%;
+      height: 19%;
+      width: 6rem;
+      text-align: left;
+    }
+
+    @include mw($ph) {
+      bottom: 64.3%;
     }
   }
 

@@ -234,6 +234,11 @@
     background-size: contain;
     background-position: center;
 
+    svg {
+      fill: transparent;
+      stroke: #000;
+    }
+
     @include mw($tb) {
       transform: scale(1.3);
     }

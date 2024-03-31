@@ -2883,15 +2883,6 @@ button.swiper-pagination-bullet {
   margin-bottom: 0.6rem;
 }
 
-.about__item:nth-child(-n+3) svg {
-  fill: #fff;
-}
-
-.about__item:nth-child(n+4) svg {
-  fill: transparent;
-  stroke: #fff;
-}
-
 .about__item span {
   color: rgb(255, 255, 255);
   font-size: 1.13rem;
@@ -3425,6 +3416,11 @@ button.swiper-pagination-bullet {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+}
+
+.soc__link svg {
+  fill: transparent;
+  stroke: #000;
 }
 
 .soc__link--vk {
@@ -4308,6 +4304,10 @@ button.swiper-pagination-bullet {
       flex-shrink: 0;
   margin-right: 0.6rem;
   margin-top: 0.6rem;
+}
+
+.aesthetics-tab__item--title {
+  display: none;
 }
 
 .aesthetics-tab__cover {
@@ -5821,7 +5821,16 @@ button.swiper-pagination-bullet {
   }
 
   .location-flag--7 {
-    display: none;
+    bottom: 55.3%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    right: auto;
+    left: 5%;
+    height: 19%;
+    width: 6rem;
+    text-align: left;
   }
 
   .location-flag--8 {
@@ -5890,7 +5899,7 @@ button.swiper-pagination-bullet {
 
   .about__text {
     max-width: none;
-    font-size: 1rem;
+    font-size: 1.15rem;
     line-height: 1.9;
     margin-bottom: 2.9rem;
     padding-left: 1.5rem;
@@ -5920,6 +5929,14 @@ button.swiper-pagination-bullet {
     height: 4rem;
   }
 
+  .about__item:nth-child(2) svg {
+    width: 4.1rem;
+  }
+
+  .about__item:nth-child(5) svg {
+    width: 4.07rem;
+  }
+
   .about__item span {
     font-size: 0.81rem;
     line-height: 1rem;
@@ -5928,7 +5945,7 @@ button.swiper-pagination-bullet {
   .about__link {
     display: block;
     min-width: auto;
-    font-size: 0.94rem;
+    font-size: 1rem;
     line-height: 1;
     width: 76%;
     padding: 1.05rem 1rem;
@@ -5942,6 +5959,10 @@ button.swiper-pagination-bullet {
 
   .about .picture__wrap {
     padding-top: 141%;
+  }
+
+  .near {
+    padding-bottom: 5rem;
   }
 
   .near__title {
@@ -5970,6 +5991,8 @@ button.swiper-pagination-bullet {
     padding-left: 1rem;
     padding-right: 1rem;
     padding-top: 3.5rem;
+    pozition: relative;
+    z-index: 2;
   }
 
   .near-content__subtitle {
@@ -6020,6 +6043,11 @@ button.swiper-pagination-bullet {
     font-size: 0.88rem;
     line-height: 0.75rem;
     margin-left: 1rem;
+    row-gap: 0;
+  }
+
+  .near-item__text span {
+    line-height: 1.1;
   }
 
   .near-indication__color {
@@ -6029,11 +6057,6 @@ button.swiper-pagination-bullet {
 
   .near-map__mark {
     top: 67%;
-  }
-
-  .ymaps-2-1-79-events-pane:after {
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(120, 137, 159, 0)), color-stop(99%, rgb(120, 137, 159)), to(rgb(120, 137, 159)));
-    background-image: linear-gradient(180deg, rgba(120, 137, 159, 0) 0%, rgb(120, 137, 159) 99%, rgb(120, 137, 159) 100%);
   }
 
   .zoom-control__btn {
@@ -6259,6 +6282,21 @@ button.swiper-pagination-bullet {
     width: 86%;
   }
 
+  .dubrovka-slide::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(68.889%, rgba(0, 0, 0, 0)), color-stop(96.889%, rgba(0, 0, 0, 0.75)));
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 68.889%, rgba(0, 0, 0, 0.75) 96.889%);
+    position: absolute;
+  }
+
+  .dubrovka-slide.swiper-slide-active .dubrovka-slide__text {
+    opacity: 1;
+  }
+
   .dubrovka-slide__figure {
     height: 100%;
   }
@@ -6275,6 +6313,8 @@ button.swiper-pagination-bullet {
     text-align: left;
     opacity: 1;
     visibility: visible;
+    z-index: 1;
+    opacity: 0;
   }
 
   .circle {
@@ -6342,7 +6382,7 @@ button.swiper-pagination-bullet {
   }
 
   .yard__title {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     line-height: 2.13rem;
   }
 
@@ -6427,6 +6467,16 @@ button.swiper-pagination-bullet {
     color: #fff;
     font-size: 0.88rem;
     line-height: 1.13rem;
+  }
+
+  .aesthetics-tab__item--title {
+    display: block;
+    color: rgb(255, 255, 255);
+    font-size: 0.88rem;
+    font-weight: 500;
+    line-height: 2.4;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
   }
 
   .aesthetics-tab__scrollbar {
@@ -6610,7 +6660,7 @@ button.swiper-pagination-bullet {
 
   .info-block__text {
     line-height: 1.8;
-    font-size: 1rem;
+    font-size: 1.15rem;
   }
 
   .info-list {
@@ -6632,7 +6682,7 @@ button.swiper-pagination-bullet {
   }
 
   .info-list__item {
-    margin: 1.1rem 0;
+    margin: 1.15rem 0;
   }
 
   .info-list__item::before {
@@ -6704,6 +6754,16 @@ button.swiper-pagination-bullet {
     padding: 0 1rem;
   }
 
+  .promo-slide__title {
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+  }
+
+  .promo-slide__text {
+    padding-left: 0.5rem;
+    padding-right: 1rem;
+  }
+
   .location {
     padding-top: 7.8rem;
   }
@@ -6735,10 +6795,14 @@ button.swiper-pagination-bullet {
   }
 
   .location-flag--3 {
-    bottom: 51.5%;
+    bottom: 61.5%;
     left: 69.5%;
     width: 5rem;
     height: 17%;
+  }
+
+  .location-flag--7 {
+    bottom: 64.3%;
   }
 
   .about__inner {
@@ -6746,10 +6810,30 @@ button.swiper-pagination-bullet {
     padding-right: 1.5rem;
   }
 
+  .about__subtitle {
+    width: 92%;
+  }
+
+  .near-item__time {
+    font-size: 2.55rem;
+  }
+
   .near-map__mark {
     width: 2.56rem;
     height: 2.56rem;
     font-size: 0.75rem;
+  }
+
+  .zoom-control {
+    row-gap: 8rem;
+  }
+
+  .dubrovka__title {
+    padding-right: 0.7rem;
+  }
+
+  .tabs-block__text {
+    font-size: 1.15rem;
   }
 
   .circle__title {

@@ -18,7 +18,7 @@ export const createMap = () => {
     {
       iconLayout: "default#image",
       iconImageHref: "./img/map-mark.png",
-      iconImageSize: width < 769 ? [40, 40] : [80, 80],
+      iconImageSize: width < 769 ? [60, 60] : [86, 86],
       iconImageOffset: width < 769 ? [-20, -20] : [-40, -40],
     },
   );
@@ -62,8 +62,8 @@ export const createMap = () => {
   map.controls.add(zoomControl, {
     position: {
       float: "none",
-      top: `${width < 769 ? "5.5rem" : "20rem"}`,
-      left: `${width < 769 ? "1rem" : "3rem"}`,
+      top: `${width < 769 ? "9rem" : "20rem"}`,
+      left: `${width < 769 ? "0.5rem" : "3rem"}`,
     },
   });
   map.behaviors.disable("scrollZoom");

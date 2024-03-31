@@ -7355,7 +7355,7 @@
       }), t = new ymaps.Placemark([ 59.84294662775576, 30.94030068653868 ], {}, {
         iconLayout: "default#image",
         iconImageHref: "./img/map-mark.png",
-        iconImageSize: fs < 769 ? [ 40, 40 ] : [ 80, 80 ],
+        iconImageSize: fs < 769 ? [ 60, 60 ] : [ 86, 86 ],
         iconImageOffset: fs < 769 ? [ -20, -20 ] : [ -40, -40 ]
       }), r = ymaps.templateLayoutFactory.createClass("<div class='zoom-control'><div id='zoom-in' class='zoom-control__btn zoom-control__btn--in'><i class='icon-plus'></i></div><div id='zoom-out' class='zoom-control__btn zoom-control__btn--out'><i class='icon-minus'></i></div></div>", {
         build: function() {
@@ -7384,8 +7384,8 @@
       e.controls.add(i, {
         position: {
           float: "none",
-          top: "" + (fs < 769 ? "5.5rem" : "20rem"),
-          left: "" + (fs < 769 ? "1rem" : "3rem")
+          top: "" + (fs < 769 ? "9rem" : "20rem"),
+          left: "" + (fs < 769 ? "0.5rem" : "3rem")
         }
       }), e.behaviors.disable("scrollZoom"), e.geoObjects.add(t), fs > 768 || e.behaviors.disable("drag");
     }, bc = ji.querySelector(".choose__content"), wc = () => {
@@ -7535,7 +7535,6 @@
             toggleActions: "restart pause reverse pause",
             start: "top 60%",
             end: "bottom 40%",
-            markers: !0,
             scrub: 3
           },
           width: "100%",
@@ -7642,7 +7641,9 @@
               e || nc.reverse();
             }
           }
-        })), e && Hi.to(e, {
+        })), e && (fs < 769 ? Hi.set(e, {
+          flexGrow: 0
+        }) : Hi.to(e, {
           scrollTrigger: {
             trigger: Xl,
             toggleActions: "restart pause reverse pause",
@@ -7652,7 +7653,7 @@
           },
           flexGrow: 0,
           duration: 1
-        });
+        }));
       })(), (() => {
         if (!oc) {
           return;

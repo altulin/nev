@@ -86,6 +86,11 @@
       margin-bottom: 2.5rem;
       font-size: 3rem;
     }
+
+    @include mw($ph) {
+      padding-right: 0.5rem;
+      padding-left: 0.5rem;
+    }
   }
 
   &__block {
@@ -143,6 +148,11 @@
     @include mw($tb) {
       font-size: 1rem;
       line-height: 1.8;
+    }
+
+    @include mw($ph) {
+      padding-left: 0.5rem;
+      padding-right: 1rem;
     }
   }
 }

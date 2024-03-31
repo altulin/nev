@@ -233,6 +233,20 @@
         content: none;
       }
     }
+
+    &--title {
+      display: none;
+
+      @include mw($tb) {
+        display: block;
+        color: rgb(255, 255, 255);
+        font-size: 0.88rem;
+        font-weight: 500;
+        line-height: 2.4;
+        text-transform: uppercase;
+        letter-spacing: 0.1rem;
+      }
+    }
   }
 
   &__scrollbar {

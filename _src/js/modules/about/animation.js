@@ -3,6 +3,7 @@ import { body } from "../header/menu.js";
 import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 import Splitting from "splitting";
 gsap.registerPlugin(ScrollTrigger);
+import { width } from "../sliders/dubrovka.js";
 
 let title, subTitle, text, link, img, about, itemUp, itemDown, list;
 
@@ -207,18 +208,22 @@ export const animationAbout = () => {
   }
 
   if (word) {
-    gsap.to(word, {
-      scrollTrigger: {
-        trigger: title,
-        toggleActions: "restart pause reverse pause",
-        start: "top 70%",
-        end: "bottom 30%",
-        scrub: 2,
-        // once: true,
-        // markers: true,
-      },
-      flexGrow: 0,
-      duration: 1,
-    });
+    if (width < 769) {
+      gsap.set(word, { flexGrow: 0 });
+    } else {
+      gsap.to(word, {
+        scrollTrigger: {
+          trigger: title,
+          toggleActions: "restart pause reverse pause",
+          start: "top 70%",
+          end: "bottom 30%",
+          scrub: 2,
+          // once: true,
+          // markers: true,
+        },
+        flexGrow: 0,
+        duration: 1,
+      });
+    }
   }
 };
