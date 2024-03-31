@@ -15,7 +15,7 @@ html {
   font-size: 0.83vw;
 
   @include mw($ldt) {
-    font-size: 1.1vw;
+    font-size: 0.95vw;
   }
 
   @include mw($dt) {

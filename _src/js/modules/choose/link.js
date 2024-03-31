@@ -18,10 +18,10 @@ export const chooseLink = () => {
     e.preventDefault();
     gsap
       .timeline()
-      .to(leftLink.querySelector(".choose-block"), {
-        display: "none",
-        duration: 0.1,
-      })
+      // .to(leftLink.querySelector(".choose-block"), {
+      //   display: "none",
+      //   duration: 0.1,
+      // })
       .to(rightLink.querySelector(".choose-block"), {
         display: "none",
         duration: 0.1,

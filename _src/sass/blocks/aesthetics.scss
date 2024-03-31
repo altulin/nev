@@ -191,10 +191,15 @@
     padding: 1rem 2rem;
     align-self: flex-end;
 
-    @include mw($tb) {
-      position: absolute;
+    @include mw($ldt) {
+      width: 100%;
       padding-left: 1.25rem;
       padding-right: 1.25rem;
+    }
+
+    @include mw($tb) {
+      position: absolute;
+
       bottom: 0;
     }
   }
@@ -224,7 +229,7 @@
       margin-right: 0.6rem;
       margin-top: 0.6rem;
 
-      @include mw($tb) {
+      @include mw($dt) {
         content: none;
       }
     }
