@@ -35,9 +35,10 @@ export const createYardDots = () => {
 
     element.addEventListener("mousemove", function (e) {
       btn.classList.add("yard-touch__btn--active");
+      const delta = btn.offsetWidth / 2;
 
-      mouseX = e.offsetX - 95;
-      mouseY = e.offsetY - 95;
+      mouseX = e.offsetX - delta;
+      mouseY = e.offsetY - delta;
     });
 
     element.addEventListener("mouseleave", function (e) {

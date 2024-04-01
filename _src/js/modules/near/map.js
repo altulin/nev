@@ -2,7 +2,7 @@ import { width } from "../../modules/sliders/dubrovka.js";
 import { body } from "../header/menu.js";
 
 const getWidth = () => {
-  const delta = width < 769 ? 0.1 : 0.045;
+  const delta = width < 769 ? 0.15 : 0.045;
   const size = Math.round(width * delta);
   return { size: [size, size], offset: [size / -2, size / -2] };
 };

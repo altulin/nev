@@ -31,33 +31,12 @@ export const animationCircle = () => {
           trigger: circle,
           toggleActions: "play none none none",
           start: `top 80%`,
-          // end: "+=100",
+          end: "+=100",
           once: true,
           // markers: true,
         },
       })
       .to(item, { backgroundPositionY: "100%", duration: 1 })
       .to(item, { y: 0, duration: 1 }, "<");
-
-    // gsap.to(item, {
-    //   scrollTrigger: {
-    //     trigger: circle,
-    //     toggleActions: "play none none none",
-    //     // start: `top 60%`,
-    //     start: `top 80%`,
-    //     end: "+=100",
-    //     scrub: 1,
-    //     // markers: true,
-    //     once: true,
-    //     // onToggle: ({ isActive }) => {
-    //     //   if (!isActive) {
-    //     //     animationTitle.reverse();
-    //     //   }
-    //     // },
-    //   },
-    //   backgroundPositionY: "100%",
-    //   y: 0,
-    //   duration: 1,
-    // });
   });
 };

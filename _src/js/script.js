@@ -7469,7 +7469,7 @@
         }));
       }));
     }, Tc = () => {
-      const e = vs < 769 ? .1 : .045, t = Math.round(vs * e);
+      const e = vs < 769 ? .15 : .045, t = Math.round(vs * e);
       return {
         size: [ t, t ],
         offset: [ t / -2, t / -2 ]
@@ -7803,7 +7803,9 @@
             i += .2 * (t - i), n += .2 * (r - n), s.style.left = i + "px", s.style.top = n + "px", 
             requestAnimationFrame(e);
           }(), e.addEventListener("mousemove", (function(e) {
-            s.classList.add("circle-control__btn--active"), t = e.offsetX - 95, r = e.offsetY - 95;
+            s.classList.add("circle-control__btn--active");
+            const i = s.offsetWidth / 2;
+            t = e.offsetX - i, r = e.offsetY - i;
           })), e.addEventListener("mouseleave", (function(e) {
             s.classList.remove("circle-control__btn--active");
           }));
@@ -7834,6 +7836,7 @@
               trigger: pc,
               toggleActions: "play none none none",
               start: "top 80%",
+              end: "+=100",
               once: !0
             }
           }).to(e, {
@@ -7925,7 +7928,9 @@
             i += .2 * (t - i), n += .2 * (r - n), s.style.left = i + "px", s.style.top = n + "px", 
             requestAnimationFrame(e);
           }(), e.addEventListener("mousemove", (function(e) {
-            s.classList.add("yard-touch__btn--active"), t = e.offsetX - 95, r = e.offsetY - 95;
+            s.classList.add("yard-touch__btn--active");
+            const i = s.offsetWidth / 2;
+            t = e.offsetX - i, r = e.offsetY - i;
           })), e.addEventListener("mouseleave", (function(e) {
             s.classList.remove("yard-touch__btn--active");
           }));
@@ -7944,7 +7949,9 @@
             i += .2 * (t - i), n += .2 * (r - n), s.style.left = i + "px", s.style.top = n + "px", 
             requestAnimationFrame(e);
           }(), e.addEventListener("mousemove", (function(e) {
-            s.classList.add("aesthetics-touch__btn--active"), t = e.offsetX - 95, r = e.offsetY - 95;
+            s.classList.add("aesthetics-touch__btn--active");
+            const i = s.offsetWidth / 2;
+            t = e.offsetX - i, r = e.offsetY - i;
           })), e.addEventListener("mouseleave", (function(e) {
             s.classList.remove("aesthetics-touch__btn--active");
           }));
@@ -7963,8 +7970,9 @@
             i += .2 * (t - i), n += .2 * (r - n), s.style.left = i + "px", s.style.top = n + "px", 
             requestAnimationFrame(e);
           }(), e.addEventListener("mousemove", (function(i) {
-            s.classList.add("choose__circle--active"), e.classList.add("choose__control--active"), 
-            t = i.offsetX - 95, r = i.offsetY - 95;
+            s.classList.add("choose__circle--active"), e.classList.add("choose__control--active");
+            const n = s.offsetWidth / 2;
+            t = i.offsetX - n, r = i.offsetY - n;
           })), e.addEventListener("mouseleave", (function(t) {
             s.classList.remove("choose__circle--active"), e.classList.remove("choose__control--active");
           }));
@@ -8122,8 +8130,9 @@
             trigger: e,
             toggleActions: "play none none none",
             start: "top 70%",
-            end: "center 70%",
-            once: !0
+            end: "30% 70%",
+            once: !0,
+            scrub: !0
           },
           autoAlpha: 1,
           duration: 1

@@ -613,8 +613,8 @@ input:-webkit-autofill:active {
 
 .control {
   aspect-ratio: 1;
-  max-width: 12.5rem;
-  max-height: 12.5rem;
+  width: 12.5rem;
+  height: 12.5rem;
   position: relative;
   border-radius: 50%;
   display: -webkit-box;
@@ -628,6 +628,8 @@ input:-webkit-autofill:active {
           justify-content: center;
   cursor: pointer;
   background-color: transparent;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 
 .control::before {
@@ -3075,6 +3077,7 @@ button.swiper-pagination-bullet {
   padding-left: 1rem;
   position: relative;
   background-color: #78899f;
+  margin-left: -1px;
 }
 
 .near-content__subtitle {
@@ -4086,8 +4089,6 @@ button.swiper-pagination-bullet {
 
 .circle-control__btn {
   position: absolute;
-  width: 190px;
-  height: 190px;
   pointer-events: none;
 }
 
@@ -4227,8 +4228,6 @@ button.swiper-pagination-bullet {
 
 .yard-touch__btn {
   position: absolute;
-  width: 190px;
-  height: 190px;
   pointer-events: none;
 }
 
@@ -4526,8 +4525,6 @@ button.swiper-pagination-bullet {
 
 .aesthetics-touch__btn {
   position: absolute;
-  width: 190px;
-  height: 190px;
   pointer-events: none;
 }
 
@@ -4719,8 +4716,6 @@ button.swiper-pagination-bullet {
 
 .choose__circle {
   position: absolute;
-  width: 190px;
-  height: 190px;
   pointer-events: none;
 }
 
@@ -5657,8 +5652,8 @@ button.swiper-pagination-bullet {
   }
 
   .control {
-    max-width: 3.13rem;
-    max-height: 3.13rem;
+    width: 3.13rem;
+    height: 3.13rem;
   }
 
   .control::before {
@@ -6045,7 +6040,7 @@ button.swiper-pagination-bullet {
   .about__link {
     display: block;
     min-width: auto;
-    font-size: 1rem;
+    font-size: 1.1rem;
     line-height: 1;
     width: 76%;
     padding: 1.05rem 1rem;
@@ -6093,6 +6088,7 @@ button.swiper-pagination-bullet {
     padding-top: 3.5rem;
     pozition: relative;
     z-index: 2;
+    margin-left: 0;
   }
 
   .near-content__subtitle {
@@ -6410,7 +6406,7 @@ button.swiper-pagination-bullet {
   }
 
   .dubrovka-slide__text {
-    font-size: 0.88rem;
+    font-size: 1rem;
     line-height: 1.13;
     left: 0;
     width: 100%;
