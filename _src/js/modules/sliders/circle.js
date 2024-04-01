@@ -15,7 +15,36 @@ export const sliderCircle = new Swiper(".circle__slider", {
     prevEl: `.circle-control__block--left`,
   },
   scrollbar: {
+    enabled: false,
     el: ".circle-slider__scrollbar",
-    draggable: true,
+  },
+
+  on: {
+    init: (s) => {
+      console.log(s.scrollbar);
+      // s.scrollbar.updateSize();
+      s.scrollbar.setTranslate();
+    },
+  },
+
+  breakpoints: {
+    320: {
+      scrollbar: {
+        enabled: true,
+        el: ".circle-slider__scrollbar",
+      },
+      allowTouchMove: true,
+      // navigation: { enabled: true },
+      slidesPerView: "auto",
+    },
+    769: {
+      allowTouchMove: false,
+      // navigation: { enabled: false },
+      slidesPerView: "auto",
+      scrollbar: {
+        enabled: false,
+        el: ".circle-slider__scrollbar",
+      },
+    },
   },
 });

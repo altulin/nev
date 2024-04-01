@@ -18,64 +18,45 @@ export const animationDeveloper = () => {
   const infoBock = developer.querySelector(".info-block");
   const infoList = developer.querySelector(".info-list");
 
-  const animationCover = gsap
-    .timeline({ paused: true })
+  gsap.set(cover, { y: "-100%" });
+  gsap.set(infoList, { y: 100, autoAlpha: 0 });
+  gsap.set(infoBock, { y: 100, autoAlpha: 0 });
 
-    .fromTo(cover, { y: 0 }, { y: "-100%", duration: 0.5 })
-
-    .fromTo(
-      infoList,
-      { y: 0, autoAlpha: 1 },
-      { y: 100, autoAlpha: 0, duration: 1 },
-    )
-    .fromTo(
-      infoBock,
-      { y: 0, autoAlpha: 1 },
-      { y: 100, autoAlpha: 0, duration: 1 },
-      "<",
-    );
-
-  const animationTitle = gsap
-    .timeline({ paused: true })
+  gsap
+    .timeline()
     .fromTo(
       title,
       { autoAlpha: 1, y: 0 },
       { autoAlpha: 0, y: 100, duration: 0.5 },
     )
-    .fromTo(logo, { autoAlpha: 1 }, { autoAlpha: 0, duration: 0.5 }, "<");
+    .fromTo(logo, { autoAlpha: 1 }, { autoAlpha: 0, duration: 0.5 }, "<")
+    .play();
 
-  animationTitle.play();
-  animationCover.play();
-
-  gsap.to(title, {
-    scrollTrigger: {
-      trigger: developer,
-      toggleActions: "play none none pause",
-      start: `${width < 769 ? "top 100%" : "top 60%"}`,
-      end: `${width < 769 ? "+=200" : "+=300"}`,
-      // once: true,
-      // markers: true,
-      onToggle: ({ isActive }) => {
-        if (!isActive) {
-          animationTitle.reverse();
-        }
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: developer,
+        toggleActions: "play none none none",
+        start: `${width < 769 ? "top 100%" : "top 60%"}`,
+        end: `${width < 769 ? "+=200" : "+=300"}`,
+        once: true,
       },
-    },
-  });
+    })
+    .to(title, { autoAlpha: 1, y: 0, duration: 0.5 })
+    .to(logo, { autoAlpha: 1, duration: 0.5 }, "<");
 
-  gsap.to(infoBock, {
-    scrollTrigger: {
-      trigger: developer,
-      toggleActions: "play none none pause",
-      start: `${width < 769 ? "top 80%" : "top 80%"}`,
-      end: `${width < 769 ? "+=200" : "+=200"}`,
-      // markers: true,
-      // once: true,
-      onToggle: ({ isActive }) => {
-        if (!isActive) {
-          animationCover.reverse();
-        }
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: developer,
+        toggleActions: "play none none none",
+        start: `${width < 769 ? "top 80%" : "top 80%"}`,
+        end: `${width < 769 ? "+=200" : "+=200"}`,
+        once: true,
       },
-    },
-  });
+    })
+
+    .to(infoList, { y: 0, autoAlpha: 1, duration: 0.5 })
+    .to(infoBock, { y: 0, autoAlpha: 1, duration: 0.5 }, "<")
+    .to(cover, { y: 0, duration: 1 });
 };

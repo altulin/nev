@@ -24,12 +24,27 @@ section.near#near
 							span.near-item__time= item.time
 							span.near-item__min мин
 							p.near-item__text
-								each el in item.text
-									span(class=`${item.last?"near-item__text--mini":""}`)= el
+								each el,i in item.text
+									if item.last
 
 
-							if item.span
+											if i===2
+												span.item-last
+													span= el
+													span.item-last__text (Финлянский&nbsp;вокзал)
+											else
+												span= el
+
+
+									else
+										span= el
+
+
+
+							//- if item.span
 								span.near-item__station= item.span
+
+
 
 						.near-item__indication.near-indication(class=`near-indication--${i+1}`)
 							.near-indication__line(class=`near-indication__line--${i}`)

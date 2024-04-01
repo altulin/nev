@@ -13,103 +13,59 @@ export const animationYard = () => {
   const cover = yard.querySelector(".yard__cover");
   const bar = yard.querySelector(".yard__pagination");
 
-  const tlYard = gsap
-    .timeline({
-      paused: true,
-    })
-    .fromTo(
-      title,
-      { autoAlpha: 0, y: "200" },
-      { autoAlpha: 1, y: "0", duration: 1 },
-    )
-    .fromTo(
-      text,
-      { autoAlpha: 0, y: 200 },
-      { autoAlpha: 1, y: 0, duration: 1 },
-      "<",
-    )
-    .to(cover, { y: "100%", duration: 1 }, "<")
-    .call(() => {
-      sliderYard.enable();
-      sliderYard.slideNext(2000);
-    })
-    .to(bar, { autoAlpha: 1 });
-
-  const tlYardMobPic = gsap
-    .timeline({
-      paused: true,
-    })
-    .to(cover, { y: "100%", duration: 1 }, "<")
-    .call(() => {
-      sliderYard.enable();
-      sliderYard.slideNext(2000);
-    })
-    .to(bar, { autoAlpha: 1 });
-
-  const tlYartTypograthy = gsap
-    .timeline({ paused: true })
-    .fromTo(
-      title,
-      { autoAlpha: 0, y: "200" },
-      { autoAlpha: 1, y: "0", duration: 1 },
-    )
-    .fromTo(
-      text,
-      { autoAlpha: 0, y: 200 },
-      { autoAlpha: 1, y: 0, duration: 1 },
-      "<",
-    );
+  gsap
+    .timeline()
+    .set(title, { autoAlpha: 0, y: "200" })
+    .set(text, { autoAlpha: 0, y: "200" });
 
   if (width > 768) {
-    gsap.to(title, {
-      scrollTrigger: {
-        trigger: yard,
-        toggleActions: "play none none pause",
-        start: "top 80%",
-        end: "+=300",
-
-        // once: true,
-        // markers: true,
-        onToggle: ({ isActive }) => {
-          if (!isActive) {
-            tlYard.play();
-          }
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: yard,
+          toggleActions: "play none none none",
+          start: "top 80%",
+          end: "+=300",
+          once: true,
         },
-      },
-    });
+      })
+      .to(title, { autoAlpha: 1, y: 0, duration: 1 })
+      .to(text, { autoAlpha: 1, y: 0, duration: 1 }, "<")
+      .to(cover, { y: "100%", duration: 1 }, "<")
+      .call(() => {
+        sliderYard.enable();
+        sliderYard.slideNext(2000);
+      })
+      .to(bar, { autoAlpha: 1 });
   } else {
-    gsap.to(title, {
-      scrollTrigger: {
-        trigger: yard,
-        toggleActions: "play none none pause",
-        start: "top 90%",
-        end: "+=200",
-
-        // once: true,
-        // markers: true,
-        onToggle: ({ isActive }) => {
-          if (!isActive) {
-            tlYardMobPic.play();
-          }
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: yard,
+          toggleActions: "play none none none",
+          start: "top 90%",
+          end: "+=200",
+          once: true,
         },
-      },
-    });
+      })
+      .to(cover, { y: "100%", duration: 1 }, "<")
+      .call(() => {
+        sliderYard.enable();
+        sliderYard.slideNext(2000);
+      })
+      .to(bar, { autoAlpha: 1 });
 
-    gsap.to(title, {
-      scrollTrigger: {
-        trigger: title,
-        toggleActions: "play none none pause",
-        start: "top 90%",
-        end: "+=50",
-
-        // once: true,
-        // markers: true,
-        onToggle: ({ isActive }) => {
-          if (!isActive) {
-            tlYartTypograthy.play();
-          }
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: title,
+          toggleActions: "play none none none",
+          start: "top 90%",
+          end: "+=50",
+          once: true,
         },
-      },
-    });
+      })
+      .to(title, { autoAlpha: 1, y: 0, duration: 1 })
+      .to(text, { autoAlpha: 1, y: 0, duration: 1 }, "<");
   }
 };

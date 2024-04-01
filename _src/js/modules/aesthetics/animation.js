@@ -12,32 +12,17 @@ export const animationAesthetics = () => {
   if (!aesthetics) return;
   const title = aesthetics.querySelector(".aesthetics__title");
 
-  const animationTitle = gsap
-    .timeline({ paused: true })
-    .fromTo(
-      title,
-      { backgroundPositionY: "100%" },
-      { backgroundPositionY: "200%", duration: 1 },
-    )
-    .fromTo(title, { y: 0 }, { y: "100%", duration: 1 }, "<");
+  gsap.timeline().set(title, { backgroundPositionY: "200%", y: "100%" });
 
-  animationTitle.play();
-
-  gsap.to(title, {
-    scrollTrigger: {
-      trigger: title,
-      toggleActions: "play pause reverse pause",
-      start: `${width < 769 ? "top 100%" : "top 90%"}`,
-      end: `${width < 769 ? "+=200" : "+=100"}`,
-      once: true,
-      // markers: true,
-      onToggle: ({ isActive }) => {
-        if (!isActive) {
-          animationTitle.reverse();
-        }
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: title,
+        toggleActions: "play none reverse none",
+        start: `${width < 769 ? "top 100%" : "top 90%"}`,
+        end: `${width < 769 ? "+=200" : "+=100"}`,
       },
-    },
-
-    duration: 1,
-  });
+    })
+    .to(title, { backgroundPositionY: "100%", duration: 1 })
+    .to(title, { y: 0, duration: 1 }, "<");
 };

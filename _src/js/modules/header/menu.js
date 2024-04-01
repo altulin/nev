@@ -33,7 +33,7 @@ const openHandle = async () => {
   await menuTl.play();
 
   anchorList.forEach((element) => {
-    element.addEventListener("click", anchorHandle);
+    element.addEventListener("click", (e) => anchorHandle(element, e));
   });
 };
 

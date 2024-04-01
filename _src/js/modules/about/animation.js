@@ -30,61 +30,36 @@ const createAnimation = () => {
 
   tlAboutItemUp = gsap
     .timeline({ paused: true })
-    .fromTo(
-      itemUp,
-      { autoAlpha: 1, y: "0" },
-      { autoAlpha: 0, y: "50", duration: 1 },
-    );
+    .set(itemUp, { autoAlpha: 0, y: "50" });
 
   tlAboutItemDown = gsap
     .timeline({ paused: true })
-    .fromTo(
-      itemDown,
-      { autoAlpha: 1, y: "0" },
-      { autoAlpha: 0, y: "50", duration: 1 },
-    );
+    .set(itemDown, { autoAlpha: 0, y: "50" });
 
   tlAboutSubtitle = gsap
     .timeline({
       paused: true,
     })
-    .fromTo(
-      subTitle,
-      { autoAlpha: 1, y: "0" },
-      { autoAlpha: 0, y: "50", duration: 1 },
-    );
+    .set(subTitle, { autoAlpha: 0, y: "50" });
 
   tlAboutText = gsap
     .timeline({
       paused: true,
     })
-    .fromTo(
-      text,
-      { autoAlpha: 1, y: "0" },
-      { autoAlpha: 0, y: "50", duration: 1 },
-    );
+    .set(text, { autoAlpha: 0, y: "50" });
 
   tlAboutLink = gsap
     .timeline({
       paused: true,
     })
-    .fromTo(
-      link,
-      { autoAlpha: 1, y: "0" },
-      { autoAlpha: 0, y: "50", duration: 1 },
-    );
+    .set(link, { autoAlpha: 0, y: "50", duration: 1 });
 
   tlAboutImg = gsap
     .timeline({
       paused: true,
     })
-    .fromTo(
+    .set(
       img,
-      width < 769
-        ? { autoAlpha: 1, y: 0 }
-        : {
-            scale: 1,
-          },
       width < 769
         ? { autoAlpha: 0, y: 100, duration: 1 }
         : { scale: 0.9, duration: 1 },
@@ -104,36 +79,30 @@ export const animationAbout = () => {
     tlAboutItemUp.play();
     tlAboutItemDown.play();
 
-    gsap.to(list, {
+    gsap.to(itemUp, {
       scrollTrigger: {
         trigger: list,
-        toggleActions: "play none none pause",
+        toggleActions: "play none none none",
         start: `top 90%`,
         end: "+=100",
         // markers: true,
-        // once: true,
-        onToggle: ({ isActive }) => {
-          if (!isActive) {
-            tlAboutItemUp.reverse();
-          }
-        },
+        once: true,
       },
+      autoAlpha: 1,
+      y: 0,
     });
 
-    gsap.to(list, {
+    gsap.to(itemDown, {
       scrollTrigger: {
         trigger: list,
-        toggleActions: "play none none pause",
+        toggleActions: "play none none none",
         start: `top 80%`,
         end: "+=100",
         // markers: true,
-        // once: true,
-        onToggle: ({ isActive }) => {
-          if (!isActive) {
-            tlAboutItemDown.reverse();
-          }
-        },
+        once: true,
       },
+      autoAlpha: 1,
+      y: 0,
     });
   }
 
@@ -142,17 +111,16 @@ export const animationAbout = () => {
     gsap.to(subTitle, {
       scrollTrigger: {
         trigger: subTitle,
-        toggleActions: "play none none pause",
-        start: `top 100%`,
+        toggleActions: "play none none none",
+        start: `top 70%`,
         end: "+=100",
         // markers: true,
-        // once: true,
-        onToggle: ({ isActive }) => {
-          if (!isActive) {
-            tlAboutSubtitle.reverse();
-          }
-        },
+        // scrub: 1,
+        once: true,
       },
+      autoAlpha: 1,
+      y: 0,
+      duration: 0.5,
     });
   }
   if (text) {
@@ -160,17 +128,15 @@ export const animationAbout = () => {
     gsap.to(text, {
       scrollTrigger: {
         trigger: text,
-        toggleActions: "play none none pause",
+        toggleActions: "play none none none",
         start: `top 100%`,
         end: "+=100",
         // markers: true,
-        // once: true,
-        onToggle: ({ isActive }) => {
-          if (!isActive) {
-            tlAboutText.reverse();
-          }
-        },
+        once: true,
       },
+      autoAlpha: 1,
+      y: 0,
+      duration: 1,
     });
   }
 
@@ -183,13 +149,11 @@ export const animationAbout = () => {
         start: `top 100%`,
         end: "+=100",
         // markers: true,
-        // once: true,
-        onToggle: ({ isActive }) => {
-          if (!isActive) {
-            tlAboutLink.reverse();
-          }
-        },
+        once: true,
       },
+      autoAlpha: 1,
+      y: 0,
+      duration: 1,
     });
   }
   if (img) {
@@ -201,13 +165,12 @@ export const animationAbout = () => {
         start: `top 70%`,
         end: "+=100",
         // markers: true,
-        // once: true,
-        onToggle: ({ isActive }) => {
-          if (!isActive) {
-            tlAboutImg.reverse();
-          }
-        },
+        once: true,
       },
+      scale: 1,
+      autoAlpha: 1,
+      y: 0,
+      duration: 1,
     });
   }
 
