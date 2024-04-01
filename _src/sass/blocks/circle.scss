@@ -141,6 +141,7 @@
 
   @include mw($tb) {
     pointer-events: none;
+    height: calc(100% - 0.79rem);
   }
 
   &__block {
@@ -181,6 +182,8 @@
 
 .circle-control {
   display: flex;
+  position: relative;
+  z-index: 1;
   &__block {
     width: 50%;
     position: relative;

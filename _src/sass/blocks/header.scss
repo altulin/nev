@@ -6,6 +6,10 @@
   z-index: 10;
   transition: 0.8s ease-in-out;
 
+  &--fix {
+    position: sticky;
+  }
+
   &--plan {
     .header__line-middle {
       background-color: #000;

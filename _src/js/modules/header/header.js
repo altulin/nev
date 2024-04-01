@@ -1,10 +1,14 @@
-import { header } from "./menu.js";
+// import { header } from "./menu.js";
+import { body } from "./menu.js";
 
 let lastScrollY = window.scrollY;
 let scrollDirection = "";
 let timerId;
+const header = body.querySelector(".header--hide");
 
 const updateScrollDirection = () => {
+  if (!header) return;
+
   const scrollY = window.scrollY;
   const direction = scrollY > lastScrollY ? "down" : "up";
   if (

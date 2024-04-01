@@ -19,14 +19,6 @@ export const sliderCircle = new Swiper(".circle__slider", {
     el: ".circle-slider__scrollbar",
   },
 
-  on: {
-    init: (s) => {
-      console.log(s.scrollbar);
-      // s.scrollbar.updateSize();
-      s.scrollbar.setTranslate();
-    },
-  },
-
   breakpoints: {
     320: {
       scrollbar: {

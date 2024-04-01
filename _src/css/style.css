@@ -1619,6 +1619,10 @@ button.swiper-pagination-bullet {
   transition: 0.8s ease-in-out;
 }
 
+.header--fix {
+  position: sticky;
+}
+
 .header--plan .header__line-middle {
   background-color: #000;
 }
@@ -4071,6 +4075,8 @@ button.swiper-pagination-bullet {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
+  z-index: 1;
 }
 
 .circle-control__block {
@@ -4548,7 +4554,8 @@ button.swiper-pagination-bullet {
 
 .choose {
   padding-top: 5rem;
-  margin-bottom: 2rem;
+  overflow: hidden;
+  padding-bottom: 6rem;
 }
 
 .choose__inner {
@@ -4602,7 +4609,6 @@ button.swiper-pagination-bullet {
   display: -ms-flexbox;
   display: flex;
   position: relative;
-  overflow-x: hidden;
 }
 
 .choose__bg {
@@ -4736,7 +4742,7 @@ button.swiper-pagination-bullet {
 }
 
 .developer {
-  padding-top: 8.5rem;
+  padding-top: 4.5rem;
   border-bottom: 0.06rem solid rgb(167, 167, 171);
 }
 
@@ -6293,7 +6299,7 @@ button.swiper-pagination-bullet {
   }
 
   .tabs-head__link {
-    font-size: 0.88rem;
+    font-size: 1rem;
     padding: 0.5rem;
     line-height: 1;
   }
@@ -6444,6 +6450,7 @@ button.swiper-pagination-bullet {
 
   .circle-cover {
     pointer-events: none;
+    height: calc(100% - 0.79rem);
   }
 
   .circle-cover__block--center {
@@ -6489,7 +6496,7 @@ button.swiper-pagination-bullet {
   }
 
   .yard__text {
-    font-size: 1rem;
+    font-size: 1.15rem;
     line-height: 1.8;
   }
 
@@ -6649,7 +6656,7 @@ button.swiper-pagination-bullet {
   }
 
   .aesthetics-head__link {
-    font-size: 0.88rem;
+    font-size: 1rem;
     line-height: 1;
     padding: 0.63rem 1.25rem;
     text-align: center;
