@@ -21,17 +21,13 @@ section.promo
 
 							h1.title.title--lg.title--white.promo-slide__title.promo-title(class=`promo-title--${i}`)
 								span.promo-title__text
-									//- if i===0
-										span.promo-title__cover
-											|	КВАРТИРА
+
 									| КВАРТИРА
 								span.promo-title__text
-									//- if i===0
-										span.promo-title__cover
-											| У НЕВЫ
+
 									| У НЕВЫ
 							.promo-slide__block
-								a.promo-slide__link(href="/") смотреть планировки
+								a.promo-slide__link.js-anchor(href="#choose") смотреть планировки
 								p.promo-slide__text= item.text
 
 			.promo-swiper__pagination.pagination-bar

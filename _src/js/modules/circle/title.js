@@ -32,7 +32,7 @@ export const animationCircle = () => {
           toggleActions: "play none none none",
           start: `top 80%`,
           end: "+=100",
-          once: true,
+          // once: true,
           // markers: true,
         },
       })

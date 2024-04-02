@@ -112,18 +112,16 @@ export const setAestheticsSliders = () => {
       breakpoints: {
         320: {
           allowTouchMove: true,
-          //     navigation: { enabled: true },
+          speed: 300,
           initialSlide: 0,
-          // slidesPerView: 1,
           slidesPerView: "auto",
           slidesOffsetBefore: 0,
           centeredSlides: false,
-          //   },
         },
         769: {
           allowTouchMove: false,
           initialSlide: 3,
-          //     navigation: { enabled: false },
+          speed: 1000,
           slidesPerView: "auto",
           slidesOffsetBefore: 200,
           centeredSlides: true,

@@ -1,14 +1,9 @@
-<svg width="80.000000" height="79.000000" viewBox="0 0 80 79" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-	<desc>
-			Created with Pixso.
-	</desc>
-	<defs/>
-	<path id="Vector" d="M63.82 62.53L16.17 62.53L16.17 15.34L57.12 15.34C60.8 15.34 63.76 18.24 63.76 21.85L63.76 62.53L63.82 62.53ZM17.36 61.37L62.57 61.37L62.57 21.85C62.57 18.88 60.14 16.5 57.12 16.5L17.36 16.5L17.36 61.37Z" fill="#FFFFFF" fill-opacity="1.000000" fill-rule="nonzero"/>
-	<path id="Vector" d="M16.77 33.24L47.76 33.24L47.76 34.4L16.77 34.4L16.77 33.24Z" fill="#FFFFFF" fill-opacity="1.000000" fill-rule="evenodd"/>
-	<path id="Vector" d="M32.88 53.99L26.13 48L16.77 48L16.77 46.84L26.6 46.84L33.65 53.11L32.88 53.99Z" fill="#FFFFFF" fill-opacity="1.000000" fill-rule="nonzero"/>
-	<path id="Vector" d="M42.96 48L38.45 48L38.45 46.84L41.77 46.84L41.77 33.82L42.96 33.82L42.96 48Z" fill="#FFFFFF" fill-opacity="1.000000" fill-rule="nonzero"/>
-	<path id="Vector" d="M30.34 28.18L31.52 28.18L31.52 33.82L30.34 33.82L30.34 28.18Z" fill="#FFFFFF" fill-opacity="1.000000" fill-rule="evenodd"/>
-	<path id="Vector" d="M30.34 15.92L31.52 15.92L31.52 21.56L30.34 21.56L30.34 15.92Z" fill="#FFFFFF" fill-opacity="1.000000" fill-rule="evenodd"/>
-	<path id="Vector" d="M57.3 33.24L63.05 33.24L63.05 34.4L57.3 34.4L57.3 33.24Z" fill="#FFFFFF" fill-opacity="1.000000" fill-rule="evenodd"/>
-	<path id="Vector" d="M78.81 0.87L78.81 77L1.18 77L1.18 0.87L78.81 0.87ZM80 -0.3L0 -0.3L0 78.16L80 78.16L80 -0.3Z" fill="#FFFFFF" fill-opacity="1.000000" fill-rule="nonzero"/>
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M47.8222 47.5345H0.177765V0.342773H41.1259C44.8 0.342773 47.763 3.24867 47.763 6.85197V47.5345H47.8222ZM1.36295 46.3721H46.5778V6.85197C46.5778 3.88796 44.1481 1.50513 41.1259 1.50513H1.36295V46.3721Z" fill="white"/>
+<path d="M31.7629 18.2427H0.77034V19.405H31.7629V18.2427Z" fill="white"/>
+<path d="M16.8889 38.9908L10.1333 33.0046H0.77034V31.8423H10.6074L17.6592 38.119L16.8889 38.9908Z" fill="white"/>
+<path d="M26.9629 33.0045H22.4592V31.8421H25.7777V18.8237H26.9629V33.0045Z" fill="white"/>
+<path d="M15.5259 13.1865H14.3407V18.824H15.5259V13.1865Z" fill="white"/>
+<path d="M15.5259 0.92334H14.3407V6.56077H15.5259V0.92334Z" fill="white"/>
+<path d="M47.0518 18.2427H41.3036V19.405H47.0518V18.2427Z" fill="white"/>
 </svg>

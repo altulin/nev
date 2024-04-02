@@ -1,6 +1,7 @@
 import gsap from "gsap";
 import { closeHandle, body } from "./menu.js";
 import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin.js";
+import { width } from "../sliders/dubrovka.js";
 
 gsap.registerPlugin(ScrollToPlugin);
 
@@ -28,19 +29,11 @@ function scrollToHash(hash, e) {
   const elem = hash ? document.querySelector(hash) : false;
   if (elem) {
     if (e) e.preventDefault();
-    gsap.to(window, { scrollTo: elem, duration: 0.1 });
-    // elem.scrollIntoView({
-    //   behavior: "smooth",
-    // });
+    const yOffset = width < 769 ? -30 : -100;
+    const y = elem.getBoundingClientRect().top + window.scrollY + yOffset;
+    gsap.to(window, { scrollTo: y, duration: 0.5 });
   }
 }
-
-// If a link's href is within the current page, scroll to it instead
-// document.querySelectorAll("a[href]").forEach((a) => {
-//   a.addEventListener("click", (e) => {
-//     scrollToHash(getSamePageAnchor(a), e);
-//   });
-// });
 
 // Scroll to the element in the URL's hash on load
 scrollToHash(window.location.hash);

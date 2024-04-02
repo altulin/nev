@@ -5,7 +5,8 @@
     padding-bottom: 5rem;
   }
   &__title {
-    margin-bottom: 16.7rem;
+    // margin-bottom: 16.7rem;
+    margin-bottom: 12rem;
     display: flex;
     justify-content: center;
     // justify-content: space-between;
@@ -95,6 +96,7 @@
     pozition: relative;
     z-index: 2;
     margin-left: 0;
+    margin-top: -1px;
   }
 
   &__subtitle {
@@ -500,6 +502,7 @@
   }
 
   &__text {
+    align-self: flex-end;
     font-size: 1.3rem;
 
     @include mw($tb) {

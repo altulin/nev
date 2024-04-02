@@ -1622,7 +1622,7 @@ button.swiper-pagination-bullet {
 }
 
 .header--fix {
-  position: sticky;
+  position: static;
 }
 
 .header--plan .header__line-middle {
@@ -2416,7 +2416,7 @@ button.swiper-pagination-bullet {
 }
 
 .promo {
-  margin-bottom: 9rem;
+  margin-bottom: 7rem;
 }
 
 .promo-swiper {
@@ -2938,9 +2938,16 @@ button.swiper-pagination-bullet {
   width: 5rem;
   height: 5rem;
   margin-bottom: 0.6rem;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center center;
+  border: 0.06rem solid #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .about__item {
@@ -2957,12 +2964,34 @@ button.swiper-pagination-bullet {
 }
 
 .about__item svg {
-  width: 5rem;
-  height: 5rem;
-  margin-bottom: 0.6rem;
+  fill: #fff;
 }
 
-.about__item span {
+.about__item--1 svg {
+  width: 71%;
+}
+
+.about__item--2 svg {
+  width: 61%;
+}
+
+.about__item--3 svg {
+  width: 36%;
+}
+
+.about__item--4 svg {
+  width: 64%;
+}
+
+.about__item--5 svg {
+  width: 61%;
+}
+
+.about__item--6 svg {
+  width: 68%;
+}
+
+.about__item-text {
   color: rgb(255, 255, 255);
   font-size: 1.13rem;
   font-weight: 300;
@@ -3020,7 +3049,7 @@ button.swiper-pagination-bullet {
 }
 
 .near__title {
-  margin-bottom: 16.7rem;
+  margin-bottom: 12rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3369,6 +3398,8 @@ button.swiper-pagination-bullet {
 }
 
 .item-last__text {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
   font-size: 1.3rem;
 }
 
@@ -3711,7 +3742,7 @@ button.swiper-pagination-bullet {
 }
 
 .dubrovka {
-  margin-bottom: 18.5rem;
+  margin-bottom: 11rem;
 }
 
 .dubrovka__inner {
@@ -3727,7 +3758,7 @@ button.swiper-pagination-bullet {
       -ms-flex-direction: column;
           flex-direction: column;
   row-gap: 1rem;
-  margin-bottom: 15.6rem;
+  margin-bottom: 9.6rem;
   padding-left: 2rem;
   padding-right: 2rem;
   margin-left: auto;
@@ -4251,7 +4282,7 @@ button.swiper-pagination-bullet {
 .aesthetics {
   padding-top: 10rem;
   position: relative;
-  margin-bottom: 9rem;
+  margin-bottom: 6rem;
 }
 
 .aesthetics__inner {
@@ -4552,11 +4583,11 @@ button.swiper-pagination-bullet {
 .choose {
   padding-top: 5rem;
   overflow: hidden;
-  padding-bottom: 6rem;
+  padding-bottom: 3rem;
 }
 
 .choose__inner {
-  margin-bottom: 15rem;
+  margin-bottom: 10rem;
 }
 
 .choose__title {
@@ -4763,7 +4794,7 @@ button.swiper-pagination-bullet {
   line-height: 4rem;
   letter-spacing: 0.4rem;
   text-transform: uppercase;
-  margin-bottom: 14rem;
+  margin-bottom: 9rem;
 }
 
 .developer__title--tb {
@@ -4810,6 +4841,7 @@ button.swiper-pagination-bullet {
 
 .developer-info__head {
   margin-bottom: 11.5rem;
+  margin-bottom: 6.5rem;
 }
 
 .developer-info__logo {
@@ -6019,21 +6051,8 @@ button.swiper-pagination-bullet {
     width: 33.3333333333%;
   }
 
-  .about__item svg {
-    width: 4rem;
-    height: 4rem;
-  }
-
-  .about__item:nth-child(2) svg {
-    width: 4.1rem;
-  }
-
-  .about__item:nth-child(5) svg {
-    width: 4.07rem;
-  }
-
-  .about__item span {
-    font-size: 0.81rem;
+  .about__item-text {
+    font-size: 0.93rem;
     line-height: 1rem;
   }
 
@@ -6089,6 +6108,7 @@ button.swiper-pagination-bullet {
     pozition: relative;
     z-index: 2;
     margin-left: 0;
+    margin-top: -1px;
   }
 
   .near-content__subtitle {

@@ -97,11 +97,6 @@ export const setDubrovkaSliders = () => {
       slidesPerView: "auto",
       loop: true,
       spaceBetween: 5,
-      // navigation: {
-      //   enabled: false,
-      //   nextEl: `.tabs-block__btn--next-${i}`,
-      //   prevEl: `.tabs-block__btn--prev-${i}`,
-      // },
       allowTouchMove: false,
       scrollbar: {
         el: ".tabs-slider__scrollbar",
@@ -114,12 +109,12 @@ export const setDubrovkaSliders = () => {
       breakpoints: {
         320: {
           allowTouchMove: true,
-          // navigation: { enabled: true },
+          speed: 300,
           slidesPerView: "auto",
         },
         769: {
+          speed: 500,
           allowTouchMove: false,
-          // navigation: { enabled: false },
           slidesPerView: "auto",
         },
       },

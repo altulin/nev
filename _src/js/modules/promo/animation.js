@@ -33,7 +33,7 @@ const animationPromo = () => {
     .fromTo(
       text,
       { backgroundPositionY: "200%" },
-      { backgroundPositionY: "100%", duration: 2 },
+      { backgroundPositionY: "100%", duration: 1 },
       "<",
     )
     .fromTo(

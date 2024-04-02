@@ -1,6 +1,6 @@
 include ../helpers/data/dubrovka.pug
 
-section.dubrovka#dubrovka
+section.dubrovka
 	.dubrovka__inner
 		h2.dubrovka__title.dubrovka__title--desk.title.title--lg.title--gray
 			span одубровке
@@ -10,7 +10,7 @@ section.dubrovka#dubrovka
 			span о дубровке
 			span на неве
 
-		.dubrovka__content.tabs.container-lt
+		.dubrovka__content.tabs.container-lt#dubrovka
 			ul.tabs__head.tabs-head
 				each item,i in dubrovka_tabs
 					li.tabs-head__item

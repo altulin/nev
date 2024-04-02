@@ -26,12 +26,12 @@ export const sliderCircle = new Swiper(".circle__slider", {
         el: ".circle-slider__scrollbar",
       },
       allowTouchMove: true,
-      // navigation: { enabled: true },
+      speed: 300,
       slidesPerView: "auto",
     },
     769: {
       allowTouchMove: false,
-      // navigation: { enabled: false },
+      speed: 1000,
       slidesPerView: "auto",
       scrollbar: {
         enabled: false,

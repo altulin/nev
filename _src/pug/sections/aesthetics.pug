@@ -1,13 +1,13 @@
 include ../helpers/data/aesthetics.pug
 
-section.aesthetics#aesthetics
+section.aesthetics
 	.aesthetics__inner
 		h2.title.title--lg.title--gray.aesthetics__title
 			span эстетика
 			span внутри
 
 
-		.aesthetics__tab.aesthetics-tab
+		.aesthetics__tab.aesthetics-tab#aesthetics
 			ul.aesthetics-tab__head.aesthetics-head
 				each item,i in aesthetics_tabs
 					li.aesthetics-head__item(class=`${i===2?"aesthetics-head__item--width":""}`)

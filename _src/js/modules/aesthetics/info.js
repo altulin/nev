@@ -11,13 +11,18 @@ export const infoVisible = () => {
 
   listInfo.forEach((element) => {
     const mark = element.querySelector(".aesthetics-head__mark");
+    if (!mark) return;
     const block = mark.parentNode;
 
     const text = element.querySelector(".aesthetics-head__text");
 
     const tl = gsap
       .timeline({ paused: true })
-      .fromTo(text, { width: "11rem" }, { width: "0", duration: 0.5 });
+      .fromTo(
+        text,
+        { width: `${text.clientWidth}px` },
+        { width: "0", duration: 0.5 },
+      );
     tl.play();
 
     mark.addEventListener("mousemove", function () {
