@@ -16,14 +16,15 @@
   	<path fill-rule="evenodd" clip-rule="evenodd" d="M24.5 40.279V9.876H1v30.403h23.5Zm-24.5.98V8.895h50v32.364H0Zm49-.98H25.5V9.876H49v30.403Zm-21-11.77v-6.374h1v6.375h-1Zm-7 0v-6.374h1v6.375h-1Z"/>
   	<path fill-rule="evenodd" clip-rule="evenodd" d="M0 49.105V.068h1v49.037H0Zm49 0V.068h1v49.037h-1Z"/>
 	</symbol>
-	<symbol id="about_5" viewBox="0 0 48 49">
-  	<path d="M47 .04H26v47.08h21V.04ZM25-.94V48.1h23V-.94H25Zm-3 .98H1v47.08h21V.04ZM0-.94V48.1h23V-.94H0Z" fill-rule="evenodd"/>
-  	<path d="m31.64 39.91 13-12.75.71.69-13 12.75-.71-.69Zm-29-20.6 13-12.75.71.7-13 12.75-.71-.7Z" fill-rule="evenodd"/>
+	<symbol id="about_5" viewBox="0 0 48 50">
+  	<path fill-rule="evenodd" clip-rule="evenodd" d="M47 1.05H26v47.075h21V1.049ZM25 .067v49.037h23V.068H25Zm-3 .983H1v47.075h21V1.049ZM0 .067v49.037h23V.068H0Z"/>
+  	<path fill-rule="evenodd" clip-rule="evenodd" d="m31.646 40.913 13-12.75.707.693-13 12.75-.707-.693Zm-29-20.596 13-12.75.707.694-13 12.75-.707-.694Z"/>
 	</symbol>
-	<symbol id="about_6" viewBox="0 0 53 51">
-  	<path d="M26 4.97H6V49.1h20V4.97ZM5 3.99v46.09h22V3.99H5Z" fill-rule="evenodd"/>
-  	<path d="M47 4.97H27V49.1h20V4.97Zm-21-.98v46.09h22V3.99H26Z" fill-rule="evenodd"/>
-  	<path d="M-.5-.43h53v50.51h-1V.55H.5v49.53h-1V-.43Z" fill-rule="evenodd"/>
+	<symbol id="about_6" viewBox="0 0 54 52">
+  	<path fill-rule="evenodd" clip-rule="evenodd" d="M27 5.972H7v44.133h20V5.972Zm-21-.98v46.094h22V4.99H6Z"/>
+  	<path fill-rule="evenodd" clip-rule="evenodd" d="M48 5.972H28v44.133h20V5.972Zm-21-.98v46.094h22V4.99H27Z"/>
+  	<path fill-rule="evenodd" clip-rule="evenodd" d="M.5.578h53v50.508h-1V1.56h-51v49.527h-1V.578Z"/>
+  	<path fill-rule="evenodd" clip-rule="evenodd" d="m22.535 31.64-3.181 3.12a.507.507 0 0 1-.708 0l-3.182-3.12a.484.484 0 0 1 0-.694.507.507 0 0 1 .708 0L18.5 33.23V15.78h1v17.45l2.328-2.284a.507.507 0 0 1 .707 0 .484.484 0 0 1 0 .693Zm11.93-13.087 3.181-3.12a.507.507 0 0 1 .708 0l3.181 3.12a.484.484 0 0 1 0 .694.507.507 0 0 1-.707 0L38.5 16.963v17.45h-1v-17.45l-2.328 2.284a.507.507 0 0 1-.707 0 .484.484 0 0 1 0-.694Z"/>
 	</symbol>
 	<symbol id="acc" viewBox="0 0 21 10">
   	<path d="m1 1 9.194 8L20 1"/>

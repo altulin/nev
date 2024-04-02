@@ -1,10 +1,16 @@
 .promo {
   // margin-bottom: 9rem;
 
-  margin-bottom: 7rem;
+  // margin-bottom: 7rem;
+
+  margin-bottom: 4rem;
 
   @include mw($tb) {
     margin-bottom: 0;
+  }
+
+  &__inner {
+    position: relative;
   }
 }
 
@@ -124,6 +130,19 @@
     min-width: 33%;
     transition: 0.3s;
 
+    &--desk {
+      @include mw($tb) {
+        display: none;
+      }
+    }
+    &--mob {
+      display: none;
+
+      @include mw($tb) {
+        display: block;
+      }
+    }
+
     @include hocus() {
       background-color: #fff;
     }
@@ -148,7 +167,7 @@
     }
 
     @include mw($tb) {
-      font-size: 1rem;
+      font-size: 1.15rem;
       line-height: 1.8;
     }
 
@@ -268,3 +287,6 @@
     background-position-y: 100%;
   }
 }
+
+// .promo-touch {
+// }

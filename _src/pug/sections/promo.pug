@@ -27,7 +27,17 @@ section.promo
 
 									| У НЕВЫ
 							.promo-slide__block
-								a.promo-slide__link.js-anchor(href="#choose") смотреть планировки
+								a.promo-slide__link.promo-slide__link--desk.js-anchor(href="#choose") смотреть планировки
+								a.promo-slide__link.promo-slide__link--mob(href="#") смотреть планировки
 								p.promo-slide__text= item.text
 
 			.promo-swiper__pagination.pagination-bar
+
+
+		//- .promo__touch.promo-touch
+			.promo-touch__block.promo-touch__block--prev(class=`promo-touch__block--prev-${i}`)
+				button.control.control--prev.promo-touch__btn--prev.promo-touch__btn(type='button')
+					+svg('arr-top')
+			.promo-touch__block.promo-touch__block--next(class=`promo-touch__block--next-${i}`)
+				button.control.control--next.promo-touch__btn--next.promo-touch__btn(type='button')
+					+svg('arr-top')

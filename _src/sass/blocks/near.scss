@@ -1,5 +1,7 @@
 .near {
-  margin-bottom: -1px;
+  margin-bottom: -8rem;
+  position: relative;
+  z-index: 3;
 
   @include mw($tb) {
     padding-bottom: 5rem;
@@ -7,16 +9,13 @@
   &__title {
     // margin-bottom: 16.7rem;
     margin-bottom: 12rem;
+    margin-bottom: 8rem;
     display: flex;
     justify-content: center;
-    // justify-content: space-between;
-    padding-left: 2rem;
-    padding-right: 2rem;
     margin-left: auto;
     margin-right: auto;
 
     span:last-child {
-      // margin-left: 1rem;
     }
 
     @include mw($tb) {

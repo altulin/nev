@@ -40,13 +40,14 @@ export const animationLine = () => {
     gsap.to(item, {
       scrollTrigger: {
         trigger: item,
-        toggleActions: "restart pause reverse pause",
-        start: "top 60%",
-        end: "bottom 40%",
-        scrub: 3,
+        toggleActions: "restart none reverse none",
+        start: "top 80%",
+        end: "top 60%",
+        scrub: 1,
+        // markers: true,
       },
       width: "100%",
-      duration: 5,
+      // duration: 0.5,
     });
   });
 };

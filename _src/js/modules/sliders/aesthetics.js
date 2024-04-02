@@ -44,7 +44,10 @@ const changeHandler = (s) => {
   const previousSlide = s.slides[s.previousIndex];
 
   s.slides.forEach((item) => {
-    gsap.to(item.querySelector(".aesthetics-tab__list"), { autoAlpha: 0 });
+    gsap.to(item.querySelector(".aesthetics-tab__list"), {
+      autoAlpha: 0,
+      duration: 0.01,
+    });
   });
 
   const activSlide = s.slides.filter((slide) =>
@@ -73,7 +76,10 @@ const slideNext = (s) => {
   if (width < 769) return;
 
   s.slides.forEach((item) => {
-    gsap.set(item.querySelector(".aesthetics-tab__list"), { autoAlpha: 0 });
+    gsap.set(item.querySelector(".aesthetics-tab__list"), {
+      autoAlpha: 0,
+      duration: 0.01,
+    });
   });
 
   const prev = s.slides.filter((slide) =>

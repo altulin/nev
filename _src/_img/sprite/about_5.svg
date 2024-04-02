@@ -1,10 +1,6 @@
-<svg width="48.000000" height="49.000000" viewBox="0 0 48 49" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-	<desc>
-			Created with Pixso.
-	</desc>
-	<defs/>
-	<path id="Rectangle 80 (Stroke)" d="M47 0.04L26 0.04L26 47.12L47 47.12L47 0.04ZM25 -0.94L25 48.1L48 48.1L48 -0.94L25 -0.94Z" fill="#FFFFFF" fill-opacity="1.000000" fill-rule="evenodd"/>
-	<path id="Rectangle 81 (Stroke)" d="M22 0.04L1 0.04L1 47.12L22 47.12L22 0.04ZM0 -0.94L0 48.1L23 48.1L23 -0.94L0 -0.94Z" fill="#FFFFFF" fill-opacity="1.000000" fill-rule="evenodd"/>
-	<path id="Line 9 (Stroke)" d="M31.64 39.91L44.64 27.16L45.35 27.85L32.35 40.6L31.64 39.91Z" fill="#FFFFFF" fill-opacity="1.000000" fill-rule="evenodd"/>
-	<path id="Line 10 (Stroke)" d="M2.64 19.31L15.64 6.56L16.35 7.26L3.35 20.01L2.64 19.31Z" fill="#FFFFFF" fill-opacity="1.000000" fill-rule="evenodd"/>
+<svg width="48" height="50" viewBox="0 0 48 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M47 1.0491H26V48.1246H47V1.0491ZM25 0.0683594V49.1053H48V0.0683594H25Z" fill="white"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M22 1.0491H1V48.1246H22V1.0491ZM0 0.0683594V49.1053H23V0.0683594H0Z" fill="white"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M31.6464 40.9126L44.6464 28.163L45.3535 28.8564L32.3535 41.6061L31.6464 40.9126Z" fill="white"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M2.64644 20.3173L15.6464 7.56774L16.3535 8.26123L3.35355 21.0108L2.64644 20.3173Z" fill="white"/>
 </svg>

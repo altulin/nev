@@ -5874,14 +5874,10 @@
     }, ls = e => e.protocol === window.location.protocol && e.host === window.location.host && e.pathname === window.location.pathname && e.search === window.location.search && e.hash;
     function cs(e, t) {
       const r = !!e && document.querySelector(e);
-      if (r) {
-        t && t.preventDefault();
-        const e = is < 769 ? -30 : -100, i = r.getBoundingClientRect().top + window.scrollY + e;
-        Hi.to(window, {
-          scrollTo: i,
-          duration: .5
-        });
-      }
+      r && (t && t.preventDefault(), Hi.to(window, {
+        scrollTo: r,
+        duration: .5
+      }));
     }
     cs(window.location.hash);
     const us = document.querySelector("body"), ds = us.querySelector(".header"), ps = ds.querySelector(".header-left__btn"), fs = Array.from(ds.querySelectorAll(".js-anchor")), hs = Hi.timeline({
@@ -6038,7 +6034,8 @@
       const t = e.slides[e.previousIndex];
       e.slides.forEach((e => {
         Hi.to(e.querySelector(".aesthetics-tab__list"), {
-          autoAlpha: 0
+          autoAlpha: 0,
+          duration: .01
         });
       }));
       const r = e.slides.filter((e => e.classList.contains("swiper-slide-active")))[0];
@@ -6057,7 +6054,8 @@
       }
       e.slides.forEach((e => {
         Hi.set(e.querySelector(".aesthetics-tab__list"), {
-          autoAlpha: 0
+          autoAlpha: 0,
+          duration: .01
         });
       }));
       const t = e.slides.filter((e => e.classList.contains("swiper-slide-prev")))[0];
@@ -7668,13 +7666,12 @@
         Hi.to(e, {
           scrollTrigger: {
             trigger: e,
-            toggleActions: "restart pause reverse pause",
-            start: "top 60%",
-            end: "bottom 40%",
-            scrub: 3
+            toggleActions: "restart none reverse none",
+            start: "top 80%",
+            end: "top 60%",
+            scrub: 1
           },
-          width: "100%",
-          duration: 5
+          width: "100%"
         });
       })), (() => {
         const e = Array.from(us.querySelectorAll(".location-flag__line")), t = us.querySelector(".location");

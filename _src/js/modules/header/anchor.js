@@ -29,9 +29,9 @@ function scrollToHash(hash, e) {
   const elem = hash ? document.querySelector(hash) : false;
   if (elem) {
     if (e) e.preventDefault();
-    const yOffset = width < 769 ? -30 : -100;
-    const y = elem.getBoundingClientRect().top + window.scrollY + yOffset;
-    gsap.to(window, { scrollTo: y, duration: 0.5 });
+    // const yOffset = width < 769 ? -30 : -100;
+    // const y = elem.getBoundingClientRect().top + window.scrollY + yOffset;
+    gsap.to(window, { scrollTo: elem, duration: 0.5 });
   }
 }
 

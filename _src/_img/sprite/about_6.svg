@@ -1,9 +1,7 @@
-<svg width="53.000000" height="51.000000" viewBox="0 0 53 51" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-	<desc>
-			Created with Pixso.
-	</desc>
-	<defs/>
-	<path id="Rectangle 86 (Stroke)" d="M26 4.97L6 4.97L6 49.1L26 49.1L26 4.97ZM5 3.99L5 50.08L27 50.08L27 3.99L5 3.99Z" fill="#FFFFFF" fill-opacity="1.000000" fill-rule="evenodd"/>
-	<path id="Rectangle 87 (Stroke)" d="M47 4.97L27 4.97L27 49.1L47 49.1L47 4.97ZM26 3.99L26 50.08L48 50.08L48 3.99L26 3.99Z" fill="#FFFFFF" fill-opacity="1.000000" fill-rule="evenodd"/>
-	<path id="Vector 6 (Stroke)" d="M-0.5 -0.43L52.5 -0.43L52.5 50.08L51.5 50.08L51.5 0.55L0.5 0.55L0.5 50.08L-0.5 50.08L-0.5 -0.43Z" fill="#FFFFFF" fill-opacity="1.000000" fill-rule="evenodd"/>
+<svg width="54" height="52" viewBox="0 0 54 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M27 5.97195H7V50.1052H27V5.97195ZM6 4.99121V51.0859H28V4.99121H6Z" fill="white"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M48 5.97195H28V50.1052H48V5.97195ZM27 4.99121V51.0859H49V4.99121H27Z" fill="white"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0.5 0.578125H53.5V51.0862H52.5V1.55886H1.5V51.0862H0.5V0.578125Z" fill="white"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M22.5355 31.6394L19.3535 34.7601C19.1583 34.9516 18.8417 34.9516 18.6464 34.7601L15.4645 31.6394C15.2692 31.4479 15.2692 31.1374 15.4645 30.9459C15.6597 30.7544 15.9763 30.7544 16.1716 30.9459L18.5 33.2295V15.7793H19.5V33.2295L21.8284 30.9459C22.0237 30.7544 22.3403 30.7544 22.5355 30.9459C22.7308 31.1374 22.7308 31.4479 22.5355 31.6394Z" fill="white"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M34.4645 18.5535L37.6464 15.4328C37.8417 15.2413 38.1583 15.2413 38.3536 15.4328L41.5355 18.5535C41.7308 18.745 41.7308 19.0555 41.5355 19.247C41.3403 19.4385 41.0237 19.4385 40.8284 19.247L38.5 16.9634L38.5 34.4136L37.5 34.4136L37.5 16.9634L35.1716 19.247C34.9763 19.4385 34.6597 19.4385 34.4645 19.247C34.2692 19.0555 34.2692 18.745 34.4645 18.5535Z" fill="white"/>
 </svg>
