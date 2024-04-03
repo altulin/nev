@@ -27,7 +27,7 @@ const animationPromo = () => {
       { width: "0%" },
       { width: "100%", duration: width > 768 ? 2 : 1 },
     )
-    .fromTo(linesMiddle, { height: 0 }, { height: "100%", duration: 1 })
+    .fromTo(linesMiddle, { height: 0 }, { height: "100%", duration: 1 }, "<50%")
     .fromTo(elements, { autoAlpha: 0 }, { autoAlpha: 1, duration: 1 }, "<")
 
     .fromTo(

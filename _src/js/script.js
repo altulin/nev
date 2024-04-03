@@ -6094,7 +6094,7 @@
       }, {
         height: "100%",
         duration: 1
-      }).fromTo(i, {
+      }, "<50%").fromTo(i, {
         autoAlpha: 0
       }, {
         autoAlpha: 1,
