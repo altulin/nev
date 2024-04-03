@@ -7917,7 +7917,7 @@
           y: "100%",
           duration: 1
         }, "<").call((() => {
-          hc.enable(), hc.slideNext(2e3);
+          hc.init();
         })).to(n, {
           autoAlpha: 1
         }), Hi.timeline({

@@ -50,8 +50,7 @@ export const animationYard = () => {
       })
       .to(cover, { y: "100%", duration: 1 }, "<")
       .call(() => {
-        sliderYard.enable();
-        sliderYard.slideNext(2000);
+        sliderYard.init();
       })
       .to(bar, { autoAlpha: 1 });
 
