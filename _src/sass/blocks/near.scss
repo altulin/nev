@@ -70,7 +70,11 @@
     justify-content: space-between;
 
     .char:nth-child(4) {
-      margin-left: 1.5rem;
+      margin-left: 2.5rem;
+
+      @include mw($dt) {
+        margin-left: 1.5rem;
+      }
     }
   }
 
@@ -150,16 +154,19 @@
         margin-top: 0;
       }
     }
+  }
 
-    span {
-      font-size: 1.5rem;
-      font-weight: 300;
-      line-height: 2.25rem;
+  &__addr {
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 2.25rem;
 
-      @include mw($tb) {
-        font-size: 0.88rem;
-        line-height: 1.7;
-      }
+    @include mw($tb) {
+      font-size: 1rem;
+      line-height: 1.7;
+      letter-spacing: 0.01rem;
+      display: flex;
+      flex-direction: column;
     }
   }
 
@@ -223,7 +230,7 @@
     text-transform: lowercase;
 
     @include mw($tb) {
-      font-size: 1rem;
+      font-size: 1.15rem;
     }
   }
 
@@ -238,7 +245,7 @@
     margin-left: 2rem;
 
     @include mw($tb) {
-      font-size: 0.88rem;
+      font-size: 1rem;
       line-height: 0.75rem;
       margin-left: 1rem;
       row-gap: 0;
@@ -434,8 +441,8 @@
   }
 
   &__btn {
-    width: 5.5rem;
-    height: 5.5rem;
+    width: 4.5rem;
+    height: 4.5rem;
     border-radius: 50%;
     background-color: #88d68b;
     cursor: pointer;

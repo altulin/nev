@@ -3099,7 +3099,7 @@ button.swiper-pagination-bullet {
 }
 
 .near-title .word .char:nth-child(4) {
-  margin-left: 1.5rem;
+  margin-left: 2.5rem;
 }
 
 .near-title__right {
@@ -3150,7 +3150,7 @@ button.swiper-pagination-bullet {
   margin-top: 0.5rem;
 }
 
-.near-content__mark span {
+.near-content__addr {
   font-size: 1.5rem;
   font-weight: 300;
   line-height: 2.25rem;
@@ -3355,8 +3355,8 @@ button.swiper-pagination-bullet {
 }
 
 .zoom-control__btn {
-  width: 5.5rem;
-  height: 5.5rem;
+  width: 4.5rem;
+  height: 4.5rem;
   border-radius: 50%;
   background-color: #88d68b;
   cursor: pointer;
@@ -3728,6 +3728,7 @@ button.swiper-pagination-bullet {
   position: fixed;
   right: 9rem;
   bottom: 5rem;
+  opacity: 0;
 }
 
 .footer__top--absolute {
@@ -4596,7 +4597,7 @@ button.swiper-pagination-bullet {
 .choose {
   padding-top: 5rem;
   overflow: hidden;
-  padding-bottom: 3rem;
+  padding-bottom: 6.2rem;
 }
 
 .choose__inner {
@@ -4781,7 +4782,7 @@ button.swiper-pagination-bullet {
 }
 
 .developer {
-  padding-top: 4.5rem;
+  padding-top: 1.5rem;
   border-bottom: 0.06rem solid rgb(167, 167, 171);
 }
 
@@ -5454,6 +5455,10 @@ button.swiper-pagination-bullet {
     max-width: 51%;
   }
 
+  .near-title .word .char:nth-child(4) {
+    margin-left: 1.5rem;
+  }
+
   .near-content__subtitle {
     padding-left: 0;
     text-align: center;
@@ -5841,6 +5846,10 @@ button.swiper-pagination-bullet {
     padding-top: 0.7rem;
   }
 
+  .header__line-middle {
+    display: none;
+  }
+
   .promo {
     margin-bottom: 0;
   }
@@ -5873,8 +5882,9 @@ button.swiper-pagination-bullet {
   }
 
   .promo-slide__link {
-    font-size: 0.94rem;
+    font-size: 1.03rem;
     line-height: 1;
+    letter-spacing: 0.14rem;
   }
 
   .promo-slide__text {
@@ -6048,9 +6058,10 @@ button.swiper-pagination-bullet {
   .about__text {
     max-width: none;
     font-size: 1.15rem;
-    line-height: 1.9;
+    line-height: 1.65;
     margin-bottom: 2.9rem;
     padding-left: 1.5rem;
+    padding-right: 1rem;
   }
 
   .about__list {
@@ -6157,9 +6168,17 @@ button.swiper-pagination-bullet {
     margin-top: 0;
   }
 
-  .near-content__mark span {
-    font-size: 0.88rem;
+  .near-content__addr {
+    font-size: 1rem;
     line-height: 1.7;
+    letter-spacing: 0.01rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 
   .near-item__inner {
@@ -6173,11 +6192,11 @@ button.swiper-pagination-bullet {
   }
 
   .near-item__min {
-    font-size: 1rem;
+    font-size: 1.15rem;
   }
 
   .near-item__text {
-    font-size: 0.88rem;
+    font-size: 1rem;
     line-height: 0.75rem;
     margin-left: 1rem;
     row-gap: 0;

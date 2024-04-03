@@ -5967,9 +5967,6 @@
       enabled: !1,
       init: !1,
       modules: [ Zn, Jn, rs ],
-      autoplay: {
-        delay: 3e3
-      },
       effect: "fade",
       fadeEffect: {
         crossFade: !0
@@ -7439,7 +7436,7 @@
     const pc = us.querySelector(".circle");
     let fc;
     const hc = new jn(".yard__slider", {
-      enabled: !1,
+      init: !1,
       modules: [ Zn, Jn, Un, rs ],
       autoplay: {
         delay: 3e3
@@ -7459,24 +7456,24 @@
         nextEl: ".yard-touch__block--next",
         prevEl: ".yard-touch__block--prev"
       },
-      speed: 2e3,
+      speed: 500,
       on: {
-        init: e => (e => {
+        afterInit: e => {
           const t = e.pagination.bullets;
           fc = t.map(((e, r) => Hi.timeline({
             paused: !0
           }).set(t[r], {
-            width: ss < 769 ? "0.63rem" : "1rem",
+            width: "" + (ss < 769 ? "0.63rem" : "1rem"),
             marginRight: 0
           }).to(t[r], {
-            marginRight: ss < 769 ? "1.87rem" : "4.6rem",
+            marginRight: "" + (ss < 769 ? "1.87rem" : "4.6rem"),
             duration: .01
           }).add("clear", "<").to(t[r], {
-            width: ss < 769 ? "2.5rem" : "5.6rem",
+            width: "" + (ss < 769 ? "2.5rem" : "5.6rem"),
             marginRight: 0,
             duration: 3
           }).add("ready", "<"))), fc[e.realIndex].play();
-        })(e),
+        },
         realIndexChange: e => (e => {
           fc.forEach((e => {
             e.pause("clear");
@@ -7670,13 +7667,13 @@
         }), Hi.timeline({
           scrollTrigger: {
             trigger: e,
-            toggleActions: "restart pause reverse pause",
+            toggleActions: "restart none reverse none",
             start: "top 90%",
             end: "bottom 60%",
             scrub: 2
           }
         }).to(e, {
-          width: ss > 1920 ? "68%" : ss > 1440 ? "90%" : "100%",
+          width: ss > 1920 || ss > 1440 ? "65%" : "90%",
           duration: 1
         }).to(r, {
           flexGrow: 0,
@@ -7889,7 +7886,9 @@
             end: "+=300",
             once: !0
           }
-        }).to(t, {
+        }).call((() => {
+          hc.init();
+        })).to(t, {
           autoAlpha: 1,
           y: 0,
           duration: 1
@@ -7900,9 +7899,7 @@
         }, "<").to(i, {
           y: "100%",
           duration: 1
-        }, "<").call((() => {
-          hc.enable(), hc.slideNext(2e3);
-        })).to(n, {
+        }, "<").to(n, {
           autoAlpha: 1
         }) : (Hi.timeline({
           scrollTrigger: {
@@ -8138,7 +8135,7 @@
             scrub: 2
           }
         }).to(e, {
-          width: ss > 1920 ? "65%" : ss > 1439 ? "80%" : "100%",
+          width: ss > 1920 || ss > 1439 ? "65%" : "90%",
           duration: 1
         }).to(r, {
           flexGrow: 0,
@@ -8176,19 +8173,30 @@
         if (!r || !t) {
           return;
         }
-        const i = r.getBoundingClientRect();
+        const i = us.querySelector(".dubrovka__content"), n = r.getBoundingClientRect();
         Hi.set(t, {
           autoAlpha: 0
         }), Hi.timeline({
           scrollTrigger: {
             trigger: t,
-            start: `top ${i.top}px`,
-            end: `top ${i.top}px`,
+            start: `top ${n.top}px`,
+            end: `top ${n.top}px`,
             toggleActions: "play none none reverse"
           }
         }).set(r, {
           autoAlpha: 0
         }).set(t, {
+          autoAlpha: 1
+        }), i && Hi.timeline({
+          scrollTrigger: {
+            trigger: i,
+            toggleActions: "restart none reverse none",
+            start: "top 100%",
+            end: "+=100"
+          }
+        }).fromTo(r, {
+          autoAlpha: 0
+        }, {
           autoAlpha: 1
         });
       })();

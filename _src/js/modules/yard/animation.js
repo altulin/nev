@@ -29,13 +29,13 @@ export const animationYard = () => {
           once: true,
         },
       })
+      .call(() => {
+        sliderYard.init();
+      })
       .to(title, { autoAlpha: 1, y: 0, duration: 1 })
       .to(text, { autoAlpha: 1, y: 0, duration: 1 }, "<")
       .to(cover, { y: "100%", duration: 1 }, "<")
-      .call(() => {
-        sliderYard.enable();
-        sliderYard.slideNext(2000);
-      })
+
       .to(bar, { autoAlpha: 1 });
   } else {
     gsap

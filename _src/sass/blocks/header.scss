@@ -886,6 +886,10 @@
   border: 0;
   margin: 0;
 
+  @include mw($tb) {
+    display: none;
+  }
+
   &--left {
     left: 0;
   }

@@ -45,7 +45,8 @@ const initHandle = (s) => {
 };
 
 export const sliderYard = new Swiper(".yard__slider", {
-  enabled: false,
+  // enabled: false,
+  init: false,
   modules: [Pagination, Autoplay, Navigation, EffectFade],
   autoplay: {
     delay: progressTime * 1000,
@@ -65,9 +66,10 @@ export const sliderYard = new Swiper(".yard__slider", {
     nextEl: `.yard-touch__block--next`,
     prevEl: `.yard-touch__block--prev`,
   },
-  speed: 2000,
+  speed: 500,
   on: {
-    init: (s) => initHandle(s),
+    afterInit: initHandle,
+
     realIndexChange: (s) => changeHandle(s),
     slideChangeTransitionEnd: (s) => transitionHandle(s),
   },

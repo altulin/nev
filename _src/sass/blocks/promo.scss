@@ -148,8 +148,9 @@
     }
 
     @include mw($tb) {
-      font-size: 0.94rem;
+      font-size: 1.03rem;
       line-height: 1;
+      letter-spacing: 0.14rem;
     }
   }
 

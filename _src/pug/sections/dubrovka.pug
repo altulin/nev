@@ -27,7 +27,7 @@ section.dubrovka
 					.tabs-block__inner
 						each item,i in dubrovka_tabs
 							.tabs-block__info.tab-content(id=`${item.href}` class=i===0?"":'hidden')
-								p.tabs-block__text= dubrovka_text
+								p.tabs-block__text= `${dubrovka_text} ${i}`
 						.tabs-block__control.tabs-block__control--dt
 							button.tabs-block__btn.control.control--prev(type='button' class=`tabs-block__btn--prev`)
 								+svg('arr-top')

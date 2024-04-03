@@ -8,13 +8,13 @@ import Splitting from "splitting";
 
 const getWidth = () => {
   if (width > 1920) {
-    return "68%";
+    return "65%";
   }
   if (width > 1440) {
-    return "90%";
+    return "65%";
   }
 
-  return "100%";
+  return "90%";
 };
 
 export const animationDubrovka = () => {
@@ -36,7 +36,7 @@ export const animationDubrovka = () => {
     .timeline({
       scrollTrigger: {
         trigger: title,
-        toggleActions: "restart pause reverse pause",
+        toggleActions: "restart none reverse none",
         start: "top 90%",
         end: "bottom 60%",
         scrub: 2,

@@ -12,10 +12,10 @@ const getWidth = () => {
     return "65%";
   }
   if (width > 1439) {
-    return "80%";
+    return "65%";
   }
 
-  return "100%";
+  return "90%";
 };
 
 export const animationChoose = () => {
