@@ -1,7 +1,7 @@
 import { setSticky } from "./modules/header/header.js";
 import { controlMenu } from "./modules/header/menu.js";
 import { sliderPromo } from "./modules/sliders/promo.js";
-import { setDubrovkaSliders, width } from "./modules/sliders/dubrovka.js";
+import { sliderDubrovka, width } from "./modules/sliders/dubrovka.js";
 import { sliderCircle } from "./modules/sliders/circle.js";
 import { setAestheticsSliders } from "./modules/sliders/aesthetics.js";
 import { setToTop } from "./modules/header/toTop.js";
@@ -36,11 +36,11 @@ const handler = () => {
     sliderPromo.init();
     sliderPromo.enable();
   });
-  createTabs(".dubrovka");
-  createTabs(".aesthetics");
+  createTabs("dubrovka", sliderDubrovka);
+  createTabs("aesthetics");
   controlMenu();
   setSticky();
-  setDubrovkaSliders();
+  // setDubrovkaSliders();
   sliderCircle.enable();
   setAestheticsSliders();
   setToTop();

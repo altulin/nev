@@ -353,7 +353,7 @@
         });
       }(t);
     },
-    967: function(e) {
+    348: function(e) {
       e.exports = function() {
         "use strict";
         var e = document, t = e.createTextNode.bind(e);
@@ -5788,86 +5788,123 @@
         })), s.splice(0, s.length);
       }));
     } ]);
-    const is = window.innerWidth, ns = e => {
-      if (is < 769) {
+    let is = {};
+    const ns = (e, t) => {
+      const r = us.querySelector(`.${e}`);
+      if (!r) {
         return;
       }
-      const t = e.slides[e.realIndex];
-      t && Hi.timeline().to(t, {
-        width: "43.4%",
-        duration: .5
-      }).to(t.querySelector(".dubrovka-slide__figure"), {
-        height: "100%",
-        duration: .5
-      }, "<").to(t.querySelector(".dubrovka-slide__text"), {
-        autoAlpha: 1,
-        duration: .1
-      });
-    }, ss = e => {
-      if (is < 769) {
-        return;
-      }
-      const t = e.slides[e.previousIndex], r = e.slides.filter((e => e.classList.contains("swiper-slide-active")))[0];
-      r && t && Hi.timeline().fromTo(t.querySelector(".dubrovka-slide__text"), {
-        autoAlpha: 1
-      }, {
-        autoAlpha: 0,
-        duration: .01
-      }).to(r, {
-        width: "43.4%",
-        duration: 1
-      }, "<").to(r.querySelector(".dubrovka-slide__figure"), {
-        height: "100%",
-        duration: 1
-      }, "<").fromTo(t, {
-        width: "43.4%"
-      }, {
-        width: "35.4%",
-        duration: 1
-      }, "<").fromTo(t.querySelector(".dubrovka-slide__figure"), {
-        height: "100%"
-      }, {
-        height: "64%",
-        duration: 1
-      }, "<").to(r.querySelector(".dubrovka-slide__text"), {
-        autoAlpha: 1,
-        duration: .1
-      });
-    }, as = () => {
-      Array.from(us.querySelectorAll(".js-tabs-slider")).map(((e, t) => new jn(e, {
-        modules: [ Un, Qn ],
-        speed: 500,
-        slidesPerView: "auto",
-        loop: !0,
-        spaceBetween: 5,
-        allowTouchMove: !1,
-        scrollbar: {
-          el: ".tabs-slider__scrollbar",
-          draggable: !0
-        },
-        on: {
-          afterInit: ns,
-          slideChangeTransitionStart: ss
-        },
-        breakpoints: {
-          320: {
-            allowTouchMove: !0,
-            speed: 300,
-            slidesPerView: "auto"
-          },
-          769: {
-            speed: 500,
-            allowTouchMove: !1,
-            slidesPerView: "auto"
+      const i = r.querySelectorAll(".tab-btn"), n = r.querySelectorAll(".tab-content");
+      is[`${e}`] = i, i.forEach((e => {
+        e.addEventListener("click", (e => {
+          Array.from(i).forEach((e => {
+            e.classList.remove("selected");
+          })), e.target.classList.add("selected");
+          const r = e.target.dataset.tabContentId;
+          if (t) {
+            const e = t.slides.map((e => e.dataset.slide)).indexOf(r);
+            t.slideToLoop(e, 1e3);
           }
-        }
-      }))).forEach(((e, t) => {
-        is < 769 || ((e, t) => {
-          const r = us.querySelector(`.tabs-block__btn--next-${t}`), i = us.querySelector(`.tabs-block__btn--prev-${t}`);
-          r.addEventListener("click", (() => e.slideNext(1e3))), i.addEventListener("click", (() => e.slidePrev(1e3)));
-        })(e, t);
+          const s = document.getElementById(r);
+          s && (Array.from(n).forEach((e => {
+            e.classList.add("hidden");
+          })), s.classList.remove("hidden"));
+        }));
       }));
-    };
+    }, ss = window.innerWidth;
+    const as = new jn(".tabs-block__slider", {
+      modules: [ Un, Qn ],
+      speed: 500,
+      slidesPerView: "auto",
+      loop: !0,
+      spaceBetween: 5,
+      allowTouchMove: !1,
+      scrollbar: {
+        el: ".tabs-slider__scrollbar",
+        draggable: !0
+      },
+      navigation: {
+        nextEl: ".tabs-block__btn--next",
+        prevEl: ".tabs-block__btn--prev"
+      },
+      on: {
+        afterInit: e => {
+          if (ss < 769) {
+            return;
+          }
+          const t = e.slides[e.realIndex];
+          t && Hi.timeline().to(t, {
+            width: "43.4%",
+            duration: .5
+          }).to(t.querySelector(".dubrovka-slide__figure"), {
+            height: "100%",
+            duration: .5
+          }, "<").to(t.querySelector(".dubrovka-slide__text"), {
+            autoAlpha: 1,
+            duration: .1
+          });
+        },
+        slideChangeTransitionStart: e => {
+          if (((e, t) => {
+            const r = Array.from(is[`${e}`]);
+            r.forEach((e => {
+              e.classList.remove("selected");
+            }));
+            const i = t.slides.filter((e => e.classList.contains("swiper-slide-active")))[0];
+            r.filter((e => e.dataset.tabContentId === i.dataset.slide)).forEach((e => {
+              e.classList.add("selected");
+            }));
+          })("dubrovka", e), ss < 769) {
+            return;
+          }
+          e.navigation.disable();
+          const t = e.slides[e.previousIndex], r = e.slides.filter((e => e.classList.contains("swiper-slide-active")))[0];
+          r && t && (e.slides.forEach((e => {
+            Hi.set(e.querySelector(".dubrovka-slide__text"), {
+              autoAlpha: 0
+            });
+          })), Hi.timeline().fromTo(t.querySelector(".dubrovka-slide__text"), {
+            autoAlpha: 1
+          }, {
+            autoAlpha: 0,
+            duration: .01
+          }).to(r, {
+            width: "43.4%",
+            duration: 1
+          }, "<").to(r.querySelector(".dubrovka-slide__figure"), {
+            height: "100%",
+            duration: 1
+          }, "<").fromTo(t, {
+            width: "43.4%"
+          }, {
+            width: "35.4%",
+            duration: 1
+          }, "<").fromTo(t.querySelector(".dubrovka-slide__figure"), {
+            height: "100%"
+          }, {
+            height: "64%",
+            duration: 1
+          }, "<").to(r.querySelector(".dubrovka-slide__text"), {
+            autoAlpha: 1,
+            duration: .1
+          }).then((() => {
+            e.navigation.enable();
+          })));
+        }
+      },
+      breakpoints: {
+        320: {
+          allowTouchMove: !0,
+          speed: 300,
+          slidesPerView: "auto"
+        },
+        769: {
+          speed: 500,
+          allowTouchMove: !1,
+          slidesPerView: "auto"
+        }
+      }
+    });
     Hi.registerPlugin(Xi.ScrollToPlugin);
     const os = async (e, t) => {
       cs(ls(e), t), ms();
@@ -5950,15 +5987,15 @@
           ws = t.map(((r, i) => Hi.timeline({
             paused: !0
           }).set(t[i], {
-            width: is < 769 ? "0.63rem" : "1rem",
+            width: ss < 769 ? "0.63rem" : "1rem",
             marginRight: 0
           }).to(t[i], {
-            marginRight: is < 769 ? "1.87rem" : "4.6rem",
+            marginRight: ss < 769 ? "1.87rem" : "4.6rem",
             duration: .01
           }).add("clear", "<").set(e.pagination.el, {
             autoAlpha: 1
           }).to(t[i], {
-            width: is < 769 ? "2.5rem" : "5.6rem",
+            width: ss < 769 ? "2.5rem" : "5.6rem",
             marginRight: 0,
             duration: 3
           }).add("ready", "<"))), requestAnimationFrame((() => {
@@ -6010,7 +6047,7 @@
         }
       }
     }), Ss = e => {
-      if (is < 769) {
+      if (ss < 769) {
         return;
       }
       e.forEach((e => {
@@ -6019,7 +6056,7 @@
       const t = e.filter((e => e.classList.contains("swiper-slide-prev")))[0], r = e.filter((e => e.classList.contains("swiper-slide-active")))[0];
       t && r && (t.classList.remove("aesthetics-tab__slide--cover"), r.classList.remove("aesthetics-tab__slide--cover"));
     }, Es = e => {
-      if (is < 769) {
+      if (ss < 769) {
         return;
       }
       const t = e.slides[e.realIndex];
@@ -6028,7 +6065,7 @@
         duration: .1
       }), Ss(e.slides));
     }, Cs = e => {
-      if (is < 769) {
+      if (ss < 769) {
         return;
       }
       const t = e.slides[e.previousIndex];
@@ -6049,7 +6086,7 @@
         duration: 1
       }, "<"), Ss(e.slides));
     }, As = e => {
-      if (is < 769) {
+      if (ss < 769) {
         return;
       }
       e.slides.forEach((e => {
@@ -6088,7 +6125,7 @@
         width: "0%"
       }, {
         width: "100%",
-        duration: is > 768 ? 2 : 1
+        duration: ss > 768 ? 2 : 1
       }).fromTo(r, {
         height: 0
       }, {
@@ -7321,11 +7358,11 @@
         }
       }
     }, ho() && ga.registerPlugin(Fl);
-    var jl = r(967);
+    var jl = r(348);
     Hi.registerPlugin(Fl);
     Hi.registerPlugin(Fl);
     const Wl = us.querySelector(".near"), Ul = () => {
-      if (is < 769) {
+      if (ss < 769) {
         return;
       }
       if (!Wl) {
@@ -7389,7 +7426,7 @@
       duration: 1
     }), lc = Hi.timeline({
       paused: !0
-    }).set(ec, is < 769 ? {
+    }).set(ec, ss < 769 ? {
       autoAlpha: 0,
       y: 100,
       duration: 1
@@ -7429,13 +7466,13 @@
           fc = t.map(((e, r) => Hi.timeline({
             paused: !0
           }).set(t[r], {
-            width: is < 769 ? "0.63rem" : "1rem",
+            width: ss < 769 ? "0.63rem" : "1rem",
             marginRight: 0
           }).to(t[r], {
-            marginRight: is < 769 ? "1.87rem" : "4.6rem",
+            marginRight: ss < 769 ? "1.87rem" : "4.6rem",
             duration: .01
           }).add("clear", "<").to(t[r], {
-            width: is < 769 ? "2.5rem" : "5.6rem",
+            width: ss < 769 ? "2.5rem" : "5.6rem",
             marginRight: 0,
             duration: 3
           }).add("ready", "<"))), fc[e.realIndex].play();
@@ -7457,30 +7494,13 @@
     Hi.registerPlugin(Fl);
     const bc = us.querySelector(".aesthetics");
     Hi.registerPlugin(Fl);
-    const wc = us.querySelector(".choose"), xc = e => {
-      const t = us.querySelector(e);
-      if (!t) {
-        return;
-      }
-      const r = t.querySelectorAll(".tab-btn"), i = t.querySelectorAll(".tab-content");
-      r.forEach((e => {
-        e.addEventListener("click", (e => {
-          Array.from(r).forEach((e => {
-            e.classList.remove("selected");
-          })), e.target.classList.add("selected");
-          const t = e.target.dataset.tabContentId, n = document.getElementById(t);
-          n && (Array.from(i).forEach((e => {
-            e.classList.add("hidden");
-          })), n.classList.remove("hidden"));
-        }));
-      }));
-    }, Tc = () => {
-      const e = is < 769 ? .15 : .045, t = Math.round(is * e);
+    const wc = us.querySelector(".choose"), xc = () => {
+      const e = ss < 769 ? .15 : .045, t = Math.round(ss * e);
       return {
         size: [ t, t ],
         offset: [ t / -2, t / -2 ]
       };
-    }, Sc = () => {
+    }, Tc = () => {
       if (!us.querySelector("#map")) {
         return;
       }
@@ -7491,8 +7511,8 @@
       }), t = new ymaps.Placemark([ 59.84294662775576, 30.94030068653868 ], {}, {
         iconLayout: "default#image",
         iconImageHref: "./img/map-mark.png",
-        iconImageSize: Tc().size,
-        iconImageOffset: Tc().offset
+        iconImageSize: xc().size,
+        iconImageOffset: xc().offset
       }), r = ymaps.templateLayoutFactory.createClass("<div class='zoom-control'><div id='zoom-in' class='zoom-control__btn zoom-control__btn--in'><i class='icon-plus'></i></div><div id='zoom-out' class='zoom-control__btn zoom-control__btn--out'><i class='icon-minus'></i></div></div>", {
         build: function() {
           r.superclass.build.call(this);
@@ -7520,15 +7540,15 @@
       e.controls.add(i, {
         position: {
           float: "none",
-          top: "" + (is < 769 ? "9rem" : "20rem"),
-          left: "" + (is < 769 ? "0.5rem" : "3rem")
+          top: "" + (ss < 769 ? "9rem" : "20rem"),
+          left: "" + (ss < 769 ? "0.5rem" : "3rem")
         }
-      }), e.behaviors.disable("scrollZoom"), e.geoObjects.add(t), is > 768 || e.behaviors.disable("drag");
-    }, Ec = us.querySelector(".choose__content"), Cc = () => {
-      if (!Ec) {
+      }), e.behaviors.disable("scrollZoom"), e.geoObjects.add(t), ss > 768 || e.behaviors.disable("drag");
+    }, Sc = us.querySelector(".choose__content"), Ec = () => {
+      if (!Sc) {
         return;
       }
-      const e = Ec.querySelector(".choose__left"), t = Ec.querySelector(".choose__right"), r = Ec.querySelector(".choose__bg");
+      const e = Sc.querySelector(".choose__left"), t = Sc.querySelector(".choose__right"), r = Sc.querySelector(".choose__bg");
       e.addEventListener("click", (i => {
         i.preventDefault(), Hi.timeline().to(t.querySelector(".choose-block"), {
           display: "none",
@@ -7568,13 +7588,13 @@
         }));
       }));
     };
-    var Ac = r(344);
-    const kc = us.querySelector(".js-accordion");
+    var Cc = r(344);
+    const Ac = us.querySelector(".js-accordion");
     document.addEventListener("DOMContentLoaded", (() => {
       Ps.play().then((() => {
         xs.init(), xs.enable();
-      })), xc(".dubrovka"), xc(".aesthetics"), ps && ps.addEventListener("click", gs), 
-      _s && window.addEventListener("scroll", bs), as(), Ts.enable(), Array.from(us.querySelectorAll(".js-aesthetics-tabs")).map(((e, t) => new jn(e, {
+      })), ns("dubrovka", as), ns("aesthetics"), ps && ps.addEventListener("click", gs), 
+      _s && window.addEventListener("scroll", bs), Ts.enable(), Array.from(us.querySelectorAll(".js-aesthetics-tabs")).map(((e, t) => new jn(e, {
         modules: [ Un, Qn ],
         speed: 1e3,
         slidesPerView: "auto",
@@ -7627,7 +7647,7 @@
       })(), Array.from(us.querySelectorAll(".promo-slide__link")).forEach((e => {
         e.addEventListener("click", (t => os(e, t)));
       })), (() => {
-        if (is < 769) {
+        if (ss < 769) {
           return;
         }
         const e = us.querySelector(".dubrovka__title");
@@ -7656,7 +7676,7 @@
             scrub: 2
           }
         }).to(e, {
-          width: is > 1920 ? "68%" : is > 1440 ? "90%" : "100%",
+          width: ss > 1920 ? "68%" : ss > 1440 ? "90%" : "100%",
           duration: 1
         }).to(r, {
           flexGrow: 0,
@@ -7779,7 +7799,7 @@
           autoAlpha: 1,
           y: 0,
           duration: 1
-        })), e && (is < 769 ? Hi.set(e, {
+        })), e && (ss < 769 ? Hi.set(e, {
           flexGrow: 0
         }) : Hi.to(e, {
           scrollTrigger: {
@@ -7796,7 +7816,7 @@
         if (!dc) {
           return;
         }
-        if (is < 769) {
+        if (ss < 769) {
           return;
         }
         Array.from(dc.querySelectorAll(".circle-control__block")).forEach((e => {
@@ -7861,7 +7881,7 @@
         }).set(r, {
           autoAlpha: 0,
           y: "200"
-        }), is > 768 ? Hi.timeline({
+        }), ss > 768 ? Hi.timeline({
           scrollTrigger: {
             trigger: e,
             toggleActions: "play none none none",
@@ -7920,7 +7940,7 @@
         if (!mc) {
           return;
         }
-        if (is < 769) {
+        if (ss < 769) {
           return;
         }
         Array.from(mc.querySelectorAll(".yard-touch__block")).forEach((e => {
@@ -7938,7 +7958,7 @@
           }));
         }));
       })(), (() => {
-        if (is < 769) {
+        if (ss < 769) {
           return;
         }
         if (!gc) {
@@ -7962,7 +7982,7 @@
         if (!yc) {
           return;
         }
-        if (is < 769) {
+        if (ss < 769) {
           return;
         }
         Array.from(yc.querySelectorAll(".choose__control")).forEach((e => {
@@ -7983,7 +8003,7 @@
         if (!_c) {
           return;
         }
-        const e = _c.querySelector(".developer__title--" + (is < 769 ? "tb" : "dt")), t = _c.querySelector(".developer-info__logo"), r = _c.querySelector(".developer__figure-cover"), i = _c.querySelector(".info-block"), n = _c.querySelector(".info-list");
+        const e = _c.querySelector(".developer__title--" + (ss < 769 ? "tb" : "dt")), t = _c.querySelector(".developer-info__logo"), r = _c.querySelector(".developer__figure-cover"), i = _c.querySelector(".info-block"), n = _c.querySelector(".info-list");
         Hi.set(r, {
           y: "-100%"
         }), Hi.set(n, {
@@ -8008,8 +8028,8 @@
           scrollTrigger: {
             trigger: _c,
             toggleActions: "play none none none",
-            start: is < 769 ? "top 100%" : "top 60%",
-            end: is < 769 ? "+=200" : "+=300",
+            start: ss < 769 ? "top 100%" : "top 60%",
+            end: ss < 769 ? "+=200" : "+=300",
             once: !0
           }
         }).to(e, {
@@ -8064,7 +8084,7 @@
           }));
         }));
       })(), (() => {
-        if (is < 769) {
+        if (ss < 769) {
           return;
         }
         if (!bc) {
@@ -8078,8 +8098,8 @@
           scrollTrigger: {
             trigger: e,
             toggleActions: "play none reverse none",
-            start: is < 769 ? "top 100%" : "top 90%",
-            end: is < 769 ? "+=200" : "+=100"
+            start: ss < 769 ? "top 100%" : "top 90%",
+            end: ss < 769 ? "+=200" : "+=100"
           }
         }).to(e, {
           backgroundPositionY: "100%",
@@ -8118,13 +8138,13 @@
             scrub: 2
           }
         }).to(e, {
-          width: is > 1920 ? "65%" : is > 1439 ? "80%" : "100%",
+          width: ss > 1920 ? "65%" : ss > 1439 ? "80%" : "100%",
           duration: 1
         }).to(r, {
           flexGrow: 0,
           duration: 1
         }, "<");
-      })(), ymaps.ready(Sc), (() => {
+      })(), ymaps.ready(Tc), (() => {
         if (!Wl) {
           return;
         }
@@ -8143,9 +8163,9 @@
           autoAlpha: 1,
           duration: 1
         }));
-      })(), Cc(), Ul(), 0 === kc.offsetHeight && 0 === kc.offsetWidth || kc && new Ac(".js-accordion", {}), 
+      })(), Ec(), Ul(), 0 === Ac.offsetHeight && 0 === Ac.offsetWidth || Ac && new Cc(".js-accordion", {}), 
       (() => {
-        if (is < 769) {
+        if (ss < 769) {
           return;
         }
         const e = us.querySelector(".footer");

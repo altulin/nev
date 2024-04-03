@@ -179,38 +179,44 @@
 .tabs-block {
   display: flex;
   width: 100%;
-  opacity: 1;
-  z-index: 1;
 
   @include mw($tb) {
     flex-direction: column;
     padding-left: 2.6rem;
   }
 
-  &.hidden {
-    position: absolute;
-    left: 0;
-    top: 0;
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  &__info {
-    width: 28.7%;
-    padding-right: 2rem;
+  &__inner {
+    width: 25.7%;
+    margin-right: 2rem;
+    position: relative;
     display: flex;
     flex-direction: column;
-    flex-shrink: 0;
+    justify-content: space-between;
 
     @include mw($tb) {
       width: 100%;
       padding-right: 1rem;
       margin-left: -1rem;
+      margin-right: 0;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__info {
+    position: relative;
+    opacity: 1;
+    z-index: 1;
+
+    &.hidden {
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0;
+      pointer-events: none;
     }
   }
 
   &__text {
-    /* TKO 1 */
     color: rgb(0, 0, 0);
     font-size: 1.5rem;
     font-weight: 300;
@@ -220,7 +226,6 @@
     @include mw($tb) {
       font-size: 1rem;
       line-height: 1.8rem;
-      margin-bottom: 2rem;
     }
 
     @include mw($ph) {
@@ -259,7 +264,9 @@
   }
 
   &__btn {
-    flex-grow: 1;
+    aspect-ratio: 1;
+    height: auto;
+    width: calc(50% - 0.5rem);
 
     svg {
       stroke: #000;

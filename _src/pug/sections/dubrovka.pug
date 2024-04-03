@@ -22,34 +22,37 @@ section.dubrovka
 			.tabs__wrapper
 
 
-				each item,i in dubrovka_tabs
-					.tabs__block.tabs-block.tab-content(id=`${item.href}` class=i===0?"":'hidden')
-						.tabs-block__info
-							p.tabs-block__text= dubrovka_text
-							.tabs-block__control.tabs-block__control--dt
-								button.tabs-block__btn.control.control--prev(type='button' class=`tabs-block__btn--prev-${i}`)
-									+svg('arr-top')
-								button.tabs-block__btn.control.control--next(type='button' class=`tabs-block__btn--next-${i}`)
-									+svg('arr-top')
+
+				.tabs__block.tabs-block
+					.tabs-block__inner
+						each item,i in dubrovka_tabs
+							.tabs-block__info.tab-content(id=`${item.href}` class=i===0?"":'hidden')
+								p.tabs-block__text= dubrovka_text
+						.tabs-block__control.tabs-block__control--dt
+							button.tabs-block__btn.control.control--prev(type='button' class=`tabs-block__btn--prev`)
+								+svg('arr-top')
+							button.tabs-block__btn.control.control--next(type='button' class=`tabs-block__btn--next`)
+								+svg('arr-top')
 
 
 
-						.tabs-block__slider.tabs-slider.swiper.js-tabs-slider
-							.tabs-slider__list.swiper-wrapper
-								- var n = 0;
-									while n < 6
-										.swiper-slide.tabs-slider__item.dubrovka-slide
-											figure.dubrovka-slide__figure
-												img.dubrovka-slide__img(src='/img/dubrovka.jpg', alt="слайд" width="488" height="746")
+					.tabs-block__slider.tabs-slider.swiper.js-tabs-slider
+						.tabs-slider__list.swiper-wrapper
+							each item,i in dubrovka_tabs
 
-											p.dubrovka-slide__text Мягкий шепот волни легкий бриз приносят с собой ощущениесвежести и обновления.
+								each el,n in ['','','']
+									.swiper-slide.tabs-slider__item.dubrovka-slide(data-slide=`${item.href}`)
+										figure.dubrovka-slide__figure
+											img.dubrovka-slide__img(src='/img/dubrovka.jpg', alt="слайд" width="488" height="746")
 
-										-n++
-								-n=0
-							//- .tabs-block__control.tabs-block__control--tb
-								button.tabs-block__btn.control.control--prev(type='button' class=`tabs-block__btn--prev-${i}`)
-									+svg('arr-top')
-								button.tabs-block__btn.control.control--next(type='button' class=`tabs-block__btn--next-${i}`)
-									+svg('arr-top')
-							.tabs-slider__scrollbar
-							.tabs-slider__cover
+										p.dubrovka-slide__text Мягкий шепот волни легкий бриз приносят с собой ощущениесвежести и обновления.
+											span= `${item.label}`
+
+
+						//- .tabs-block__control.tabs-block__control--tb
+							button.tabs-block__btn.control.control--prev(type='button' class=`tabs-block__btn--prev-${i}`)
+								+svg('arr-top')
+							button.tabs-block__btn.control.control--next(type='button' class=`tabs-block__btn--next-${i}`)
+								+svg('arr-top')
+						.tabs-slider__scrollbar
+						.tabs-slider__cover
