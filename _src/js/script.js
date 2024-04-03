@@ -5967,6 +5967,9 @@
       enabled: !1,
       init: !1,
       modules: [ Zn, Jn, rs ],
+      autoplay: {
+        delay: 3e3
+      },
       effect: "fade",
       fadeEffect: {
         crossFade: !0
@@ -5975,9 +5978,10 @@
       pagination: {
         el: ".promo-swiper__pagination",
         bulletClass: "pagination-bar__bullet",
-        bulletActiveClass: "pagination-bar__bullet--active"
+        bulletActiveClass: "pagination-bar__bullet--active",
+        clickable: !0
       },
-      speed: 2e3,
+      speed: 500,
       on: {
         init: e => (e => {
           const t = e.pagination.bullets;

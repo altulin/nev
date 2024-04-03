@@ -51,9 +51,9 @@ export const sliderPromo = new Swiper(".promo__swiper", {
   enabled: false,
   init: false,
   modules: [Pagination, Autoplay, EffectFade],
-  // autoplay: {
-  //   delay: progressTime * 1000,
-  // },
+  autoplay: {
+    delay: progressTime * 1000,
+  },
   effect: "fade",
   fadeEffect: {
     crossFade: true,
@@ -63,8 +63,9 @@ export const sliderPromo = new Swiper(".promo__swiper", {
     el: ".promo-swiper__pagination",
     bulletClass: "pagination-bar__bullet",
     bulletActiveClass: "pagination-bar__bullet--active",
+    clickable: true,
   },
-  speed: 2000,
+  speed: 500,
   on: {
     init: (s) => initHandle(s),
     realIndexChange: (s) => changeHandle(s),
