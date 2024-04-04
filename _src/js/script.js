@@ -5839,6 +5839,10 @@
           r && t && (e.slides.forEach((e => {
             Hi.set(e.querySelector(".dubrovka-slide__text"), {
               autoAlpha: 0
+            }), Hi.set(e.querySelector(".dubrovka-slide__figure"), {
+              height: "64%"
+            }), Hi.set(e, {
+              width: "35.4%"
             });
           })), Hi.timeline().fromTo(t.querySelector(".dubrovka-slide__text"), {
             autoAlpha: 1

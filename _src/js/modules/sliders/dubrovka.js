@@ -43,6 +43,10 @@ const changeHandler = (s) => {
 
   s.slides.forEach((element) => {
     gsap.set(element.querySelector(".dubrovka-slide__text"), { autoAlpha: 0 });
+    gsap.set(element.querySelector(".dubrovka-slide__figure"), {
+      height: "64%",
+    });
+    gsap.set(element, { width: "35.4%" });
   });
 
   gsap
