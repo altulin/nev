@@ -1,22 +1,9 @@
 import Swiper from "swiper";
-import { body } from "../header/menu.js";
 import { Navigation, Scrollbar } from "swiper/modules";
 import gsap from "gsap";
 import { changeTab } from "../dubrovka/changeTab.js";
 
 export const width = window.innerWidth;
-
-// const createAnimation = (s, i) => {
-//   const next = body.querySelector(`.tabs-block__btn--next`);
-//   const prev = body.querySelector(`.tabs-block__btn--prev`);
-
-//   if (!next || !prev) return;
-
-//   next.addEventListener("click", () => s.slideNext(1000));
-//   prev.addEventListener("click", () => s.slidePrev(1000));
-// };
-
-let tabs;
 
 const initHandler = (s) => {
   if (width < 769) return;
@@ -102,45 +89,10 @@ const changeHandler = (s) => {
     });
 };
 
-// export const setDubrovkaSliders = () => {
-//   const list = Array.from(body.querySelectorAll(".js-tabs-slider"));
-
-//   const slidesDubrovka = list.map((item, i) => {
-//     return new Swiper(item, {
-//       modules: [Navigation, Scrollbar],
-//       speed: 500,
-//       slidesPerView: "auto",
-//       loop: true,
-//       spaceBetween: 5,
-//       allowTouchMove: false,
-//       scrollbar: {
-//         el: ".tabs-slider__scrollbar",
-//         draggable: true,
-//       },
-//       on: {
-//         afterInit: initHandler,
-//         slideChangeTransitionStart: changeHandler,
-//       },
-//       breakpoints: {
-//         320: {
-//           allowTouchMove: true,
-//           speed: 300,
-//           slidesPerView: "auto",
-//         },
-//         769: {
-//           speed: 500,
-//           allowTouchMove: false,
-//           slidesPerView: "auto",
-//         },
-//       },
-//     });
-//   });
-
-//   slidesDubrovka.forEach((item, i) => {
-//     if (width < 769) return;
-//     createAnimation(item, i);
-//   });
-// };
+const clickHandler = (s, e) => {
+  const index = e.target.dataset.swiperSlideIndex;
+  s.slideToLoop(index, 1000);
+};
 
 export const sliderDubrovka = new Swiper(".tabs-block__slider", {
   modules: [Navigation, Scrollbar],
@@ -160,6 +112,7 @@ export const sliderDubrovka = new Swiper(".tabs-block__slider", {
   on: {
     afterInit: initHandler,
     slideChangeTransitionStart: changeHandler,
+    click: (s, e) => clickHandler(s, e),
   },
   breakpoints: {
     320: {

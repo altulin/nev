@@ -5789,8 +5789,7 @@
       }));
     } ]);
     let is = {};
-    const ns = window.innerWidth;
-    const ss = new jn(".tabs-block__slider", {
+    const ns = window.innerWidth, ss = new jn(".tabs-block__slider", {
       modules: [ Un, Qn ],
       speed: 500,
       slidesPerView: "auto",
@@ -5868,7 +5867,11 @@
           }).then((() => {
             e.navigation.enable();
           })));
-        }
+        },
+        click: (e, t) => ((e, t) => {
+          const r = t.target.dataset.swiperSlideIndex;
+          e.slideToLoop(r, 1e3);
+        })(e, t)
       },
       breakpoints: {
         320: {

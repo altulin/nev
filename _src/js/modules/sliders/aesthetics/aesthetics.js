@@ -1,5 +1,4 @@
 import Swiper from "swiper";
-// import { body } from "../../header/menu.js";
 import { Navigation, Scrollbar } from "swiper/modules";
 import gsap from "gsap";
 import { width } from "../dubrovka.js";

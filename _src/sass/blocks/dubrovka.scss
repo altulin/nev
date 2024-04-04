@@ -380,6 +380,7 @@
     position: absolute;
     left: 0;
     top: 0;
+    pointer-events: none;
 
     @include mw($tb) {
       height: 100%;
@@ -394,6 +395,7 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
+    pointer-events: none;
   }
 
   &__text {
@@ -411,6 +413,7 @@
     width: 70%;
     opacity: 0;
     visibility: hidden;
+    pointer-events: none;
     // transition: 1s;
 
     @include mw($tb) {

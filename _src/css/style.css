@@ -3951,6 +3951,7 @@ button.swiper-pagination-bullet {
   position: absolute;
   left: 0;
   top: 0;
+  pointer-events: none;
 }
 
 .dubrovka-slide__img {
@@ -3963,6 +3964,7 @@ button.swiper-pagination-bullet {
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
+  pointer-events: none;
 }
 
 .dubrovka-slide__text {
@@ -3981,6 +3983,7 @@ button.swiper-pagination-bullet {
   width: 70%;
   opacity: 0;
   visibility: hidden;
+  pointer-events: none;
 }
 
 .tab-btn--mobile {
