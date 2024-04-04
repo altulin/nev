@@ -161,3 +161,9 @@ input:-webkit-autofill:active {
 .page-main {
   flex-grow: 1;
 }
+
+.page-body {
+  &--contact {
+    background-color: #78899f;
+  }
+}

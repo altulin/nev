@@ -41,7 +41,7 @@ footer.footer
 			ul.footer-middle__list
 				each item in footer_middle
 					li.footer-middle__item
-						a.footer-middle__link(href=`${item.href}`)= item.title
+						a.footer-middle__link(href= item.href class=item.anchor && 'js-anchor' target=item.anchor ? null:'_blank')= item.title
 
 		ul.soc__list.soc__list-bot
 			each item,i in soc

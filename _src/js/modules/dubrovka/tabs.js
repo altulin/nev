@@ -11,6 +11,7 @@ export const createTabs = (selector, swiper) => {
   const tabs = parent.querySelectorAll(".tab-content");
 
   objTabs[`${selector}`] = tabButtons;
+  objTabs[`${selector}-tabs`] = tabs;
 
   tabButtons.forEach((tabButton) => {
     tabButton.addEventListener("click", (e) => {

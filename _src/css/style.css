@@ -572,6 +572,10 @@ input:-webkit-autofill:active {
           flex-grow: 1;
 }
 
+.page-body--contact {
+  background-color: #78899f;
+}
+
 .title {
   color: rgb(167, 167, 171);
   font-family: Montserrat;
@@ -1665,6 +1669,14 @@ button.swiper-pagination-bullet {
   stroke: #000;
 }
 
+.header--contact {
+  background-color: #78899f;
+}
+
+.header--contact .header__inner {
+  background-color: transparent;
+}
+
 .header--down {
   -webkit-transform: translateY(-100%);
       -ms-transform: translateY(-100%);
@@ -2209,7 +2221,7 @@ button.swiper-pagination-bullet {
 
 .menu-icon__inner {
   width: 73%;
-  height: 1rem;
+  height: 0.98rem;
   position: relative;
 }
 
@@ -2221,19 +2233,20 @@ button.swiper-pagination-bullet {
   left: 0;
   -webkit-transition: all 0.3s cubic-bezier(0.1, 0.82, 0.76, 0.965);
   transition: all 0.3s cubic-bezier(0.1, 0.82, 0.76, 0.965);
+  display: block;
 }
 
-.menu-icon__line--top {
-  top: 0;
+.menu-icon__line--up {
+  top: 0.1px;
 }
 
 .menu-icon__line--down {
-  bottom: 0;
+  bottom: 0.1px;
 }
 
 .camera__pulse {
-  width: 0.23em;
-  height: 0.23em;
+  width: 0.23rem;
+  height: 0.23rem;
   border-radius: 50%;
   background-color: #f42a36;
   position: absolute;
@@ -2742,6 +2755,10 @@ button.swiper-pagination-bullet {
   margin-top: -0.03vw;
 }
 
+.location-flag__title--color {
+  color: #8ed688;
+}
+
 .location-flag--1 {
   bottom: 55.5%;
   right: 68.6%;
@@ -2924,7 +2941,7 @@ button.swiper-pagination-bullet {
   font-weight: 300;
   line-height: 2.25rem;
   margin-bottom: 4.1rem;
-  max-width: 50%;
+  max-width: 45%;
   padding-right: 1.5rem;
   padding-left: 0;
 }
@@ -3427,15 +3444,18 @@ button.swiper-pagination-bullet {
   font-size: 1.3rem;
 }
 
-.near .ymaps3x0--map-copyrights {
+.near .ymaps3x0--map-copyrights,
+.contacts .ymaps3x0--map-copyrights {
   z-index: 1;
 }
 
-.near .ymaps3x0--map-copyrights__container {
+.near .ymaps3x0--map-copyrights__container,
+.contacts .ymaps3x0--map-copyrights__container {
   background-color: transparent;
 }
 
-.near__marker {
+.near__marker,
+.contacts__marker {
   width: 5.37rem;
   height: 5.37rem;
   border-radius: 50%;
@@ -3446,23 +3466,27 @@ button.swiper-pagination-bullet {
           transform: translate(-50%, -50%);
 }
 
-.near .ymaps3x0--button {
+.near .ymaps3x0--button,
+.contacts .ymaps3x0--button {
   border-radius: 50%;
   padding: 0;
   background-color: transparent;
 }
 
-.near .ymaps3x0--control__background {
+.near .ymaps3x0--control__background,
+.contacts .ymaps3x0--control__background {
   background-color: transparent;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
 
-.near .ymaps3x0--controls_vertical > .ymaps3x0--control {
+.near .ymaps3x0--controls_vertical > .ymaps3x0--control,
+.contacts .ymaps3x0--controls_vertical > .ymaps3x0--control {
   margin-bottom: 5rem;
 }
 
-.near .ymaps3x0--controls {
+.near .ymaps3x0--controls,
+.contacts .ymaps3x0--controls {
   left: 2rem;
 }
 
@@ -4212,7 +4236,8 @@ button.swiper-pagination-bullet {
 }
 
 .yard {
-  padding-top: 15rem;
+  padding-top: 10rem;
+  margin-top: 5rem;
   margin-bottom: 1rem;
 }
 
@@ -4435,6 +4460,10 @@ button.swiper-pagination-bullet {
 
 .aesthetics-tab__slide.swiper-slide-active {
   width: 42.5%;
+}
+
+.aesthetics-tab__slide.swiper-slide-active .aesthetics-tab__list {
+  display: none;
 }
 
 .aesthetics-tab__figure {
@@ -5023,7 +5052,6 @@ button.swiper-pagination-bullet {
 
 .contacts {
   background-color: #78899f;
-  min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -5041,47 +5069,65 @@ button.swiper-pagination-bullet {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  background-color: #78899f;
 }
 
 .contacts-map {
   position: relative;
-  width: 52%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  padding-top: 11rem;
+  width: 50%;
   background-color: #78899f;
+}
+
+.contacts-map:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background-image: url(../img/svg/Linear.svg);
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: right center;
+}
+
+.contacts-map::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #78899f;
+  left: 0;
+  bottom: -1px;
+  z-index: 1;
 }
 
 .contacts-map__picture {
   width: 100%;
-  background-image: url("../../img/map-contact.png");
-  background-repeat: no-repeat;
-  background-size: 100% auto;
-  background-position: left top;
-  background-color: #78899f;
-  background-blend-mode: luminosity;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  height: 0;
+  padding-top: 105%;
+  position: relative;
 }
 
 .contacts-map__map {
   width: 100%;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.contacts-map__map:after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  top: 0;
+  right: -1px;
+  background-color: #78899f;
+  z-index: 1;
 }
 
 .contacts-map__mark {
@@ -5121,6 +5167,7 @@ button.swiper-pagination-bullet {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-left: -1px;
 }
 
 .contacts-info__block {
@@ -5265,6 +5312,10 @@ button.swiper-pagination-bullet {
 }
 
 @media screen and (max-width: 1920px) {
+  .menu-icon__line {
+    height: 1px;
+  }
+
   .near__inner {
     padding-bottom: 5rem;
   }
@@ -5739,12 +5790,13 @@ button.swiper-pagination-bullet {
 
   .contacts-map {
     width: 100%;
-    min-height: 40rem;
-    margin-bottom: 2rem;
   }
 
   .contacts-info {
     padding-bottom: 5rem;
+    margin-top: -1px;
+    margin-left: 0;
+    padding-top: 2rem;
   }
 }
 
@@ -6294,17 +6346,20 @@ button.swiper-pagination-bullet {
     font-size: 0.7rem;
   }
 
-  .near__marker {
+  .near__marker,
+  .contacts__marker {
     width: 4rem;
     height: 4rem;
     border-radius: 50%;
   }
 
-  .near .ymaps3x0--controls_vertical > .ymaps3x0--control {
+  .near .ymaps3x0--controls_vertical > .ymaps3x0--control,
+  .contacts .ymaps3x0--controls_vertical > .ymaps3x0--control {
     margin-bottom: 8rem;
   }
 
-  .near .ymaps3x0--controls {
+  .near .ymaps3x0--controls,
+  .contacts .ymaps3x0--controls {
     left: 0;
   }
 
@@ -6600,6 +6655,7 @@ button.swiper-pagination-bullet {
   }
 
   .yard {
+    margin-top: 0;
     padding-top: 2.7rem;
     margin-bottom: 0;
   }
@@ -6942,8 +6998,8 @@ button.swiper-pagination-bullet {
     font-size: 1.15rem;
   }
 
-  .contacts-map {
-    padding-top: 7rem;
+  .contacts-map__picture {
+    padding-top: 121%;
   }
 
   .contacts-map__mark {

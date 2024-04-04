@@ -1,8 +1,10 @@
 .yard {
-  padding-top: 15rem;
+  padding-top: 10rem;
+  margin-top: 5rem;
   margin-bottom: 1rem;
 
   @include mw($tb) {
+    margin-top: 0;
     padding-top: 2.7rem;
     margin-bottom: 0;
   }

@@ -1,9 +1,10 @@
 .contacts {
   background-color: #78899f;
-  min-height: 100vh;
+
   display: flex;
   flex-direction: column;
   padding-bottom: 3rem;
+  // padding-top: 6.8rem;
 
   @include mw($dt) {
     padding-bottom: 0;
@@ -12,6 +13,8 @@
   &__inner {
     flex-grow: 1;
     display: flex;
+
+    background-color: #78899f;
 
     @include mw($dt) {
       flex-direction: column;
@@ -26,38 +29,71 @@
 }
 .contacts-map {
   position: relative;
-  width: 52%;
-  display: flex;
-  flex-direction: column;
-  padding-top: 11rem;
+  width: 50%;
+
   background-color: #78899f;
+
+  &:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-image: url(../img/svg/Linear.svg);
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: right center;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #78899f;
+    left: 0;
+    bottom: -1px;
+    z-index: 1;
+  }
 
   @include mw($dt) {
     width: 100%;
-    min-height: 40rem;
-    margin-bottom: 2rem;
   }
 
   @include mw($tb) {
-    padding-top: 7rem;
   }
 
   &__picture {
     width: 100%;
-    background-image: url("../../img/map-contact.png");
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    background-position: left top;
-    background-color: #78899f;
-    background-blend-mode: luminosity;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
+    height: 0;
+    padding-top: 105%;
+    position: relative;
+
+    @include mw($tb) {
+      padding-top: 121%;
+    }
   }
 
   &__map {
     width: 100%;
-    flex-grow: 1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 2px;
+      height: 100%;
+      top: 0;
+      right: -1px;
+      background-color: #78899f;
+      z-index: 1;
+    }
   }
 
   &__mark {
@@ -90,9 +126,13 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-left: -1px;
 
   @include mw($dt) {
     padding-bottom: 5rem;
+    margin-top: -1px;
+    margin-left: 0;
+    padding-top: 2rem;
   }
 
   @include mw($tb) {

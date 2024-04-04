@@ -1,8 +1,6 @@
 .aesthetics {
   padding-top: 10rem;
   position: relative;
-  // margin-bottom: 9rem;
-  // margin-bottom: 6rem;
   margin-bottom: 2rem;
 
   @include mw($dt) {
@@ -123,6 +121,9 @@
     flex-direction: column;
     overflow: hidden;
 
+    .swiper-slide-active {
+    }
+
     &--cover {
       .aesthetics-tab__figure {
         &::after {
@@ -151,6 +152,10 @@
 
     &.swiper-slide-active {
       width: 42.5%;
+
+      .aesthetics-tab__list {
+        display: none;
+      }
     }
   }
 

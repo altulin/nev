@@ -5824,13 +5824,15 @@
         slideChangeTransitionStart: e => {
           if (((e, t) => {
             const o = Array.from(ra[`${e}`]);
-            o.forEach((e => {
+            Array.from(ra[`${e}-tabs`]).forEach((e => {
+              e.classList.add("hidden");
+            })), o.forEach((e => {
               e.classList.remove("selected");
             }));
             const r = t.slides.filter((e => e.classList.contains("swiper-slide-active")))[0];
             o.filter((e => e.dataset.tabContentId === r.dataset.slide)).forEach((e => {
               e.classList.add("selected");
-            }));
+            })), ca.querySelector(`#${r.dataset.slide}`).classList.remove("hidden");
           })("dubrovka", e), ia < 769) {
             return;
           }
@@ -5902,7 +5904,7 @@
       }));
     }
     la(window.location.hash);
-    const ca = document.querySelector("body"), da = ca.querySelector(".header"), fa = da.querySelector(".header-left__btn"), ua = Array.from(da.querySelectorAll(".js-anchor")), pa = Xr.timeline({
+    const ca = document.querySelector("body"), da = ca.querySelector(".header"), fa = da.querySelector(".header-left__btn"), ua = Array.from(ca.querySelectorAll(".js-anchor")), pa = Xr.timeline({
       paused: !0
     }).fromTo(da.querySelector(".menu"), {
       autoAlpha: 0
@@ -12561,7 +12563,7 @@
           return;
         }
         const r = o.querySelectorAll(".tab-btn"), i = o.querySelectorAll(".tab-content");
-        ra[`${e}`] = r, r.forEach((e => {
+        ra[`${e}`] = r, ra[`${e}-tabs`] = i, r.forEach((e => {
           e.addEventListener("click", (e => {
             Array.from(r).forEach((e => {
               e.classList.remove("selected");
@@ -12799,8 +12801,7 @@
             scrollTrigger: {
               trigger: nc,
               toggleActions: "play none none none",
-              start: "top 80%",
-              end: "+=100"
+              start: "top 80%"
             }
           }).to(e, {
             backgroundPositionY: "100%",

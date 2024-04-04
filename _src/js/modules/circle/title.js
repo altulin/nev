@@ -31,7 +31,7 @@ export const animationCircle = () => {
           trigger: circle,
           toggleActions: "play none none none",
           start: `top 80%`,
-          end: "+=100",
+          // end: "+=100",
           // once: true,
           // markers: true,
         },

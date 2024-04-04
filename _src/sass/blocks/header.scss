@@ -61,6 +61,14 @@
     }
   }
 
+  &--contact {
+    background-color: #78899f;
+
+    .header__inner {
+      background-color: transparent;
+    }
+  }
+
   &--down {
     transform: translateY(-100%);
     // background-color: rgba(#78899f, 0.8);
@@ -723,8 +731,12 @@
 
   &__inner {
     width: 73%;
-    height: 1rem;
+    height: 0.98rem;
     position: relative;
+
+    @media screen and (max-width: 1920px) {
+      // height: 16px;
+    }
 
     @include mw($tb) {
       width: 63%;
@@ -739,20 +751,25 @@
     background-color: #fff;
     left: 0;
     transition: all 0.3s cubic-bezier(0.1, 0.82, 0.76, 0.965);
+    display: block;
 
-    &--top {
-      top: 0;
+    @media screen and (max-width: 1920px) {
+      height: 1px;
+    }
+
+    &--up {
+      top: 0.1px;
     }
     &--down {
-      bottom: 0;
+      bottom: 0.1px;
     }
   }
 }
 
 .camera {
   &__pulse {
-    width: 0.23em;
-    height: 0.23em;
+    width: 0.23rem;
+    height: 0.23rem;
     border-radius: 50%;
     background-color: #f42a36;
     position: absolute;

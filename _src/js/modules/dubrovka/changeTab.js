@@ -1,7 +1,13 @@
+import { body } from "../header/menu.js";
 import { objTabs } from "./tabs.js";
 
 export const changeTab = (section, s) => {
   const listTabs = Array.from(objTabs[`${section}`]);
+  const listContents = Array.from(objTabs[`${section}-tabs`]);
+
+  listContents.forEach((item) => {
+    item.classList.add("hidden");
+  });
 
   listTabs.forEach((tabBtn) => {
     tabBtn.classList.remove("selected");
@@ -18,4 +24,7 @@ export const changeTab = (section, s) => {
   currentTabs.forEach((item) => {
     item.classList.add("selected");
   });
+
+  const selectedTab = body.querySelector(`#${activeSlide.dataset.slide}`);
+  selectedTab.classList.remove("hidden");
 };

@@ -12,7 +12,7 @@ section.location#location(name="location")
 
 	each item,i in locationlist
 		.location__flag.location-flag(class=`location-flag--${i+1}`)
-			h3.location-flag__title(class=`location-flag__title--${i+1}`)= item
+			h3.location-flag__title(class=`location-flag__title--${i+1}` class=item.color && 'location-flag__title--color')= item.title
 			.location-flag__vertical
 				.location-flag__line(class=`location-flag__line--${i+1}`)
 				.location-flag__circle

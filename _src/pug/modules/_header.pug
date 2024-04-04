@@ -1,6 +1,6 @@
 include ../helpers/data/header.pug
 
-header.header#header(class=plan===true?'header--plan':"" class=`${headerHide?"header--hide":"header--fix"}`)
+header.header#header(class=plan===true?'header--plan':"" class=`${headerHide?"header--hide":"header--fix"}` class=`${contact?"header--contact":""}`)
 	.header__inner(class=plan===true?'header__inner--plan':""  )
 		if !choose
 			hr.header__line
