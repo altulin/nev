@@ -25,7 +25,7 @@ import { infoVisible } from "./modules/aesthetics/info.js";
 import { animationAesthetics } from "./modules/aesthetics/animation.js";
 import { animationChoose } from "./modules/choose/animation.js";
 import { createTabs } from "./modules/dubrovka/tabs.js";
-import { createMap } from "./modules/near/map.js";
+import { createMap } from "./modules/near/map/map.js";
 import { chooseLink } from "./modules/choose/link.js";
 import { makeAccordionHeder } from "./modules/header/accordion.js";
 import { topBtnAnimation } from "./modules/footer/top.js";
@@ -61,7 +61,8 @@ const handler = () => {
   infoVisible();
   animationAesthetics();
   animationChoose();
-  ymaps.ready(createMap);
+  createMap();
+  // ymaps.ready(createMap);
   animationSection();
   chooseLink();
   animationNearTitle();

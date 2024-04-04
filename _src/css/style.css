@@ -3083,6 +3083,21 @@ button.swiper-pagination-bullet {
 
 .near__map {
   width: 46%;
+  position: relative;
+}
+
+.near__map:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background-image: url(../img/svg/Linear.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right center;
 }
 
 .near-title .whitespace {
@@ -3410,6 +3425,45 @@ button.swiper-pagination-bullet {
   -ms-flex-item-align: end;
       align-self: flex-end;
   font-size: 1.3rem;
+}
+
+.near .ymaps3x0--map-copyrights {
+  z-index: 1;
+}
+
+.near .ymaps3x0--map-copyrights__container {
+  background-color: transparent;
+}
+
+.near__marker {
+  width: 5.37rem;
+  height: 5.37rem;
+  border-radius: 50%;
+  background-image: url(../img/map-mark.png);
+  background-size: cover;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.near .ymaps3x0--button {
+  border-radius: 50%;
+  padding: 0;
+  background-color: transparent;
+}
+
+.near .ymaps3x0--control__background {
+  background-color: transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.near .ymaps3x0--controls_vertical > .ymaps3x0--control {
+  margin-bottom: 5rem;
+}
+
+.near .ymaps3x0--controls {
+  left: 2rem;
 }
 
 .footer {
@@ -6219,8 +6273,8 @@ button.swiper-pagination-bullet {
   }
 
   .zoom-control__btn {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2.7rem;
+    height: 2.7rem;
   }
 
   .near-title--phone {
@@ -6238,6 +6292,20 @@ button.swiper-pagination-bullet {
 
   .item-last__text {
     font-size: 0.7rem;
+  }
+
+  .near__marker {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+  }
+
+  .near .ymaps3x0--controls_vertical > .ymaps3x0--control {
+    margin-bottom: 8rem;
+  }
+
+  .near .ymaps3x0--controls {
+    left: 0;
   }
 
   .container--footer {
