@@ -22,4 +22,13 @@ section.about
 
 	div.about__picture.picture#about
 		.figure.picture__wrap
-			+img-retina('about', 'png', 'about', 'picture__img', '895', '993', 768)
+			//- +img-retina('house', 'png', 'about', 'picture__img', '895', '993', 768)
+
+
+
+			<picture>
+				<source media="(max-width: 768px)" type="image/webp" srcset="/img/webp/house-768.webp 1x, /img/webp/house-768@2x.webp 2x" />
+				<source media="(max-width: 768px)" type="image/png" srcset="/img/house-768.png 1x, /img/house-768@2x.png 2x" />
+				<source type="image/webp" srcset="/img/webp/house.webp 1x, /img/webp/house@2x.webp 2x" />
+				<img class="picture__img" src="/img/house.png" alt="about" width="895" height="993" />
+			</picture>
