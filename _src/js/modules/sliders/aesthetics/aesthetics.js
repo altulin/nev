@@ -1,8 +1,9 @@
 import Swiper from "swiper";
-import { body } from "../header/menu.js";
+// import { body } from "../../header/menu.js";
 import { Navigation, Scrollbar } from "swiper/modules";
 import gsap from "gsap";
-import { width } from "./dubrovka.js";
+import { width } from "../dubrovka.js";
+import { controlSlider, controlTabsStyle } from "./tabs.js";
 
 export const makeCover = (list) => {
   if (width < 769) return;
@@ -26,6 +27,8 @@ export const makeCover = (list) => {
 };
 
 const initHandler = (s) => {
+  controlSlider(s);
+
   if (width < 769) return;
   const activSlide = s.slides[s.realIndex];
 
@@ -73,6 +76,8 @@ const changeHandler = (s) => {
 };
 
 const slideNext = (s) => {
+  controlTabsStyle(s);
+
   if (width < 769) return;
 
   s.slides.forEach((item) => {
@@ -92,54 +97,49 @@ const slideNext = (s) => {
   });
 };
 
-export const setAestheticsSliders = () => {
-  const list = Array.from(body.querySelectorAll(".js-aesthetics-tabs"));
-
-  const slides = list.map((item, i) => {
-    return new Swiper(item, {
-      modules: [Navigation, Scrollbar],
+export const setAestheticsSliders = new Swiper(".js-aesthetics-tabs", {
+  modules: [Navigation, Scrollbar],
+  initt: false,
+  speed: 1000,
+  slidesPerView: "auto",
+  loop: true,
+  spaceBetween: 5,
+  navigation: {
+    enabled: true,
+    nextEl: `.aesthetics-touch__block--next`,
+    prevEl: `.aesthetics-touch__block--prev`,
+  },
+  allowTouchMove: false,
+  slidesOffsetBefore: 200,
+  centeredSlides: true,
+  initialSlide: 3,
+  scrollbar: {
+    el: ".aesthetics-tab__scrollbar",
+    draggable: true,
+  },
+  breakpoints: {
+    320: {
+      allowTouchMove: true,
+      speed: 300,
+      initialSlide: 0,
+      slidesPerView: "auto",
+      slidesOffsetBefore: 0,
+      centeredSlides: false,
+    },
+    769: {
+      allowTouchMove: false,
+      initialSlide: 3,
       speed: 1000,
       slidesPerView: "auto",
-      loop: true,
-      spaceBetween: 5,
-      navigation: {
-        enabled: true,
-        nextEl: `.aesthetics-touch__block--next-${i}`,
-        prevEl: `.aesthetics-touch__block--prev-${i}`,
-      },
-      allowTouchMove: false,
       slidesOffsetBefore: 200,
       centeredSlides: true,
-      initialSlide: 3,
-      scrollbar: {
-        el: ".aesthetics-tab__scrollbar",
-        draggable: true,
-      },
-      breakpoints: {
-        320: {
-          allowTouchMove: true,
-          speed: 300,
-          initialSlide: 0,
-          slidesPerView: "auto",
-          slidesOffsetBefore: 0,
-          centeredSlides: false,
-        },
-        769: {
-          allowTouchMove: false,
-          initialSlide: 3,
-          speed: 1000,
-          slidesPerView: "auto",
-          slidesOffsetBefore: 200,
-          centeredSlides: true,
-        },
-      },
-      on: {
-        slideChangeTransitionStart: changeHandler,
-        afterInit: initHandler,
+    },
+  },
+  on: {
+    slideChangeTransitionStart: changeHandler,
+    afterInit: initHandler,
 
-        slideNextTransitionEnd: slideNext,
-        slidePrevTransitionEnd: slideNext,
-      },
-    });
-  });
-};
+    slideNextTransitionEnd: slideNext,
+    slidePrevTransitionEnd: slideNext,
+  },
+});

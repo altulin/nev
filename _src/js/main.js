@@ -3,7 +3,6 @@ import { controlMenu } from "./modules/header/menu.js";
 import { sliderPromo } from "./modules/sliders/promo.js";
 import { sliderDubrovka, width } from "./modules/sliders/dubrovka.js";
 import { sliderCircle } from "./modules/sliders/circle.js";
-import { setAestheticsSliders } from "./modules/sliders/aesthetics.js";
 import { setToTop } from "./modules/header/toTop.js";
 import { anchorPromoOrder } from "./modules/promo/anchor.js";
 import { tlPromo } from "./modules/promo/animation.js";
@@ -30,6 +29,8 @@ import { createMap } from "./modules/near/map.js";
 import { chooseLink } from "./modules/choose/link.js";
 import { makeAccordionHeder } from "./modules/header/accordion.js";
 import { topBtnAnimation } from "./modules/footer/top.js";
+import { setAestheticsSliders } from "./modules/sliders/aesthetics/aesthetics.js";
+// import { setAestheticsSliders } from "./modules/sliders/aesthetics.js";
 
 const handler = () => {
   tlPromo.play().then(() => {
@@ -37,12 +38,13 @@ const handler = () => {
     sliderPromo.enable();
   });
   createTabs("dubrovka", sliderDubrovka);
-  createTabs("aesthetics");
+  // createTabs("aesthetics");
   controlMenu();
   setSticky();
   // setDubrovkaSliders();
   sliderCircle.enable();
-  setAestheticsSliders();
+  // setAestheticsSliders();
+  setAestheticsSliders.init();
   setToTop();
   anchorPromoOrder();
   animationDubrovka();
