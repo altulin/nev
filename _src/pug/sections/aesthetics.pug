@@ -24,8 +24,8 @@ section.aesthetics
 		.aesthetics-tab__swiper.swiper.js-aesthetics-tabs
 			.swiper-wrapper
 				each item,i in aesthetics_tabs
-					each el in ['','','','']
-						.swiper-slide.aesthetics-tab__slide.aesthetics-tab__slide--cover(data-slide=`${item.href}`)
+					each el,n in ['','','','']
+						.swiper-slide.aesthetics-tab__slide.aesthetics-tab__slide--cover(data-slide=`${item.href}-${n}`)
 							figure.aesthetics-tab__figure
 								+img-retina('aesthetics', 'jpg', 'aesthetics', 'aesthetics-tab__img', '803', '803')
 

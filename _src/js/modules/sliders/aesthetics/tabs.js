@@ -3,8 +3,11 @@ import { body } from "../../header/menu.js";
 const tabsHandle = (s, e) => {
   const selectedTabId = e.target.dataset.tabContentId;
   const slides = s.slides;
-  const index = slides.find((item) => item.dataset.slide === selectedTabId)
-    .dataset.swiperSlideIndex;
+  const index = slides.find(
+    (item) => item.dataset.slide === `${selectedTabId}-0`,
+  ).dataset.swiperSlideIndex;
+
+  if (!index) return;
 
   s.slideToLoop(index, 1000);
 };
@@ -35,7 +38,7 @@ export const controlTabsStyle = (s) => {
   tabs.forEach((tab) => {
     tab.classList.remove("selected");
 
-    if (tab.dataset.tabContentId === id) {
+    if (tab.dataset.tabContentId === id.split("-")[0]) {
       tab.classList.add("selected");
     }
   });

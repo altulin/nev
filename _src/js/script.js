@@ -7534,7 +7534,7 @@
         }
         const r = t.dataset.slide;
         Array.from(aesthetics.querySelectorAll(".tab-btn")).forEach((e => {
-          e.classList.remove("selected"), e.dataset.tabContentId === r && e.classList.add("selected");
+          e.classList.remove("selected"), e.dataset.tabContentId === r.split("-")[0] && e.classList.add("selected");
         }));
       })(e), ns < 769) {
         return;
@@ -7619,8 +7619,8 @@
             }
             Array.from(t.querySelectorAll(".tab-btn")).forEach((t => {
               t.addEventListener("click", (t => ((e, t) => {
-                const r = t.target.dataset.tabContentId, i = e.slides.find((e => e.dataset.slide === r)).dataset.swiperSlideIndex;
-                e.slideToLoop(i, 1e3);
+                const r = t.target.dataset.tabContentId, i = e.slides.find((e => e.dataset.slide === `${r}-0`)).dataset.swiperSlideIndex;
+                i && e.slideToLoop(i, 1e3);
               })(e, t)));
             }));
           })(e), ns < 769) {
