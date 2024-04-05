@@ -85,7 +85,7 @@
     justify-content: space-between;
 
     .char:nth-child(4) {
-      margin-left: 2.5rem;
+      margin-left: 3.5rem;
 
       @include mw($dt) {
         margin-left: 1.5rem;

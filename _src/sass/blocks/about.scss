@@ -48,7 +48,11 @@
       justify-content: space-between;
 
       .char:nth-child(2) {
-        margin-left: 1.5rem;
+        margin-left: 3.5rem;
+
+        @include mw($tb) {
+          margin-left: 1.8rem;
+        }
       }
     }
 

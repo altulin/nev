@@ -2921,7 +2921,7 @@ button.swiper-pagination-bullet {
 }
 
 .about__title .word .char:nth-child(2) {
-  margin-left: 1.5rem;
+  margin-left: 3.5rem;
 }
 
 .about__subtitle {
@@ -3131,7 +3131,7 @@ button.swiper-pagination-bullet {
 }
 
 .near-title .word .char:nth-child(4) {
-  margin-left: 2.5rem;
+  margin-left: 3.5rem;
 }
 
 .near-title__right {
@@ -3873,7 +3873,7 @@ button.swiper-pagination-bullet {
 }
 
 .dubrovka__title .words:first-child .word span:first-child {
-  margin-right: 2.5rem;
+  margin-right: 3.5rem;
 }
 
 .dubrovka__title .words:last-child {
@@ -6166,6 +6166,10 @@ button.swiper-pagination-bullet {
     padding-top: 2rem;
     position: relative;
     z-index: 1;
+  }
+
+  .about__title .word .char:nth-child(2) {
+    margin-left: 1.8rem;
   }
 
   .about__title {
