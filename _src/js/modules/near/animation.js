@@ -36,18 +36,18 @@ animationNearTitle();
 export const animationLine = () => {
   const list = Array.from(body.querySelectorAll(".near-indication__line"));
 
-  list.forEach((item) => {
+  list.forEach((item, i) => {
     gsap.to(item, {
       scrollTrigger: {
         trigger: item,
         toggleActions: "restart none reverse none",
-        start: "top 80%",
-        end: "top 60%",
-        scrub: 1,
+        start: "top 90%",
+        end: "top 89%",
+        // scrub: 1,
         // markers: true,
       },
       width: "100%",
-      // duration: 0.5,
+      duration: 0.5 + i * 0.2,
     });
   });
 };

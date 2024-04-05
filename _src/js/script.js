@@ -12627,16 +12627,16 @@
           flexGrow: 0,
           duration: 1
         }, "<");
-      })(), Array.from(ca.querySelectorAll(".near-indication__line")).forEach((e => {
+      })(), Array.from(ca.querySelectorAll(".near-indication__line")).forEach(((e, t) => {
         Xr.to(e, {
           scrollTrigger: {
             trigger: e,
             toggleActions: "restart none reverse none",
-            start: "top 80%",
-            end: "top 60%",
-            scrub: 1
+            start: "top 90%",
+            end: "top 89%"
           },
-          width: "100%"
+          width: "100%",
+          duration: .5 + .2 * t
         });
       })), (() => {
         const e = Array.from(ca.querySelectorAll(".location-flag__line")), t = ca.querySelector(".location");
