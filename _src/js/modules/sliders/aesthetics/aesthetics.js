@@ -30,13 +30,29 @@ const initHandler = (s) => {
 
   if (width < 769) return;
   const activSlide = s.slides[s.realIndex];
+  const previousSlide = s.slides.filter((slide) =>
+    slide.classList.contains("swiper-slide-prev"),
+  )[0];
+
+  s.slides.forEach((item) => {
+    gsap.set(item.querySelector(".aesthetics-tab__list"), {
+      autoAlpha: 0,
+      duration: 0.01,
+    });
+  });
 
   if (!activSlide) return;
 
-  gsap.timeline().to(activSlide, {
-    width: "43.4%",
-    duration: 0.1,
-  });
+  gsap
+    .timeline()
+    .to(activSlide, {
+      width: "43.4%",
+      duration: 0.1,
+    })
+    .to(previousSlide.querySelector(".aesthetics-tab__list"), {
+      autoAlpha: 1,
+      duration: 1,
+    });
 
   makeCover(s.slides);
 };
@@ -45,12 +61,12 @@ const changeHandler = (s) => {
   if (width < 769) return;
   const previousSlide = s.slides[s.previousIndex];
 
-  s.slides.forEach((item) => {
-    gsap.to(item.querySelector(".aesthetics-tab__list"), {
-      autoAlpha: 0,
-      duration: 0.01,
-    });
-  });
+  // s.slides.forEach((item) => {
+  //   gsap.to(item.querySelector(".aesthetics-tab__list"), {
+  //     autoAlpha: 0,
+  //     duration: 0.01,
+  //   });
+  // });
 
   const activSlide = s.slides.filter((slide) =>
     slide.classList.contains("swiper-slide-active"),
@@ -111,7 +127,7 @@ export const setAestheticsSliders = new Swiper(".js-aesthetics-tabs", {
   allowTouchMove: false,
   slidesOffsetBefore: 200,
   centeredSlides: true,
-  initialSlide: 3,
+  initialSlide: 0,
   scrollbar: {
     el: ".aesthetics-tab__scrollbar",
     draggable: true,
@@ -127,7 +143,7 @@ export const setAestheticsSliders = new Swiper(".js-aesthetics-tabs", {
     },
     769: {
       allowTouchMove: false,
-      initialSlide: 3,
+      initialSlide: 0,
       speed: 1000,
       slidesPerView: "auto",
       slidesOffsetBefore: 200,

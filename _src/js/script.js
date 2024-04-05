@@ -5944,19 +5944,16 @@
         return;
       }
       const e = window.scrollY, t = e > ya ? "down" : "up";
-      "" !== t && (e - ya > 10 || e - ya < -10) && ("down" === t && (va.classList.contains("header--down") || (ga = setTimeout((() => {
-        va.className = "", va.classList.add("header"), e > 50 && va.classList.add(`header--${t}`);
-      }), 800))), "up" === t && (clearTimeout(ga), va.className = "", va.classList.add("header"), 
-      e > 50 && va.classList.add(`header--${t}`))), ya = e > 0 ? e : 0;
+      "" !== t && (e - ya > 10 || e - ya < -10) && (clearTimeout(ga), "down" === t && (va.classList.contains("header--down") || e > 50 && (ga = setTimeout((() => {
+        va.className = "", va.classList.add("header"), va.classList.add(`header--${t}`);
+      }), 800))), "up" === t && (ga && (clearTimeout(ga), ga = 0), va.className = "", 
+      va.classList.add("header"), e > 50 && va.classList.add(`header--${t}`))), ya = e > 0 ? e : 0;
     };
     let ba;
     const _a = new ji(".promo__swiper", {
       enabled: !1,
       init: !1,
       modules: [ Qi, Ji, oa ],
-      autoplay: {
-        delay: 3e3
-      },
       effect: "fade",
       fadeEffect: {
         crossFade: !0
@@ -12483,7 +12480,7 @@
       allowTouchMove: !1,
       slidesOffsetBefore: 200,
       centeredSlides: !0,
-      initialSlide: 3,
+      initialSlide: 0,
       scrollbar: {
         el: ".aesthetics-tab__scrollbar",
         draggable: !0
@@ -12499,7 +12496,7 @@
         },
         769: {
           allowTouchMove: !1,
-          initialSlide: 3,
+          initialSlide: 0,
           speed: 1e3,
           slidesPerView: "auto",
           slidesOffsetBefore: 200,
@@ -12511,14 +12508,7 @@
           if (ia < 769) {
             return;
           }
-          const t = e.slides[e.previousIndex];
-          e.slides.forEach((e => {
-            Xr.to(e.querySelector(".aesthetics-tab__list"), {
-              autoAlpha: 0,
-              duration: .01
-            });
-          }));
-          const o = e.slides.filter((e => e.classList.contains("swiper-slide-active")))[0];
+          const t = e.slides[e.previousIndex], o = e.slides.filter((e => e.classList.contains("swiper-slide-active")))[0];
           o && t && (Xr.timeline().to(o, {
             width: "42.5%",
             duration: 1
@@ -12544,10 +12534,18 @@
           })(e), ia < 769) {
             return;
           }
-          const t = e.slides[e.realIndex];
-          t && (Xr.timeline().to(t, {
+          const t = e.slides[e.realIndex], o = e.slides.filter((e => e.classList.contains("swiper-slide-prev")))[0];
+          e.slides.forEach((e => {
+            Xr.set(e.querySelector(".aesthetics-tab__list"), {
+              autoAlpha: 0,
+              duration: .01
+            });
+          })), t && (Xr.timeline().to(t, {
             width: "43.4%",
             duration: .1
+          }).to(o.querySelector(".aesthetics-tab__list"), {
+            autoAlpha: 1,
+            duration: 1
           }), Tc(e.slides));
         },
         slideNextTransitionEnd: Sc,

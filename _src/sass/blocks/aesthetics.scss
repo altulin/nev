@@ -9,16 +9,15 @@
 
   @include mw($tb) {
     padding-top: 6rem;
-    padding-left: 1.5rem;
   }
 
   &__inner {
-    margin: 0 auto;
-    width: 64%;
+    // margin: 0 auto;
+    // width: 64%;
 
     @media screen and (max-width: 1920px) {
-      width: 77rem;
-      max-width: 100%;
+      // width: 78rem;
+      // max-width: 100%;
     }
 
     @include mw($dt) {
@@ -62,7 +61,7 @@
       padding-right: 1.5rem;
       margin-bottom: 3.5rem;
       flex-direction: column;
-      padding-left: 1.5rem;
+      padding-left: 2.5rem;
 
       span:last-child {
         align-self: flex-end;
@@ -84,7 +83,7 @@
     position: relative;
 
     @include mw($tb) {
-      width: 95%;
+      width: 90%;
       margin-left: auto;
     }
   }
@@ -153,8 +152,18 @@
     &.swiper-slide-active {
       width: 42.5%;
 
-      .aesthetics-tab__list {
+      .aesthetics-tab__list--desktop {
         display: none;
+
+        // @include mw($tb) {
+        //   display: block;
+        // }
+      }
+
+      @include mw($tb) {
+        .aesthetics-tab__list--mobile {
+          opacity: 1;
+        }
       }
     }
   }
@@ -198,6 +207,21 @@
     padding: 1rem 2rem;
     align-self: flex-end;
 
+    &--desktop {
+      @include mw($tb) {
+        display: none;
+      }
+    }
+    &--mobile {
+      display: none;
+
+      @include mw($tb) {
+        transition: 0.3s;
+        display: block;
+        opacity: 0;
+      }
+    }
+
     @include mw($ldt) {
       width: 100%;
       padding-left: 1.25rem;
@@ -206,7 +230,6 @@
 
     @include mw($tb) {
       position: absolute;
-
       bottom: 0;
     }
   }
@@ -220,7 +243,7 @@
     display: flex;
 
     @include mw($tb) {
-      color: #fff;
+      // color: #fff;
       font-size: 0.88rem;
       line-height: 1.13rem;
     }
@@ -298,16 +321,17 @@
   align-items: center;
   flex-wrap: wrap;
   margin-bottom: 3rem;
-  column-gap: 6rem;
+  column-gap: 5.1rem;
   row-gap: 1rem;
 
   @include mw($tb) {
     padding-right: 2rem;
     box-sizing: border-box;
     column-gap: 0;
-    justify-content: center;
     align-items: stretch;
-    gap: 1rem;
+    padding-left: 0.4rem;
+    row-gap: 1.7rem;
+    margin-bottom: 2rem;
   }
 
   &__item {
@@ -315,11 +339,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      width: 47%;
-
-      &--width {
-        width: auto;
-      }
+      width: 50%;
     }
   }
 
@@ -336,13 +356,24 @@
     position: relative;
     background-color: transparent;
     cursor: pointer;
-    display: block;
+    display: flex;
+    column-gap: 0.5rem;
+    letter-spacing: 0.12rem;
+
+    @include mw($dt) {
+      flex-direction: column;
+      align-items: center;
+    }
 
     @include mw($tb) {
       font-size: 1rem;
       line-height: 1;
-      padding: 0.63rem 1.25rem;
+      padding: 0.55rem 1.4rem;
       text-align: center;
+    }
+
+    span {
+      pointer-events: none;
     }
 
     &.selected {

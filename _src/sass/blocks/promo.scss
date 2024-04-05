@@ -140,6 +140,7 @@
 
       @include mw($tb) {
         display: block;
+        padding-left: 2.2rem;
       }
     }
 
@@ -169,7 +170,7 @@
 
     @include mw($tb) {
       font-size: 1.15rem;
-      line-height: 1.8;
+      line-height: 1.62;
     }
 
     @include mw($ph) {

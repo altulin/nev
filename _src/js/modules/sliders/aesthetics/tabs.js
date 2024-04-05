@@ -3,6 +3,7 @@ import { body } from "../../header/menu.js";
 const tabsHandle = (s, e) => {
   const selectedTabId = e.target.dataset.tabContentId;
   const slides = s.slides;
+
   const index = slides.find(
     (item) => item.dataset.slide === `${selectedTabId}-0`,
   ).dataset.swiperSlideIndex;

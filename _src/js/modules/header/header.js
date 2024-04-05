@@ -15,20 +15,26 @@ const updateScrollDirection = () => {
     direction !== scrollDirection &&
     (scrollY - lastScrollY > 10 || scrollY - lastScrollY < -10)
   ) {
+    clearTimeout(timerId);
+
     if (direction === "down") {
       if (!header.classList.contains("header--down")) {
-        timerId = setTimeout(() => {
-          header.className = "";
-          header.classList.add(`header`);
+        if (scrollY > 50) {
+          timerId = setTimeout(() => {
+            header.className = "";
+            header.classList.add(`header`);
 
-          if (scrollY > 50) {
             header.classList.add(`header--${direction}`);
-          }
-        }, 800);
+          }, 800);
+        }
       }
     }
     if (direction === "up") {
-      clearTimeout(timerId);
+      if (timerId) {
+        clearTimeout(timerId);
+        timerId = 0;
+      }
+
       header.className = "";
       header.classList.add(`header`);
 

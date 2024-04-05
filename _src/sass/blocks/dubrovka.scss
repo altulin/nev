@@ -69,7 +69,11 @@
     .words:first-child {
       .word {
         span:first-child {
-          margin-right: 1.5rem;
+          margin-right: 2.5rem;
+
+          @include mw($tb) {
+            margin-right: 1.8rem;
+          }
         }
       }
     }
@@ -78,7 +82,11 @@
       justify-content: flex-end;
       .word {
         span:nth-child(2) {
-          margin-right: 1.5rem;
+          margin-right: 2.5rem;
+
+          @include mw($tb) {
+            margin-right: 1.8rem;
+          }
         }
       }
     }
@@ -131,18 +139,19 @@
   flex-wrap: wrap;
   margin-bottom: 2.5rem;
   margin-right: 1rem;
-  column-gap: 2rem;
+  column-gap: 4.5rem;
   row-gap: 1rem;
 
   @include mw($tb) {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    // padding-left: 1.4rem;
+    // padding-right: 1.4rem;
+    padding: 0 1.4rem;
     margin-right: 0;
     margin-bottom: 1.3rem;
     column-gap: 1rem;
     justify-content: space-around;
     column-gap: 0;
-    row-gap: 2rem;
+    row-gap: 1.5rem;
   }
 
   &__item {
@@ -164,10 +173,11 @@
     transition: 0.3s;
     background-color: transparent;
     cursor: pointer;
+    letter-spacing: 0.12rem;
 
     @include mw($tb) {
       font-size: 1rem;
-      padding: 0.5rem;
+      padding: 0.5rem 0.65rem;
       line-height: 1;
     }
 
@@ -213,6 +223,10 @@
       top: 0;
       opacity: 0;
       pointer-events: none;
+    }
+
+    @include mw($tb) {
+      display: none;
     }
   }
 

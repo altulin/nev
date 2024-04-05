@@ -131,11 +131,11 @@
     }
 
     @include mw($dt) {
-      font-size: 0.94rem;
+      font-size: 1.08rem;
       line-height: 1;
-      margin-left: auto;
-      margin-right: auto;
-      display: inline-block;
+      letter-spacing: 0.12rem;
+      align-self: flex-start;
+      margin: 0 2rem;
     }
   }
 }
