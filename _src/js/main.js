@@ -30,7 +30,7 @@ import { chooseLink } from "./modules/choose/link.js";
 import { makeAccordionHeder } from "./modules/header/accordion.js";
 import { topBtnAnimation } from "./modules/footer/top.js";
 import { setAestheticsSliders } from "./modules/sliders/aesthetics/aesthetics.js";
-// import { setAestheticsSliders } from "./modules/sliders/aesthetics.js";
+import { targetWa } from "./modules/footer/target.js";
 
 const handler = () => {
   tlPromo.play().then(() => {
@@ -38,12 +38,9 @@ const handler = () => {
     sliderPromo.enable();
   });
   createTabs("dubrovka", sliderDubrovka);
-  // createTabs("aesthetics");
   controlMenu();
   setSticky();
-  // setDubrovkaSliders();
   sliderCircle.enable();
-  // setAestheticsSliders();
   setAestheticsSliders.init();
   setToTop();
   anchorPromoOrder();
@@ -62,12 +59,12 @@ const handler = () => {
   animationAesthetics();
   animationChoose();
   createMap();
-  // ymaps.ready(createMap);
   animationSection();
   chooseLink();
   animationNearTitle();
   makeAccordionHeder();
   topBtnAnimation();
+  targetWa();
 
   if (width < 769) return;
 };

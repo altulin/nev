@@ -26,7 +26,7 @@ export const animationYard = () => {
           toggleActions: "play none none none",
           start: "top 80%",
           end: "+=300",
-          once: true,
+          // once: true,
         },
       })
       .call(() => {
@@ -35,7 +35,6 @@ export const animationYard = () => {
       .to(title, { autoAlpha: 1, y: 0, duration: 1 })
       .to(text, { autoAlpha: 1, y: 0, duration: 1 }, "<")
       .to(cover, { y: "100%", duration: 1 }, "<")
-
       .to(bar, { autoAlpha: 1 });
   } else {
     gsap
@@ -53,7 +52,6 @@ export const animationYard = () => {
         sliderYard.init();
       })
       .to(bar, { autoAlpha: 1 });
-
     gsap
       .timeline({
         scrollTrigger: {

@@ -12551,7 +12551,7 @@
         slideNextTransitionEnd: Sc,
         slidePrevTransitionEnd: Sc
       }
-    });
+    }), Cc = ca.querySelector(".footer");
     document.addEventListener("DOMContentLoaded", (() => {
       Sa.play().then((() => {
         _a.init(), _a.enable();
@@ -12826,8 +12826,7 @@
             trigger: e,
             toggleActions: "play none none none",
             start: "top 80%",
-            end: "+=300",
-            once: !0
+            end: "+=300"
           }
         }).call((() => {
           cc.init();
@@ -13180,6 +13179,13 @@
         }, {
           autoAlpha: 1
         });
+      })(), (() => {
+        if (!Cc) {
+          return;
+        }
+        Cc.querySelector(".soc__link--wa").addEventListener("click", (e => {
+          window.ym(96902955, "reachGoal", "WhatsApp_lid");
+        }));
       })();
     }));
   })();
