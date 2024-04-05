@@ -121,7 +121,7 @@ export const setAestheticsSliders = new Swiper(".js-aesthetics-tabs", {
   allowTouchMove: false,
   slidesOffsetBefore: 200,
   centeredSlides: true,
-  initialSlide: 0,
+  initialSlide: 1,
   scrollbar: {
     el: ".aesthetics-tab__scrollbar",
     draggable: true,
@@ -137,7 +137,7 @@ export const setAestheticsSliders = new Swiper(".js-aesthetics-tabs", {
     },
     769: {
       allowTouchMove: false,
-      initialSlide: 0,
+      initialSlide: 1,
       speed: 1000,
       slidesPerView: "auto",
       slidesOffsetBefore: 200,

@@ -32,7 +32,7 @@
     }
 
     .menu-icon__line {
-      background-color: #000;
+      border-color: #000;
     }
 
     .header-middle__logo svg {
@@ -86,7 +86,7 @@
     // background-color: rgba(#fff, 0.9);
 
     .menu-icon__line {
-      background-color: #000;
+      border-color: #000;
     }
 
     .header__line-middle {
@@ -138,10 +138,10 @@
 
     .menu-icon:hover {
       .menu-icon__line--up {
-        background-color: #000;
+        border-color: #000;
       }
       .menu-icon__line--down {
-        background-color: #000;
+        border-color: #000;
       }
     }
   }
@@ -242,7 +242,7 @@
       }
 
       .menu-icon__line {
-        background-color: #000;
+        border-color: #000;
       }
 
       .header-middle__logo svg {

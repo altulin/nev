@@ -3,7 +3,7 @@ import { anchorHandle } from "./anchor.js";
 export const body = document.querySelector("body");
 export const header = body.querySelector(".header");
 
-const btnMenu = header.querySelector(".header-left__btn");
+export const btnMenu = header.querySelector(".header-left__btn");
 const anchorList = Array.from(body.querySelectorAll(".js-anchor"));
 
 export const menuTl = gsap

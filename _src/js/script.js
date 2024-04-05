@@ -5945,7 +5945,9 @@
       }
       const e = window.scrollY, t = e > ya ? "down" : "up";
       "" !== t && (e - ya > 10 || e - ya < -10) && (clearTimeout(ga), "down" === t && (va.classList.contains("header--down") || e > 50 && (ga = setTimeout((() => {
-        va.className = "", va.classList.add("header"), va.classList.add(`header--${t}`);
+        va.className = "", va.classList.add("header"), va.classList.add(`header--${t}`), 
+        ca.classList.contains("scroll-lock") && ca.classList.remove("scroll-lock"), fa.classList.contains("menu-icon--active") && fa.classList.remove("menu-icon--active"), 
+        pa.progress() > 0 && pa.reverse();
       }), 800))), "up" === t && (ga && (clearTimeout(ga), ga = 0), va.className = "", 
       va.classList.add("header"), e > 50 && va.classList.add(`header--${t}`))), ya = e > 0 ? e : 0;
     };
@@ -12474,7 +12476,7 @@
       allowTouchMove: !1,
       slidesOffsetBefore: 200,
       centeredSlides: !0,
-      initialSlide: 0,
+      initialSlide: 1,
       scrollbar: {
         el: ".aesthetics-tab__scrollbar",
         draggable: !0
@@ -12490,7 +12492,7 @@
         },
         769: {
           allowTouchMove: !1,
-          initialSlide: 0,
+          initialSlide: 1,
           speed: 1e3,
           slidesPerView: "auto",
           slidesOffsetBefore: 200,

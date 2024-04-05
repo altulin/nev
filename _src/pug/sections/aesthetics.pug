@@ -13,11 +13,13 @@ section.aesthetics
 					li.aesthetics-head__item(class=`${i===2?"aesthetics-head__item--width":""}`)
 						button.aesthetics-head__link.tab-btn( data-tab-content-id=`${item.href}` class=i===0?"selected":'')
 							each word in item.label
-								span= word
+								span.aesthetics-head__word= word
+
 
 							if item.info
 								.aesthetics-head__info
-									span.aesthetics-head__mark i
+									span.aesthetics-head__mark
+										+svg('i')
 									p.aesthetics-head__text= item.info
 
 

@@ -1,5 +1,5 @@
 // import { header } from "./menu.js";
-import { body } from "./menu.js";
+import { body, btnMenu, menuTl } from "./menu.js";
 
 let lastScrollY = window.scrollY;
 let scrollDirection = "";
@@ -11,6 +11,7 @@ const updateScrollDirection = () => {
 
   const scrollY = window.scrollY;
   const direction = scrollY > lastScrollY ? "down" : "up";
+
   if (
     direction !== scrollDirection &&
     (scrollY - lastScrollY > 10 || scrollY - lastScrollY < -10)
@@ -25,6 +26,18 @@ const updateScrollDirection = () => {
             header.classList.add(`header`);
 
             header.classList.add(`header--${direction}`);
+
+            if (body.classList.contains("scroll-lock")) {
+              body.classList.remove("scroll-lock");
+            }
+
+            if (btnMenu.classList.contains("menu-icon--active")) {
+              btnMenu.classList.remove("menu-icon--active");
+            }
+
+            if (menuTl.progress() > 0) {
+              menuTl.reverse();
+            }
           }, 800);
         }
       }
