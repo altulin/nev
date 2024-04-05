@@ -52,9 +52,12 @@ export const createMap = async () => {
       }),
     );
 
-  map.addChild(controls);
-  controls.addChild(buttons);
   map.addChild(new YMapDefaultSchemeLayer({ customization }));
-  map.addChild(new YMapDefaultFeaturesLayer());
-  map.addChild(new YMapMarker(markerSetting, markerElement));
+
+  requestAnimationFrame(() => {
+    map.addChild(controls);
+    controls.addChild(buttons);
+    map.addChild(new YMapDefaultFeaturesLayer());
+    map.addChild(new YMapMarker(markerSetting, markerElement));
+  });
 };

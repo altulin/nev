@@ -26,7 +26,10 @@ export const createTabs = (selector, swiper) => {
       if (swiper) {
         const dataList = swiper.slides.map((item) => item.dataset.slide);
 
-        const index = dataList.indexOf(selectedTabId);
+        // const index = dataList.indexOf(selectedTabId);
+        const index = swiper.slides.find(
+          (item) => item.dataset.slide === `${selectedTabId}-0`,
+        ).dataset.swiperSlideIndex;
 
         swiper.slideToLoop(index, 1000);
       }

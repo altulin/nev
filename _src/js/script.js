@@ -5830,9 +5830,9 @@
               e.classList.remove("selected");
             }));
             const r = t.slides.filter((e => e.classList.contains("swiper-slide-active")))[0];
-            o.filter((e => e.dataset.tabContentId === r.dataset.slide)).forEach((e => {
+            o.filter((e => `${e.dataset.tabContentId}` === r.dataset.slide.split("-")[0])).forEach((e => {
               e.classList.add("selected");
-            })), ca.querySelector(`#${r.dataset.slide}`).classList.remove("hidden");
+            })), ca.querySelector(`#${r.dataset.slide.split("-")[0]}`).classList.remove("hidden");
           })("dubrovka", e), ia < 769) {
             return;
           }
@@ -5954,6 +5954,9 @@
       enabled: !1,
       init: !1,
       modules: [ Qi, Ji, oa ],
+      autoplay: {
+        delay: 3e3
+      },
       effect: "fade",
       fadeEffect: {
         crossFade: !0
@@ -12442,16 +12445,7 @@
       const t = e.filter((e => e.classList.contains("swiper-slide-prev")))[0], o = e.filter((e => e.classList.contains("swiper-slide-active")))[0];
       t && o && (t.classList.remove("aesthetics-tab__slide--cover"), o.classList.remove("aesthetics-tab__slide--cover"));
     }, Sc = e => {
-      if ((e => {
-        const t = e.slides.filter((e => e.classList.contains("swiper-slide-active")))[0];
-        if (!t) {
-          return;
-        }
-        const o = t.dataset.slide;
-        Array.from(aesthetics.querySelectorAll(".tab-btn")).forEach((e => {
-          e.classList.remove("selected"), e.dataset.tabContentId === o.split("-")[0] && e.classList.add("selected");
-        }));
-      })(e), ia < 769) {
+      if (ia < 769) {
         return;
       }
       e.slides.forEach((e => {
@@ -12505,7 +12499,16 @@
       },
       on: {
         slideChangeTransitionStart: e => {
-          if (ia < 769) {
+          if ((e => {
+            const t = e.slides.filter((e => e.classList.contains("swiper-slide-active")))[0];
+            if (!t) {
+              return;
+            }
+            const o = t.dataset.slide;
+            Array.from(aesthetics.querySelectorAll(".tab-btn")).forEach((e => {
+              e.classList.remove("selected"), e.dataset.tabContentId === o.split("-")[0] && e.classList.add("selected");
+            }));
+          })(e), ia < 769) {
             return;
           }
           const t = e.slides[e.previousIndex], o = e.slides.filter((e => e.classList.contains("swiper-slide-active")))[0];
@@ -12568,7 +12571,8 @@
             })), e.target.classList.add("selected");
             const o = e.target.dataset.tabContentId;
             if (t) {
-              const e = t.slides.map((e => e.dataset.slide)).indexOf(o);
+              t.slides.map((e => e.dataset.slide));
+              const e = t.slides.find((e => e.dataset.slide === `${o}-0`)).dataset.swiperSlideIndex;
               t.slideToLoop(e, 1e3);
             }
             const a = document.getElementById(o);
@@ -13118,9 +13122,11 @@
             }
           })
         }));
-        l.addChild(c), c.addChild(u), l.addChild(new o({
+        l.addChild(new o({
           customization: yc
-        })), l.addChild(new r), l.addChild(new i(zc, vc));
+        })), requestAnimationFrame((() => {
+          l.addChild(c), c.addChild(u), l.addChild(new r), l.addChild(new i(zc, vc));
+        }));
       })(), (() => {
         if (!$l) {
           return;

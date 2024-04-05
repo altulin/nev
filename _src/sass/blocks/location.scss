@@ -107,6 +107,10 @@
 
     &--color {
       color: #8ed688;
+
+      @include mw($tb) {
+        color: #fff;
+      }
     }
     // opacity: 0;
 
@@ -273,6 +277,8 @@
 
     @include mw($ph) {
       bottom: 64.3%;
+      height: 20.5%;
+      left: 8%;
     }
   }
 

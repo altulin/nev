@@ -41,7 +41,7 @@ section.dubrovka
 							each item,i in dubrovka_tabs
 
 								each el,n in ['','','']
-									.swiper-slide.tabs-slider__item.dubrovka-slide(data-slide=`${item.href}`)
+									.swiper-slide.tabs-slider__item.dubrovka-slide(data-slide=`${item.href}-${n}`)
 										figure.dubrovka-slide__figure
 											img.dubrovka-slide__img(src='/img/dubrovka.jpg', alt="слайд" width="488" height="746")
 

@@ -58,15 +58,9 @@ const initHandler = (s) => {
 };
 
 const changeHandler = (s) => {
+  controlTabsStyle(s);
   if (width < 769) return;
   const previousSlide = s.slides[s.previousIndex];
-
-  // s.slides.forEach((item) => {
-  //   gsap.to(item.querySelector(".aesthetics-tab__list"), {
-  //     autoAlpha: 0,
-  //     duration: 0.01,
-  //   });
-  // });
 
   const activSlide = s.slides.filter((slide) =>
     slide.classList.contains("swiper-slide-active"),
@@ -91,7 +85,7 @@ const changeHandler = (s) => {
 };
 
 const slideNext = (s) => {
-  controlTabsStyle(s);
+  // controlTabsStyle(s);
 
   if (width < 769) return;
 

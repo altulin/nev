@@ -111,7 +111,6 @@
     padding-left: 1rem;
     padding-right: 1rem;
     padding-top: 3.5rem;
-    pozition: relative;
     z-index: 2;
     margin-left: 0;
     margin-top: -1px;
@@ -130,11 +129,13 @@
       padding-left: 0;
       text-align: center;
       margin-bottom: 2.3rem;
+      margin-right: 2rem;
     }
 
     @include mw($tb) {
-      font-size: 1.5rem;
+      font-size: 1.72rem;
       line-height: 2.13rem;
+      letter-spacing: 0.15rem;
     }
   }
 
@@ -150,7 +151,7 @@
       margin-left: auto;
       margin-right: auto;
       column-gap: 2.5rem;
-      align-items: center;
+      // align-items: center;
       margin-bottom: 1.5rem;
     }
 
@@ -164,9 +165,9 @@
       margin-top: 0.5rem;
 
       @include mw($tb) {
-        width: 1.88rem;
-        height: 1.88rem;
-        margin-top: 0;
+        width: 2rem;
+        height: 2rem;
+        margin-top: 0.3rem;
       }
     }
   }

@@ -18,13 +18,19 @@ export const changeTab = (section, s) => {
   )[0];
 
   const currentTabs = listTabs.filter(
-    (item) => item.dataset.tabContentId === activeSlide.dataset.slide,
+    (item) =>
+      `${item.dataset.tabContentId}` ===
+      activeSlide.dataset.slide.split("-")[0],
   );
 
   currentTabs.forEach((item) => {
     item.classList.add("selected");
   });
 
-  const selectedTab = body.querySelector(`#${activeSlide.dataset.slide}`);
+  const selectedTab = body.querySelector(
+    `#${activeSlide.dataset.slide.split("-")[0]}`,
+  );
+
+  s;
   selectedTab.classList.remove("hidden");
 };

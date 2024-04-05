@@ -209,7 +209,7 @@
   @include mw($tb) {
     width: 12rem;
     height: 12rem;
-    font-size: 1rem;
+    font-size: 1.15rem;
     margin-right: 1rem;
   }
 
@@ -227,7 +227,7 @@
     font-size: 2.5rem;
 
     @include mw($tb) {
-      font-size: 1.5rem;
+      font-size: 1.72rem;
     }
   }
 }

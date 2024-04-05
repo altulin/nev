@@ -1,12 +1,8 @@
 import { body } from "./header/menu.js";
 
-const observeHandleUp = (target) => {
-  console.log("up");
-};
+const observeHandleUp = (target) => {};
 
-const observeHandleDown = (target) => {
-  console.log("down");
-};
+const observeHandleDown = (target) => {};
 
 const callback = (entries, observer) => {
   entries.forEach((entry) => {
