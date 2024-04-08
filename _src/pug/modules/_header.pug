@@ -61,7 +61,7 @@ header.header#header(class=plan===true?'header--plan':"" class=`${headerHide?"he
 							each item in header_nav
 								if !item.accordion
 									li.menu-nav__item
-										a.menu-nav__link(href=`${item.href}` class=item.anchor && 'js-anchor' target=item.anchor ? null:'_blank' data-anchor=item.anchor && `${item.href}`)= item.label
+										a.menu-nav__link(href=`${item.href}` class=item.anchor && 'js-anchor' target=item.target ? '_blank' : null data-anchor=item.anchor && `${item.href}`)= item.label
 
 								else
 									li.menu-nav__item.menu-nav__item--acc.js-accordion
@@ -74,7 +74,7 @@ header.header#header(class=plan===true?'header--plan':"" class=`${headerHide?"he
 											ul.contetnt-point__list.contetnt-point__list--ph.ac-panel.accordion__panel
 												each item in header_point
 													li.contetnt-point__item.ac-text.accordion__text
-														a.contetnt-point__link(href=`${item.href}` class=item.anchor && 'js-anchor' target=item.anchor ? null:'_blank')= item.label
+														a.contetnt-point__link(href=`${item.href}` class=item.anchor && 'js-anchor' target=item.target ? '_blank':null)= item.label
 
 
 

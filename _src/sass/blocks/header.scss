@@ -33,6 +33,7 @@
 
     .menu-icon__line {
       background-color: #000;
+      border-color: #000;
     }
 
     .header-middle__logo svg {
@@ -87,6 +88,7 @@
 
     .menu-icon__line {
       background-color: #000;
+      border-color: #000;
     }
 
     .header__line-middle {
@@ -139,9 +141,11 @@
     .menu-icon:hover {
       .menu-icon__line--up {
         background-color: #000;
+        border-color: #000;
       }
       .menu-icon__line--down {
         background-color: #000;
+        border-color: #000;
       }
     }
   }
@@ -243,6 +247,7 @@
 
       .menu-icon__line {
         background-color: #000;
+        border-color: #000;
       }
 
       .header-middle__logo svg {
@@ -715,6 +720,7 @@
     .menu-icon__line {
       width: 100%;
       background-color: #000;
+      border-color: #000;
     }
   }
 
@@ -761,17 +767,17 @@
   &__line {
     // position: absolute;
     width: 100%;
-    height: 1px;
-    background-color: #fff;
-    left: 0;
+    // height: 1px;
+    // background-color: #fff;
+    transform: scaleY(0.75);
+    height: 0;
+    border: 1px solid #fff;
     transition: all 0.3s cubic-bezier(0.1, 0.82, 0.76, 0.965);
     display: block;
 
     &--up {
-      top: 0;
     }
     &--down {
-      bottom: 0;
     }
   }
 }
