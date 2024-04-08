@@ -65,7 +65,6 @@ const handler = () => {
   makeAccordionHeder();
   topBtnAnimation();
   targetWa();
-
   if (width < 769) return;
 };
 

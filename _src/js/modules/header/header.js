@@ -1,17 +1,20 @@
-// import { header } from "./menu.js";
 import { body, btnMenu, menuTl } from "./menu.js";
 import gsap from "gsap";
 
 let lastScrollY = window.scrollY;
 let scrollDirection = "";
-// let timerId;
 const header = body.querySelector(".header--hide");
 
 let timer = null;
+const tlHeader = gsap.timeline({ paused: true });
 
-const tlHeader = gsap
-  .timeline({ paused: true })
-  .fromTo(header, { y: 0 }, { y: "-100%", duration: 0.3, ease: "none" });
+if (header) {
+  tlHeader.fromTo(
+    header,
+    { y: 0 },
+    { y: "-100%", duration: 0.3, ease: "none" },
+  );
+}
 
 const updateScrollDirection = () => {
   if (!header) return;
@@ -35,30 +38,10 @@ const updateScrollDirection = () => {
     direction !== scrollDirection &&
     (scrollY - lastScrollY > 10 || scrollY - lastScrollY < -10)
   ) {
-    // clearTimeout(timerId);
-
     if (direction === "down") {
       if (tlHeader.progress() === 0) {
         tlHeader.play();
       }
-
-      // if (!header.classList.contains("header--down")) {
-      //   if (scrollY > 50) {
-      //     timerId = setTimeout(() => {
-      //       header.className = "";
-      //       header.classList.add(`header`);
-      //       header.classList.add(`header--${direction}`);
-      //       if (body.classList.contains("scroll-lock")) {
-      //         body.classList.remove("scroll-lock");
-      //       }
-      //       if (btnMenu.classList.contains("menu-icon--active")) {
-      //         btnMenu.classList.remove("menu-icon--active");
-      //       }
-      //       if (menuTl.progress() > 0) {
-      //         menuTl.reverse();
-      //       }
-      //     }, 800);
-      //   }
     }
   }
   if (direction === "up") {
@@ -75,27 +58,10 @@ const updateScrollDirection = () => {
         header.classList.remove("header--up");
       }
     }
-
-    //   if (timerId) {
-    //     clearTimeout(timerId);
-    //     timerId = 0;
-    //   }
-    //   header.className = "";
-    //   header.classList.add(`header`);
-    //   if (scrollY > 50) {
-    //     header.classList.add(`header--${direction}`);
-    //   }
-    // }
   }
-
-  // console.log(timer);
 
   lastScrollY = scrollY > 0 ? scrollY : 0;
 };
-
-// window.addEventListener('scroll', function() {
-
-// }, false);
 
 export const setSticky = () => {
   if (!header) return;

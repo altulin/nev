@@ -570,7 +570,7 @@
     text-transform: uppercase;
     display: block;
     border-bottom: 1px solid transparent;
-    transform: 0.5s;
+    transition: 0.5s;
 
     @include mw($dt) {
       font-size: 1.25rem;

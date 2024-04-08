@@ -5943,13 +5943,15 @@
     let va = null;
     const za = Xr.timeline({
       paused: !0
-    }).fromTo(ya, {
+    });
+    ya && za.fromTo(ya, {
       y: 0
     }, {
       y: "-100%",
       duration: .3,
       ease: "none"
-    }), ba = () => {
+    });
+    const ba = () => {
       if (!ya) {
         return;
       }

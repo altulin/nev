@@ -2104,9 +2104,8 @@ button.swiper-pagination-bullet {
   text-transform: uppercase;
   display: block;
   border-bottom: 1px solid transparent;
-  -webkit-transform: 0.5s;
-      -ms-transform: 0.5s;
-          transform: 0.5s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .menu-nav__link:hover,
