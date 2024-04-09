@@ -5958,7 +5958,7 @@
       const e = window.scrollY, t = e > ga ? "down" : "up";
       null !== va && (clearTimeout(va), va = null), va = setTimeout((function() {
         0 === za.progress() && (e < 50 || fa.classList.contains("menu-icon--active") || za.play());
-      }), 3e3), "" !== t && (e - ga > 10 || e - ga < -10) && "down" === t && 0 === za.progress() && za.play(), 
+      }), 2e3), "" !== t && (e - ga > 10 || e - ga < -10) && "down" === t && 0 === za.progress() && za.play(), 
       "up" === t && (1 === za.progress() && (ya.classList.contains("header--up") || ya.classList.add("header--up"), 
       za.reverse()), e < 50 && ya.classList.contains("header--up") && ya.classList.remove("header--up")), 
       ga = e > 0 ? e : 0;
@@ -5968,9 +5968,6 @@
       enabled: !1,
       init: !1,
       modules: [ Qi, Ji, oa ],
-      autoplay: {
-        delay: 3e3
-      },
       effect: "fade",
       fadeEffect: {
         crossFade: !0

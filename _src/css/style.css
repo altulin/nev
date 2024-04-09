@@ -1846,7 +1846,7 @@ button.swiper-pagination-bullet {
   position: absolute;
   width: 100%;
   background-color: #fff;
-  bottom: 0;
+  bottom: -1px;
   left: 0;
   height: 0;
   border: 0;
@@ -2638,6 +2638,17 @@ button.swiper-pagination-bullet {
 
 .slide-label__price {
   font-size: 2.5rem;
+  text-transform: uppercase;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .pagination-bar {
@@ -4560,6 +4571,10 @@ button.swiper-pagination-bullet {
   margin-top: 0.6rem;
 }
 
+.aesthetics-tab__item.pointless::before {
+  content: none;
+}
+
 .aesthetics-tab__item--title {
   display: none;
 }
@@ -4582,6 +4597,16 @@ button.swiper-pagination-bullet {
      -moz-column-gap: 5.1rem;
           column-gap: 5.1rem;
   row-gap: 1rem;
+}
+
+.aesthetics-head__item:nth-child(4n+3) .aesthetics-head__info,
+.aesthetics-head__item:nth-child(4n+4) .aesthetics-head__info {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  left: auto;
+  right: 0.3rem;
 }
 
 .aesthetics-head__link {

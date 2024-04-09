@@ -7,17 +7,31 @@ section.promo
 				each item,i in promo_slider
 					li.swiper-slide.promo-swiper__slide.promo-slide(class=`promo-slide--${i}`)
 						figure.promo-slide__figure
-								+img-retina(`${item.img}`, 'jpg', 'image', 'promo-slide__img', '1919', '970')
+								+img-retina(`${item.img}`, 'jpg', 'image', 'promo-slide__img', '1919', '970', 768)
 
 						.promo-slide__inner
 							.promo-slide__label.slide-label
-								span.slide-label__head
-									span= item.label[0]
-									span.slide-label__price= item.price
-									span= item.label[1]
-								each el,i in item.label
-									if i>1
-										span= el
+								if i===1
+									span.slide-label__head
+										span.slide-label__price акция
+									span до 1 мая
+									span 2024 г.
+
+								else if i===2
+									span.slide-label__head
+										span.slide-label__price
+											span за наш
+											span счет
+
+								else
+									span.slide-label__head
+										span= item.label[0]
+										span.slide-label__price= item.price
+										span= item.label[1]
+									each el,i in item.label
+										if i>1
+											span= el
+
 
 							h1.title.title--lg.title--white.promo-slide__title.promo-title(class=`promo-title--${i}`)
 								span.promo-title__text

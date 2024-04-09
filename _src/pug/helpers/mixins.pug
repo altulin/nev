@@ -30,11 +30,12 @@ mixin img-retina(name, type, alt, className, width, height, ...args)
 
 
       each item in args
-        - sourceArgsWebp[srcsetAttr] = `${baseDir}img/webp/${name}-${item}.webp 1x, ${baseDir}img/webp/${name}-${item}@2x.webp 2x`;
-        - sourceArgs[srcsetAttr] = `${baseDir}img/${name}-${item}.${type} 1x, ${baseDir}img/${name}-${item}@2x.${type} 2x`;
+        //- - sourceArgsWebp[srcsetAttr] = `${baseDir}img/webp/${name}-${item}.webp 1x, ${baseDir}img/webp/${name}-${item}@2x.webp 2x`;
+        //- - sourceArgs[srcsetAttr] = `${baseDir}img/${name}-${item}.${type} 1x, ${baseDir}img/${name}-${item}@2x.${type} 2x`;
+        - sourceArgs[srcsetAttr] = `${baseDir}img/${name}-${item}.${type}`;
         - let media = `(max-width: ${item}px)`
 
-        source(media = `${media}` type="image/webp")&attributes(sourceArgsWebp)
+        //- source(media = `${media}` type="image/webp")&attributes(sourceArgsWebp)
         source(media = `${media}` type= type==='jpg'?"image/jpeg":`image/${type}`  )&attributes(sourceArgs)
 
     source(type="image/webp")&attributes(sourceWebp)

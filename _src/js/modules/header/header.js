@@ -32,7 +32,7 @@ const updateScrollDirection = () => {
     if (btnMenu.classList.contains("menu-icon--active")) return;
 
     tlHeader.play();
-  }, 3000);
+  }, 2000);
 
   if (
     direction !== scrollDirection &&
