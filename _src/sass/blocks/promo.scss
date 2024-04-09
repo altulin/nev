@@ -20,7 +20,7 @@
   &__pagination {
     position: absolute;
     width: 100%;
-    bottom: 4rem !important;
+    bottom: 3rem !important;
     left: 0;
     z-index: 1;
     justify-content: center;
@@ -32,51 +32,73 @@
 }
 
 .promo-slide {
-  min-height: 60.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  padding-bottom: 8rem;
+  // min-height: 60.5rem;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: flex-end;
+  // align-items: center;
+  // padding-bottom: 8rem;
   box-sizing: border-box;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
+  // padding-left: 1.25rem;
+  // padding-right: 1.25rem;
 
   @include mw($dt) {
-    padding-top: 8.3rem;
   }
 
   @include mw($tb) {
-    padding-left: 1rem;
-    padding-right: 1rem;
-    justify-content: flex-start;
-    min-height: auto;
-    padding-bottom: 10.5rem;
+    // padding-left: 1rem;
+    // padding-right: 1rem;
+    // justify-content: flex-start;
+    // min-height: auto;
+    // padding-bottom: 10.5rem;
   }
 
   &__figure {
-    position: absolute;
     width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
+    height: 0;
+    padding-top: 50.5%;
+    position: relative;
+
+    @include mw($tb) {
+      padding-top: 218.5%;
+    }
   }
 
   &__img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    position: absolute;
+    left: 0;
+    top: 0;
   }
 
   &__inner {
-    position: relative;
+    position: absolute;
     z-index: 1;
     width: 74rem;
     max-width: 100%;
-    transform: translateX(3rem);
+    left: 53%;
+    transform: translate(-50%, 0);
+    bottom: 8rem;
 
     @include mw($ldt) {
-      transform: none;
+      left: 50%;
+    }
+
+    @include mw($dt) {
+      width: 76%;
+      bottom: 6rem;
+      // width: 90rem;
+    }
+
+    @include mw($tb) {
+      width: 96%;
+      bottom: 30%;
+    }
+
+    @include mw($ph) {
+      bottom: 10rem;
     }
   }
 
@@ -107,7 +129,7 @@
     justify-content: space-between;
     column-gap: 3.6rem;
 
-    @include mw($dt) {
+    @include mw($tb) {
       align-items: center;
       flex-direction: column-reverse;
       row-gap: 3.6rem;
@@ -164,11 +186,13 @@
     // width: 53%;
 
     @include mw($dt) {
-      width: 100%;
-      padding-right: 0;
+      // width: 100%;
+      // padding-right: 0;
     }
 
     @include mw($tb) {
+      width: 100%;
+      padding-right: 0;
       font-size: 1.15rem;
       line-height: 1.62;
     }
@@ -201,12 +225,16 @@
   text-align: center;
 
   @include mw($dt) {
-    position: static;
-    margin-bottom: 3rem;
-    margin-left: auto;
+    // position: static;
+    // margin-bottom: 3rem;
+    // margin-left: auto;
   }
 
   @include mw($tb) {
+    position: static;
+    margin-bottom: 3rem;
+    margin-left: auto;
+
     width: 12rem;
     height: 12rem;
     font-size: 1.15rem;

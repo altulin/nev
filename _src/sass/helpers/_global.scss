@@ -15,11 +15,11 @@ html {
   font-size: 0.83vw;
 
   @include mw($ldt) {
-    font-size: 0.95vw;
+    font-size: 0.85vw;
   }
 
   @include mw($dt) {
-    font-size: 1.2vw;
+    font-size: 1.05vw;
   }
 
   @include mw($tb) {
