@@ -4,12 +4,15 @@ import gsap from "gsap";
 import { changeTab } from "../dubrovka/changeTab.js";
 
 export const width = window.innerWidth;
+let isMoving = false;
 
 const clickHandler = (s, e) => {
   const parent = e.target.parentNode;
 
   if (!parent) return;
   const index = parent.dataset.swiperSlideIndex;
+
+  if (isMoving) return;
 
   s.slideToLoop(index, 1000);
 };
@@ -49,6 +52,7 @@ const changeHandler = (s) => {
   changeTab("dubrovka", s);
 
   if (width < 769) return;
+  isMoving = true;
   s.navigation.disable();
   const previousSlide = s.slides[s.previousIndex];
 
@@ -128,6 +132,7 @@ export const sliderDubrovka = new Swiper(".tabs-block__slider", {
   on: {
     afterInit: initHandler,
     slideChangeTransitionStart: changeHandler,
+    slideChangeTransitionEnd: () => (isMoving = false),
   },
   breakpoints: {
     320: {
