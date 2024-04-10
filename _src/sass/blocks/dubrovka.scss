@@ -390,7 +390,7 @@
     position: absolute;
     left: 0;
     top: 0;
-    pointer-events: none;
+    cursor: pointer;
 
     @include mw($tb) {
       height: 100%;

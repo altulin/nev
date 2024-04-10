@@ -4,7 +4,7 @@ import gsap from "gsap";
 import { width } from "./dubrovka.js";
 
 let tlList;
-const progressTime = 3;
+const progressTime = 4.5;
 
 const changeHandle = (s) => {
   tlList.forEach((item) => {
@@ -51,9 +51,9 @@ export const sliderPromo = new Swiper(".promo__swiper", {
   enabled: false,
   init: false,
   modules: [Pagination, Autoplay, EffectFade],
-  // autoplay: {
-  //   delay: progressTime * 1000,
-  // },
+  autoplay: {
+    delay: progressTime * 1000,
+  },
   effect: "fade",
   fadeEffect: {
     crossFade: true,

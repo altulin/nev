@@ -5809,8 +5809,17 @@
           if (ia < 769) {
             return;
           }
-          const t = e.slides[e.realIndex];
-          t && Xr.timeline().to(t, {
+          const t = e.slides[e.realIndex], o = e.slides.map((e => e.querySelector(".dubrovka-slide__figure")));
+          o.forEach((t => {
+            t.addEventListener("click", (t => ((e, t) => {
+              const o = t.target.parentNode;
+              if (!o) {
+                return;
+              }
+              const r = o.dataset.swiperSlideIndex;
+              e.slideToLoop(r, 1e3);
+            })(e, t)));
+          })), t && Xr.timeline().to(t, {
             width: "43.4%",
             duration: .5
           }).to(t.querySelector(".dubrovka-slide__figure"), {
@@ -5873,11 +5882,7 @@
           }).then((() => {
             e.navigation.enable();
           })));
-        },
-        click: (e, t) => ((e, t) => {
-          const o = t.target.dataset.swiperSlideIndex;
-          e.slideToLoop(o, 1e3);
-        })(e, t)
+        }
       },
       breakpoints: {
         320: {
@@ -5968,6 +5973,9 @@
       enabled: !1,
       init: !1,
       modules: [ Qi, Ji, oa ],
+      autoplay: {
+        delay: 4500
+      },
       effect: "fade",
       fadeEffect: {
         crossFade: !0
@@ -5996,7 +6004,7 @@
           }).to(t[r], {
             width: ia < 769 ? "2.5rem" : "5.6rem",
             marginRight: 0,
-            duration: 3
+            duration: 4.5
           }).add("ready", "<"))), requestAnimationFrame((() => {
             _a[e.realIndex].play();
           }));

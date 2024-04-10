@@ -5,9 +5,26 @@ import { changeTab } from "../dubrovka/changeTab.js";
 
 export const width = window.innerWidth;
 
+const clickHandler = (s, e) => {
+  const parent = e.target.parentNode;
+
+  if (!parent) return;
+  const index = parent.dataset.swiperSlideIndex;
+
+  s.slideToLoop(index, 1000);
+};
+
 const initHandler = (s) => {
   if (width < 769) return;
   const activSlide = s.slides[s.realIndex];
+
+  const images = s.slides.map((slide) => {
+    return slide.querySelector(".dubrovka-slide__figure");
+  });
+
+  images.forEach((element) => {
+    element.addEventListener("click", (e) => clickHandler(s, e));
+  });
 
   if (!activSlide) return;
 
@@ -93,11 +110,6 @@ const changeHandler = (s) => {
     });
 };
 
-const clickHandler = (s, e) => {
-  const index = e.target.dataset.swiperSlideIndex;
-  s.slideToLoop(index, 1000);
-};
-
 export const sliderDubrovka = new Swiper(".tabs-block__slider", {
   modules: [Navigation, Scrollbar],
   speed: 500,
@@ -116,7 +128,6 @@ export const sliderDubrovka = new Swiper(".tabs-block__slider", {
   on: {
     afterInit: initHandler,
     slideChangeTransitionStart: changeHandler,
-    click: (s, e) => clickHandler(s, e),
   },
   breakpoints: {
     320: {
