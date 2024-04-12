@@ -12570,8 +12570,16 @@
             duration: .1
           }).to(o.querySelector(".aesthetics-tab__list"), {
             autoAlpha: 1,
-            duration: 1
-          }), Ec(e.slides));
+            duration: .01
+          }).then((() => {
+            const t = e.slides.filter((e => !e.classList.contains("swiper-slide-active")));
+            t.forEach((e => {
+              Xr.to(e, {
+                width: "27%",
+                duration: .01
+              });
+            }));
+          })), Ec(e.slides));
         },
         slideNextTransitionEnd: Cc,
         slidePrevTransitionEnd: Cc

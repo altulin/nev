@@ -51,7 +51,19 @@ const initHandler = (s) => {
     })
     .to(previousSlide.querySelector(".aesthetics-tab__list"), {
       autoAlpha: 1,
-      duration: 1,
+      duration: 0.01,
+    })
+    .then(() => {
+      const notActive = s.slides.filter(
+        (slide) => !slide.classList.contains("swiper-slide-active"),
+      );
+
+      notActive.forEach((item) => {
+        gsap.to(item, {
+          width: "27%",
+          duration: 0.01,
+        });
+      });
     });
 
   makeCover(s.slides);
