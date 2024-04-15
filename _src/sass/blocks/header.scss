@@ -293,13 +293,13 @@
     width: 100%;
     // height: 1px;
     background-color: #fff;
-    bottom: -1px;
+    bottom: 0;
     left: 0;
     height: 0;
     border: 0;
     border-top: 1px solid #fff;
-    border-bottom: 1px solid #fff;
-    transform: scaleY(var(--scale));
+    // border-bottom: 1px solid #fff;
+    // transform: scaleY(var(--scale));
     margin: 0;
   }
 
@@ -375,7 +375,6 @@
     font-size: 1.13rem;
     font-weight: 500;
     line-height: 1.38rem;
-    letter-spacing: 10%;
     align-items: center;
     padding: 0.63rem 1.25rem 0.63rem 1.25rem;
     border: 1px solid rgb(255, 255, 255);
@@ -708,7 +707,7 @@
   @include mw($tb) {
     width: 30px;
     height: 30px;
-    --delta: 3px;
+    --delta: 4px;
   }
 
   &:hover {
@@ -775,7 +774,7 @@
     }
 
     @include mw($tb) {
-      height: 7px;
+      height: 9px;
     }
   }
 
@@ -784,9 +783,10 @@
     width: 100%;
     // height: 1px;
     // background-color: #fff;
-    transform: scaleY(var(--scale));
+    // transform: scaleY(var(--scale));
     height: 0;
-    border: 1px solid #fff;
+    // border: 1px solid #fff;
+    border-top: 1px solid #fff;
     transition: all 0.3s cubic-bezier(0.1, 0.82, 0.76, 0.965);
     display: block;
 
@@ -932,9 +932,9 @@
   top: 0;
   width: 0;
   border: 0;
-  border-left: 1px solid #fff;
+  // border-left: 1px solid #fff;
   border-right: 1px solid #fff;
-  transform: scaleX(var(--scale));
+  // transform: scaleX(var(--scale));
 
   margin: 0;
 

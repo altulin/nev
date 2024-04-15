@@ -5955,7 +5955,7 @@
     va && ba.fromTo(va, {
       y: 0
     }, {
-      y: "-100%",
+      y: "-101%",
       duration: .3,
       ease: "none"
     });

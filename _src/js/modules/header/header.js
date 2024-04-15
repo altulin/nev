@@ -12,7 +12,7 @@ if (header) {
   tlHeader.fromTo(
     header,
     { y: 0 },
-    { y: "-100%", duration: 0.3, ease: "none" },
+    { y: "-101%", duration: 0.3, ease: "none" },
   );
 }
 
