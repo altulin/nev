@@ -2029,6 +2029,7 @@ button.swiper-pagination-bullet {
   z-index: -1;
   visibility: hidden;
   opacity: 0;
+  pointer-events: none;
 }
 
 .menu__inner {
@@ -7215,3 +7216,4 @@ button.swiper-pagination-bullet {
     font-size: 2rem;
   }
 }
+/*# sourceMappingURL=style.css.map */

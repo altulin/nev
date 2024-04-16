@@ -10,8 +10,8 @@ export const menuTl = gsap
   .timeline({ paused: true })
   .fromTo(
     header.querySelector(".menu"),
-    { autoAlpha: 0 },
-    { autoAlpha: 1, duration: 0.3 },
+    { autoAlpha: 0, pointerEvents: "none" },
+    { autoAlpha: 1, pointerEvents: "all", duration: 0.3 },
   )
   .fromTo(
     header.querySelector(".menu__figure"),

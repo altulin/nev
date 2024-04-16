@@ -5906,18 +5906,19 @@
     }, la = e => e.protocol === window.location.protocol && e.host === window.location.host && e.pathname === window.location.pathname && e.search === window.location.search && e.hash;
     function ca(e, t) {
       const o = !!e && document.querySelector(e);
-      o && (t && t.preventDefault(), Xr.to(window, {
-        scrollTo: o,
-        duration: .5
+      o && (t && t.preventDefault(), o.scrollIntoView({
+        behavior: "smooth"
       }));
     }
     ca(window.location.hash);
     const da = document.querySelector("body"), fa = da.querySelector(".header"), ua = fa.querySelector(".header-left__btn"), pa = Array.from(da.querySelectorAll(".js-anchor")), ma = Xr.timeline({
       paused: !0
     }).fromTo(fa.querySelector(".menu"), {
-      autoAlpha: 0
+      autoAlpha: 0,
+      pointerEvents: "none"
     }, {
       autoAlpha: 1,
+      pointerEvents: "all",
       duration: .3
     }).fromTo(fa.querySelector(".menu__figure"), {
       x: 50,
