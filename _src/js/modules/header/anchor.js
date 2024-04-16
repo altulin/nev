@@ -31,10 +31,7 @@ function scrollToHash(hash, e) {
     if (e) e.preventDefault();
     // const yOffset = width < 769 ? -30 : -100;
     // const y = elem.getBoundingClientRect().top + window.scrollY + yOffset;
-    // gsap.to(window, { scrollTo: elem, duration: 0.5 });
-    elem.scrollIntoView({
-      behavior: "smooth",
-    });
+    gsap.to(window, { scrollTo: elem, duration: 0.5 });
   }
 }
 

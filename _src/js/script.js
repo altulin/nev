@@ -5906,8 +5906,9 @@
     }, la = e => e.protocol === window.location.protocol && e.host === window.location.host && e.pathname === window.location.pathname && e.search === window.location.search && e.hash;
     function ca(e, t) {
       const o = !!e && document.querySelector(e);
-      o && (t && t.preventDefault(), o.scrollIntoView({
-        behavior: "smooth"
+      o && (t && t.preventDefault(), Xr.to(window, {
+        scrollTo: o,
+        duration: .5
       }));
     }
     ca(window.location.hash);
