@@ -5885,7 +5885,23 @@
             e.navigation.enable();
           })));
         },
-        slideChangeTransitionEnd: () => aa = !1
+        slideChangeTransitionEnd: () => aa = !1,
+        update: e => {
+          if (ia < 769) {
+            return;
+          }
+          const t = e.slides[e.realIndex];
+          t && Xr.timeline().to(t, {
+            width: "43.4%",
+            duration: .5
+          }).to(t.querySelector(".dubrovka-slide__figure"), {
+            height: "100%",
+            duration: .5
+          }, "<").to(t.querySelector(".dubrovka-slide__text"), {
+            autoAlpha: 1,
+            duration: .1
+          });
+        }
       },
       breakpoints: {
         320: {
@@ -5936,8 +5952,8 @@
       autoAlpha: 1,
       duration: .3
     }, "<"), ha = async () => {
-      ua.classList.remove("menu-icon--active"), da.classList.remove("scroll-lock"), await ma.reverse(), 
-      fa.classList.remove("header--menu-active"), pa.forEach((e => {
+      ua.classList.remove("menu-icon--active"), da.classList.remove("scroll-lock"), sa.update(), 
+      await ma.reverse(), fa.classList.remove("header--menu-active"), pa.forEach((e => {
         e.removeEventListener("click", na);
       }));
     }, ga = () => {

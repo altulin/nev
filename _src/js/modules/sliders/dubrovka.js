@@ -17,6 +17,29 @@ const clickHandler = (s, e) => {
   s.slideToLoop(index, 1000);
 };
 
+const updateHandler = (s) => {
+  if (width < 769) return;
+  const activSlide = s.slides[s.realIndex];
+
+  if (!activSlide) return;
+
+  gsap
+    .timeline()
+    .to(activSlide, {
+      width: "43.4%",
+      duration: 0.5,
+    })
+    .to(
+      activSlide.querySelector(".dubrovka-slide__figure"),
+      { height: "100%", duration: 0.5 },
+      "<",
+    )
+    .to(activSlide.querySelector(".dubrovka-slide__text"), {
+      autoAlpha: 1,
+      duration: 0.1,
+    });
+};
+
 const initHandler = (s) => {
   if (width < 769) return;
   const activSlide = s.slides[s.realIndex];
@@ -133,7 +156,7 @@ export const sliderDubrovka = new Swiper(".tabs-block__slider", {
     afterInit: initHandler,
     slideChangeTransitionStart: changeHandler,
     slideChangeTransitionEnd: () => (isMoving = false),
-    // update: initHandler,
+    update: updateHandler,
   },
   breakpoints: {
     320: {
