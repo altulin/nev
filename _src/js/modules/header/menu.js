@@ -1,5 +1,6 @@
 import gsap from "gsap";
 import { anchorHandle } from "./anchor.js";
+// import { sliderDubrovka } from "../sliders/dubrovka.js";
 export const body = document.querySelector("body");
 export const header = body.querySelector(".header");
 
@@ -40,6 +41,7 @@ const openHandle = async () => {
 export const closeHandle = async () => {
   btnMenu.classList.remove("menu-icon--active");
   body.classList.remove("scroll-lock");
+  // sliderDubrovka.update();
 
   await menuTl.reverse();
   header.classList.remove("header--menu-active");

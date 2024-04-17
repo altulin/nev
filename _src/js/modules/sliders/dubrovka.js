@@ -133,6 +133,7 @@ export const sliderDubrovka = new Swiper(".tabs-block__slider", {
     afterInit: initHandler,
     slideChangeTransitionStart: changeHandler,
     slideChangeTransitionEnd: () => (isMoving = false),
+    // update: initHandler,
   },
   breakpoints: {
     320: {
