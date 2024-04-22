@@ -48,6 +48,10 @@
   flex-direction: column;
   align-items: center;
 
+  @include mw($dt) {
+    left: 16.5%;
+  }
+
   @include mw($tb) {
     width: 26.3%;
     top: 39.5%;
@@ -91,8 +95,8 @@
     }
 
     @include mw($dt) {
-      width: 100%;
-      text-wrap: wrap;
+      // width: 100%;
+      // text-wrap: wrap;
       bottom: calc(100% + 1rem);
     }
 
@@ -287,7 +291,7 @@
 
   &--7 {
     bottom: 61.3%;
-    right: 84.5%;
+    right: 84.8%;
     flex-direction: row;
     height: 15%;
     text-align: right;

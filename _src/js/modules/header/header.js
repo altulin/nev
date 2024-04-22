@@ -12,7 +12,7 @@ if (header) {
   tlHeader.fromTo(
     header,
     { y: 0 },
-    { y: "-101%", duration: 0.3, ease: "none" },
+    { y: "-100%", duration: 0.3, ease: "none" },
   );
 }
 
@@ -65,5 +65,10 @@ const updateScrollDirection = () => {
 
 export const setSticky = () => {
   if (!header) return;
+
+  if (lastScrollY > 200) {
+    tlHeader.progress(1);
+  }
+
   window.addEventListener("scroll", updateScrollDirection);
 };

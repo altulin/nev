@@ -1857,7 +1857,7 @@ button.swiper-pagination-bullet {
   position: absolute;
   width: 100%;
   background-color: #fff;
-  bottom: -1px;
+  bottom: 0;
   left: 0;
   height: 0;
   border: 0;
@@ -2855,7 +2855,7 @@ button.swiper-pagination-bullet {
 
 .location-flag--7 {
   bottom: 61.3%;
-  right: 84.5%;
+  right: 84.8%;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -5630,9 +5630,11 @@ button.swiper-pagination-bullet {
     bottom: 6rem;
   }
 
+  .location-logo {
+    left: 16.5%;
+  }
+
   .location-logo__title {
-    width: 100%;
-    text-wrap: wrap;
     bottom: calc(100% + 1rem);
   }
 
@@ -7346,4 +7348,3 @@ button.swiper-pagination-bullet {
     font-size: 2rem;
   }
 }
-/*# sourceMappingURL=style.css.map */

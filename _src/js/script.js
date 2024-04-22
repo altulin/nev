@@ -5976,7 +5976,7 @@
     va && ba.fromTo(va, {
       y: 0
     }, {
-      y: "-101%",
+      y: "-100%",
       duration: .3,
       ease: "none"
     });
@@ -12437,7 +12437,7 @@
       if (ia < 769) {
         return;
       }
-      if (console.log(ia), !wc) {
+      if (!wc) {
         return;
       }
       const e = wc.querySelector(".choose__left"), t = wc.querySelector(".choose__right"), o = wc.querySelector(".choose__bg");
@@ -12635,8 +12635,8 @@
             })), a.classList.remove("hidden"));
           }));
         }));
-      })("dubrovka", sa), ua && ua.addEventListener("click", ga), va && window.addEventListener("scroll", _a), 
-      Ta.enable(), Ac.init(), (() => {
+      })("dubrovka", sa), ua && ua.addEventListener("click", ga), va && (ya > 200 && ba.progress(1), 
+      window.addEventListener("scroll", _a)), Ta.enable(), Ac.init(), (() => {
         if (!Sa) {
           return;
         }

@@ -14,7 +14,6 @@ const location = () => {
 export const chooseLink = () => {
   if (width < 769) return;
 
-  console.log(width);
   if (!choose) return;
   const leftLink = choose.querySelector(".choose__left");
   const rightLink = choose.querySelector(".choose__right");

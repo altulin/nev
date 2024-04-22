@@ -67,5 +67,7 @@ export const controlMenu = () => {
     return;
   }
 
+
+
   btnMenu.addEventListener("click", hadleBtn);
 };
