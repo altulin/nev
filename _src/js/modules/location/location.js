@@ -10,6 +10,7 @@ export const animationPins = () => {
   if (!location) return;
 
   const figure = location.querySelector(".location-logo__figure");
+  const title = location.querySelector(".location-logo__title");
 
   list.forEach((item, i) => {
     const flag = location.querySelector(`.location-flag__title--${i + 1}`);
@@ -38,14 +39,29 @@ export const animationPins = () => {
       });
   });
 
-  gsap.to(figure, {
-    scrollTrigger: {
-      trigger: location,
-      toggleActions: "play none none pause",
-      start: `top 50%`,
-      end: "+=300",
-    },
-    scale: 1,
-    duration: 1,
-  });
+  if (figure) {
+    gsap.to(figure, {
+      scrollTrigger: {
+        trigger: location,
+        toggleActions: "play none none pause",
+        start: `top 50%`,
+        end: "+=300",
+      },
+      scale: 1,
+      duration: 1,
+    });
+  }
+
+  if (title) {
+    gsap.to(title, {
+      scrollTrigger: {
+        trigger: location,
+        toggleActions: "play none none pause",
+        start: `top 50%`,
+        end: "+=300",
+      },
+      scale: 1,
+      duration: 1,
+    });
+  }
 };

@@ -41,7 +41,6 @@ const openHandle = async () => {
 export const closeHandle = async () => {
   btnMenu.classList.remove("menu-icon--active");
   body.classList.remove("scroll-lock");
-  sliderDubrovka.update();
 
   await menuTl.reverse();
   header.classList.remove("header--menu-active");
@@ -49,6 +48,14 @@ export const closeHandle = async () => {
   anchorList.forEach((element) => {
     element.removeEventListener("click", anchorHandle);
   });
+
+  try {
+    if (sliderDubrovka.slides.length > 0) {
+      sliderDubrovka.update();
+    }
+  } catch (error) {
+    //
+  }
 };
 
 const hadleBtn = () => {

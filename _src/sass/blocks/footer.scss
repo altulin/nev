@@ -125,9 +125,10 @@
     background-color: transparent;
     transition: 0.3s;
     cursor: pointer;
+    color: #000;
 
     @include hocus() {
-      background-color: #fff;
+      // background-color: #fff;
     }
 
     @include mw($dt) {

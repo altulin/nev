@@ -1,6 +1,7 @@
 import { body } from "../../header/menu.js";
 import { customization } from "./customization.js";
 import { markerElement, markerSetting } from "./marker.js";
+import { width } from "../../sliders/dubrovka.js";
 
 export const createMap = async () => {
   const el = body.querySelector("#map");
@@ -24,7 +25,7 @@ export const createMap = async () => {
         center: [30.938058, 59.84347],
         zoom: 16,
       },
-      behaviors: ["drag"],
+      behaviors: width < 769 ? ["pinchZoom"] : ["drag"],
     },
   );
 

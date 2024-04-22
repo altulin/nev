@@ -29,9 +29,16 @@ header.header#header(class=plan===true?'header--plan':"" class=`${headerHide?"he
 				if param
 					a.header-middle__spec.header-middle--param(href="") выбор по секциям
 
+
+				if !chema
+					a.header-middle__search-flat.js-header(href="" aria-label='search')
+						+svg('search')
+
 				a.header-middle__choose.js-anchor.js-header(href="#choose" data-anchor="#choose" ) выбрать квартиру
 
-				a.header-middle__tel.js-header(href="tel:+78124435659") +7 (812) 443-56-59
+
+
+				a.header-middle__tel.js-header(href="tel:+78124435659" class=`${chema ? 'header-middle__tel--chema':''}`) +7 (812) 443-56-59
 
 
 		.header__right.header-right(class=`${choose ? 'header-right--choose':''}`)

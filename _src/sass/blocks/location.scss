@@ -41,21 +41,23 @@
 
 .location-logo {
   position: absolute;
-  width: 12.3%;
+  width: 13.5%;
   top: 37.5%;
-  left: 17%;
+  left: 16.8%;
   display: flex;
   flex-direction: column;
+  align-items: center;
 
   @include mw($tb) {
+    width: 26.3%;
     top: 39.5%;
-    left: 9%;
+    left: 8%;
   }
 
   @include mw($ph) {
-    width: 25.3%;
+    width: 28.3%;
     top: 36%;
-    left: 11%;
+    left: 9%;
   }
 
   &__link {
@@ -72,6 +74,34 @@
     }
   }
 
+  &__title {
+    width: fit-content;
+    position: absolute;
+    bottom: calc(100% + 3rem);
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.3;
+    color: #8ed688;
+    text-wrap: nowrap;
+    transform: scale(0);
+
+    @include mw($ldt) {
+      font-size: 1.3rem;
+    }
+
+    @include mw($dt) {
+      width: 100%;
+      text-wrap: wrap;
+      bottom: calc(100% + 1rem);
+    }
+
+    @include mw($tb) {
+      font-size: 0.88rem;
+      display: none;
+    }
+  }
+
   &__figure {
     width: 100%;
     padding-top: 100%;
@@ -81,9 +111,11 @@
     transform: scale(0);
     border-radius: 50%;
     outline: 0.6rem solid #8ed688;
+    outline-offset: -0.6rem;
 
     @include mw($tb) {
       outline-width: 0.4rem;
+      outline-offset: -0.4rem;
     }
   }
 }
@@ -112,7 +144,6 @@
         color: #fff;
       }
     }
-    // opacity: 0;
 
     @include mw($ldt) {
       font-size: 1.3rem;

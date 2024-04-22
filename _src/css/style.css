@@ -1656,6 +1656,10 @@ button.swiper-pagination-bullet {
   fill: #78899f;
 }
 
+.header--plan .header-middle__search-flat svg {
+  stroke: #000;
+}
+
 .header--plan .header-middle__choose {
   color: #000;
 }
@@ -1719,6 +1723,10 @@ button.swiper-pagination-bullet {
   border-color: #000;
 }
 
+.header--up .header-middle__search-flat svg {
+  stroke: #000;
+}
+
 .header--up .header-right__mail svg {
   stroke: #000;
 }
@@ -1760,12 +1768,15 @@ button.swiper-pagination-bullet {
   fill: #78899f;
 }
 
+.header--menu-active .header-middle__search-flat svg {
+  stroke: #000;
+}
+
 .header--menu-active .header-middle__choose {
   display: none;
 }
 
 .header--menu-active .header-middle__tel {
-  margin-left: auto;
   color: #000;
 }
 
@@ -1846,7 +1857,7 @@ button.swiper-pagination-bullet {
   position: absolute;
   width: 100%;
   background-color: #fff;
-  bottom: 0;
+  bottom: -1px;
   left: 0;
   height: 0;
   border: 0;
@@ -1969,6 +1980,10 @@ button.swiper-pagination-bullet {
   margin-left: 4.75rem;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+}
+
+.header-middle__search-flat {
+  display: none;
 }
 
 .header-right {
@@ -2708,9 +2723,9 @@ button.swiper-pagination-bullet {
 
 .location-logo {
   position: absolute;
-  width: 12.3%;
+  width: 13.5%;
   top: 37.5%;
-  left: 17%;
+  left: 16.8%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2718,6 +2733,9 @@ button.swiper-pagination-bullet {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .location-logo__link {
@@ -2736,6 +2754,23 @@ button.swiper-pagination-bullet {
   aspect-ratio: 4/1;
 }
 
+.location-logo__title {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: absolute;
+  bottom: calc(100% + 3rem);
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #8ed688;
+  text-wrap: nowrap;
+  -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+          transform: scale(0);
+}
+
 .location-logo__figure {
   width: 100%;
   padding-top: 100%;
@@ -2747,6 +2782,7 @@ button.swiper-pagination-bullet {
           transform: scale(0);
   border-radius: 50%;
   outline: 0.6rem solid #8ed688;
+  outline-offset: -0.6rem;
 }
 
 .location-flag {
@@ -3598,11 +3634,7 @@ button.swiper-pagination-bullet {
   -webkit-transition: 0.3s;
   transition: 0.3s;
   cursor: pointer;
-}
-
-.department__route:hover,
-.department__route:focus {
-  background-color: #fff;
+  color: #000;
 }
 
 .soc__logo {
@@ -4854,15 +4886,24 @@ button.swiper-pagination-bullet {
 }
 
 .choose-block__link {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 5rem;
   height: 5rem;
+  border: 0.06rem solid #fff;
   margin-bottom: 1.4rem;
 }
 
 .choose-block__link svg {
-  width: 100%;
-  height: 100%;
+  width: 70%;
+  height: 70%;
   fill: transparent;
   stroke: #fff;
 }
@@ -5392,6 +5433,10 @@ button.swiper-pagination-bullet {
     left: 50%;
   }
 
+  .location-logo__title {
+    font-size: 1.3rem;
+  }
+
   .location-flag__title {
     font-size: 1.3rem;
   }
@@ -5544,8 +5589,24 @@ button.swiper-pagination-bullet {
   }
 
   .header-middle__tel {
-    margin-left: auto;
+    margin-left: 2rem;
     font-size: 0.88rem;
+  }
+
+  .header-middle__tel--chema {
+    margin-left: auto;
+  }
+
+  .header-middle__search-flat {
+    display: block;
+    margin-left: auto;
+  }
+
+  .header-middle__search-flat svg {
+    fill: transparent;
+    stroke: #fff;
+    width: 1.9rem;
+    height: 1.9rem;
   }
 
   .menu__figure {
@@ -5567,6 +5628,12 @@ button.swiper-pagination-bullet {
   .promo-slide__inner {
     width: 76%;
     bottom: 6rem;
+  }
+
+  .location-logo__title {
+    width: 100%;
+    text-wrap: wrap;
+    bottom: calc(100% + 1rem);
   }
 
   .location-flag--2 {
@@ -5881,8 +5948,12 @@ button.swiper-pagination-bullet {
   }
 
   .header-middle__logo svg {
-    width: 6.45rem;
+    width: 7.45rem;
     height: 2.26rem;
+  }
+
+  .header-middle__tel {
+    margin-left: auto;
   }
 
   .menu__content {
@@ -6085,12 +6156,19 @@ button.swiper-pagination-bullet {
   }
 
   .location-logo {
+    width: 26.3%;
     top: 39.5%;
-    left: 9%;
+    left: 8%;
+  }
+
+  .location-logo__title {
+    font-size: 0.88rem;
+    display: none;
   }
 
   .location-logo__figure {
     outline-width: 0.4rem;
+    outline-offset: -0.4rem;
   }
 
   .location-flag__title--color {
@@ -6939,7 +7017,58 @@ button.swiper-pagination-bullet {
   }
 
   .choose {
+    padding-top: 4.6rem;
+    padding-bottom: 0;
+  }
+
+  .choose__inner {
+    margin-bottom: 2.5rem;
+  }
+
+  .choose__title {
+    line-height: 1;
+    padding-left: 2.5rem;
+    padding-right: 1.5rem;
+    letter-spacing: 0.45rem;
+  }
+
+  .choose__title span:last-child {
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+  }
+
+  .choose__bg {
+    padding-top: 100%;
+    background-image: url("/img/choose-mob.jpg");
+  }
+
+  .choose__bg::after {
+    content: none;
+  }
+
+  .choose__left {
     display: none;
+  }
+
+  .choose__right {
+    width: 100%;
+    background-color: transparent;
+  }
+
+  .choose-block__link {
+    width: 3.8rem;
+    height: 3.7rem;
+  }
+
+  .choose-block__title {
+    line-height: 1;
+    font-size: 1.5rem;
+    letter-spacing: 0.1rem;
+  }
+
+  .choose-block__text {
+    font-size: 1rem;
+    line-height: 1;
   }
 
   .choose__circle {
@@ -7113,7 +7242,8 @@ button.swiper-pagination-bullet {
   }
 
   .header-middle {
-    padding: 0 1rem;
+    padding-left: 1.5rem;
+    padding-right: 0.2rem;
   }
 
   .promo-slide__inner {
@@ -7135,9 +7265,9 @@ button.swiper-pagination-bullet {
   }
 
   .location-logo {
-    width: 25.3%;
+    width: 28.3%;
     top: 36%;
-    left: 11%;
+    left: 9%;
   }
 
   .location-flag {

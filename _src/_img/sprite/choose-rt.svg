@@ -1,10 +1,9 @@
-<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="0.5" y="0.5" width="79" height="79" fill="#88D68B" stroke="white"/>
-<path d="M30 20L65 20" stroke="white" stroke-linecap="round"/>
-<path d="M14 40H52" stroke="white" stroke-linecap="round"/>
-<path d="M45 60L65 60" stroke="white" stroke-linecap="round"/>
-<path d="M15 60L35 60" stroke="white" stroke-linecap="round"/>
-<circle cx="25" cy="20" r="4.5" stroke="white"/>
-<circle cx="57" cy="40" r="4.5" stroke="white"/>
-<circle cx="40" cy="60" r="4.5" stroke="white"/>
+<svg width="53" height="50" viewBox="0 0 53 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M17 5.00684L52 5.00684" stroke="white" stroke-linecap="round"/>
+<path d="M1 25.0068H39" stroke="white" stroke-linecap="round"/>
+<path d="M32 45.0068L52 45.0068" stroke="white" stroke-linecap="round"/>
+<path d="M2 45.0068L22 45.0068" stroke="white" stroke-linecap="round"/>
+<circle cx="12" cy="5.00684" r="4.5" stroke="white"/>
+<circle cx="44" cy="25.0068" r="4.5" stroke="white"/>
+<circle cx="27" cy="45.0068" r="4.5" stroke="white"/>
 </svg>

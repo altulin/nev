@@ -20,7 +20,7 @@ const getWidth = () => {
 
 export const animationChoose = () => {
   if (!choose) return;
-  // if (width < 769) return;
+  if (width < 769) return;
   const title = choose.querySelector(".choose__title");
   if (!title) return;
 

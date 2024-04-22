@@ -5952,10 +5952,13 @@
       autoAlpha: 1,
       duration: .3
     }, "<"), ha = async () => {
-      ua.classList.remove("menu-icon--active"), da.classList.remove("scroll-lock"), sa.update(), 
-      await ma.reverse(), fa.classList.remove("header--menu-active"), pa.forEach((e => {
+      ua.classList.remove("menu-icon--active"), da.classList.remove("scroll-lock"), await ma.reverse(), 
+      fa.classList.remove("header--menu-active"), pa.forEach((e => {
         e.removeEventListener("click", na);
       }));
+      try {
+        sa.slides.length > 0 && sa.update();
+      } catch (e) {}
     }, ga = () => {
       0 === ma.progress() ? (async () => {
         ua.classList.add("menu-icon--active"), fa.classList.add("header--menu-active"), 
@@ -12431,11 +12434,14 @@
     const _c = {
       coordinates: [ 30.94030068653868, 59.84294662775576 ]
     }, wc = da.querySelector(".choose__content"), xc = () => {
-      if (!wc) {
+      if (ia < 769) {
+        return;
+      }
+      if (console.log(ia), !wc) {
         return;
       }
       const e = wc.querySelector(".choose__left"), t = wc.querySelector(".choose__right"), o = wc.querySelector(".choose__bg");
-      e.addEventListener("click", (r => {
+      e && e.addEventListener("click", (r => {
         r.preventDefault(), Xr.timeline().to(t.querySelector(".choose-block"), {
           display: "none",
           duration: .1
@@ -12455,7 +12461,7 @@
         }).then((() => {
           window.location.assign("/choose.html");
         }));
-      })), t.addEventListener("click", (o => {
+      })), t && t.addEventListener("click", (o => {
         o.preventDefault(), Xr.timeline().to(e.querySelector(".choose-block"), {
           display: "none",
           duration: .1
@@ -12691,7 +12697,7 @@
         if (!t) {
           return;
         }
-        const o = t.querySelector(".location-logo__figure");
+        const o = t.querySelector(".location-logo__figure"), r = t.querySelector(".location-logo__title");
         e.forEach(((e, o) => {
           const r = t.querySelector(`.location-flag__title--${o + 1}`);
           Xr.timeline().set(r, {
@@ -12711,7 +12717,16 @@
           }).to(r, {
             autoAlpha: 1
           });
-        })), Xr.to(o, {
+        })), o && Xr.to(o, {
+          scrollTrigger: {
+            trigger: t,
+            toggleActions: "play none none pause",
+            start: "top 50%",
+            end: "+=300"
+          },
+          scale: 1,
+          duration: 1
+        }), r && Xr.to(r, {
           scrollTrigger: {
             trigger: t,
             toggleActions: "play none none pause",
@@ -12973,7 +12988,7 @@
         if (!hc) {
           return;
         }
-        if (ia < 769) {
+        if (ia < 1201) {
           return;
         }
         Array.from(hc.querySelectorAll(".choose__control")).forEach((e => {
@@ -13103,6 +13118,9 @@
         if (!vc) {
           return;
         }
+        if (ia < 769) {
+          return;
+        }
         const e = vc.querySelector(".choose__title");
         if (!e) {
           return;
@@ -13146,7 +13164,7 @@
             center: [ 30.938058, 59.84347 ],
             zoom: 16
           },
-          behaviors: [ "drag" ]
+          behaviors: ia < 769 ? [ "pinchZoom" ] : [ "drag" ]
         }), c = new a({
           position: "left"
         }), d = document.createElement("div");
